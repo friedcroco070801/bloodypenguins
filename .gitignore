@@ -1,0 +1,12 @@
+build
+.vscode
+win32-build
+bin
+cocos2d/cocos/platform/android/**/build
+cocos2d/cocos/platform/android/**/.classpath
+cocos2d/cocos/platform/android/**/.settings/*.prefs
+**/.vs
+**/.vscode
+**/*.user
+**/CMakeCache.txt
+**/CMakeFiles
