@@ -1,0 +1,11 @@
+#ifndef __LEVEL_MODEL_DEFINITIONS_H__
+#define __LEVEL_MODEL_DEFINITIONS_H__
+
+enum MapPosition {
+    EMPTY_CAN_PUT, // 0
+    ENEMY_PATH, // 1
+    ENEMY_PATH_END, // 2
+    EMPTY_CANNOT_PUT // 99
+};
+
+#endif // !__LEVEL_MODEL_DEFINITIONS_H__
