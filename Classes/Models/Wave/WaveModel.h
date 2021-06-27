@@ -8,7 +8,8 @@ class WaveModel {
 public:
     WaveModel(){};
     ~WaveModel();
-    bool isHugeWave() {return hugeWave;}
+    bool isHugeWave();
+    void setHugeWave(bool);
     void add(DiseaseModel*);
 private:
     bool hugeWave;
