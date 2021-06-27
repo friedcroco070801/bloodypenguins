@@ -1,0 +1,6 @@
+#ifndef __CELL_MODEL_DEFINITIONS_H__
+#define __CELL_MODEL_DEFINITIONS_H__
+
+
+
+#endif // !__CELL_MODEL_DEFINITIONS_H__

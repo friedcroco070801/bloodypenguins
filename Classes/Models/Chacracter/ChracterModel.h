@@ -4,7 +4,7 @@
 #include "CharacterModelDefinitions.h"
 
 class CharacterModel {
-private:
+protected:
     int hp;
     CharacterStatus status;
 public:
