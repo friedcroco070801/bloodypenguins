@@ -16,3 +16,5 @@ cocos2d/cocos/platform/android/**/.settings/*.prefs
 **/*.user
 **/CMakeCache.txt
 **/CMakeFiles
+**/*.vcxproj
+**/*.vcxproj.filters
