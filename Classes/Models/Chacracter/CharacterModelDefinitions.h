@@ -1,0 +1,8 @@
+#ifndef __CHARACTER_MODEL_DEFINITIONS_H__
+#define __CHARACTER_MODEL_DEFINITIONS_H__
+
+enum CharacterStatus {
+    NORMAL
+};
+
+#endif // !__CHARACTER_MODEL_DEFINITIONS_H__
