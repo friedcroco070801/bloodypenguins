@@ -1,7 +1,7 @@
 #ifndef __DISEASE_MODEL_H__
 #define __DISEASE_MODEL_H__
 
-#include "../ChracterModel.h"
+#include "../CharacterModel.h"
 
 class DiseaseModel : public CharacterModel {
 

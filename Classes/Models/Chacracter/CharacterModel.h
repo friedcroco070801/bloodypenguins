@@ -9,6 +9,7 @@ protected:
     CharacterStatus status;
 public:
     CharacterModel();
+    virtual ~CharacterModel();
 };
 
 #endif // !__CHARACTER_MODEL_H__

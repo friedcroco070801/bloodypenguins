@@ -1,7 +1,7 @@
 #ifndef __CELL_MODEL_H__
 #define __CELL_MODEL_H__
 
-#include "../ChracterModel.h"
+#include "../CharacterModel.h"
 
 class CellModel : public CharacterModel {
 
