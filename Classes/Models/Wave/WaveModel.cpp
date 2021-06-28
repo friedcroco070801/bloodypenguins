@@ -29,3 +29,10 @@ Add a DiseaseModel to list of enemies
 void WaveModel::add(DiseaseModel* enemy) {
     enemies.push_back(enemy);
 }
+
+/* 
+Return the start time of the wave
+*/
+float WaveModel::getTime() {
+    return time;
+}

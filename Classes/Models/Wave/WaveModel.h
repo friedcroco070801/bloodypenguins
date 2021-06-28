@@ -6,12 +6,14 @@
 
 class WaveModel {
 public:
-    WaveModel(){};
+    WaveModel(){}
     ~WaveModel();
     bool isHugeWave();
     void setHugeWave(bool);
     void add(DiseaseModel*);
+    float getTime();
 private:
+    float time;
     bool hugeWave;
     std::vector<DiseaseModel*> enemies;
 };
