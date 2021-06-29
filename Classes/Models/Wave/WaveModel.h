@@ -2,7 +2,7 @@
 #define __WAVE_MODEL_H__
 
 #include <vector>
-#include "../Chacracter/Disease/DiseaseModel.h"
+#include "../Character/Disease/DiseaseModel.h"
 
 class WaveModel {
 public:

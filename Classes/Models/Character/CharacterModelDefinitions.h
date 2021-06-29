@@ -2,8 +2,9 @@
 #define __CHARACTER_MODEL_DEFINITIONS_H__
 
 // ID of the character
-enum CharacterId {
-    CELL_00_EOSINOPHILS
+enum CharacterType {
+    CELL,
+    DISEASE
 };
 
 // Status of the character

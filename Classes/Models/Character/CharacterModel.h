@@ -10,7 +10,7 @@ struct CellPosition {
 
 class CharacterModel {
 protected:
-    CharacterId id;
+    CharacterType type;
     int hp;
     CharacterStatus status;
     bool alive;
@@ -18,7 +18,7 @@ protected:
     float cellY;
 public:
     CharacterModel(){};
-    CharacterModel(CharacterId);
+    CharacterModel(CharacterType);
     virtual void takeDamage(int);
     virtual void setStatus(CharacterStatus);
     virtual bool isAlive();

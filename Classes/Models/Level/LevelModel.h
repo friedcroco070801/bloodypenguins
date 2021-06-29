@@ -14,10 +14,18 @@ public:
     std::vector< std::vector<MapPosition> > getMap() {return map;}
 
     // Return the list of waves
-    std::vector<WaveModel> getWaveList() {return waveList;} 
+    std::vector<WaveModel> getWaveList() {return waveList;}
+
+    // Reset the timeCounter to 0 and start to count
+    void startCounting() {
+        timeCounter = 0.0f;
+        isCounting = true;
+    }
 private:
     std::vector< std::vector<MapPosition> > map;
     std::vector<WaveModel> waveList;
+    float timeCounter;
+    bool isCounting;
 };
 
 #endif // !__LEVEL_MODEL_H__

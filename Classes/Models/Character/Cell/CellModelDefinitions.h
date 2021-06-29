@@ -1,6 +1,8 @@
 #ifndef __CELL_MODEL_DEFINITIONS_H__
 #define __CELL_MODEL_DEFINITIONS_H__
 
-
+enum CellId {
+    CELL_00_EOSINOPHILS
+};
 
 #endif // !__CELL_MODEL_DEFINITIONS_H__

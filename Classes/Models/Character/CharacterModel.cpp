@@ -3,8 +3,8 @@
 /* 
 Constructor of CharacterModel
 */
-CharacterModel::CharacterModel(CharacterId id) {
-    this->id = id;
+CharacterModel::CharacterModel(CharacterType type) {
+    this->type = type;
     hp = 10;
     status = NORMAL;
     alive = true;
