@@ -15,7 +15,7 @@ public:
 
     // Return the distance 
     virtual float getDistance() {return distance;}
-    virtual bool canPlantOn(LevelModel level, int cellX, int cellY);
+    virtual bool canPutOn(LevelModel level, int cellX, int cellY);
 };
 
 #endif // !__CELL_MODEL_H__
