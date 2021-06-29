@@ -6,19 +6,25 @@
 
 class ProjectileModel {
 protected:
+    LevelModel* level;
+    ProjectileId id;
     float cellX;
     float cellY;
+    float directionVectorX;
+    float directionVectorY;
     float targetX;
     float targetY;
     float speed;
+    float damage;
     CharacterModel* target;
-    ProjectileId id;
+    virtual void effectOnHit();
 public:
-    ProjectileModel(ProjectileId id, float cellX, float cellY, CharacterModel* target);
+    ProjectileModel(LevelModel* level, ProjectileId id, CharacterModel* source, CharacterModel* target);
     virtual void update();
     virtual float getPositionCellX();
     virtual float getPositionCellY();
     virtual CellPosition getPosition();
+    virtual void hitTarget();
 };
 
 #endif // !__PROJECTILE_MODEL_H__

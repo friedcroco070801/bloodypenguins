@@ -2,6 +2,7 @@
 #define __CHARACTER_MODEL_H__
 
 #include "CharacterModelDefinitions.h"
+#include "../Level/LevelModel.h"
 
 struct CellPosition {
     float cellX, cellY;
@@ -10,6 +11,7 @@ struct CellPosition {
 
 class CharacterModel {
 protected:
+    LevelModel* level;
     CharacterType type;
     int hp;
     CharacterStatus status;
@@ -18,7 +20,7 @@ protected:
     float cellY;
 public:
     CharacterModel(){};
-    CharacterModel(CharacterType);
+    CharacterModel(LevelModel*, CharacterType);
     virtual void takeDamage(int);
     virtual void setStatus(CharacterStatus);
     virtual bool isAlive();
@@ -28,6 +30,7 @@ public:
     virtual float getPositionCellY();
     virtual void update();
     virtual ~CharacterModel();
+    float getDistanceToOther(CharacterModel* other);
 };
 
 #endif // !__CHARACTER_MODEL_H__

@@ -8,4 +8,6 @@ enum MapPosition {
     EMPTY_CANNOT_PUT // 99
 };
 
+#define UPDATING_FREQUENCY 0.01f
+
 #endif // !__LEVEL_MODEL_DEFINITIONS_H__

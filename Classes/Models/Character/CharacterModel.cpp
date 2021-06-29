@@ -1,10 +1,12 @@
 #include "CharacterModel.h"
+#include <cmath>
 
 /* 
 Constructor of CharacterModel
 */
-CharacterModel::CharacterModel(CharacterType type) {
+CharacterModel::CharacterModel(LevelModel* level, CharacterType type) {
     this->type = type;
+    this->level = level;
     hp = 10;
     status = NORMAL;
     alive = true;
@@ -60,4 +62,11 @@ Get cellY position of the character.
 */
 float CharacterModel::getPositionCellY() {
     return cellY;
+}
+
+/*
+Get distance to other character
+*/
+float CharacterModel::getDistanceToOther(CharacterModel* other) {
+    return sqrt((cellX - other->cellX) * (cellX - other->cellX) + (cellY - other->cellY) * (cellY - other->cellY));
 }
