@@ -9,6 +9,7 @@ enum MapPosition {
 };
 
 #define UPDATING_FREQUENCY 0.01f
-#define ACCEPTING_TIME_ERROR 0.001f
+#define ACCEPTING_TIME_ERROR 0.0001f
+#define DUMP_CAPACITY 100
 
 #endif // !__LEVEL_MODEL_DEFINITIONS_H__

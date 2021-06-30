@@ -22,7 +22,7 @@ Update on each updating
 void ShootingCellModel::update() {
     CellModel::update();
 
-    if (isAlive) {
+    if (isAlive && level != NULL) {
         // Check if recharge time
         auto timePoint = level->getTimeCounter() / shootRechargeTime;
         auto roundTimePoint = round(timePoint);

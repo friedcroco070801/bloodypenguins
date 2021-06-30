@@ -1,10 +1,13 @@
 #include "LevelModel.h"
+#include <random>
+#include <ctime>
 using namespace std;
 
 /*
 Constructor of LevelModel
 */
 LevelModel::LevelModel(int level) {
+    srand(time(NULL));
     int arr[10][5] = {
         {0, 2, 0, 2, 0},
         {0, 1, 0, 1, 0},
@@ -27,6 +30,14 @@ LevelModel::LevelModel(int level) {
     // Initialize properties
     timeCounter = 0.0f;
     isCounting = false;
+}
+
+/*
+Get a enemy path of the level randomly. Should not be used outside Models.
+*/
+vector< vector<int> >* LevelModel::__getEnemyPath() {
+    int index = rand() % enemyPaths.size();
+    return &enemyPaths[index];
 }
 
 /*
@@ -63,24 +74,44 @@ LevelModel::~LevelModel() {
     for (auto it = projectileList.begin(); it != projectileList.end(); it++) {
         delete (*it);
     }
+    for (auto it = cellDump.begin(); it != cellDump.end(); it++) {
+        delete (*it);
+    }
+    for (auto it = diseaseDump.begin(); it != diseaseDump.end(); it++) {
+        delete (*it);
+    }
+    for (auto it = projectileDump.begin(); it != projectileDump.end(); it++) {
+        delete (*it);
+    }
 }
 
 /* 
 Collect garbage after each updating
 */
 void LevelModel::garbageCollect() {
-    for (auto it = cellDump.begin(); it != cellDump.end(); it++) {
-        delete (*it);
+    if (cellDump.size() >= DUMP_CAPACITY) {
+        auto it = cellDump.begin();
+        for (int i = 0; i < cellDump.size() / 2; i++, it++) {
+            delete (*it);
+        }
+        cellDump.erase(cellDump.begin(), it);
     }
-    cellDump.clear();
-    for (auto it = diseaseDump.begin(); it != diseaseDump.end(); it++) {
-        delete (*it);
+
+    if (diseaseDump.size() >= DUMP_CAPACITY) {
+        auto it = diseaseDump.begin();
+        for (int i = 0; i < diseaseDump.size() / 2; i++, it++) {
+            delete (*it);
+        }
+        diseaseDump.erase(diseaseDump.begin(), it);
     }
-    diseaseDump.clear();
-    for (auto it = projectileDump.begin(); it != projectileDump.end(); it++) {
-        delete (*it);
+
+    if (projectileDump.size() >= DUMP_CAPACITY) {
+        auto it = projectileDump.begin();
+        for (int i = 0; i < projectileDump.size() / 2; i++, it++) {
+            delete (*it);
+        }
+        projectileDump.erase(projectileDump.begin(), it);
     }
-    projectileDump.clear();
 }
 
 /*
@@ -120,4 +151,24 @@ void LevelModel::dumpProjectile(ProjectileModel* obj) {
             break;
         }
     }
+}
+
+/*
+Add a CellModel to cellList
+*/
+void LevelModel::addCell(CellModel* obj) {
+    cellList.push_back(obj);
+}
+/*
+Add a DiseaseModel to diseaseList
+*/
+void LevelModel::addDisease(DiseaseModel* obj) {
+    diseaseList.push_back(obj);
+}
+
+/*
+Add a ProjectileModel to projectileList
+*/
+void LevelModel::addProjectile(ProjectileModel* obj) {
+    projectileList.push_back(obj);
 }

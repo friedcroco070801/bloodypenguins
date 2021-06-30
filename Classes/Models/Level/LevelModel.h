@@ -32,14 +32,22 @@ public:
     }
 
     void update();
+    void addCell(CellModel*);
+    void addDisease(DiseaseModel*);
+    void addProjectile(ProjectileModel*);
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);
     void dumpProjectile(ProjectileModel*);
 
     // Get diseaseList of the level. Should not be used outside Models.
     std::vector<DiseaseModel*>& __getDiseaseList() {return diseaseList;}
+
+    // Get cellList of the level. Should not be used outside Models.
+    std::vector<CellModel*>& __getCellList() {return cellList;}
+    std::vector< std::vector<int> >* __getEnemyPath();
 private:
     std::vector< std::vector<MapPosition> > map;
+    std::vector< std::vector< std::vector<int> > > enemyPaths;
     std::vector<WaveModel> waveList;
     std::vector<CellModel*> cellList;
     std::vector<DiseaseModel*> diseaseList;

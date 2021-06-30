@@ -12,9 +12,10 @@ Update on each updating
 */
 void CellModel::update() {
     // Check for available hp
-    if (hp <= 0) {
+    if (hp <= 0 && alive && level != NULL) {
         alive = false;
         level->dumpCell(this);
+        this->level = NULL;
         return;
     }
 }
