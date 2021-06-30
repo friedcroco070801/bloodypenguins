@@ -4,13 +4,15 @@
 #include "../CharacterModel.h"
 #include "CellModelDefinitions.h"
 #include "../../Level/LevelModel.h"
+#include "ShootingCell/ShootingCellModel.h"
 
 class CellModel : public CharacterModel {
 protected:
     CellId id;
     float distance;
 public:
-    CellModel(LevelModel*, CellId id);
+    static CellModel* create(CellId id);
+    CellModel(CellId id);
     virtual ~CellModel();
 
     // Return the distance 

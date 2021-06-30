@@ -2,10 +2,17 @@
 #include <cmath>
 
 /*
+Create a projectile model with factory
+*/
+ProjectileModel* ProjectileModel::create(ProjectileId id, CharacterModel* source, CharacterModel* target) {
+    return new ProjectileModel(id, source, target);
+}
+
+/*
 Constructor of projectile model
 */
-ProjectileModel::ProjectileModel(LevelModel* level, ProjectileId id, CharacterModel* source, CharacterModel* target) {
-    this->level = level;
+ProjectileModel::ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target) {
+    this->level = NULL;
     this->id = id;
     this->target = target;
     isDestroyed = false;
@@ -18,6 +25,17 @@ ProjectileModel::ProjectileModel(LevelModel* level, ProjectileId id, CharacterMo
     float distance = sqrt((cellX - targetX) * (cellX - targetX) + (cellY - targetY) * (cellY - targetY));
     directionVectorX = (targetX - cellX) / distance;
     directionVectorY = (targetY - cellY) / distance; 
+
+    // Temporary data
+    speed = 4.0f;
+    damage = 1;
+}
+
+/*
+Set level model of the projectile
+*/
+void ProjectileModel::__setLevel(LevelModel* level) {
+    this->level = level;
 }
 
 /*

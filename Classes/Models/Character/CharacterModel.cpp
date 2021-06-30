@@ -4,12 +4,21 @@
 /* 
 Constructor of CharacterModel
 */
-CharacterModel::CharacterModel(LevelModel* level, CharacterType type) {
+CharacterModel::CharacterModel(CharacterType type) {
     this->type = type;
-    this->level = level;
-    hp = 10;
+    this->level = NULL;
     status = NORMAL;
     alive = true;
+
+    // Temporary data
+    hp = 5;
+}
+
+/*
+Set level model of the character
+*/
+void CharacterModel::__setLevel(LevelModel* level) {
+    this->level = level;
 }
 
 /*

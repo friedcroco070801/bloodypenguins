@@ -20,12 +20,14 @@ protected:
     bool isDestroyed;
     virtual void effectOnHit();
 public:
-    ProjectileModel(LevelModel* level, ProjectileId id, CharacterModel* source, CharacterModel* target);
+    static ProjectileModel* create(ProjectileId id, CharacterModel* source, CharacterModel* target);
+    ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target);
     virtual void update();
     virtual float getPositionCellX();
     virtual float getPositionCellY();
     virtual CellPosition getPosition();
     virtual void hitTarget();
+    virtual void __setLevel(LevelModel*);
 };
 
 #endif // !__PROJECTILE_MODEL_H__

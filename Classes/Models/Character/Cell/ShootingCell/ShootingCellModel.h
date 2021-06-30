@@ -9,7 +9,7 @@ class ShootingCellModel : public CellModel, public Shooter {
 protected:
 
 public:
-    ShootingCellModel(LevelModel* level, CellId cellId);
+    ShootingCellModel(CellId cellId);
     virtual ~ShootingCellModel();
     virtual void shoot(CharacterModel* target);
     virtual void update();

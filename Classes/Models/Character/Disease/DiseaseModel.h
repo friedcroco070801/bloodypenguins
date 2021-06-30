@@ -20,10 +20,12 @@ protected:
     virtual void changeDirectionOnPath();
     virtual void changeDirectionToTarget(CellModel*);
 public:
-    DiseaseModel(LevelModel*, DiseaseId);
+    static DiseaseModel* create(DiseaseId);
+    DiseaseModel(DiseaseId);
     virtual ~DiseaseModel();
     virtual void update();
     virtual void hitTarget(CellModel* target);
+    virtual void __setLevel(LevelModel*);
 };
 
 #endif // !__DISEASE_MODEL_H__

@@ -4,13 +4,34 @@ using namespace std;
 /*
 Constructor of DiseaseModel
 */
-DiseaseModel::DiseaseModel(LevelModel* level, DiseaseId id) : CharacterModel(level, DISEASE), id(id), action(WAITING), dir(LEFT) {
+DiseaseModel::DiseaseModel(DiseaseId id) : CharacterModel(DISEASE), id(id), action(WAITING), dir(LEFT) {
+    level = NULL;
+    path = NULL;
+
+    // Temporary data
+    speed = 0.25f;
+    damage = 2;
+    hitRechargeTime = 0.5f;
+}
+
+/* 
+Set level model of disease
+*/
+void DiseaseModel::__setLevel(LevelModel* level) {
     if (level != NULL) {
+        this->level = level;
         path = level->__getEnemyPath();
         currentPath = path->begin();
         nextPath = currentPath + 1;
         changeDirectionOnPath();
     }
+}
+
+/* 
+Create new instance of DiseaseModel with Factory
+*/
+DiseaseModel* DiseaseModel::create(DiseaseId id) {
+    return new DiseaseModel(id);
 }
 
 /*

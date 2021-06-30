@@ -20,7 +20,7 @@ protected:
     float cellY;
 public:
     CharacterModel(){};
-    CharacterModel(LevelModel*, CharacterType);
+    CharacterModel(CharacterType);
     virtual void takeDamage(int);
     virtual void setStatus(CharacterStatus);
     virtual bool isAlive();
@@ -31,6 +31,7 @@ public:
     virtual void update();
     virtual ~CharacterModel();
     float getDistanceToOther(CharacterModel* other);
+    virtual void __setLevel(LevelModel*);
 };
 
 #endif // !__CHARACTER_MODEL_H__

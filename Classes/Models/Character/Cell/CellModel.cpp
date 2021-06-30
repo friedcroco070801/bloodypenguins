@@ -3,9 +3,19 @@
 /* 
 Constructor of CellModel
 */
-CellModel::CellModel(LevelModel* level, CellId id) : CharacterModel(level, CELL) {
+CellModel::CellModel(CellId id) : CharacterModel(CELL) {
     this->id = id;
+
+    // Temporary data
+    distance = 2.0f;
 }
+
+/* 
+Create new instance of CellModel with factory
+*/
+CellModel* CellModel::create(CellId id) {
+    return new ShootingCellModel(id);
+} 
 
 /*
 Update on each updating

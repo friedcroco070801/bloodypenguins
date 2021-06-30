@@ -8,6 +8,8 @@ Constructor of LevelModel
 */
 LevelModel::LevelModel(int level) {
     srand(time(NULL));
+
+    // Temporary data
     int arr[10][5] = {
         {0, 2, 0, 2, 0},
         {0, 1, 0, 1, 0},
@@ -26,6 +28,7 @@ LevelModel::LevelModel(int level) {
         }
         map.push_back(temp);
     }
+
 
     // Initialize properties
     timeCounter = 0.0f;
@@ -158,12 +161,14 @@ Add a CellModel to cellList
 */
 void LevelModel::addCell(CellModel* obj) {
     cellList.push_back(obj);
+    obj->__setLevel(this);
 }
 /*
 Add a DiseaseModel to diseaseList
 */
 void LevelModel::addDisease(DiseaseModel* obj) {
     diseaseList.push_back(obj);
+    obj->__setLevel(this);
 }
 
 /*
@@ -171,4 +176,5 @@ Add a ProjectileModel to projectileList
 */
 void LevelModel::addProjectile(ProjectileModel* obj) {
     projectileList.push_back(obj);
+    obj->__setLevel(this);
 }

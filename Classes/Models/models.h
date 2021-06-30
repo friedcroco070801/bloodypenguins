@@ -2,7 +2,7 @@
 #define __MODELS_H__
 
 #include "Level/LevelModel.h"
-#include "Character/CharacterModel.h"
+#include "Wave/WaveModel.h"
 #include "Character/Cell/CellModel.h"
 #include "Character/Disease/DiseaseModel.h"
 

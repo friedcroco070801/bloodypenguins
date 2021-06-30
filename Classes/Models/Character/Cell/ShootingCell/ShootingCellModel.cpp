@@ -5,15 +5,19 @@ using namespace std;
 /* 
 Constructor of shooting cell model
 */
-ShootingCellModel::ShootingCellModel(LevelModel* level, CellId cellId) : CellModel(level, cellId) {
-
+ShootingCellModel::ShootingCellModel(CellId cellId) : CellModel(cellId) {
+    // Temporary data
+    shootRechargeTime = 1.0f;
 };
 
 /*
 Shoot projectile from source to target
 */
 void ShootingCellModel::shoot(CharacterModel* target) {
-    auto projectile = new ProjectileModel(level, projectileId, this, target);
+    if (level != NULL) {
+        auto projectile = ProjectileModel::create(projectileId, this, target);
+        level->addProjectile(projectile);
+    }
 }
 
 /*
