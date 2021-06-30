@@ -26,6 +26,11 @@ public:
         isCounting = true;
     }
 
+    // Return current time counter value
+    float getTimeCounter() {
+        return timeCounter;
+    }
+
     void update();
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);

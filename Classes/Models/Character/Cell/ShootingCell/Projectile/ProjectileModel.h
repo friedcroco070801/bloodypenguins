@@ -17,6 +17,7 @@ protected:
     float speed;
     float damage;
     CharacterModel* target;
+    bool isDestroyed;
     virtual void effectOnHit();
 public:
     ProjectileModel(LevelModel* level, ProjectileId id, CharacterModel* source, CharacterModel* target);

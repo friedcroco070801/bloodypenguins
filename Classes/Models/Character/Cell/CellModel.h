@@ -9,6 +9,7 @@ class CellModel : public CharacterModel {
 protected:
     CellId id;
     float distance;
+    float rechargeTime;
 public:
     CellModel(LevelModel*, CellId id);
     virtual ~CellModel();

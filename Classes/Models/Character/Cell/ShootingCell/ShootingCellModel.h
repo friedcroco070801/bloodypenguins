@@ -9,8 +9,7 @@ class ShootingCellModel : public CellModel, public Shooter {
 protected:
 
 public:
-    // Constructor of shooting cell model
-    ShootingCellModel(LevelModel* level, CellId cellId, ProjectileId projId) : CellModel(level, cellId), Shooter(projId) {};
+    ShootingCellModel(LevelModel* level, CellId cellId, ProjectileId projId);
     virtual ~ShootingCellModel();
     virtual void shoot(CharacterModel* target);
     virtual void update();

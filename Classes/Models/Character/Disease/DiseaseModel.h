@@ -4,6 +4,8 @@
 #include "../CharacterModel.h"
 
 class DiseaseModel : public CharacterModel {
+protected:
+public:
 
 };
 

@@ -7,6 +7,7 @@
 class Shooter {
 protected:
     ProjectileId projectileId;
+    float shootRechargeTime;
 public:
     Shooter(ProjectileId);
     virtual ~Shooter();
