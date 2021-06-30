@@ -5,7 +5,7 @@ using namespace std;
 /* 
 Constructor of shooting cell model
 */
-ShootingCellModel::ShootingCellModel(LevelModel* level, CellId cellId, ProjectileId projId) : CellModel(level, cellId), Shooter(projId) {
+ShootingCellModel::ShootingCellModel(LevelModel* level, CellId cellId) : CellModel(level, cellId) {
 
 };
 

@@ -9,9 +9,14 @@ protected:
     ProjectileId projectileId;
     float shootRechargeTime;
 public:
-    Shooter(ProjectileId);
+    Shooter();
     virtual ~Shooter();
-    virtual void shoot(CharacterModel* target);
+    virtual void shoot(CharacterModel* target) = 0;
+
+    // Set projectile Id
+    virtual void setProjectileId(ProjectileId id) {
+        projectileId = id;
+    }
 };
 
 #endif // !__SHOOTER_H__
