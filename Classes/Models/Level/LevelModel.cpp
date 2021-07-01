@@ -3,6 +3,7 @@
 #include <random>
 #include <ctime>
 #include <cmath>
+#include <iostream>
 using namespace std;
 
 /*
@@ -55,20 +56,20 @@ LevelModel::LevelModel(int level) {
     WaveModel wave1;
     waveList.push_back(wave1);
     waveList[0].add(DISEASE_00_RABIES);
-    waveList[0].setTime(5.0f);
+    waveList[0].setTime(5.0);
     WaveModel wave2;
     waveList.push_back(wave2);
     waveList[1].add(DISEASE_00_RABIES);
-    waveList[1].setTime(10.0f);
+    waveList[1].setTime(10.0);
     WaveModel wave3;
     waveList.push_back(wave3);
     waveList[2].add(DISEASE_00_RABIES);
-    waveList[2].setTime(15.0f);
+    waveList[2].setTime(15.0);
 
     currentWave = waveList.begin();
 
     // Initialize properties
-    timeCounter = 0.0f;
+    timeCounter = 0.0;
     isCounting = false;
 }
 
@@ -89,14 +90,14 @@ void LevelModel::update() {
         timeCounter += UPDATING_FREQUENCY;
 
         // Update objects
-        for (auto it = cellList.begin(); it != cellList.end(); it++) {
-            (*it)->update();
+        for (auto it = cellList.begin(); it != cellList.end();) {
+            (*(it++))->update();
         }
-        for (auto it = diseaseList.begin(); it != diseaseList.end(); it++) {
-            (*it)->update();
+        for (auto it = diseaseList.begin(); it != diseaseList.end();) {
+            (*(it++))->update();
         }
-        for (auto it = projectileList.begin(); it != projectileList.end(); it++) {
-            (*it)->update();
+        for (auto it = projectileList.begin(); it != projectileList.end();) {
+            (*(it++))->update();
         }
 
         // Garbage collect
@@ -211,6 +212,7 @@ Add a CellModel to cellList
 */
 void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
     if (obj->canPutOn(this, cellX, cellY)) {
+        obj->setPosition(cellX, cellY);
         cellList.push_back(obj);
         obj->__setLevel(this);
         map[cellX][cellY] = (MapPosition) ((EMPTY_CAN_PUT_OCCUPIED - EMPTY_CAN_PUT) + (int) map[cellX][cellY]);
@@ -240,4 +242,28 @@ void LevelModel::addEnemiesOnWave() {
     for (auto it = enemies.begin(); it != enemies.end(); it++) {
         addDisease(DiseaseModel::create(*it));
     }
+    currentWave++;
+}
+
+/*
+Print the current state of the level
+*/
+void LevelModel::printLevelState() {
+    cout << "================= TIME: " << timeCounter << endl;
+    for (auto it = cellList.begin(); it != cellList.end(); it++) {
+        cout << "==== CELL\n";
+        cout << "X: " << (*it)->getPositionCellX() << endl;
+        cout << "Y: " << (*it)->getPositionCellY() << endl;
+    }
+    for (auto it = diseaseList.begin(); it != diseaseList.end(); it++) {
+        cout << "==== DISEASE\n";
+        cout << "X: " << (*it)->getPositionCellX() << endl;
+        cout << "Y: " << (*it)->getPositionCellY() << endl;
+    }
+    for (auto it = projectileList.begin(); it != projectileList.end(); it++) {
+        cout << "==== PROJECTILE\n";
+        cout << "X: " << (*it)->getPositionCellX() << endl;
+        cout << "Y: " << (*it)->getPositionCellY() << endl;
+    }
+    cout << "================================================\n\n";
 }

@@ -1,6 +1,8 @@
 #include "Models/models.h"
 #include "ProjectileModel.h"
 #include <cmath>
+#include <iostream>
+using namespace std;
 
 /*
 Create a projectile model with factory
@@ -23,12 +25,12 @@ ProjectileModel::ProjectileModel(ProjectileId id, CharacterModel* source, Charac
     cellY = source->getPositionCellY();
     targetX = target->getPositionCellX();
     targetY = target->getPositionCellY();
-    float distance = sqrt((cellX - targetX) * (cellX - targetX) + (cellY - targetY) * (cellY - targetY));
+    double distance = sqrt((cellX - targetX) * (cellX - targetX) + (cellY - targetY) * (cellY - targetY));
     directionVectorX = (targetX - cellX) / distance;
     directionVectorY = (targetY - cellY) / distance; 
 
     // Temporary data
-    speed = 4.0f;
+    speed = 4.0;
     damage = 1;
 }
 
@@ -42,14 +44,14 @@ void ProjectileModel::__setLevel(LevelModel* level) {
 /*
 Get cell position X
 */
-float ProjectileModel::getPositionCellX() {
+double ProjectileModel::getPositionCellX() {
     return cellX;
 }
 
 /*
 Get cell position Y
 */
-float ProjectileModel::getPositionCellY() {
+double ProjectileModel::getPositionCellY() {
     return cellY;
 }
 
@@ -66,7 +68,7 @@ Update on each updating
 void ProjectileModel::update() {
     if (!isDestroyed) {
         // Check position
-        if ((cellX - targetX) * directionVectorX >= 0.0f && (cellY - targetY) * directionVectorY >= 0.0f) {
+        if ((cellX - targetX) * directionVectorX >= 0.0 && (cellY - targetY) * directionVectorY >= 0.0) {
             // Destroyed and take effect
             hitTarget();
         }

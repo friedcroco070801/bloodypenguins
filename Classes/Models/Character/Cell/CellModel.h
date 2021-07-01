@@ -9,14 +9,14 @@ class CellModel : public CharacterModel {
 protected:
     CellId id;
     int cost;
-    float distance;
+    double distance;
 public:
     static CellModel* create(CellId id);
     CellModel(CellId id);
     virtual ~CellModel(){};
 
     // Return the distance 
-    virtual float getDistance() {return distance;}
+    virtual double getDistance() {return distance;}
     virtual bool canPutOn(LevelModel* level, int cellX, int cellY){return false;}
     virtual void update();
 };

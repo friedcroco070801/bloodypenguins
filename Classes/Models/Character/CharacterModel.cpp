@@ -27,9 +27,6 @@ Reduce hp of the Character
 */
 void CharacterModel::takeDamage(int damage) {
     hp -= damage;
-    if (hp < 0) {
-        alive = false;
-    }
 }
 
 /*
@@ -48,7 +45,7 @@ bool CharacterModel::isAlive() {
 /*
 Set cell position of the character
 */
-void CharacterModel::setPosition(float cellX, float cellY) {
+void CharacterModel::setPosition(double cellX, double cellY) {
     this->cellX = cellX;
     this->cellY = cellY;
 }
@@ -63,20 +60,20 @@ CellPosition CharacterModel::getPosition() {
 /* 
 Get cellX position of the character.
 */
-float CharacterModel::getPositionCellX() {
+double CharacterModel::getPositionCellX() {
     return cellX;
 }
 
 /* 
 Get cellY position of the character.
 */
-float CharacterModel::getPositionCellY() {
+double CharacterModel::getPositionCellY() {
     return cellY;
 }
 
 /*
 Get distance to other character
 */
-float CharacterModel::getDistanceToOther(CharacterModel* other) {
+double CharacterModel::getDistanceToOther(CharacterModel* other) {
     return sqrt((cellX - other->cellX) * (cellX - other->cellX) + (cellY - other->cellY) * (cellY - other->cellY));
 }

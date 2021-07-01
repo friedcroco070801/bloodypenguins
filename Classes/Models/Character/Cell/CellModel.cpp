@@ -8,7 +8,7 @@ CellModel::CellModel(CellId id) : CharacterModel(CELL) {
     this->id = id;
 
     // Temporary data
-    distance = 2.0f;
+    distance = 2.0;
     cost = 100;
 }
 

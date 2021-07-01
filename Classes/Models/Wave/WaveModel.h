@@ -14,11 +14,11 @@ public:
     bool isHugeWave();
     void setHugeWave(bool);
     void add(DiseaseId);
-    float getTime();
-    void setTime(float time);
+    double getTime();
+    void setTime(double time);
     std::vector<DiseaseId>& getEnemies();
 private:
-    float time;
+    double time;
     bool hugeWave;
     std::vector<DiseaseId> enemies;
 };

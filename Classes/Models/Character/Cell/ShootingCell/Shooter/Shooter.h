@@ -7,7 +7,7 @@ class CharacterModel;
 class Shooter {
 protected:
     ProjectileId projectileId;
-    float shootRechargeTime;
+    double shootRechargeTime;
 public:
     Shooter(){};
     virtual ~Shooter(){};

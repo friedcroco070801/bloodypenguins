@@ -12,9 +12,9 @@ protected:
     DiseaseId id;
     DiseaseAction action;
     Direction dir;
-    float speed;
+    double speed;
     int damage;
-    float hitRechargeTime;
+    double hitRechargeTime;
     std::vector< std::vector<int> >* path;
     std::vector< std::vector<int> >::iterator currentPath;
     std::vector< std::vector<int> >::iterator nextPath;

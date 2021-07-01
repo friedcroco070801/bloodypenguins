@@ -1,5 +1,6 @@
 #include "Models/models.h"
 #include "DiseaseModel.h"
+#include <cmath>
 using namespace std;
 
 /*
@@ -10,9 +11,9 @@ DiseaseModel::DiseaseModel(DiseaseId id) : CharacterModel(DISEASE), id(id), acti
     path = NULL;
 
     // Temporary data
-    speed = 0.25f;
+    speed = 0.25;
     damage = 2;
-    hitRechargeTime = 0.5f;
+    hitRechargeTime = 0.5;
 }
 
 /* 
@@ -66,11 +67,11 @@ void DiseaseModel::changeDirectionToTarget(CellModel* target) {
     auto deltaX = target->getPositionCellX() - cellX;
     auto deltaY = target->getPositionCellY() - cellY;
     if (abs(deltaX) < abs(deltaY)) {
-        if (deltaY > 0.0f) dir = UP;
+        if (deltaY > 0.0) dir = UP;
         else dir = DOWN;
     }
     else {
-        if (deltaX > 0.0f) dir = RIGHT;
+        if (deltaX > 0.0) dir = RIGHT;
         else dir = LEFT;
     }
 }
@@ -99,7 +100,7 @@ void DiseaseModel::update() {
         auto cellList = level->__getCellList();
         auto target = cellList.end();
         for (auto it = cellList.begin(); it != cellList.end(); it++) {
-            if (getDistanceToOther(*it) <= 1.0f + ACCEPTING_TIME_ERROR) {
+            if (getDistanceToOther(*it) <= 1.0 + ACCEPTING_TIME_ERROR) {
                 target = it;
                 break;
             }
@@ -145,12 +146,12 @@ void DiseaseModel::update() {
         // If is walking
         if (action == WALKING) {
             // Update position
-            auto directionVectorX = 0.0f;
-            auto directionVectorY = 0.0f;
-            if (dir == UP) {directionVectorY = 1.0f;}
-            else if (dir == DOWN) {directionVectorY = -1.0f;}
-            else if (dir == RIGHT) {directionVectorX = 1.0f;}
-            else directionVectorX = -1.0f;
+            auto directionVectorX = 0.0;
+            auto directionVectorY = 0.0;
+            if (dir == UP) {directionVectorY = 1.0;}
+            else if (dir == DOWN) {directionVectorY = -1.0;}
+            else if (dir == RIGHT) {directionVectorX = 1.0;}
+            else directionVectorX = -1.0;
             cellX += directionVectorX * UPDATING_FREQUENCY * speed;
             cellY += directionVectorY * UPDATING_FREQUENCY * speed;
 

@@ -2,6 +2,7 @@
 #define __LEVEL_MODEL_H__
 
 #include <vector>
+#include <list>
 #include "LevelModelDefinitions.h"
 
 class CharacterModel;
@@ -25,12 +26,12 @@ public:
 
     // Reset the timeCounter to 0 and start to count
     void startCounting() {
-        timeCounter = 0.0f;
+        timeCounter = 0.0;
         isCounting = true;
     }
 
     // Return current time counter value
-    float getTimeCounter() {
+    double getTimeCounter() {
         return timeCounter;
     }
 
@@ -41,29 +42,30 @@ public:
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);
     void dumpProjectile(ProjectileModel*);
+    void printLevelState();
 
     // Get diseaseList of the level. Should not be used outside Models.
-    std::vector<DiseaseModel*>& __getDiseaseList() {return diseaseList;}
+    std::list<DiseaseModel*>& __getDiseaseList() {return diseaseList;}
 
     // Get cellList of the level. Should not be used outside Models.
-    std::vector<CellModel*>& __getCellList() {return cellList;}
+    std::list<CellModel*>& __getCellList() {return cellList;}
     std::vector< std::vector<int> >* __getEnemyPath();
 private:
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
     std::vector<WaveModel> waveList;
     std::vector<WaveModel>::iterator currentWave;
-    std::vector<CellModel*> cellList;
-    std::vector<DiseaseModel*> diseaseList;
-    std::vector<ProjectileModel*> projectileList;
+    std::list<CellModel*> cellList;
+    std::list<DiseaseModel*> diseaseList;
+    std::list<ProjectileModel*> projectileList;
 
-    float timeCounter;
+    double timeCounter;
     bool isCounting;
     int energy;
 
-    std::vector<CellModel*> cellDump;
-    std::vector<DiseaseModel*> diseaseDump;
-    std::vector<ProjectileModel*> projectileDump;
+    std::list<CellModel*> cellDump;
+    std::list<DiseaseModel*> diseaseDump;
+    std::list<ProjectileModel*> projectileDump;
     void garbageCollect();
     void addEnemiesOnWave();
 };

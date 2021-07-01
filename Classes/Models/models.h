@@ -9,6 +9,7 @@ class DiseaseModel;
 class ShootingCellModel;
 class ProjectileModel;
 class Shooter;
+#define NULL nullptr
 
 #include "Character/CharacterModel.h"
 #include "Character/Cell/CellModel.h"

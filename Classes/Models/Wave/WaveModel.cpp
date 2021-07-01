@@ -33,14 +33,14 @@ void WaveModel::add(DiseaseId enemy) {
 /* 
 Return the start time of the wave
 */
-float WaveModel::getTime() {
+double WaveModel::getTime() {
     return time;
 }
 
 /*
 Set the start time of the wave
 */
-void WaveModel::setTime(float time) {
+void WaveModel::setTime(double time) {
     this->time = time;
 }
 
