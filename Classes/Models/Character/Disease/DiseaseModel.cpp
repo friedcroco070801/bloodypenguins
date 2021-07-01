@@ -23,6 +23,7 @@ void DiseaseModel::__setLevel(LevelModel* level) {
         path = level->__getEnemyPath();
         currentPath = path->begin();
         nextPath = currentPath + 1;
+        setPosition((*currentPath)[0], (*currentPath)[1]);
         changeDirectionOnPath();
     }
 }
@@ -84,6 +85,14 @@ DiseaseModel::~DiseaseModel() {
 Update on each updating
 */
 void DiseaseModel::update() {
+    // Check if alive
+    if (alive && hp <= 0) {
+        alive = false;
+        level->dumpDisease(this);
+        this->level = NULL;
+        return;
+    }
+
     if (alive && level != NULL) {
         // Search if any cell to attack
         auto cellList = level->__getCellList();
@@ -154,6 +163,16 @@ void DiseaseModel::update() {
     }
 }
 
+/*
+Attack on target
+*/
 void DiseaseModel::hitTarget(CellModel* target) {
     target->takeDamage(damage);
+}
+
+/*
+Get value of disease id. Should not be used outside models
+*/
+DiseaseId DiseaseModel::__getDiseaseId() {
+    return id;
 }

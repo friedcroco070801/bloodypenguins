@@ -32,7 +32,7 @@ public:
     }
 
     void update();
-    void addCell(CellModel*);
+    void addCell(CellModel*, int, int);
     void addDisease(DiseaseModel*);
     void addProjectile(ProjectileModel*);
     void dumpCell(CellModel*);
@@ -49,16 +49,20 @@ private:
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
     std::vector<WaveModel> waveList;
+    std::vector<WaveModel>::iterator currentWave;
     std::vector<CellModel*> cellList;
     std::vector<DiseaseModel*> diseaseList;
     std::vector<ProjectileModel*> projectileList;
+
     float timeCounter;
     bool isCounting;
+    int energy;
 
     std::vector<CellModel*> cellDump;
     std::vector<DiseaseModel*> diseaseDump;
     std::vector<ProjectileModel*> projectileDump;
     void garbageCollect();
+    void addEnemiesOnWave();
 };
 
 #endif // !__LEVEL_MODEL_H__

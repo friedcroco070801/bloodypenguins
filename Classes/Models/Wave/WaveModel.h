@@ -6,16 +6,21 @@
 
 class WaveModel {
 public:
-    WaveModel(){}
+    // Constructor of waveModel
+    WaveModel(){
+        hugeWave = false;
+    }
     ~WaveModel();
     bool isHugeWave();
     void setHugeWave(bool);
-    void add(DiseaseModel*);
+    void add(DiseaseId);
     float getTime();
+    void setTime(float time);
+    std::vector<DiseaseId>& getEnemies();
 private:
     float time;
     bool hugeWave;
-    std::vector<DiseaseModel*> enemies;
+    std::vector<DiseaseId> enemies;
 };
 
 #endif // !__WAVE_MODEL_H__

@@ -26,6 +26,7 @@ public:
     virtual void update();
     virtual void hitTarget(CellModel* target);
     virtual void __setLevel(LevelModel*);
+    virtual DiseaseId __getDiseaseId();
 };
 
 #endif // !__DISEASE_MODEL_H__

@@ -9,7 +9,7 @@ protected:
     ProjectileId projectileId;
     float shootRechargeTime;
 public:
-    Shooter();
+    Shooter(){};
     virtual ~Shooter(){};
     virtual void shoot(CharacterModel* target){};
 

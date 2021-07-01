@@ -28,8 +28,8 @@ public:
     virtual CellPosition getPosition();
     virtual float getPositionCellX();
     virtual float getPositionCellY();
-    virtual void update();
-    virtual ~CharacterModel();
+    virtual void update(){};
+    virtual ~CharacterModel(){};
     float getDistanceToOther(CharacterModel* other);
     virtual void __setLevel(LevelModel*);
 };

@@ -1,6 +1,7 @@
 #include "LevelModel.h"
 #include <random>
 #include <ctime>
+#include <cmath>
 using namespace std;
 
 /*
@@ -10,6 +11,8 @@ LevelModel::LevelModel(int level) {
     srand(time(NULL));
 
     // Temporary data
+    energy = 400;
+
     int arr[10][5] = {
         {0, 2, 0, 2, 0},
         {0, 1, 0, 1, 0},
@@ -29,6 +32,39 @@ LevelModel::LevelModel(int level) {
         map.push_back(temp);
     }
 
+    int p1[] = {6, 4, 6, 3, 6, 2, 6, 1, 5, 1, 4, 1, 3, 1, 2, 1, 1, 1, 0, 1};
+    int p2[] = {7, 3, 6, 3, 5, 3, 4, 3, 3, 3, 2, 3, 1, 3, 0, 3};
+    vector< vector<int> > temp1;
+    vector< vector<int> > temp2;
+    for (int i = 0; i < sizeof(p1) / sizeof(int); i += 2) {
+        vector<int> t;
+        t.push_back(p1[i]);
+        t.push_back(p1[i + 1]);
+        temp1.push_back(t);
+    }
+    enemyPaths.push_back(temp1);
+    for (int i = 0; i < sizeof(p2) / sizeof(int); i += 2) {
+        vector<int> t;
+        t.push_back(p2[i]);
+        t.push_back(p2[i + 1]);
+        temp2.push_back(t);
+    }
+    enemyPaths.push_back(temp2);
+
+    WaveModel wave1;
+    waveList.push_back(wave1);
+    waveList[0].add(DISEASE_00_RABIES);
+    waveList[0].setTime(5.0f);
+    WaveModel wave2;
+    waveList.push_back(wave2);
+    waveList[1].add(DISEASE_00_RABIES);
+    waveList[1].setTime(10.0f);
+    WaveModel wave3;
+    waveList.push_back(wave3);
+    waveList[2].add(DISEASE_00_RABIES);
+    waveList[2].setTime(15.0f);
+
+    currentWave = waveList.begin();
 
     // Initialize properties
     timeCounter = 0.0f;
@@ -60,6 +96,16 @@ void LevelModel::update() {
         }
         for (auto it = projectileList.begin(); it != projectileList.end(); it++) {
             (*it)->update();
+        }
+
+        // Garbage collect
+        garbageCollect();
+
+        // Add enemies on current wave
+        if (currentWave != waveList.end()) {
+            if (abs(timeCounter - currentWave->getTime()) <= ACCEPTING_TIME_ERROR) {
+                addEnemiesOnWave();
+            }
         }
     }
 }
@@ -125,6 +171,9 @@ void LevelModel::dumpCell(CellModel* obj) {
         if (*it == obj) {
             cellList.erase(it);
             cellDump.push_back(obj);
+            auto cellX = (int) obj->getPositionCellX();
+            auto cellY = (int) obj->getPositionCellY();
+            map[cellX][cellY] = (MapPosition) ((EMPTY_CAN_PUT - EMPTY_CAN_PUT_OCCUPIED) + (int) map[cellX][cellY]);
             break;
         }
     }
@@ -159,9 +208,12 @@ void LevelModel::dumpProjectile(ProjectileModel* obj) {
 /*
 Add a CellModel to cellList
 */
-void LevelModel::addCell(CellModel* obj) {
-    cellList.push_back(obj);
-    obj->__setLevel(this);
+void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
+    if (obj->canPutOn(this, cellX, cellY)) {
+        cellList.push_back(obj);
+        obj->__setLevel(this);
+        map[cellX][cellY] = (MapPosition) ((EMPTY_CAN_PUT_OCCUPIED - EMPTY_CAN_PUT) + (int) map[cellX][cellY]);
+    }
 }
 /*
 Add a DiseaseModel to diseaseList
@@ -177,4 +229,14 @@ Add a ProjectileModel to projectileList
 void LevelModel::addProjectile(ProjectileModel* obj) {
     projectileList.push_back(obj);
     obj->__setLevel(this);
+}
+
+/*
+Add enemies in the current wave
+*/
+void LevelModel::addEnemiesOnWave() {
+    auto enemies = currentWave->getEnemies();
+    for (auto it = enemies.begin(); it != enemies.end(); it++) {
+        addDisease(DiseaseModel::create(*it));
+    }
 }

@@ -1,12 +1,11 @@
 #include "WaveModel.h"
+using namespace std;
 
 /*
 WaveModel destructor
 */
 WaveModel::~WaveModel() {
-    for (auto it = enemies.begin(); it != enemies.end(); it++) {
-        delete (*it);
-    }
+
 }
 
 /*
@@ -26,7 +25,7 @@ void WaveModel::setHugeWave(bool _hugeWave) {
 /*
 Add a DiseaseModel to list of enemies
 */
-void WaveModel::add(DiseaseModel* enemy) {
+void WaveModel::add(DiseaseId enemy) {
     enemies.push_back(enemy);
 }
 
@@ -35,4 +34,17 @@ Return the start time of the wave
 */
 float WaveModel::getTime() {
     return time;
+}
+
+/*
+Set the start time of the wave
+*/
+void WaveModel::setTime(float time) {
+    this->time = time;
+}
+
+/*
+*/
+vector<DiseaseId>& WaveModel::getEnemies() {
+    return enemies;
 }

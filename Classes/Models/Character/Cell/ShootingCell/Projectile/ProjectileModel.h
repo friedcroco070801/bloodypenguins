@@ -18,7 +18,7 @@ protected:
     float damage;
     CharacterModel* target;
     bool isDestroyed;
-    virtual void effectOnHit();
+    virtual void effectOnHit(){};
 public:
     static ProjectileModel* create(ProjectileId id, CharacterModel* source, CharacterModel* target);
     ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target);

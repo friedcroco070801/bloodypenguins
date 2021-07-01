@@ -55,3 +55,14 @@ void ShootingCellModel::update() {
         }
     }
 }
+
+/* 
+Check if can put the plant on map
+*/
+bool ShootingCellModel::canPutOn(LevelModel* level, int cellX, int cellY) {
+    if (level != NULL) {
+        auto map = level->getMap();
+        if (map[cellX][cellY] == EMPTY_CAN_PUT) return true;
+    }
+    return false;
+}

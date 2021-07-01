@@ -85,5 +85,6 @@ void ProjectileModel::hitTarget() {
         target->takeDamage(damage);
         effectOnHit();
         isDestroyed = true;
+        level->dumpProjectile(this);
     }
 }

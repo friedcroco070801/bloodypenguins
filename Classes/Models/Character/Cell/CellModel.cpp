@@ -8,6 +8,7 @@ CellModel::CellModel(CellId id) : CharacterModel(CELL) {
 
     // Temporary data
     distance = 2.0f;
+    cost = 100;
 }
 
 /* 

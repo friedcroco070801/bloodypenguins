@@ -5,7 +5,9 @@ enum MapPosition {
     EMPTY_CAN_PUT, // 0
     ENEMY_PATH, // 1
     ENEMY_PATH_END, // 2
-    EMPTY_CANNOT_PUT // 99
+    EMPTY_CANNOT_PUT, // 3
+    EMPTY_CAN_PUT_OCCUPIED, // 4
+    ENEMY_PATH_OCCUPIED // 5
 };
 
 #define UPDATING_FREQUENCY 0.01f
