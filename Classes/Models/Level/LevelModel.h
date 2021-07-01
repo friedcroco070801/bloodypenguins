@@ -3,16 +3,19 @@
 
 #include <vector>
 #include "LevelModelDefinitions.h"
-#include "Models/Wave/WaveModel.h"
-#include "../Character/Cell/CellModel.h"
-#include "../Character/Disease/DiseaseModel.h"
-#include "../Character/Cell/ShootingCell/Projectile/ProjectileModel.h"
+
+class CharacterModel;
+class WaveModel;
+class CellModel;
+class DiseaseModel;
+class ProjectileModel;
 
 class LevelModel {
 public:
     // Default constructor of LevelModel
     LevelModel(){};
     LevelModel(int level);
+    ~LevelModel();
 
     // Return the map of the level
     std::vector< std::vector<MapPosition> > getMap() {return map;}

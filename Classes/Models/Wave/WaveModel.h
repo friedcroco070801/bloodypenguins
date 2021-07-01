@@ -2,7 +2,7 @@
 #define __WAVE_MODEL_H__
 
 #include <vector>
-#include "../Character/Disease/DiseaseModel.h"
+enum DiseaseId;
 
 class WaveModel {
 public:

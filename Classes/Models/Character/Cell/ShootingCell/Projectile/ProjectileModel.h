@@ -1,8 +1,10 @@
 #ifndef __PROJECTILE_MODEL_H__
 #define __PROJECTILE_MODEL_H__
 
-#include "../../../CharacterModel.h"
 #include "ProjectileModelDefinitions.h"
+class LevelModel;
+class CharacterModel;
+struct CellPosition;
 
 class ProjectileModel {
 protected:

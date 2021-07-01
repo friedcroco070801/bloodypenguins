@@ -1,10 +1,9 @@
 #ifndef __CELL_MODEL_H__
 #define __CELL_MODEL_H__
 
-#include "../CharacterModel.h"
+class CharacterModel;
+class LevelModel;
 #include "CellModelDefinitions.h"
-#include "../../Level/LevelModel.h"
-#include "ShootingCell/ShootingCellModel.h"
 
 class CellModel : public CharacterModel {
 protected:
@@ -18,7 +17,7 @@ public:
 
     // Return the distance 
     virtual float getDistance() {return distance;}
-    virtual bool canPutOn(LevelModel* level, int cellX, int cellY){};
+    virtual bool canPutOn(LevelModel* level, int cellX, int cellY){return false;}
     virtual void update();
 };
 

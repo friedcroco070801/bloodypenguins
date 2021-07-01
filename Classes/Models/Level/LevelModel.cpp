@@ -1,4 +1,5 @@
 #include "LevelModel.h"
+#include "Models/models.h"
 #include <random>
 #include <ctime>
 #include <cmath>

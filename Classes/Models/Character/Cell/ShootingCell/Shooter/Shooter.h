@@ -1,8 +1,8 @@
 #ifndef __SHOOTER_H__
 #define __SHOOTER_H__
 
-#include "../../../CharacterModel.h"
-#include "../Projectile/ProjectileModel.h"
+enum ProjectileId;
+class CharacterModel;
 
 class Shooter {
 protected:

@@ -1,9 +1,8 @@
 #ifndef __SHOOTING_CELL_MODEL_H__
 #define __SHOOTING_CELL_MODEL_H__
 
-#include "../CellModel.h"
-#include "Projectile/ProjectileModel.h"
-#include "Shooter/Shooter.h"
+class CellModel;
+class Shooter;
 
 class ShootingCellModel : public CellModel, public Shooter {
 protected:

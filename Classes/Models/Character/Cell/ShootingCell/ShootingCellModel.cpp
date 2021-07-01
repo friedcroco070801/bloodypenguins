@@ -1,3 +1,4 @@
+#include "Models/models.h"
 #include "ShootingCellModel.h"
 #include <cmath>
 using namespace std;
@@ -26,7 +27,7 @@ Update on each updating
 void ShootingCellModel::update() {
     CellModel::update();
 
-    if (isAlive && level != NULL) {
+    if (alive && level != NULL) {
         // Check if recharge time
         auto timePoint = level->getTimeCounter() / shootRechargeTime;
         auto roundTimePoint = round(timePoint);

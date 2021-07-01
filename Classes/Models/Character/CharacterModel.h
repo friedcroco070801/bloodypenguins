@@ -2,7 +2,7 @@
 #define __CHARACTER_MODEL_H__
 
 #include "CharacterModelDefinitions.h"
-#include "../Level/LevelModel.h"
+class LevelModel;
 
 struct CellPosition {
     float cellX, cellY;

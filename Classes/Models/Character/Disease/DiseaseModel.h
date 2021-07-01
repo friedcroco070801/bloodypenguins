@@ -1,10 +1,11 @@
 #ifndef __DISEASE_MODEL_H__
 #define __DISEASE_MODEL_H__
 
-#include "../CharacterModel.h"
 #include "DiseaseModelDefinitions.h"
-#include "../Cell/CellModel.h"
 #include <vector>
+class CharacterModel;
+class CellModel;
+class LevelModel;
 
 class DiseaseModel : public CharacterModel {
 protected:
