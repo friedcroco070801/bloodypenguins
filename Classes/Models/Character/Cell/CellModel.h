@@ -1,21 +1,24 @@
 #ifndef __CELL_MODEL_H__
 #define __CELL_MODEL_H__
 
-#include "../CharacterModel.h"
+class CharacterModel;
+class LevelModel;
 #include "CellModelDefinitions.h"
-#include "../../Level/LevelModel.h"
 
 class CellModel : public CharacterModel {
 protected:
     CellId id;
-    float distance;
+    int cost;
+    double distance;
 public:
+    static CellModel* create(CellId id);
     CellModel(CellId id);
-    virtual ~CellModel();
+    virtual ~CellModel(){};
 
     // Return the distance 
-    virtual float getDistance() {return distance;}
-    virtual bool canPlantOn(LevelModel level, int cellX, int cellY);
+    virtual double getDistance() {return distance;}
+    virtual bool canPutOn(LevelModel* level, int cellX, int cellY){return false;}
+    virtual void update();
 };
 
 #endif // !__CELL_MODEL_H__

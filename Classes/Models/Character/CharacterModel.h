@@ -2,32 +2,36 @@
 #define __CHARACTER_MODEL_H__
 
 #include "CharacterModelDefinitions.h"
+class LevelModel;
 
 struct CellPosition {
-    float cellX, cellY;
-    CellPosition(float x, float y) {cellX = x; cellY = y;}
+    double cellX, cellY;
+    CellPosition(double x, double y) {cellX = x; cellY = y;}
 };
 
 class CharacterModel {
 protected:
+    LevelModel* level;
     CharacterType type;
     int hp;
     CharacterStatus status;
     bool alive;
-    float cellX;
-    float cellY;
+    double cellX;
+    double cellY;
 public:
     CharacterModel(){};
     CharacterModel(CharacterType);
     virtual void takeDamage(int);
     virtual void setStatus(CharacterStatus);
     virtual bool isAlive();
-    virtual void setPosition(float, float);
+    virtual void setPosition(double, double);
     virtual CellPosition getPosition();
-    virtual float getPositionCellX();
-    virtual float getPositionCellY();
-    virtual void update();
-    virtual ~CharacterModel();
+    virtual double getPositionCellX();
+    virtual double getPositionCellY();
+    virtual void update(){};
+    virtual ~CharacterModel(){};
+    double getDistanceToOther(CharacterModel* other);
+    virtual void __setLevel(LevelModel*);
 };
 
 #endif // !__CHARACTER_MODEL_H__

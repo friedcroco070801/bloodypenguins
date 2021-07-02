@@ -1,13 +1,25 @@
+#include "Models/models.h"
 #include "CharacterModel.h"
+#include <cmath>
 
 /* 
 Constructor of CharacterModel
 */
 CharacterModel::CharacterModel(CharacterType type) {
     this->type = type;
-    hp = 10;
+    this->level = NULL;
     status = NORMAL;
     alive = true;
+
+    // Temporary data
+    hp = 5;
+}
+
+/*
+Set level model of the character
+*/
+void CharacterModel::__setLevel(LevelModel* level) {
+    this->level = level;
 }
 
 /*
@@ -15,9 +27,6 @@ Reduce hp of the Character
 */
 void CharacterModel::takeDamage(int damage) {
     hp -= damage;
-    if (hp < 0) {
-        alive = false;
-    }
 }
 
 /*
@@ -36,7 +45,7 @@ bool CharacterModel::isAlive() {
 /*
 Set cell position of the character
 */
-void CharacterModel::setPosition(float cellX, float cellY) {
+void CharacterModel::setPosition(double cellX, double cellY) {
     this->cellX = cellX;
     this->cellY = cellY;
 }
@@ -51,13 +60,20 @@ CellPosition CharacterModel::getPosition() {
 /* 
 Get cellX position of the character.
 */
-float CharacterModel::getPositionCellX() {
+double CharacterModel::getPositionCellX() {
     return cellX;
 }
 
 /* 
 Get cellY position of the character.
 */
-float CharacterModel::getPositionCellY() {
+double CharacterModel::getPositionCellY() {
     return cellY;
+}
+
+/*
+Get distance to other character
+*/
+double CharacterModel::getDistanceToOther(CharacterModel* other) {
+    return sqrt((cellX - other->cellX) * (cellX - other->cellX) + (cellY - other->cellY) * (cellY - other->cellY));
 }

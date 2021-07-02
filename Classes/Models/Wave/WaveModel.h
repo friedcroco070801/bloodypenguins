@@ -2,20 +2,25 @@
 #define __WAVE_MODEL_H__
 
 #include <vector>
-#include "../Character/Disease/DiseaseModel.h"
+enum DiseaseId;
 
 class WaveModel {
 public:
-    WaveModel(){}
+    // Constructor of waveModel
+    WaveModel(){
+        hugeWave = false;
+    }
     ~WaveModel();
     bool isHugeWave();
     void setHugeWave(bool);
-    void add(DiseaseModel*);
-    float getTime();
+    void add(DiseaseId);
+    double getTime();
+    void setTime(double time);
+    std::vector<DiseaseId>& getEnemies();
 private:
-    float time;
+    double time;
     bool hugeWave;
-    std::vector<DiseaseModel*> enemies;
+    std::vector<DiseaseId> enemies;
 };
 
 #endif // !__WAVE_MODEL_H__
