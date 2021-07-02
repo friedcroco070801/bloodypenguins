@@ -25,6 +25,7 @@ bool GSControlLayer::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 	auto touchListener = EventListenerTouchOneByOne::create();
+	touchListener->setSwallowTouches(true);
 	touchListener->onTouchBegan = CC_CALLBACK_2(GSControlLayer::onTouchBegan, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
     return true;
@@ -37,8 +38,9 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 	cur_.x = p.x;
 	cur_.y = p.y;
 	GSControlLayer::calculateCellsPosition();
-	int a = cellsPosition_.x;
-	int b = cellsPosition_.y;
+	int b = cellsPosition_.x;
+	int a = cellsPosition_.y;
+	
   	if (gameMapInformation_->CellsMap[a][b] == CELL_POSITION) {
 		auto click = Sprite::create("sprites/gold.png");
 		click->setContentSize(Size(30, 30));
@@ -51,10 +53,8 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 		click->setContentSize(Size(30, 30));
 		click->setPosition(ROW_COLUMN_TO_POSITION(cellsPosition_));
 		gameMapInformation_->CellsMap[a][b] = CELL_POSITION;
-		
 		this->addChild(click, 1);
 	}
-
 	log("giatri %u", gameMapInformation_->CellsMap[a][b]);
 	log("---------------");
 	return true;

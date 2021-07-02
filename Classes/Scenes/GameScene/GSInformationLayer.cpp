@@ -1,4 +1,5 @@
 #include "GSInformationLayer.h"
+#include "GSDefine.h"
 USING_NS_CC;
 bool GSInformationLayer::init() {
 	if (!Scene::init())
@@ -15,65 +16,59 @@ bool GSInformationLayer::init() {
 void GSInformationLayer::UpdateGold(int gold_) {
 	this->gold = gold_;
 	auto goldBackground = Sprite::create("sprites/gold.png");
-	goldBackground->setContentSize(Size(30, 30));
+	goldBackground->setContentSize(Size(ICON_SIZE, ICON_SIZE));
 	goldBackground->setAnchorPoint(Vec2(0, 0));
-	goldBackground->setPosition(Vec2(600, 650));
+	goldBackground->setPosition(GOLD_POSITION);
 	this->addChild(goldBackground, 2);
-	int i;
-	int count = 1;
-	while (gold_ != 0)
-	{
-		i = gold_ % 10;
-		gold_ = gold_ / 10;
+
+	std::string number = std::to_string(gold_);
+	for (int j = 0; j < number.length(); j++) {
+		int i = number[j];
+		i = i - 48;
 		auto sprite = Sprite::create("sprites/number.png");
 		auto ith_number = Sprite::create("sprites/number.png", Rect(sprite->getContentSize().width / 10 * i, 0, sprite->getContentSize().width / 10, sprite->getContentSize().height));
-		ith_number->setContentSize(Size(15, 15));
+		ith_number->setContentSize(Size(NUMBER_SIZE,NUMBER_SIZE));
 		ith_number->setAnchorPoint(Vec2(0, 0));
-		ith_number->setPosition(Vec2(600 - count * 15, 650));
-		count++;
+		ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + WIDTH * 1 / 5 + NUMBER_SIZE *j + NUMBER_SIZE/2,NUMBER_HEIGHT));
 		this->addChild(ith_number, 2);
 	}
+
 }
 void GSInformationLayer::UpdateDiamond(int diamond_) {
 	this->diamond = diamond_;
 	auto diamondBackground = Sprite::create("sprites/diamond.png");
-	diamondBackground->setContentSize(Size(30, 30));
+	diamondBackground->setContentSize(Size(ICON_SIZE, ICON_SIZE));
 	diamondBackground->setAnchorPoint(Vec2(0, 0));
-	diamondBackground->setPosition(Vec2(300, 650));
-	int i;
-	int count = 1;
-	while (diamond_ != 0)
-	{
-		i = diamond_ % 10;
-		diamond_ = diamond_ / 10;
+	diamondBackground->setPosition(DIAMOND_POSITION);
+	this->addChild(diamondBackground, 2);
+	std::string number = std::to_string(diamond_);
+	for (int j = 0; j < number.length(); j++) {
+		int i = number[j];
+		i = i - 48;
 		auto sprite = Sprite::create("sprites/number.png");
 		auto ith_number = Sprite::create("sprites/number.png", Rect(sprite->getContentSize().width / 10 * i, 0, sprite->getContentSize().width / 10, sprite->getContentSize().height));
-		ith_number->setContentSize(Size(15, 15));
+		ith_number->setContentSize(Size(NUMBER_SIZE, NUMBER_SIZE));
 		ith_number->setAnchorPoint(Vec2(0, 0));
-		ith_number->setPosition(Vec2(300 - count * 15, 650));
-		count++;
+		ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + WIDTH * 2 / 5 + NUMBER_SIZE * j + NUMBER_SIZE / 2, NUMBER_HEIGHT));
 		this->addChild(ith_number, 2);
 	}
-	this->addChild(diamondBackground, 2);
+
 }
 void GSInformationLayer::UpdateEnergy(int energy_) {
 	this->energy = energy_;
 	auto energyBackground = Sprite::create("sprites/energy.png");
-	energyBackground->setContentSize(Size(30, 30));
+	energyBackground->setContentSize(Size(ICON_SIZE, ICON_SIZE));
 	energyBackground->setAnchorPoint(Vec2(0, 0));
-	energyBackground->setPosition(Vec2(150, 650));
-	int i;
-	int count = 1;
-	while (energy_ != 0)
-	{
-		i = energy_ % 10;
-		energy_ = energy_ / 10;
+	energyBackground->setPosition(ENERGY_POSITION);
+	std::string number = std::to_string(energy_);
+	for (int j = 0; j < number.length(); j++) {
+		int i = number[j];
+		i = i - 48;
 		auto sprite = Sprite::create("sprites/number.png");
 		auto ith_number = Sprite::create("sprites/number.png", Rect(sprite->getContentSize().width / 10 * i, 0, sprite->getContentSize().width / 10, sprite->getContentSize().height));
-		ith_number->setContentSize(Size(15, 15));
+		ith_number->setContentSize(Size(NUMBER_SIZE, NUMBER_SIZE));
 		ith_number->setAnchorPoint(Vec2(0, 0));
-		ith_number->setPosition(Vec2(150 - count * 15, 650));
-		count++;
+		ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + NUMBER_SIZE * j + NUMBER_SIZE / 2, NUMBER_HEIGHT));
 		this->addChild(ith_number, 2);
 	}
 
