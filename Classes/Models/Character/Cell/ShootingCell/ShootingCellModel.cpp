@@ -64,6 +64,10 @@ Check if can put the plant on map
 bool ShootingCellModel::canPutOn(LevelModel* level, int cellX, int cellY) {
     if (level != NULL) {
         auto map = level->getMap();
+        auto maxX = map.size();
+        auto maxY = map[0].size();
+        if (cellX < 0 || cellX >= maxX) return false;
+        if (cellY < 0 || cellY >= maxY) return false;
         if (map[cellX][cellY] == EMPTY_CAN_PUT) return true;
     }
     return false;
