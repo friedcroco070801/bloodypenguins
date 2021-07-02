@@ -4,13 +4,16 @@
 #include <ctime>
 #include <cmath>
 #include <iostream>
+#include "UIObjects/uiobj.h"
 using namespace std;
+USING_NS_CC;
 
 /*
 Constructor of LevelModel
 */
-LevelModel::LevelModel(int level) {
+LevelModel::LevelModel(int level, Scene* scene) {
     srand(time(NULL));
+    this->scene = scene;
 
     // Temporary data
     energy = 400;
@@ -216,6 +219,12 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
         cellList.push_back(obj);
         obj->__setLevel(this);
         map[cellX][cellY] = (MapPosition) ((EMPTY_CAN_PUT_OCCUPIED - EMPTY_CAN_PUT) + (int) map[cellX][cellY]);
+
+        // Draw UIObject on scene
+        auto ui = UICell::create(obj->getCellId());
+        obj->setUIObject(ui);
+        ui->addToScene(this->scene);
+        ui->setCellPosition(cellX, cellY);
     }
 }
 /*
@@ -224,6 +233,12 @@ Add a DiseaseModel to diseaseList
 void LevelModel::addDisease(DiseaseModel* obj) {
     diseaseList.push_back(obj);
     obj->__setLevel(this);
+
+    // Draw UIObject on scene
+    auto ui = UIDisease::create(obj->getDiseaseId());
+    obj->setUIObject(ui);
+    ui->addToScene(this->scene);
+    ui->setCellPosition(obj->getPositionCellX(), obj->getPositionCellY());
 }
 
 /*
@@ -232,6 +247,17 @@ Add a ProjectileModel to projectileList
 void LevelModel::addProjectile(ProjectileModel* obj) {
     projectileList.push_back(obj);
     obj->__setLevel(this);
+
+    // Draw UIObject on scene
+    CCLOG("Yeah");
+    auto ui = UIProjectile::create(obj->getProjectileId());
+    CCLOG("Yeah");
+    obj->setUIObject(ui);
+    CCLOG("Yeah");
+    ui->addToScene(this->scene);
+    CCLOG("Yeah");
+    ui->setCellPosition(obj->getPositionCellX(), obj->getPositionCellY());
+    CCLOG("Yeah");
 }
 
 /*

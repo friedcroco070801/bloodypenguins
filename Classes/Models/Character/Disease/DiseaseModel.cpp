@@ -1,6 +1,7 @@
 #include "Models/models.h"
 #include "DiseaseModel.h"
 #include <cmath>
+#include "UIObjects/uiobj.h"
 using namespace std;
 
 /*
@@ -92,6 +93,9 @@ void DiseaseModel::update() {
         alive = false;
         level->dumpDisease(this);
         this->level = NULL;
+
+        // Destroy UIObject
+        ui->removeFromScene();
         return;
     }
 
@@ -155,6 +159,9 @@ void DiseaseModel::update() {
             cellX += directionVectorX * UPDATING_FREQUENCY * speed;
             cellY += directionVectorY * UPDATING_FREQUENCY * speed;
 
+            // Change position of UIObject
+            ui->setCellPosition(cellX, cellY);
+
             // Check if the axis is an interger
             auto roundX = round(cellX);
             auto roundY = round(cellY);
@@ -177,4 +184,11 @@ Get value of disease id. Should not be used outside models
 */
 DiseaseId DiseaseModel::__getDiseaseId() {
     return id;
+}
+
+/*
+Set UI Object for the DiseaseModel
+*/
+void DiseaseModel::setUIObject(UIDisease* ui) {
+    this->ui = ui;
 }

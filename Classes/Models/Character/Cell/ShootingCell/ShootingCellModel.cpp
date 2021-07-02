@@ -9,6 +9,7 @@ Constructor of shooting cell model
 ShootingCellModel::ShootingCellModel(CellId cellId) : CellModel(cellId) {
     // Temporary data
     shootRechargeTime = 1.0;
+    projectileId = CELL_00_PROJECTILE;
 };
 
 /*

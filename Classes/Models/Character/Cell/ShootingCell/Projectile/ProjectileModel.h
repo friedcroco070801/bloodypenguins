@@ -5,6 +5,7 @@
 class LevelModel;
 class CharacterModel;
 struct CellPosition;
+class UIProjectile;
 
 class ProjectileModel {
 protected:
@@ -21,6 +22,7 @@ protected:
     CharacterModel* target;
     bool isDestroyed;
     virtual void effectOnHit(){};
+    UIProjectile* ui;
 public:
     static ProjectileModel* create(ProjectileId id, CharacterModel* source, CharacterModel* target);
     ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target);
@@ -30,6 +32,9 @@ public:
     virtual CellPosition getPosition();
     virtual void hitTarget();
     virtual void __setLevel(LevelModel*);
+    virtual void setUIObject(UIProjectile* ui);
+    // Get ProjectileId
+    virtual ProjectileId getProjectileId() {return id;}
 };
 
 #endif // !__PROJECTILE_MODEL_H__

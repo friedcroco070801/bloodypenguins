@@ -2,6 +2,7 @@
 #include "ProjectileModel.h"
 #include <cmath>
 #include <iostream>
+#include "UIObjects/uiobj.h"
 using namespace std;
 
 /*
@@ -76,6 +77,9 @@ void ProjectileModel::update() {
             // Update position
             cellX += directionVectorX * UPDATING_FREQUENCY * speed;
             cellY += directionVectorY * UPDATING_FREQUENCY * speed;
+
+            // Change position of UIObject
+            ui->setCellPosition(cellX, cellY);
         }
     }
 }
@@ -89,5 +93,15 @@ void ProjectileModel::hitTarget() {
         effectOnHit();
         isDestroyed = true;
         level->dumpProjectile(this);
+
+        // Destroy UIObject
+        ui->removeFromScene();
     }
+}
+
+/*
+Set UI Object for the ProjectileModel
+*/
+void ProjectileModel::setUIObject(UIProjectile* ui) {
+    this->ui = ui;
 }

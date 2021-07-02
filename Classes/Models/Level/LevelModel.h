@@ -4,6 +4,7 @@
 #include <vector>
 #include <list>
 #include "LevelModelDefinitions.h"
+#include "cocos2d.h"
 
 class CharacterModel;
 class WaveModel;
@@ -15,7 +16,7 @@ class LevelModel {
 public:
     // Default constructor of LevelModel
     LevelModel(){};
-    LevelModel(int level);
+    LevelModel(int level, cocos2d::Scene* scene);
     ~LevelModel();
 
     // Return the map of the level
@@ -68,6 +69,8 @@ private:
     std::list<ProjectileModel*> projectileDump;
     void garbageCollect();
     void addEnemiesOnWave();
+
+    cocos2d::Scene* scene;
 };
 
 #endif // !__LEVEL_MODEL_H__

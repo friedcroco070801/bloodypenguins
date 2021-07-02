@@ -1,11 +1,13 @@
 #include "Models/models.h"
 #include "CellModel.h"
+#include "UIObjects/uiobj.h"
 
 /* 
 Constructor of CellModel
 */
 CellModel::CellModel(CellId id) : CharacterModel(CELL) {
     this->id = id;
+    ui = nullptr;
 
     // Temporary data
     distance = 2.0;
@@ -28,6 +30,16 @@ void CellModel::update() {
         alive = false;
         level->dumpCell(this);
         this->level = NULL;
+
+        // Destroy UIObject
+        ui->removeFromScene();
         return;
     }
+}
+
+/*
+Set UI Object for the CellModel
+*/
+void CellModel::setUIObject(UICell* ui) {
+    this->ui = ui;
 }

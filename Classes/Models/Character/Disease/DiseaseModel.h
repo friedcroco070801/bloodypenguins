@@ -6,6 +6,7 @@
 class CharacterModel;
 class CellModel;
 class LevelModel;
+class UIDisease;
 
 class DiseaseModel : public CharacterModel {
 protected:
@@ -20,6 +21,7 @@ protected:
     std::vector< std::vector<int> >::iterator nextPath;
     virtual void changeDirectionOnPath();
     virtual void changeDirectionToTarget(CellModel*);
+    UIDisease* ui;
 public:
     static DiseaseModel* create(DiseaseId);
     DiseaseModel(DiseaseId);
@@ -28,6 +30,9 @@ public:
     virtual void hitTarget(CellModel* target);
     virtual void __setLevel(LevelModel*);
     virtual DiseaseId __getDiseaseId();
+    virtual void setUIObject(UIDisease* ui);
+    // Get DiseaseId
+    virtual DiseaseId getDiseaseId() {return id;}
 };
 
 #endif // !__DISEASE_MODEL_H__
