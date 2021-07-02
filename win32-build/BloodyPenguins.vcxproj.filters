@@ -52,6 +52,18 @@
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.cpp">
       <Filter>Source Files\Classes\Scenes\TemplateScene</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.cpp">
+      <Filter>Source Files\Classes\UIObjects\UICell</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.cpp">
+      <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.cpp">
+      <Filter>Source Files\Classes\UIObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.cpp">
+      <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
@@ -134,6 +146,33 @@
     </ClInclude>
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h">
       <Filter>Source Files\Classes\Scenes\TemplateScene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.h">
+      <Filter>Source Files\Classes\UIObjects\UICell</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICellDefinitions.h">
+      <Filter>Source Files\Classes\UIObjects\UICell</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.h">
+      <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h">
+      <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.h">
+      <Filter>Source Files\Classes\UIObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjectsDefinitions.h">
+      <Filter>Source Files\Classes\UIObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.h">
+      <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h">
+      <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\uiobj.h">
+      <Filter>Source Files\Classes\UIObjects</Filter>
     </ClInclude>
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.h">
       <Filter>Source Files\proj.win32</Filter>
@@ -240,6 +279,18 @@
     </Filter>
     <Filter Include="Source Files\Classes\Scenes\TemplateScene\Components\TemplateComponent">
       <UniqueIdentifier>{DB5F7699-3A8C-3823-AC69-6C342DC21B30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\UIObjects">
+      <UniqueIdentifier>{AD632AD2-CFDA-3449-805D-BB1CA575A566}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\UIObjects\UICell">
+      <UniqueIdentifier>{68A5A66E-5B85-39B4-94A4-EA13CC34A95C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\UIObjects\UIDisease">
+      <UniqueIdentifier>{25A6FD3F-1C06-33E4-BBD8-6EA9A6D17771}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\UIObjects\UIProjectile">
+      <UniqueIdentifier>{9688E9D0-5C2D-3AC6-A42D-09F0C257C859}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{14E78E86-3158-3B0F-B7C3-F2DB60608B9F}</UniqueIdentifier>

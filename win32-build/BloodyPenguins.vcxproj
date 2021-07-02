@@ -818,6 +818,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h" />
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.h" />
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICellDefinitions.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjectsDefinitions.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h" />
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\uiobj.h" />
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.h" />
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\resource.h" />
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\AppDelegate.cpp" />
@@ -839,6 +848,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GameScene.cpp" />
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp" />
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.cpp" />
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.cpp" />
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.cpp" />
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.cpp" />
+    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.cpp" />
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.cpp">
       <ObjectFileName>$(IntDir)/proj.win32/main.cpp.obj</ObjectFileName>
     </ClCompile>
