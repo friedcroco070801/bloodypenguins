@@ -1,4 +1,4 @@
-# Install script for directory: D:/Cuc_Tinh_Y/cocos2d/external/bullet
+# Install script for directory: D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/bullet
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

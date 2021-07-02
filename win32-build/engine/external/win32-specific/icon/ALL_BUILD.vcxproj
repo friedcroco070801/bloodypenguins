@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{35AD3230-5802-3FB6-A37E-606EB0A394FC}</ProjectGuid>
+    <ProjectGuid>{9D44E6D7-0975-3CBE-9654-8B5C2733713D}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
@@ -102,10 +102,10 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
+    <CustomBuild Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -113,12 +113,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Cuc_Tinh_Y\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Cuc_Tinh_Y\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -126,12 +126,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Cuc_Tinh_Y\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Cuc_Tinh_Y\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -139,12 +139,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Cuc_Tinh_Y\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Cuc_Tinh_Y\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/external/win32-specific/icon/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -152,16 +152,16 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Cuc_Tinh_Y\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Cuc_Tinh_Y\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\cmake\CocosExternalConfig.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\win32-specific\icon\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\ZERO_CHECK.vcxproj">
-      <Project>{325C97BC-B7BD-3F46-BC13-6313B7566B41}</Project>
+    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\ZERO_CHECK.vcxproj">
+      <Project>{1113741A-156F-3579-8E10-322A3447A36B}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

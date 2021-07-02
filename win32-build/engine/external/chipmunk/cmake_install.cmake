@@ -1,4 +1,4 @@
-# Install script for directory: D:/Cuc_Tinh_Y/cocos2d/external/chipmunk
+# Install script for directory: D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/chipmunk
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

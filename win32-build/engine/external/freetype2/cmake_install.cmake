@@ -1,4 +1,4 @@
-# Install script for directory: D:/Cuc_Tinh_Y/cocos2d/external/freetype2
+# Install script for directory: D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/freetype2
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
