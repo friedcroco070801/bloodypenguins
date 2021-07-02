@@ -10,22 +10,23 @@ Scene* GameScene::createScene()
 }
 bool GameScene::init() {
 	if (!Scene::init()) return false;
+	level = new LevelModel(1, this);
+	level->startCounting();
+	//level->addCell(CellModel::create(CELL_00_EOSINOPHILS), 7, 4);
 	//backgroundLayer();
-	controlLayer();
+	controlLayer(level);
 	informationLayer();
 
 	// Added level
-	level = new LevelModel(1, this);
-	level->startCounting();
-	level->addCell(CellModel::create(CELL_00_EOSINOPHILS), 7, 4);
+
 
 	// Schedule update
     this->schedule(CC_SCHEDULE_SELECTOR(GameScene::updateLevel), 0.01f);
 
 	return true;
 }
-void GameScene::controlLayer() {
-	auto controlLayer_ = GSControlLayer::create();
+void GameScene::controlLayer(LevelModel* level) {
+	auto controlLayer_ = GSControlLayer::create(level);
 	this->addChild(controlLayer_, 1);
 }
 void GameScene::informationLayer() {

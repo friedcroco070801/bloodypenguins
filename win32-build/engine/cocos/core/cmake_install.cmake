@@ -1,4 +1,4 @@
-# Install script for directory: D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/cocos
+# Install script for directory: D:/Cuc_Tinh_Y/cocos2d/cocos
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/external/cmake_install.cmake")
+  include("D:/Cuc_Tinh_Y/win32-build/engine/external/cmake_install.cmake")
 
 endif()
 

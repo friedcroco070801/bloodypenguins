@@ -42,21 +42,10 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 	int a = cellsPosition_.y;
 	
   	if (gameMapInformation_->CellsMap[a][b] == CELL_POSITION) {
-		auto click = Sprite::create("sprites/gold.png");
-		click->setContentSize(Size(30, 30));
-		click->setPosition(ROW_COLUMN_TO_POSITION(cellsPosition_));
+		level->addCell(CellModel::create(CELL_00_EOSINOPHILS), cellsPosition_.x, cellsPosition_.y);
 		gameMapInformation_->CellsMap[a][b] = CELL_CANT_POSITION;
-		this->addChild(click, 1);
 	}
-	else {
-		auto click = Sprite::create("sprites/diamond.png");
-		click->setContentSize(Size(30, 30));
-		click->setPosition(ROW_COLUMN_TO_POSITION(cellsPosition_));
-		gameMapInformation_->CellsMap[a][b] = CELL_POSITION;
-		this->addChild(click, 1);
-	}
-	log("giatri %u", gameMapInformation_->CellsMap[a][b]);
-	log("---------------");
+
 	return true;
 }
 
@@ -75,3 +64,12 @@ void GSControlLayer::calculateCellsPosition() {
         cellsPosition_.y = 100;
     }
 }
+void GSControlLayer::SetWay(std::vector<std::vector<MapPosition>> map_can_plant) {
+	for (int i = 0; i < COLUMN; i++) {
+		for (int j = 0; j < ROW; j++) {
+			if (map_can_plant[i][j] == ENEMY_PATH_OCCUPIED || map_can_plant[i][j] == ENEMY_PATH || map_can_plant[i][j] == ENEMY_PATH_END) {
+				gameMapInformation_->CellsMap[i][j] == DISEA_WAY;
+			}
+		}
+	}
+};

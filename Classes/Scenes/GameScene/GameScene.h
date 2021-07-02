@@ -12,7 +12,7 @@ public:
 	virtual ~GameScene() {delete level;}
 
 protected:
-	virtual void controlLayer();
+	virtual void controlLayer(LevelModel* level);
 	//virtual void backgroundLayer();
 	virtual void informationLayer();
 	LevelModel* level;

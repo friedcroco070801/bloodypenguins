@@ -1,317 +1,334 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\AppDelegate.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\EffectCell\EffectCellModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\EffectCell</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.cpp">
       <Filter>Source Files\Classes\Models\Character</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Disease</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.cpp">
       <Filter>Source Files\Classes\Models\Level</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Wave\WaveModel.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.cpp">
       <Filter>Source Files\Classes\Models\Wave</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSControlLayer.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.cpp">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSInformationLayer.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.cpp">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GameScene.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.cpp">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp">
       <Filter>Source Files\Classes\Scenes\TemplateScene\Components\TemplateComponent</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateScene.cpp">
       <Filter>Source Files\Classes\Scenes\TemplateScene</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICell.cpp">
       <Filter>Source Files\Classes\UIObjects\UICell</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDisease.cpp">
       <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjects.cpp">
       <Filter>Source Files\Classes\UIObjects</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectile.cpp">
       <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\precheader.cpp">
+    <ClCompile Include="D:\Cuc_Tinh_Y\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\AppDelegate.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\HelloWorldScene.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModelDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character\Cell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\EffectCell\EffectCellModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\EffectCell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModelDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.h">
       <Filter>Source Files\Classes\Models\Character</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModelDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModel.h">
       <Filter>Source Files\Classes\Models\Character\Disease</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModelDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character\Disease</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.h">
       <Filter>Source Files\Classes\Models\Level</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModelDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Level</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Wave\WaveModel.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.h">
       <Filter>Source Files\Classes\Models\Wave</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\models.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\models.h">
       <Filter>Source Files\Classes\Models</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSControlLayer.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.h">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSDefine.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSDefine.h">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSInformationLayer.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.h">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GameScene.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.h">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\ScenesDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\ScenesDefinitions.h">
       <Filter>Source Files\Classes\Scenes</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h">
       <Filter>Source Files\Classes\Scenes\TemplateScene\Components\TemplateComponent</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateScene.h">
       <Filter>Source Files\Classes\Scenes\TemplateScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h">
       <Filter>Source Files\Classes\Scenes\TemplateScene</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICell.h">
       <Filter>Source Files\Classes\UIObjects\UICell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICellDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICellDefinitions.h">
       <Filter>Source Files\Classes\UIObjects\UICell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDisease.h">
       <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h">
       <Filter>Source Files\Classes\UIObjects\UIDisease</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjects.h">
       <Filter>Source Files\Classes\UIObjects</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjectsDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjectsDefinitions.h">
       <Filter>Source Files\Classes\UIObjects</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectile.h">
       <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h">
       <Filter>Source Files\Classes\UIObjects\UIProjectile</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\uiobj.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\uiobj.h">
       <Filter>Source Files\Classes\UIObjects</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\main.h">
       <Filter>Source Files\proj.win32</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\resource.h">
+    <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\resource.h">
       <Filter>Source Files\proj.win32</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\CloseNormal.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\CloseNormal.png">
       <Filter>Resources</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\CloseSelected.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\CloseSelected.png">
       <Filter>Resources</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\HelloWorld.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\HelloWorld.png">
       <Filter>Resources</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\audio\hello_world.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\audio\hello_world.png">
       <Filter>Resources\audio</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\fonts\Marker Felt.ttf">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\fonts\arial.ttf">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\fonts\arial.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\res\.gitkeep">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\hello_world.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\hello_world.png">
       <Filter>Resources\sprites</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\cell\cell_00.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\cell\cell_00.png">
       <Filter>Resources\sprites\objects\cell</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\disease\disease_00.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\disease\disease_00.png">
       <Filter>Resources\sprites\objects\disease</Filter>
     </ClInclude>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\projectile\cell_00_projectile.png">
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\projectile\cell_00_projectile.png">
       <Filter>Resources\sprites\objects\projectile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\CMakeLists.txt" />
+    <CustomBuild Include="D:\Cuc_Tinh_Y\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\game.rc">
+    <ResourceCompile Include="D:\Cuc_Tinh_Y\proj.win32\game.rc">
       <Filter>Source Files\proj.win32</Filter>
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Resources">
-      <UniqueIdentifier>{A59D74E8-4523-3382-85A2-C2BCE1072DAA}</UniqueIdentifier>
+      <UniqueIdentifier>{D77334A3-B7B5-39C9-8AEE-A7CD93A4EBD8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\audio">
-      <UniqueIdentifier>{B3E76909-3EB6-3026-BB58-F5BDE14E87EE}</UniqueIdentifier>
+      <UniqueIdentifier>{E96ABC20-EA22-3D2C-B80A-65E79E2AD748}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\fonts">
-      <UniqueIdentifier>{080A4526-F15E-3095-9FC0-92882D762C9A}</UniqueIdentifier>
+      <UniqueIdentifier>{2127127F-1529-3B35-93C0-BFCBB1EBA567}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\res">
-      <UniqueIdentifier>{0CE0D91D-4869-3301-A981-FBB53F59BB4F}</UniqueIdentifier>
+      <UniqueIdentifier>{9518D20E-F76B-33F3-ACE0-67EB729092EA}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\sprites">
-      <UniqueIdentifier>{C25F55F1-06C9-32E3-8836-ED9F08178F6A}</UniqueIdentifier>
+      <UniqueIdentifier>{6061C089-9062-3410-ADB5-DD57686FA897}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\sprites\objects">
-      <UniqueIdentifier>{530604AF-60F4-3F63-8823-28FEC2BBC8D0}</UniqueIdentifier>
+      <UniqueIdentifier>{1C55A7C3-669B-386B-8976-69AE9F7DBD7F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\sprites\objects\cell">
-      <UniqueIdentifier>{AEA6D740-FF20-3AD1-A843-72340527A76A}</UniqueIdentifier>
+      <UniqueIdentifier>{17EDB827-4E03-3F8E-8C1E-C19318EB5F06}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\sprites\objects\disease">
-      <UniqueIdentifier>{E2759205-3D75-35ED-A6D1-C264419246CF}</UniqueIdentifier>
+      <UniqueIdentifier>{DAB411A2-1042-3E81-8E92-14B6A7904412}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\sprites\objects\projectile">
-      <UniqueIdentifier>{361DC1B6-FBC9-36D8-8E33-10603E5CB521}</UniqueIdentifier>
+      <UniqueIdentifier>{44556886-5000-3B7F-8F0D-2F5DF72EACB6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{5293204C-5FFB-3B9E-831D-6FF822FFF501}</UniqueIdentifier>
+      <UniqueIdentifier>{EC8CCF2C-3418-3E83-98C3-FBC9DA180D26}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes">
-      <UniqueIdentifier>{6331C04A-ABAF-3C73-A006-6AC978C64011}</UniqueIdentifier>
+      <UniqueIdentifier>{103741A7-ECE8-3299-8626-228BD88C8629}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models">
-      <UniqueIdentifier>{609723DD-25DF-39DE-81D5-759BEDDAECC7}</UniqueIdentifier>
+      <UniqueIdentifier>{959DBE6D-AFB3-3BB5-8C41-B8FFE1FE737B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character">
-      <UniqueIdentifier>{0A8232E5-EA01-30B1-8200-D8972368C87F}</UniqueIdentifier>
+      <UniqueIdentifier>{891D5494-E978-32CE-9099-34C6B47044E4}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell">
-      <UniqueIdentifier>{E8A81DF5-DFC1-32C2-B7FC-D985453F4C82}</UniqueIdentifier>
+      <UniqueIdentifier>{255978CD-9228-38E8-A9CF-001CDC9AB067}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\EffectCell">
-      <UniqueIdentifier>{146191E4-FB2E-3A38-A55B-55842923BA8E}</UniqueIdentifier>
+      <UniqueIdentifier>{4C5D1CA8-3CE5-3D53-90C5-6E2B424AC8EF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell">
-      <UniqueIdentifier>{0F1EA8BF-6291-32D3-BDE0-33819BD5B793}</UniqueIdentifier>
+      <UniqueIdentifier>{E5C6C15A-47AC-3E02-BD5A-595B75210636}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile">
-      <UniqueIdentifier>{090E2262-C387-3B8E-947E-6A1930D8C4EE}</UniqueIdentifier>
+      <UniqueIdentifier>{0E39B636-2DA6-3C48-9C42-5F7D3FBFE879}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter">
-      <UniqueIdentifier>{03331662-B0CB-36C8-9A39-04FF4CECBCF8}</UniqueIdentifier>
+      <UniqueIdentifier>{85046066-3459-3BBC-A14C-F81890BB0F21}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Disease">
-      <UniqueIdentifier>{8635BD98-138B-3840-A8C7-1614101E8ED9}</UniqueIdentifier>
+      <UniqueIdentifier>{00254229-3107-3C4B-9DCD-CD07072483E6}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Level">
-      <UniqueIdentifier>{B5B8CDC8-EB6C-3C6B-B353-D44E6FB207B1}</UniqueIdentifier>
+      <UniqueIdentifier>{3E399FA0-7BE4-3509-88F2-2F75E687B12F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Wave">
-      <UniqueIdentifier>{3C3D9544-3529-3A00-9CE1-466B569B7658}</UniqueIdentifier>
+      <UniqueIdentifier>{DF68394D-98A7-374B-94CB-61F1E65FCA87}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Scenes">
-      <UniqueIdentifier>{7A338D2F-69D5-36BF-B96A-B6EA1985B3CB}</UniqueIdentifier>
+      <UniqueIdentifier>{628C075B-F0A5-3478-94AA-A5871B62A8DC}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Scenes\GameScene">
-      <UniqueIdentifier>{E6F6F91D-B702-3A01-ACDF-560CFC1CF8EE}</UniqueIdentifier>
+      <UniqueIdentifier>{771DB935-B09F-364A-847D-8510FCC317F2}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Scenes\TemplateScene">
-      <UniqueIdentifier>{B498215E-94EE-35D0-91D8-DBB0FF9A77C3}</UniqueIdentifier>
+      <UniqueIdentifier>{E71ABC29-0405-3163-A79C-242663ABD870}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Scenes\TemplateScene\Components">
-      <UniqueIdentifier>{E07F527B-6DE5-3F61-8FF4-DAFF2C3CAEBC}</UniqueIdentifier>
+      <UniqueIdentifier>{234627EB-2326-3BC5-AD40-4E1B0046C364}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Scenes\TemplateScene\Components\TemplateComponent">
-      <UniqueIdentifier>{DB5F7699-3A8C-3823-AC69-6C342DC21B30}</UniqueIdentifier>
+      <UniqueIdentifier>{BFAEC22A-A9D2-3243-B388-DB251B45A8A3}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\UIObjects">
-      <UniqueIdentifier>{AD632AD2-CFDA-3449-805D-BB1CA575A566}</UniqueIdentifier>
+      <UniqueIdentifier>{96ACDBC3-9F20-3382-849B-1D64DC6BF203}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\UIObjects\UICell">
-      <UniqueIdentifier>{68A5A66E-5B85-39B4-94A4-EA13CC34A95C}</UniqueIdentifier>
+      <UniqueIdentifier>{BEAB3423-8D63-3D4E-BB39-B1EF64697C6A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\UIObjects\UIDisease">
-      <UniqueIdentifier>{25A6FD3F-1C06-33E4-BBD8-6EA9A6D17771}</UniqueIdentifier>
+      <UniqueIdentifier>{3A0578C5-EAA4-36AE-9468-FE44F41B504D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\UIObjects\UIProjectile">
-      <UniqueIdentifier>{9688E9D0-5C2D-3AC6-A42D-09F0C257C859}</UniqueIdentifier>
+      <UniqueIdentifier>{721BEB63-0E3B-3F92-A68D-5C26C850E41D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\proj.win32">
-      <UniqueIdentifier>{14E78E86-3158-3B0F-B7C3-F2DB60608B9F}</UniqueIdentifier>
+      <UniqueIdentifier>{7AED2B89-6462-312C-880A-F10B38CB4F4B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\sprites\InformationLayer">
+      <UniqueIdentifier>{83fa6b11-a10b-477c-a575-10534168fd04}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\sprites\InformationLayer\diamond.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
+    <Image Include="..\Resources\sprites\InformationLayer\energy.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
+    <Image Include="..\Resources\sprites\InformationLayer\gold.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
+    <Image Include="..\Resources\sprites\InformationLayer\number.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
   </ItemGroup>
 </Project>

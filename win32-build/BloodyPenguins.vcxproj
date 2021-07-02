@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CFD492AD-A354-3CE4-B71F-B17016CB0FBE}</ProjectGuid>
+    <ProjectGuid>{2F680B10-F187-387F-B378-512DFB64E970}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
@@ -56,25 +56,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\bin\BloodyPenguins\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Cuc_Tinh_Y\win32-build\bin\BloodyPenguins\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BloodyPenguins.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">BloodyPenguins</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\bin\BloodyPenguins\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Cuc_Tinh_Y\win32-build\bin\BloodyPenguins\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BloodyPenguins.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">BloodyPenguins</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\bin\BloodyPenguins\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Cuc_Tinh_Y\win32-build\bin\BloodyPenguins\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">BloodyPenguins.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">BloodyPenguins</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\bin\BloodyPenguins\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Cuc_Tinh_Y\win32-build\bin\BloodyPenguins\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BloodyPenguins.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">BloodyPenguins</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
@@ -83,7 +83,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -101,10 +101,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -112,9 +112,10 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libssl-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -123,7 +124,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libcrypto-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -132,7 +133,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/uv/prebuilt/win32/uv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/uv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/uv/prebuilt/win32/uv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -141,7 +142,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/websockets/prebuilt/win32/websockets.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/websockets.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/websockets/prebuilt/win32/websockets.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -150,7 +151,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/curl/prebuilt/win32/libcurl.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libcurl.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/curl/prebuilt/win32/libcurl.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,7 +160,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/glew32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -168,7 +169,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/iconv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -177,7 +178,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libmpg123.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -186,7 +187,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libogg.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -195,7 +196,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libvorbis.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -204,7 +205,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/libvorbisfile.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -213,7 +214,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/OpenAL32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -222,7 +223,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/zlib1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -237,8 +238,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/Debug/BloodyPenguins.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Debug/BloodyPenguins.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/Cuc_Tinh_Y/win32-build/Debug/BloodyPenguins.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Debug/BloodyPenguins.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -247,7 +248,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -265,10 +266,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -276,9 +277,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libssl-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -287,7 +289,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libcrypto-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -296,7 +298,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/uv/prebuilt/win32/uv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/uv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/uv/prebuilt/win32/uv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -305,7 +307,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/websockets/prebuilt/win32/websockets.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/websockets.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/websockets/prebuilt/win32/websockets.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -314,7 +316,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/curl/prebuilt/win32/libcurl.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libcurl.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/curl/prebuilt/win32/libcurl.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -323,7 +325,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/glew32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -332,7 +334,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/iconv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -341,7 +343,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libmpg123.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -350,7 +352,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libogg.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -359,7 +361,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libvorbis.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -368,7 +370,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/libvorbisfile.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -377,7 +379,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/OpenAL32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -386,7 +388,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/zlib1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -401,8 +403,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/Release/BloodyPenguins.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/Release/BloodyPenguins.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/Cuc_Tinh_Y/win32-build/Release/BloodyPenguins.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/Release/BloodyPenguins.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -411,7 +413,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -429,10 +431,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -440,9 +442,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libssl-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -451,7 +454,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libcrypto-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -460,7 +463,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/uv/prebuilt/win32/uv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/uv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/uv/prebuilt/win32/uv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -469,7 +472,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/websockets/prebuilt/win32/websockets.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/websockets.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/websockets/prebuilt/win32/websockets.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -478,7 +481,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/curl/prebuilt/win32/libcurl.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libcurl.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/curl/prebuilt/win32/libcurl.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -487,7 +490,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/glew32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -496,7 +499,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/iconv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -505,7 +508,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libmpg123.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -514,7 +517,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libogg.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -523,7 +526,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libvorbis.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -532,7 +535,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/libvorbisfile.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -541,7 +544,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/OpenAL32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -550,7 +553,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/zlib1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -565,8 +568,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/MinSizeRel/BloodyPenguins.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/MinSizeRel/BloodyPenguins.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/Cuc_Tinh_Y/win32-build/MinSizeRel/BloodyPenguins.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/MinSizeRel/BloodyPenguins.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -575,7 +578,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -592,10 +595,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\audio\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\extensions;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\editor-support;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\base;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\platform\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\recast\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\tinyxml2\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxhash\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\xxtea\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\clipper\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\edtaa3func\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\ConvertUTF\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\poly2tri\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\md5\..;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\unzip\.;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\Box2D\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\chipmunk\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\freetype2\include\win32\freetype2;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\bullet\include\bullet;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\jpeg\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\openssl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\uv\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\webp\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\websockets\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\curl\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\png\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\gles\include\OGLES;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\icon\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\MP3Decoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OggDecoder\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\win32-specific\OpenalSoft\include;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\glfw3\include\win32;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\Cuc_Tinh_Y\Classes;D:\Cuc_Tinh_Y\cocos2d\cocos\audio\include;D:\Cuc_Tinh_Y\cocos2d;D:\Cuc_Tinh_Y\cocos2d\cocos;D:\Cuc_Tinh_Y\cocos2d\extensions;D:\Cuc_Tinh_Y\cocos2d\cocos\platform;D:\Cuc_Tinh_Y\cocos2d\cocos\editor-support;D:\Cuc_Tinh_Y\cocos2d\cocos\base;D:\Cuc_Tinh_Y\cocos2d\cocos\platform\win32;D:\Cuc_Tinh_Y\cocos2d\external\recast\..;D:\Cuc_Tinh_Y\cocos2d\external\tinyxml2\.;D:\Cuc_Tinh_Y\cocos2d\external\xxhash\.;D:\Cuc_Tinh_Y\cocos2d\external\xxtea\.;D:\Cuc_Tinh_Y\cocos2d\external\clipper\.;D:\Cuc_Tinh_Y\cocos2d\external\edtaa3func\.;D:\Cuc_Tinh_Y\cocos2d\external\ConvertUTF\.;D:\Cuc_Tinh_Y\cocos2d\external\poly2tri\..;D:\Cuc_Tinh_Y\cocos2d\external\md5\..;D:\Cuc_Tinh_Y\cocos2d\external\unzip\.;D:\Cuc_Tinh_Y\cocos2d\external\Box2D\include;D:\Cuc_Tinh_Y\cocos2d\external\chipmunk\include;D:\Cuc_Tinh_Y\cocos2d\external\freetype2\include\win32\freetype2;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include;D:\Cuc_Tinh_Y\cocos2d\external\bullet\include\bullet;D:\Cuc_Tinh_Y\cocos2d\external\jpeg\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\openssl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\uv\include;D:\Cuc_Tinh_Y\cocos2d\external\webp\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\websockets\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\curl\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\png\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\gles\include\OGLES;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\icon\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\MP3Decoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OggDecoder\include;D:\Cuc_Tinh_Y\cocos2d\external\win32-specific\OpenalSoft\include;D:\Cuc_Tinh_Y\cocos2d\external\glfw3\include\win32;D:\Cuc_Tinh_Y\cocos2d\external\zlib\..\win32-specific\zlib\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -603,9 +606,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libssl-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -614,7 +618,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libcrypto-1_1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/openssl/prebuilt/win32/libcrypto-1_1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libcrypto-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -623,7 +627,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/uv/prebuilt/win32/uv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/uv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/uv/prebuilt/win32/uv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/uv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -632,7 +636,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/websockets/prebuilt/win32/websockets.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/websockets.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/websockets/prebuilt/win32/websockets.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/websockets.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -641,7 +645,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/curl/prebuilt/win32/libcurl.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libcurl.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/curl/prebuilt/win32/libcurl.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libcurl.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -650,7 +654,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/glew32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/gles/prebuilt/glew32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/glew32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -659,7 +663,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/iconv.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/icon/prebuilt/iconv.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/iconv.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -668,7 +672,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libmpg123.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/MP3Decoder/prebuilt/libmpg123.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libmpg123.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -677,7 +681,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libogg.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libogg.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libogg.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -686,7 +690,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libvorbis.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbis.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libvorbis.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -695,7 +699,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/libvorbisfile.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OggDecoder/prebuilt/libvorbisfile.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/libvorbisfile.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -704,7 +708,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/OpenAL32.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/win32-specific/OpenalSoft/prebuilt/OpenAL32.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/OpenAL32.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -713,7 +717,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll" "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/zlib1.dll"
+"C:\Program Files\CMake\bin\cmake.exe" -E copy_if_different D:/Cuc_Tinh_Y/cocos2d/external/zlib/../win32-specific/zlib/prebuilt/zlib1.dll D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/zlib1.dll
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -728,8 +732,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/RelWithDebInfo/BloodyPenguins.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/bin/BloodyPenguins/RelWithDebInfo/BloodyPenguins.pdb</ProgramDataBaseFile>
+      <ImportLibrary>D:/Cuc_Tinh_Y/win32-build/RelWithDebInfo/BloodyPenguins.lib</ImportLibrary>
+      <ProgramDataBaseFile>D:/Cuc_Tinh_Y/win32-build/bin/BloodyPenguins/RelWithDebInfo/BloodyPenguins.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -737,10 +741,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/CMakeLists.txt</Message>
+    <CustomBuild Include="D:\Cuc_Tinh_Y\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -748,12 +752,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\Cuc_Tinh_Y\win32-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -761,12 +765,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Cuc_Tinh_Y\win32-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -774,12 +778,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\Cuc_Tinh_Y\win32-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/Cuc_Tinh_Y/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-SD:/Based Subject/Gameloft Internship/Project/BloodyPenguins" "-BD:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build" --check-stamp-file "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/Cuc_Tinh_Y -BD:/Cuc_Tinh_Y/win32-build --check-stamp-file D:/Cuc_Tinh_Y/win32-build/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -787,144 +791,150 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.20\Modules\Platform\WindowsPaths.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosBuildSet.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDefine.cmake;D:\Cuc_Tinh_Y\cocos2d\cmake\Modules\CocosConfigDepend.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeCXXCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeRCCompiler.cmake;D:\Cuc_Tinh_Y\win32-build\CMakeFiles\3.20.3\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\Cuc_Tinh_Y\win32-build\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\AppDelegate.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\HelloWorldScene.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModelDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\EffectCell\EffectCellModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModelDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModelDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModelDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModelDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Wave\WaveModel.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\models.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSControlLayer.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSDefine.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSInformationLayer.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GameScene.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\ScenesDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICellDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjectsDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\uiobj.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.h" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\resource.h" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\AppDelegate.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\HelloWorldScene.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\CellModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\EffectCell\EffectCellModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\CharacterModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Character\Disease\DiseaseModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Level\LevelModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Wave\WaveModel.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSControlLayer.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSInformationLayer.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GameScene.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\TemplateScene\TemplateScene.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UICell\UICell.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIDisease\UIDisease.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIObjects.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\UIObjects\UIProjectile\UIProjectile.cpp" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\main.cpp" />
-    <ResourceCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\proj.win32\game.rc" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\CloseNormal.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\CloseSelected.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\HelloWorld.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\audio\hello_world.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\fonts\Marker Felt.ttf" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\fonts\arial.ttf" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\res\.gitkeep" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\hello_world.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\cell\cell_00.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\disease\disease_00.png" />
-    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\projectile\cell_00_projectile.png" />
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\cocos2d\cocos\precheader.cpp" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModelDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModelDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModelDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModelDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModelDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\models.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSDefine.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\ScenesDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateScene.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateSceneDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICell.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICellDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDisease.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDiseaseDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjects.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjectsDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectile.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectileDefinitions.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\uiobj.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\main.h" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\resource.h" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateScene.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UICell\UICell.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIDisease\UIDisease.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIObjects.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\UIObjects\UIProjectile\UIProjectile.cpp" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\proj.win32\main.cpp" />
+    <ResourceCompile Include="D:\Cuc_Tinh_Y\proj.win32\game.rc" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\CloseNormal.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\CloseSelected.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\HelloWorld.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\audio\hello_world.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\fonts\Marker Felt.ttf" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\fonts\arial.ttf" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\res\.gitkeep" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\hello_world.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\cell\cell_00.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\disease\disease_00.png" />
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\projectile\cell_00_projectile.png" />
+    <ClCompile Include="D:\Cuc_Tinh_Y\cocos2d\cocos\precheader.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\ZERO_CHECK.vcxproj">
-      <Project>{1113741A-156F-3579-8E10-322A3447A36B}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\ZERO_CHECK.vcxproj">
+      <Project>{325C97BC-B7BD-3F46-BC13-6313B7566B41}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\SYNC_RESOURCE-BloodyPenguins.vcxproj">
-      <Project>{A505C195-9AD8-3252-BC52-ABA86C630CEC}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\SYNC_RESOURCE-BloodyPenguins.vcxproj">
+      <Project>{A6214063-5193-364B-9BD7-B53BD2C6F223}</Project>
       <Name>SYNC_RESOURCE-BloodyPenguins</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\cocos\core\cocos2d.vcxproj">
-      <Project>{B5E944E6-91F6-3E92-918F-C738C17CBF81}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\cocos\core\cocos2d.vcxproj">
+      <Project>{22BD1F1C-EDB3-3640-8C72-72742148489A}</Project>
       <Name>cocos2d</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\clipper\ext_clipper.vcxproj">
-      <Project>{C3364ED1-582D-3C1D-BCFF-272E4092AF5C}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\clipper\ext_clipper.vcxproj">
+      <Project>{E95DC3C5-DACA-37F6-8920-349F364C89B7}</Project>
       <Name>ext_clipper</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\ConvertUTF\ext_convertUTF.vcxproj">
-      <Project>{A37AEEEF-4ED7-31AA-B532-3DF0D96FE773}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\ConvertUTF\ext_convertUTF.vcxproj">
+      <Project>{E70327AA-E9AA-3D47-8B54-C894D4C2B16E}</Project>
       <Name>ext_convertUTF</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\edtaa3func\ext_edtaa3func.vcxproj">
-      <Project>{D325A3CB-373A-3371-9290-ABD5E140EFD7}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\edtaa3func\ext_edtaa3func.vcxproj">
+      <Project>{D29E5554-F006-3872-A167-0E03C9940B5C}</Project>
       <Name>ext_edtaa3func</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\md5\ext_md5.vcxproj">
-      <Project>{989D0558-7A7B-38F7-AA36-E4EC14B9C3C7}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\md5\ext_md5.vcxproj">
+      <Project>{0A03AC78-F2EB-3F5B-A750-1C2B8B9579A0}</Project>
       <Name>ext_md5</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\poly2tri\ext_poly2tri.vcxproj">
-      <Project>{B7C804D5-0AE3-3B43-84A4-2343EBC36752}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\poly2tri\ext_poly2tri.vcxproj">
+      <Project>{913AE18E-AE33-3D78-A006-B3F5F64832F0}</Project>
       <Name>ext_poly2tri</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\recast\ext_recast.vcxproj">
-      <Project>{F17DDA99-1907-3354-B38D-8C5E58A19135}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\recast\ext_recast.vcxproj">
+      <Project>{E99991B7-D5EC-3D53-9CEB-B8B3CD05E130}</Project>
       <Name>ext_recast</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\tinyxml2\ext_tinyxml2.vcxproj">
-      <Project>{255F9BF9-67F4-3F38-924B-3F7A6825C95B}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\tinyxml2\ext_tinyxml2.vcxproj">
+      <Project>{2674E59C-5900-3111-BE2B-614226925D94}</Project>
       <Name>ext_tinyxml2</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\unzip\ext_unzip.vcxproj">
-      <Project>{C9D3929F-C73D-3B79-8F5B-915115966A85}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\unzip\ext_unzip.vcxproj">
+      <Project>{0F2CAE81-C687-387A-B761-75950B6803BD}</Project>
       <Name>ext_unzip</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\xxhash\ext_xxhash.vcxproj">
-      <Project>{B594C80A-32CB-3D8D-947E-38780F887A9A}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\xxhash\ext_xxhash.vcxproj">
+      <Project>{5D98847A-095A-3D55-9067-5ECC8AF2CF9D}</Project>
       <Name>ext_xxhash</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\xxtea\ext_xxtea.vcxproj">
-      <Project>{C1531262-9A17-3AF6-A6FC-867E413B47BE}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\xxtea\ext_xxtea.vcxproj">
+      <Project>{D5B90A90-6DF9-3939-ADE0-3A8C37046546}</Project>
       <Name>ext_xxtea</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\win32-build\engine\external\external.vcxproj">
-      <Project>{92F29F38-919F-3167-8123-2FECAEEB4C8B}</Project>
+    <ProjectReference Include="D:\Cuc_Tinh_Y\win32-build\engine\external\external.vcxproj">
+      <Project>{91CDA890-C413-31AF-BA83-AF0C9378FEB1}</Project>
       <Name>external</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\Resources\sprites\InformationLayer\diamond.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\energy.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\gold.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\number.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

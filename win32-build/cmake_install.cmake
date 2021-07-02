@@ -1,4 +1,4 @@
-# Install script for directory: D:/Based Subject/Gameloft Internship/Project/BloodyPenguins
+# Install script for directory: D:/Cuc_Tinh_Y
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/engine/cocos/core/cmake_install.cmake")
+  include("D:/Cuc_Tinh_Y/win32-build/engine/cocos/core/cmake_install.cmake")
 
 endif()
 
@@ -46,5 +46,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Based Subject/Gameloft Internship/Project/BloodyPenguins/win32-build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Cuc_Tinh_Y/win32-build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
