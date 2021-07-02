@@ -4,7 +4,7 @@ USING_NS_CC;
 /*
 Convert from cell position to screen position
 */
-void UIObjects::setCellPosition(int cellX, int cellY) {
+void UIObjects::setCellPosition(double cellX, double cellY) {
     setPosition(cellX * CELL_WIDTH + POS_X_ORIGIN, cellY * CELL_WIDTH + POS_Y_ORIGIN);
 }
 

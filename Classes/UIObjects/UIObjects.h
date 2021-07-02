@@ -6,7 +6,7 @@
 
 class UIObjects : public cocos2d::Sprite {
 public:
-    virtual void setCellPosition(int, int);
+    virtual void setCellPosition(double, double);
     virtual void addToScene(cocos2d::Scene*);
     virtual void removeFromScene();
 };

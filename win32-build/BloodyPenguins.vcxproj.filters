@@ -34,9 +34,6 @@
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\Wave\WaveModel.cpp">
       <Filter>Source Files\Classes\Models\Wave</Filter>
     </ClCompile>
-    <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Models\main.cpp">
-      <Filter>Source Files\Classes\Models</Filter>
-    </ClCompile>
     <ClCompile Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Classes\Scenes\GameScene\GSControlLayer.cpp">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClCompile>
@@ -204,6 +201,15 @@
     <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\hello_world.png">
       <Filter>Resources\sprites</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\cell\cell_00.png">
+      <Filter>Resources\sprites\objects\cell</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\disease\disease_00.png">
+      <Filter>Resources\sprites\objects\disease</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\Resources\sprites\objects\projectile\cell_00_projectile.png">
+      <Filter>Resources\sprites\objects\projectile</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Based Subject\Gameloft Internship\Project\BloodyPenguins\CMakeLists.txt" />
@@ -228,6 +234,18 @@
     </Filter>
     <Filter Include="Resources\sprites">
       <UniqueIdentifier>{C25F55F1-06C9-32E3-8836-ED9F08178F6A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\sprites\objects">
+      <UniqueIdentifier>{530604AF-60F4-3F63-8823-28FEC2BBC8D0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\sprites\objects\cell">
+      <UniqueIdentifier>{AEA6D740-FF20-3AD1-A843-72340527A76A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\sprites\objects\disease">
+      <UniqueIdentifier>{E2759205-3D75-35ED-A6D1-C264419246CF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\sprites\objects\projectile">
+      <UniqueIdentifier>{361DC1B6-FBC9-36D8-8E33-10603E5CB521}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{5293204C-5FFB-3B9E-831D-6FF822FFF501}</UniqueIdentifier>
