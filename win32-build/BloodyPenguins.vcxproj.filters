@@ -67,6 +67,9 @@
     <ClCompile Include="D:\Cuc_Tinh_Y\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Scenes\GameScene\button.cpp">
+      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.h">
@@ -210,6 +213,9 @@
     <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\projectile\cell_00_projectile.png">
       <Filter>Resources\sprites\objects\projectile</Filter>
     </ClInclude>
+    <ClInclude Include="..\Classes\Scenes\GameScene\button.h">
+      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Cuc_Tinh_Y\CMakeLists.txt" />
@@ -328,6 +334,12 @@
       <Filter>Resources\sprites\InformationLayer</Filter>
     </Image>
     <Image Include="..\Resources\sprites\InformationLayer\number.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
+    <Image Include="..\Resources\sprites\InformationLayer\map.png">
+      <Filter>Resources\sprites\InformationLayer</Filter>
+    </Image>
+    <Image Include="C:\Users\Manh Nguyen\OneDrive\Pictures\map__.png">
       <Filter>Resources\sprites\InformationLayer</Filter>
     </Image>
   </ItemGroup>

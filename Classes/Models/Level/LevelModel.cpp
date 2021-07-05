@@ -18,7 +18,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
     // Temporary data
     energy = 400;
 
-    int arr[10][5] = {
+    int arr[8][5] = {
         {0, 2, 0, 2, 0},
         {0, 1, 0, 1, 0},
         {0, 1, 0, 1, 0},
@@ -29,12 +29,15 @@ LevelModel::LevelModel(int level, Scene* scene) {
         {0, 0, 0, 1, 0}
     };
     map = vector< vector<MapPosition> >();
+
     for (int i = 0; i < 8; i++) {
         vector<MapPosition> temp;
+		vector<int> temp_;
         for (int j = 0; j < 5; j++) {
             temp.push_back((MapPosition) arr[i][j]);
         }
         map.push_back(temp);
+
     }
 
     int p1[] = {6, 4, 6, 3, 6, 2, 6, 1, 5, 1, 4, 1, 3, 1, 2, 1, 1, 1, 0, 1};
@@ -256,7 +259,8 @@ void LevelModel::addProjectile(ProjectileModel* obj) {
     CCLOG("Yeah");
     ui->addToScene(this->scene);
     CCLOG("Yeah");
-    ui->setCellPosition(obj->getPositionCellX(), obj->getPositionCellY());
+    ui->setCellPosition
+	(obj->getPositionCellX(), obj->getPositionCellY());
     CCLOG("Yeah");
 }
 

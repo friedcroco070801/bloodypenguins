@@ -7,7 +7,7 @@
 struct GameMapInformation
 {
     GameMapInformation();
-    int CellsMap[7][12]; //ban do dat cell
+    int CellsMap[8][5]; //ban do dat cell
     unsigned int rowNumbers; //
     unsigned int columnNumbers;
 };
@@ -37,12 +37,18 @@ public:
 			return nullptr; 
 		} 
 	}
-
+//touch											
 	bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
+	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
+	void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event*event);
+	void ButtonCall();
+//	
+
 	GSControlLayer();
+	~GSControlLayer();
     virtual bool init();
     void calculateCellsPosition();
-	void SetWay(std::vector<std::vector<MapPosition>> map_can_plant);
+	void SetWay(std::vector< std::vector<MapPosition> >&map_can_plant);
 	LevelModel* level;
 	position cur_ ;
     position cellsPosition_ ;

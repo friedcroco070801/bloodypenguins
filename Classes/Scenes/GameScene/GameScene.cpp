@@ -31,7 +31,7 @@ void GameScene::controlLayer(LevelModel* level) {
 }
 void GameScene::informationLayer() {
 	auto informationLayer_ = GSInformationLayer::create();
-	this->addChild(informationLayer_, 1);
+	this->addChild(informationLayer_, 0);
 }
 
 void GameScene::updateLevel(float) {

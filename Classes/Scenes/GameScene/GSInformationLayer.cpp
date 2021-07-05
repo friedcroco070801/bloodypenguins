@@ -9,6 +9,7 @@ bool GSInformationLayer::init() {
 	UpdateGold(9999);
 	UpdateDiamond(9999);
 	UpdateEnergy(9999);
+
 	auto visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
 	return true;
@@ -32,7 +33,6 @@ void GSInformationLayer::UpdateGold(int gold_) {
 		ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + WIDTH * 1 / 5 + NUMBER_SIZE *j + NUMBER_SIZE/2,NUMBER_HEIGHT));
 		this->addChild(ith_number, 2);
 	}
-
 }
 void GSInformationLayer::UpdateDiamond(int diamond_) {
 	this->diamond = diamond_;
@@ -52,7 +52,6 @@ void GSInformationLayer::UpdateDiamond(int diamond_) {
 		ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + WIDTH * 2 / 5 + NUMBER_SIZE * j + NUMBER_SIZE / 2, NUMBER_HEIGHT));
 		this->addChild(ith_number, 2);
 	}
-
 }
 void GSInformationLayer::UpdateEnergy(int energy_) {
 	this->energy = energy_;
