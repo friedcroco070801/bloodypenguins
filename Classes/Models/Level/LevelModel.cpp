@@ -226,6 +226,9 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
         ui->addToScene(this->scene);
         ui->setCellPosition(cellX, cellY);
     }
+    else {
+        delete obj;
+    }
 }
 /*
 Add a DiseaseModel to diseaseList

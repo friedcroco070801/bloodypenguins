@@ -17,6 +17,8 @@ class Shooter;
 #include "Character/Cell/ShootingCell/Projectile/ProjectileModel.h"
 #include "Character/Cell/ShootingCell/Shooter/Shooter.h"
 #include "Character/Cell/ShootingCell/ShootingCellModel.h"
+#include "Character/Cell/EffectCell/Effector/Effector.h"
+#include "Character/Cell/EffectCell/EffectCellModel.h"
 #include "Wave/WaveModel.h"
 #include "Level/LevelModel.h"
 
