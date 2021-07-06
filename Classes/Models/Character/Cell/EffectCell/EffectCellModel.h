@@ -9,6 +9,8 @@ public:
     EffectCellModel(CellId id);
     virtual ~EffectCellModel(){}
 protected:
+    virtual void takeEffect(){};
+    virtual void update();
 };
 
 #endif // !__EFFECT_CELL_MODEL_H__

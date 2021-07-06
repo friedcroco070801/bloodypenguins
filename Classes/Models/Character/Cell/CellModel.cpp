@@ -1,6 +1,9 @@
 #include "Models/models.h"
 #include "CellModel.h"
 #include "UIObjects/uiobj.h"
+#include "ShootingCell/ShootingCellType/ShootingCellType.h"
+#include "EffectCell/EffectCellType/EffectCellType.h"
+#include "cocos2d.h"
 
 /* 
 Constructor of CellModel
@@ -8,17 +11,19 @@ Constructor of CellModel
 CellModel::CellModel(CellId id) : CharacterModel(CELL) {
     this->id = id;
     ui = nullptr;
-
-    // Temporary data
-    distance = 2.0;
-    cost = 100;
 }
 
 /* 
 Create new instance of CellModel with factory
 */
 CellModel* CellModel::create(CellId id) {
-    return new ShootingCellModel(id);
+    switch (id) {
+    case CELL_00_EOSINOPHILS:
+        return new Cell00Model();
+    case CELL_01_ERYTHROCYTES:
+        return new Cell01Model();
+    }
+    return nullptr;
 } 
 
 /*

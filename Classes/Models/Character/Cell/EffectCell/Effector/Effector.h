@@ -4,6 +4,7 @@
 class Effector {
 protected:
     double effectRechargeTime;
+    double effectTimeCounter;
 public:
     Effector(){}
     virtual ~Effector(){}

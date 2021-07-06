@@ -43,6 +43,7 @@ public:
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);
     void dumpProjectile(ProjectileModel*);
+    void addEnergy(double, double);
     void printLevelState();
 
     // Get diseaseList of the level. Should not be used outside Models.

@@ -1,15 +1,15 @@
 #include "Models/models.h"
 #include "ShootingCellModel.h"
 #include <cmath>
+#include "ShootingCellType/ShootingCellType.h"
 using namespace std;
 
 /* 
 Constructor of shooting cell model
 */
-ShootingCellModel::ShootingCellModel(CellId cellId) : CellModel(cellId) {
+ShootingCellModel::ShootingCellModel(CellId cellId, ProjectileId projectileId) : CellModel(cellId) {
     // Temporary data
-    shootRechargeTime = 1.0;
-    projectileId = CELL_00_PROJECTILE;
+    this->projectileId = projectileId;
 };
 
 /*

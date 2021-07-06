@@ -10,9 +10,6 @@ CharacterModel::CharacterModel(CharacterType type) {
     this->level = NULL;
     status = NORMAL;
     alive = true;
-
-    // Temporary data
-    hp = 5;
 }
 
 /*

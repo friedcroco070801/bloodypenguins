@@ -2,6 +2,7 @@
 #include "DiseaseModel.h"
 #include <cmath>
 #include "UIObjects/uiobj.h"
+#include "DiseaseType/DiseaseType.h"
 using namespace std;
 
 /*
@@ -10,11 +11,6 @@ Constructor of DiseaseModel
 DiseaseModel::DiseaseModel(DiseaseId id) : CharacterModel(DISEASE), id(id), action(WAITING), dir(LEFT) {
     level = NULL;
     path = NULL;
-
-    // Temporary data
-    speed = 0.25;
-    damage = 2;
-    hitRechargeTime = 0.5;
 }
 
 /* 
@@ -35,7 +31,11 @@ void DiseaseModel::__setLevel(LevelModel* level) {
 Create new instance of DiseaseModel with Factory
 */
 DiseaseModel* DiseaseModel::create(DiseaseId id) {
-    return new DiseaseModel(id);
+    switch (id) {
+    case DISEASE_00_RABIES:
+        return new Disease00Model();
+    }
+    return nullptr;
 }
 
 /*

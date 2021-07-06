@@ -252,15 +252,10 @@ void LevelModel::addProjectile(ProjectileModel* obj) {
     obj->__setLevel(this);
 
     // Draw UIObject on scene
-    CCLOG("Yeah");
     auto ui = UIProjectile::create(obj->getProjectileId());
-    CCLOG("Yeah");
     obj->setUIObject(ui);
-    CCLOG("Yeah");
     ui->addToScene(this->scene);
-    CCLOG("Yeah");
     ui->setCellPosition(obj->getPositionCellX(), obj->getPositionCellY());
-    CCLOG("Yeah");
 }
 
 /*
@@ -295,4 +290,13 @@ void LevelModel::printLevelState() {
         cout << "Y: " << (*it)->getPositionCellY() << endl;
     }
     cout << "================================================\n\n";
+}
+
+/*
+Add a energy to scene
+*/
+void LevelModel::addEnergy(double cellX, double cellY) {
+    if (scene != NULL) {
+        // Add to scene a energy at (cellX, cellY)
+    }
 }
