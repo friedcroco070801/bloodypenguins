@@ -17,7 +17,7 @@ Cell01Model take effect: create energy
 */
 void Cell01Model::takeEffect() {
     if (level != NULL) {
-        level->addEnergy(cellX, cellY);
+        level->addEnergyObject(cellX, cellY);
     }
 }
 

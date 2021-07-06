@@ -11,6 +11,7 @@ class WaveModel;
 class CellModel;
 class DiseaseModel;
 class ProjectileModel;
+class NumericModel;
 
 class LevelModel {
 public:
@@ -43,7 +44,9 @@ public:
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);
     void dumpProjectile(ProjectileModel*);
-    void addEnergy(double, double);
+    void addEnergyObject(double, double);
+    void addEnergyValue(int);
+    void addGoldValue(int);
     void printLevelState();
 
     // Get diseaseList of the level. Should not be used outside Models.
@@ -63,7 +66,8 @@ private:
 
     double timeCounter;
     bool isCounting;
-    int energy;
+    NumericModel energy;
+    NumericModel gold;
 
     std::list<CellModel*> cellDump;
     std::list<DiseaseModel*> diseaseDump;

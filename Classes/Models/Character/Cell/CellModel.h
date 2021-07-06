@@ -24,6 +24,8 @@ public:
     virtual void setUIObject(UICell* ui);
     // Get CellId
     virtual CellId getCellId() {return id;}
+    // Get cost
+    virtual int getCost() {return cost;}
 };
 
 #endif // !__CELL_MODEL_H__

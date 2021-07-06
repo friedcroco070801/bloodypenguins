@@ -1,5 +1,5 @@
-#include "LevelModel.h"
 #include "Models/models.h"
+#include "LevelModel.h"
 #include <random>
 #include <ctime>
 #include <cmath>
@@ -16,7 +16,8 @@ LevelModel::LevelModel(int level, Scene* scene) {
     this->scene = scene;
 
     // Temporary data
-    energy = 400;
+    energy.changeValue(400);
+    gold.changeValue(400);
 
     int arr[10][5] = {
         {0, 2, 0, 2, 0},
@@ -214,6 +215,10 @@ void LevelModel::dumpProjectile(ProjectileModel* obj) {
 Add a CellModel to cellList
 */
 void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
+    if (obj->getCost() > energy.getValue()) {
+        delete obj;
+        return;
+    }
     if (obj->canPutOn(this, cellX, cellY)) {
         obj->setPosition(cellX, cellY);
         cellList.push_back(obj);
@@ -225,6 +230,9 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
         obj->setUIObject(ui);
         ui->addToScene(this->scene);
         ui->setCellPosition(cellX, cellY);
+
+        // Change value of energy
+        addEnergyValue(0 - obj->getCost());
     }
     else {
         delete obj;
@@ -295,8 +303,22 @@ void LevelModel::printLevelState() {
 /*
 Add a energy to scene
 */
-void LevelModel::addEnergy(double cellX, double cellY) {
+void LevelModel::addEnergyObject(double cellX, double cellY) {
     if (scene != NULL) {
         // Add to scene a energy at (cellX, cellY)
     }
+}
+
+/* 
+Add more to the value of energy model
+*/
+void LevelModel::addEnergyValue(int add) {
+    energy.changeValue(energy.getValue() + add);
+}
+
+/* 
+Add more to the value of gold model
+*/
+void LevelModel::addGoldValue(int add) {
+    gold.changeValue(gold.getValue() + add);
 }
