@@ -12,6 +12,7 @@ class CellModel;
 class DiseaseModel;
 class ProjectileModel;
 class NumericModel;
+class CellBarModel;
 
 class LevelModel {
 public:
@@ -63,6 +64,7 @@ private:
     std::list<CellModel*> cellList;
     std::list<DiseaseModel*> diseaseList;
     std::list<ProjectileModel*> projectileList;
+    std::vector<CellBarModel> cellBarList;
 
     double timeCounter;
     bool isCounting;

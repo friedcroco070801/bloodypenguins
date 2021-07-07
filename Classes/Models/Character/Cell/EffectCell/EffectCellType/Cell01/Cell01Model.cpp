@@ -5,6 +5,7 @@
 Cell01Model constructor
 */
 Cell01Model::Cell01Model() : EffectCellModel(CELL_01_ERYTHROCYTES) {
+    rechargeTime = 20.0;
     effectRechargeTime = 30.0;
     effectTimeCounter = 30.0;
     distance = 0.0;

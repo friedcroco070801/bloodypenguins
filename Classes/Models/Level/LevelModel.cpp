@@ -72,6 +72,9 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     currentWave = waveList.begin();
 
+    cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
+    cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
+
     // Initialize properties
     timeCounter = 0.0;
     isCounting = false;
@@ -102,6 +105,9 @@ void LevelModel::update() {
         }
         for (auto it = projectileList.begin(); it != projectileList.end();) {
             (*(it++))->update();
+        }
+        for (auto it = cellBarList.begin(); it != cellBarList.end();) {
+            (*(it++)).update();
         }
 
         // Garbage collect

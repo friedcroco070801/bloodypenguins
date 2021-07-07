@@ -11,6 +11,7 @@ protected:
     CellId id;
     int cost;
     double distance;
+    double rechargeTime;
     UICell* ui;
 public:
     static CellModel* create(CellId id);
@@ -26,6 +27,8 @@ public:
     virtual CellId getCellId() {return id;}
     // Get cost
     virtual int getCost() {return cost;}
+    // Get recharge time
+    virtual double getRechargeTime() {return rechargeTime;}
 };
 
 #endif // !__CELL_MODEL_H__

@@ -21,6 +21,7 @@ class Shooter;
 #include "Character/Cell/EffectCell/EffectCellModel.h"
 #include "Wave/WaveModel.h"
 #include "Numeric/NumericModel.h"
+#include "CellBar/CellBarModel.h"
 #include "Level/LevelModel.h"
 
 #endif // !__MODELS_H__
