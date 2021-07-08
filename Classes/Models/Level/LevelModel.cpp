@@ -1,10 +1,12 @@
-#include "LevelModel.h"
 #include "Models/models.h"
+#include "LevelModel.h"
 #include <random>
 #include <ctime>
 #include <cmath>
 #include <iostream>
 #include "UIObjects/uiobj.h"
+#include "Database/LevelReader/LevelReader.h"
+#include "fstream"
 using namespace std;
 USING_NS_CC;
 
@@ -15,68 +17,74 @@ LevelModel::LevelModel(int level, Scene* scene) {
     srand(time(NULL));
     this->scene = scene;
 
+    /*
+    Set UIObject of energy, gold and CellBar
+    */
+
+    readLevelFromJson(level);
+
     // Temporary data
-    energy = 400;
-
-    int arr[8][5] = {
-        {0, 2, 0, 2, 0},
-        {0, 1, 0, 1, 0},
-        {0, 1, 0, 1, 0},
-        {0, 1, 0, 1, 0},
-        {0, 1, 0, 1, 0},
-        {0, 1, 0, 1, 0},
-        {0, 1, 1, 1, 1},
-        {0, 0, 0, 1, 0}
-    };
-    map = vector< vector<MapPosition> >();
-
-    for (int i = 0; i < 8; i++) {
-        vector<MapPosition> temp;
-		vector<int> temp_;
-        for (int j = 0; j < 5; j++) {
-            temp.push_back((MapPosition) arr[i][j]);
-        }
-        map.push_back(temp);
-
-    }
-
-    int p1[] = {6, 4, 6, 3, 6, 2, 6, 1, 5, 1, 4, 1, 3, 1, 2, 1, 1, 1, 0, 1};
-    int p2[] = {7, 3, 6, 3, 5, 3, 4, 3, 3, 3, 2, 3, 1, 3, 0, 3};
-    vector< vector<int> > temp1;
-    vector< vector<int> > temp2;
-    for (int i = 0; i < sizeof(p1) / sizeof(int); i += 2) {
-        vector<int> t;
-        t.push_back(p1[i]);
-        t.push_back(p1[i + 1]);
-        temp1.push_back(t);
-    }
-    enemyPaths.push_back(temp1);
-    for (int i = 0; i < sizeof(p2) / sizeof(int); i += 2) {
-        vector<int> t;
-        t.push_back(p2[i]);
-        t.push_back(p2[i + 1]);
-        temp2.push_back(t);
-    }
-    enemyPaths.push_back(temp2);
-
-    WaveModel wave1;
-    waveList.push_back(wave1);
-    waveList[0].add(DISEASE_00_RABIES);
-    waveList[0].setTime(5.0);
-    WaveModel wave2;
-    waveList.push_back(wave2);
-    waveList[1].add(DISEASE_00_RABIES);
-    waveList[1].setTime(10.0);
-    WaveModel wave3;
-    waveList.push_back(wave3);
-    waveList[2].add(DISEASE_00_RABIES);
-    waveList[2].setTime(15.0);
-
-    currentWave = waveList.begin();
+    gold.changeValue(200);
+    cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
+    cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
 
     // Initialize properties
     timeCounter = 0.0;
     isCounting = false;
+}
+
+/*
+Read level from json file
+*/
+void LevelModel::readLevelFromJson(int level) {
+    // Read json
+    string filename = "data/level/level" + to_string(level) + ".json";
+    string content;
+    FileUtils::getInstance()->getContents(filename, &content);
+    json j = json::parse(content);
+
+    // Get value of initial energy
+    energy.changeValue(j["initialEnergy"].get<int>());
+
+    // Get value of map
+    json jmap = j["map"];
+    for (auto it = jmap.begin(); it != jmap.end(); it++) {
+        vector<MapPosition> temp;
+        auto vec = it->get< vector<int> >();
+        for (auto it2 = vec.begin(); it2 != vec.end(); it2++) {
+            temp.push_back((MapPosition) *it2);
+        }
+        map.push_back(temp);
+    }
+
+    // Get enemy paths
+    json jpaths = j["enemyPaths"];
+    for (auto it1 = jpaths.begin(); it1 != jpaths.end(); it1++) {
+        vector<vector<int> > temp1;
+        vector<vector<int> > vec = it1->get< vector< vector<int> > >();
+        for (auto it2 = vec.begin(); it2 != vec.end(); it2++) {
+            vector<int> temp2;
+            for (auto it3 = it2->begin(); it3 != it2->end(); it3++) {
+                temp2.push_back(*it3);
+            }
+            temp1.push_back(temp2);
+        }
+        enemyPaths.push_back(temp1);
+    }
+
+    // Get wave lists
+    json jwaves = j["waves"];
+    for (auto it1 = jwaves.begin(); it1 != jwaves.end(); it1++) {
+        WaveModel temp1;
+        temp1.setTime((*it1)["time"].get<double>());
+        temp1.setHugeWave((*it1)["huge"].get<bool>());
+        json jenemies = (*it1)["enemies"];
+        for (auto it2 = jenemies.begin(); it2 != jenemies.end(); it2++) {
+            temp1.add((DiseaseId) it2->get<int>());
+        }
+        waveList.push_back(temp1);
+    }
+    currentWave = waveList.begin();
 }
 
 /*
@@ -104,6 +112,9 @@ void LevelModel::update() {
         }
         for (auto it = projectileList.begin(); it != projectileList.end();) {
             (*(it++))->update();
+        }
+        for (auto it = cellBarList.begin(); it != cellBarList.end();) {
+            (*(it++)).update();
         }
 
         // Garbage collect
@@ -217,6 +228,10 @@ void LevelModel::dumpProjectile(ProjectileModel* obj) {
 Add a CellModel to cellList
 */
 void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
+    if (obj->getCost() > energy.getValue()) {
+        delete obj;
+        return;
+    }
     if (obj->canPutOn(this, cellX, cellY)) {
         obj->setPosition(cellX, cellY);
         cellList.push_back(obj);
@@ -228,6 +243,12 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
         obj->setUIObject(ui);
         ui->addToScene(this->scene);
         ui->setCellPosition(cellX, cellY);
+
+        // Change value of energy
+        addEnergyValue(0 - obj->getCost());
+    }
+    else {
+        delete obj;
     }
 }
 /*
@@ -252,16 +273,10 @@ void LevelModel::addProjectile(ProjectileModel* obj) {
     obj->__setLevel(this);
 
     // Draw UIObject on scene
-    CCLOG("Yeah");
     auto ui = UIProjectile::create(obj->getProjectileId());
-    CCLOG("Yeah");
     obj->setUIObject(ui);
-    CCLOG("Yeah");
     ui->addToScene(this->scene);
-    CCLOG("Yeah");
-    ui->setCellPosition
-	(obj->getPositionCellX(), obj->getPositionCellY());
-    CCLOG("Yeah");
+    ui->setCellPosition(obj->getPositionCellX(), obj->getPositionCellY());
 }
 
 /*
@@ -296,4 +311,27 @@ void LevelModel::printLevelState() {
         cout << "Y: " << (*it)->getPositionCellY() << endl;
     }
     cout << "================================================\n\n";
+}
+
+/*
+Add a energy to scene
+*/
+void LevelModel::addEnergyObject(double cellX, double cellY) {
+    if (scene != NULL) {
+        // Add to scene a energy at (cellX, cellY)
+    }
+}
+
+/* 
+Add more to the value of energy model
+*/
+void LevelModel::addEnergyValue(int add) {
+    energy.changeValue(energy.getValue() + add);
+}
+
+/* 
+Add more to the value of gold model
+*/
+void LevelModel::addGoldValue(int add) {
+    gold.changeValue(gold.getValue() + add);
 }

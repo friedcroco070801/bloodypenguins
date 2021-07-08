@@ -11,6 +11,8 @@ class WaveModel;
 class CellModel;
 class DiseaseModel;
 class ProjectileModel;
+class NumericModel;
+class CellBarModel;
 
 class LevelModel {
 public:
@@ -21,6 +23,9 @@ public:
 
     // Return the map of the level
     std::vector< std::vector<MapPosition> > getMap() {return map;}
+
+    // Return the map of the level. Should not be used outside models.
+    std::vector< std::vector<MapPosition> >& __getMap() {return map;}
 
     // Return the list of waves
     std::vector<WaveModel> getWaveList() {return waveList;}
@@ -43,6 +48,9 @@ public:
     void dumpCell(CellModel*);
     void dumpDisease(DiseaseModel*);
     void dumpProjectile(ProjectileModel*);
+    void addEnergyObject(double, double);
+    void addEnergyValue(int);
+    void addGoldValue(int);
     void printLevelState();
 
     // Get diseaseList of the level. Should not be used outside Models.
@@ -59,10 +67,12 @@ private:
     std::list<CellModel*> cellList;
     std::list<DiseaseModel*> diseaseList;
     std::list<ProjectileModel*> projectileList;
+    std::vector<CellBarModel> cellBarList;
 
     double timeCounter;
     bool isCounting;
-    int energy;
+    NumericModel energy;
+    NumericModel gold;
 
     std::list<CellModel*> cellDump;
     std::list<DiseaseModel*> diseaseDump;
@@ -71,6 +81,8 @@ private:
     void addEnemiesOnWave();
 
     cocos2d::Scene* scene;
+
+    void readLevelFromJson(int level);
 };
 
 #endif // !__LEVEL_MODEL_H__

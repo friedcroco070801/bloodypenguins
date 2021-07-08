@@ -3,13 +3,18 @@
 #include <cmath>
 #include <iostream>
 #include "UIObjects/uiobj.h"
+#include "ProjectileType/ProjectileType.h"
 using namespace std;
 
 /*
 Create a projectile model with factory
 */
 ProjectileModel* ProjectileModel::create(ProjectileId id, CharacterModel* source, CharacterModel* target) {
-    return new ProjectileModel(id, source, target);
+    switch (id) {
+    case CELL_00_PROJECTILE:
+        return new Cell00ProjectileModel(source, target);
+    }
+    return nullptr;
 }
 
 /*
@@ -29,10 +34,6 @@ ProjectileModel::ProjectileModel(ProjectileId id, CharacterModel* source, Charac
     double distance = sqrt((cellX - targetX) * (cellX - targetX) + (cellY - targetY) * (cellY - targetY));
     directionVectorX = (targetX - cellX) / distance;
     directionVectorY = (targetY - cellY) / distance; 
-
-    // Temporary data
-    speed = 4.0;
-    damage = 1;
 }
 
 /*

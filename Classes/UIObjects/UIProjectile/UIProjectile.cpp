@@ -17,16 +17,13 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
     // Case id 00: Rabies
     case CELL_00_PROJECTILE:
         UIProjectile *uiprojectile = new (std::nothrow) UIProjectile();
-        CCLOG("Cannot create with sprite");
         if (uiprojectile && uiprojectile->initWithFile(CELL_00_PROJECTILE_FILENAME))
         {
             uiprojectile->autorelease();
             return uiprojectile;
         }
-        CCLOG("Cannot create with sprite");
         CC_SAFE_DELETE(uiprojectile);
         return nullptr;
     }
-    CCLOG("Cannot create with sprite out");
     return nullptr;
 }
