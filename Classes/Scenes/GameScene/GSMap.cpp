@@ -16,7 +16,7 @@ void GSMap::createMap(LevelModel *level) {
 	int a = level->getMap().size();
 	int b = level->getMap()[0].size();
 
-	auto mapImage = Sprite::create("sprites/InformationLayer/khonggian.png");
+	auto mapImage = Sprite::create("sprites/MapLayer/khonggian.png");
 	mapImage->setContentSize(Size(WIDTH,HEIGHT));
 	mapImage->setContentSize(Size(SIZE_OF_SQUARE*COLUMNN, SIZE_OF_SQUARE*ROWW));
 	mapImage->setAnchorPoint(Vec2(0,0));
@@ -28,7 +28,7 @@ void GSMap::createMap(LevelModel *level) {
 			temp.x = i;
 			temp.y = j;
 			if (level->getMap()[i][j] == 5 || level->getMap()[i][j] == 1 || level->getMap()[i][j] == 2) {
-				auto enemyWay = Sprite::create("sprites/InformationLayer/black.png");
+				auto enemyWay = Sprite::create("sprites/MapLayer/black.png");
 				enemyWay->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
 				enemyWay->setPosition(ROW_COLUMN_TO_POSITION(temp));
 				this->addChild(enemyWay);

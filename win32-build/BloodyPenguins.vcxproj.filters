@@ -7,14 +7,26 @@
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\CellBar\CellBarModel.cpp">
+      <Filter>Source Files\Classes\Models\CellBar</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\EffectCell</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellType\Cell01\Cell01Model.cpp">
+      <Filter>Source Files\Classes\Models\Character\Cell\EffectCell\EffectCellType\Cell01</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\Effector\Effector.cpp">
+      <Filter>Source Files\Classes\Models\Character\Cell\EffectCell\Effector</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\Cell00\Cell00ProjectileModel.cpp">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\Cell00</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter</Filter>
@@ -22,19 +34,31 @@
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\Cell00\Cell00Model.cpp">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\Cell00</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.cpp">
       <Filter>Source Files\Classes\Models\Character</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModel.cpp">
       <Filter>Source Files\Classes\Models\Character\Disease</Filter>
     </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseType\Disease00\Disease00Model.cpp">
+      <Filter>Source Files\Classes\Models\Character\Disease\DiseaseType\Disease00</Filter>
+    </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.cpp">
       <Filter>Source Files\Classes\Models\Level</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Numeric\NumericModel.cpp">
+      <Filter>Source Files\Classes\Models\Numeric</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.cpp">
       <Filter>Source Files\Classes\Models\Wave</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.cpp">
+      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSMap.cpp">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClCompile>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.cpp">
@@ -64,16 +88,19 @@
     <ClCompile Include="D:\Cuc_Tinh_Y\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Classes\Scenes\GameScene\GSMap.cpp">
-      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Database\LevelReader\LevelReader.h">
+      <Filter>Source Files\Classes\Database\LevelReader</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.h">
       <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\CellBar\CellBarModel.h">
+      <Filter>Source Files\Classes\Models\CellBar</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell</Filter>
@@ -84,17 +111,38 @@
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\EffectCell</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellType\Cell01\Cell01Model.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\EffectCell\EffectCellType\Cell01</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\EffectCellType\EffectCellType.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\EffectCell\EffectCellType</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\EffectCell\Effector\Effector.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\EffectCell\Effector</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\Cell00\Cell00ProjectileModel.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\Cell00</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\ProjectileType.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\Shooter\Shooter.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellModel.h">
       <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\Cell00\Cell00Model.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\Cell00</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\ShootingCellType.h">
+      <Filter>Source Files\Classes\Models\Character\Cell\ShootingCell\ShootingCellType</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\CharacterModel.h">
       <Filter>Source Files\Classes\Models\Character</Filter>
@@ -108,11 +156,20 @@
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Character\Disease</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseType\Disease00\Disease00Model.h">
+      <Filter>Source Files\Classes\Models\Character\Disease\DiseaseType\Disease00</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Disease\DiseaseType\DiseaseType.h">
+      <Filter>Source Files\Classes\Models\Character\Disease\DiseaseType</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.h">
       <Filter>Source Files\Classes\Models\Level</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModelDefinitions.h">
       <Filter>Source Files\Classes\Models\Level</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Numeric\NumericModel.h">
+      <Filter>Source Files\Classes\Models\Numeric</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.h">
       <Filter>Source Files\Classes\Models\Wave</Filter>
@@ -124,6 +181,9 @@
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSDefine.h">
+      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSMap.h">
       <Filter>Source Files\Classes\Scenes\GameScene</Filter>
     </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.h">
@@ -186,6 +246,9 @@
     <ClInclude Include="D:\Cuc_Tinh_Y\Resources\audio\hello_world.png">
       <Filter>Resources\audio</Filter>
     </ClInclude>
+    <ClInclude Include="D:\Cuc_Tinh_Y\Resources\data\level\level1.json">
+      <Filter>Resources\data\level</Filter>
+    </ClInclude>
     <ClInclude Include="D:\Cuc_Tinh_Y\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
@@ -207,9 +270,6 @@
     <ClInclude Include="D:\Cuc_Tinh_Y\Resources\sprites\objects\projectile\cell_00_projectile.png">
       <Filter>Resources\sprites\objects\projectile</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\Scenes\GameScene\GSMap.h">
-      <Filter>Source Files\Classes\Scenes\GameScene</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="D:\Cuc_Tinh_Y\CMakeLists.txt" />
@@ -225,6 +285,12 @@
     </Filter>
     <Filter Include="Resources\audio">
       <UniqueIdentifier>{E96ABC20-EA22-3D2C-B80A-65E79E2AD748}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\data">
+      <UniqueIdentifier>{687CD961-174C-390D-9F95-599BBC46CDC7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\data\level">
+      <UniqueIdentifier>{8C33B447-CEDC-3A72-8255-6F8C13FF95D5}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\fonts">
       <UniqueIdentifier>{2127127F-1529-3B35-93C0-BFCBB1EBA567}</UniqueIdentifier>
@@ -253,8 +319,17 @@
     <Filter Include="Source Files\Classes">
       <UniqueIdentifier>{103741A7-ECE8-3299-8626-228BD88C8629}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Database">
+      <UniqueIdentifier>{44231400-5DF3-33B8-A445-33667987A896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Database\LevelReader">
+      <UniqueIdentifier>{979AD2FD-D944-397E-84B8-EA033BD58728}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Classes\Models">
       <UniqueIdentifier>{959DBE6D-AFB3-3BB5-8C41-B8FFE1FE737B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\CellBar">
+      <UniqueIdentifier>{54E7CE65-76BE-3B4A-A905-A167948D6702}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character">
       <UniqueIdentifier>{891D5494-E978-32CE-9099-34C6B47044E4}</UniqueIdentifier>
@@ -265,20 +340,50 @@
     <Filter Include="Source Files\Classes\Models\Character\Cell\EffectCell">
       <UniqueIdentifier>{4C5D1CA8-3CE5-3D53-90C5-6E2B424AC8EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\EffectCell\EffectCellType">
+      <UniqueIdentifier>{21EDF97F-77D2-3A73-BA68-ACA82D9620F2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\EffectCell\EffectCellType\Cell01">
+      <UniqueIdentifier>{1BF33EA6-5450-3221-A982-036C2E6F731F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\EffectCell\Effector">
+      <UniqueIdentifier>{A3E422AE-2A43-3971-9752-B275972940A1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell">
       <UniqueIdentifier>{E5C6C15A-47AC-3E02-BD5A-595B75210636}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile">
       <UniqueIdentifier>{0E39B636-2DA6-3C48-9C42-5F7D3FBFE879}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType">
+      <UniqueIdentifier>{C311D50D-BFAF-3326-951E-9EBE217F6FE9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Projectile\ProjectileType\Cell00">
+      <UniqueIdentifier>{E9696D39-50F3-3E80-9265-6E6BFCAE814C}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\Shooter">
       <UniqueIdentifier>{85046066-3459-3BBC-A14C-F81890BB0F21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\ShootingCellType">
+      <UniqueIdentifier>{1AF78595-9B44-3C7C-9074-44AFF4F990B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Cell\ShootingCell\ShootingCellType\Cell00">
+      <UniqueIdentifier>{49174982-9272-3B67-8FB6-C5BED73F4EF1}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Character\Disease">
       <UniqueIdentifier>{00254229-3107-3C4B-9DCD-CD07072483E6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Disease\DiseaseType">
+      <UniqueIdentifier>{DD0DCF58-C799-3742-A635-831D4DCF0D1F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Character\Disease\DiseaseType\Disease00">
+      <UniqueIdentifier>{5FB813D5-4392-321C-A9D2-4A75F937525B}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Source Files\Classes\Models\Level">
       <UniqueIdentifier>{3E399FA0-7BE4-3509-88F2-2F75E687B12F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Models\Numeric">
+      <UniqueIdentifier>{0C09A0BB-F59D-3748-9019-E8BDBFA98A2D}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Classes\Models\Wave">
       <UniqueIdentifier>{DF68394D-98A7-374B-94CB-61F1E65FCA87}</UniqueIdentifier>
@@ -313,31 +418,16 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{7AED2B89-6462-312C-880A-F10B38CB4F4B}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\sprites\InformationLayer">
-      <UniqueIdentifier>{83fa6b11-a10b-477c-a575-10534168fd04}</UniqueIdentifier>
+    <Filter Include="Resources\sprites\MapLayer">
+      <UniqueIdentifier>{B1CD00DF-2E8B-3F10-A6AA-F3F3037022DE}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Resources\sprites\InformationLayer\diamond.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
+    <Image Include="..\Resources\sprites\MapLayer\black.png">
+      <Filter>Resources\sprites\MapLayer</Filter>
     </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\energy.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
-    </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\gold.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
-    </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\sky_2.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
-    </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\black.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
-    </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\sky_1.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
-    </Image>
-    <Image Include="..\Resources\sprites\InformationLayer\khonggian.png">
-      <Filter>Resources\sprites\InformationLayer</Filter>
+    <Image Include="..\Resources\sprites\MapLayer\khonggian.png">
+      <Filter>Resources\sprites\MapLayer</Filter>
     </Image>
   </ItemGroup>
 </Project>

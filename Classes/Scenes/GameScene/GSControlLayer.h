@@ -8,8 +8,8 @@
 
 struct position
 {
-	float x;
-	float y;
+	int x;
+	int y;
 };
 
 class GSControlLayer : public cocos2d::Layer
@@ -32,30 +32,24 @@ public:
 			return nullptr; 
 		} 
 	}
-	
+
 	bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
 	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
 	void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event*event);
-	void ButtonCall_1();
-	void ButtonCall_2();
-	void createPreview(int id);
+	void setPreviewImage(CellId id);
 
-	
 private:
 	std::string link_image;
 	CellId Cell_Id;
 	cocos2d::Sprite *previewImage ;
 	bool buttonCheck = false;
-public:
-	void setPreviewImage(std::string link, CellId id);
 
+public:
     virtual bool init();
     void calculateCellsPosition();
-	CellModel* cellMod;
 	LevelModel* level;
 	position cur_ ;
     position cellsPosition_ ;
-
 };
 
 #endif // !__GSCONTROLLAYER_H__
