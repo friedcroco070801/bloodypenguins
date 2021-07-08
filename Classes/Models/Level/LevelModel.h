@@ -24,6 +24,9 @@ public:
     // Return the map of the level
     std::vector< std::vector<MapPosition> > getMap() {return map;}
 
+    // Return the map of the level. Should not be used outside models.
+    std::vector< std::vector<MapPosition> >& __getMap() {return map;}
+
     // Return the list of waves
     std::vector<WaveModel> getWaveList() {return waveList;}
 
@@ -78,6 +81,8 @@ private:
     void addEnemiesOnWave();
 
     cocos2d::Scene* scene;
+
+    void readLevelFromJson(int level);
 };
 
 #endif // !__LEVEL_MODEL_H__

@@ -21,6 +21,7 @@ public:
     // Return the distance 
     virtual double getDistance() {return distance;}
     virtual bool canPutOn(LevelModel* level, int cellX, int cellY){return false;}
+    static bool canPutOn(CellId, LevelModel* level, int cellX, int cellY);
     virtual void update();
     virtual void setUIObject(UICell* ui);
     // Get CellId

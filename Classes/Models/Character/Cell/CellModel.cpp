@@ -48,3 +48,26 @@ Set UI Object for the CellModel
 void CellModel::setUIObject(UICell* ui) {
     this->ui = ui;
 }
+
+/*
+Check if a CellId can be put on level
+*/
+bool CellModel::canPutOn(CellId id, LevelModel* level, int cellX, int cellY) {
+    if (level != nullptr) {
+        auto map = level->__getMap();
+        int col = map.size();
+        int row = map[0].size();
+        if (cellX < 0 || cellX >= col) return false;
+        if (cellY < 0 || cellY >= row) return false;
+        switch (id) {
+        // Normal cell
+        case CELL_00_EOSINOPHILS:
+        case CELL_01_ERYTHROCYTES:
+            if (map[cellX][cellY] == EMPTY_CAN_PUT) return true;
+            else return false;
+            break;
+        }
+    }
+    else
+        return false;
+}
