@@ -797,7 +797,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\Scenes\GameScene\button.h" />
+    <ClInclude Include="..\Classes\Scenes\GameScene\GSMap.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.h" />
@@ -817,7 +817,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Models\models.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSDefine.h" />
-    <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\ScenesDefinitions.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.h" />
@@ -834,7 +833,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\Cuc_Tinh_Y\Classes\UIObjects\uiobj.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\main.h" />
     <ClInclude Include="D:\Cuc_Tinh_Y\proj.win32\resource.h" />
-    <ClCompile Include="..\Classes\Scenes\GameScene\button.cpp" />
+    <ClCompile Include="..\Classes\Scenes\GameScene\GSMap.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\AppDelegate.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Character\Cell\CellModel.cpp" />
@@ -847,7 +846,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Level\LevelModel.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Models\Wave\WaveModel.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSControlLayer.cpp" />
-    <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GSInformationLayer.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\GameScene\GameScene.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\Components\TemplateComponent\TemplateComponent.cpp" />
     <ClCompile Include="D:\Cuc_Tinh_Y\Classes\Scenes\TemplateScene\TemplateScene.cpp" />
@@ -933,12 +931,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\Resources\sprites\InformationLayer\black.png" />
     <Image Include="..\Resources\sprites\InformationLayer\diamond.png" />
     <Image Include="..\Resources\sprites\InformationLayer\energy.png" />
     <Image Include="..\Resources\sprites\InformationLayer\gold.png" />
-    <Image Include="..\Resources\sprites\InformationLayer\map.png" />
-    <Image Include="..\Resources\sprites\InformationLayer\number.png" />
-    <Image Include="C:\Users\Manh Nguyen\OneDrive\Pictures\map__.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\khonggian.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\sky_1.png" />
+    <Image Include="..\Resources\sprites\InformationLayer\sky_2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

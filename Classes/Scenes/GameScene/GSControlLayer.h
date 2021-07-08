@@ -3,21 +3,16 @@
 
 #include "cocos2d.h"
 #include "Models/models.h"
+#include "GSDefine.h"
 
-struct GameMapInformation
-{
-    GameMapInformation();
-    int CellsMap[8][5]; //ban do dat cell
-    unsigned int rowNumbers; //
-    unsigned int columnNumbers;
-};
+
 struct position
 {
 	float x;
 	float y;
 };
 
-class GSControlLayer : public cocos2d::Scene
+class GSControlLayer : public cocos2d::Layer
 {
 public:
 	static GSControlLayer* create(LevelModel* level_) 
@@ -37,22 +32,30 @@ public:
 			return nullptr; 
 		} 
 	}
-//touch											
+	
 	bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
 	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
 	void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event*event);
-	void ButtonCall();
-//	
+	void ButtonCall_1();
+	void ButtonCall_2();
+	void createPreview(int id);
 
-	GSControlLayer();
-	~GSControlLayer();
+	
+private:
+	std::string link_image;
+	CellId Cell_Id;
+	cocos2d::Sprite *previewImage ;
+	bool buttonCheck = false;
+public:
+	void setPreviewImage(std::string link, CellId id);
+
     virtual bool init();
     void calculateCellsPosition();
-	void SetWay(std::vector< std::vector<MapPosition> >&map_can_plant);
+	CellModel* cellMod;
 	LevelModel* level;
 	position cur_ ;
     position cellsPosition_ ;
-    GameMapInformation* gameMapInformation_;
+
 };
 
 #endif // !__GSCONTROLLAYER_H__

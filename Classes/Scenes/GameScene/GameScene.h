@@ -2,7 +2,7 @@
 #define __GAMESCENE_H__
 #include "cocos2d.h"
 #include "Models/models.h"
-
+#include "GSMap.h"
 class GameScene :public cocos2d::Scene 
 {
 public:
@@ -10,11 +10,11 @@ public:
 	static Scene* createScene();
 	virtual bool init();
 	virtual ~GameScene() {delete level;}
-
+	
 protected:
 	virtual void controlLayer(LevelModel* level);
-	//virtual void backgroundLayer();
-	virtual void informationLayer();
+	virtual void drawMap();
+
 	LevelModel* level;
 	void updateLevel(float);
 };
