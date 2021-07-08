@@ -5,6 +5,6 @@
 
 #define CELLBAR_LAYER_ZORDER 10
 
-#define CELLBAR_00_FILENAME "sprites/hello_world.png"
+#define CELLBAR_00 "sprites/hello_world.png"
 
 #endif // !__UI_CONTROL_CELLBAR_DEFINITIONS_H__

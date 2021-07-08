@@ -1,10 +1,11 @@
 #include "UIControlEnergy.h"
-#include "../../Scenes/GameScene/GSDefine.h"
+#include "Scenes/GameScene/GSDefine.h"
+#include "UIObjects/uiobj.h"
 
 USING_NS_CC;
 
 void UIControlEnergy::setCellPosition(double cellX, double cellY) {
-	//setPosition(cellX * CELL_WIDTH + POS_X_ORIGIN, cellY * CELL_WIDTH + POS_Y_ORIGIN);
+	setPosition(Vec2((float)cellX * CELL_WIDTH + POS_X_ORIGIN, (float)cellY * CELL_WIDTH + POS_Y_ORIGIN));
 }
 
 /*
@@ -14,9 +15,6 @@ void UIControlEnergy::addToScene(Scene* scene) {
 	scene->addChild(this, ENERGY_LAYER_ZORDER);
 }
 
-void UIControlEnergy::addButton() {
-
-}
 /*
 Remove UIObjects from Scene
 */
@@ -39,4 +37,19 @@ void UIControlEnergy::touchControlEvent(Ref *sender, ui::Widget::TouchEventType 
 		break;
 	}
 };
+
+UIControlEnergy* UIControlEnergy::create() {
+	UIControlEnergy *btn = new (std::nothrow) UIControlEnergy;
+	if (btn && btn->init(IMG_ENERGY, IMG_ENERGY, IMG_ENERGY, TextureResType::LOCAL))
+	{
+		btn->autorelease();
+		return btn;
+	}
+	CC_SAFE_DELETE(btn);
+	return nullptr;
+}
+
+void UIControlEnergy::onTouch() {
+	this->addTouchEventListener(CC_CALLBACK_2(UIControlEnergy::touchControlEvent, this));
+}
 

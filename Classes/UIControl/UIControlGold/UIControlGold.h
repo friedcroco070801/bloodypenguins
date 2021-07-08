@@ -13,8 +13,8 @@ public:
 	void idleAnimate();
 	void destroyAnimate();
 	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type);
-private:
-	ui::Button *goldButton;
+	virtual void onTouch();
+	static UIControlGold* create();
 };
 
 #endif // !__UI_CONTROL_GOLD_H__

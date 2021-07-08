@@ -6,15 +6,11 @@
 #include "../Models/models.h"
 
 
-class UINumeric : public cocos2d::Sprite {
+class UINumeric : public cocos2d::Node {
 public:
 	virtual void addToScene(cocos2d::Scene* scene);
-    virtual void setPosition(double, double);
     virtual void removeFromScene();
 	virtual void changeValue(int);
-
-private:
-	LevelModel *level;
 };
 
 #endif // !__UI_NUMERIC_H__

@@ -1,6 +1,7 @@
 #include "GameScene.h"
 #include "GSControlLayer.h"
 #include "UIObjects/uiobj.h"
+#include "GSBackgroundLayer.h"
 
 USING_NS_CC;
 Scene* GameScene::createScene()
@@ -13,6 +14,7 @@ bool GameScene::init() {
 	level->startCounting();
 	controlLayer(level);
 	drawMap();
+	addBackground();
     this->schedule(CC_SCHEDULE_SELECTOR(GameScene::updateLevel), 0.01f);
 	return true;
 }
@@ -27,4 +29,9 @@ void GameScene::drawMap() {
 	auto drawMapp = GSMap::create();
 	drawMapp->createMap(level);
 	this->addChild(drawMapp);
+}
+
+void GameScene::addBackground() {
+	auto backgroundLayer = GSBackgroundLayer::create();
+	this->addChild(backgroundLayer, -1);
 }

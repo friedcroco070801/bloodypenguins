@@ -10,10 +10,14 @@ public:
 	static Scene* createScene();
 	virtual bool init();
 	virtual ~GameScene() {delete level;}
+
+	void addEnergyLabel(int);
 	
 protected:
 	virtual void controlLayer(LevelModel* level);
 	virtual void drawMap();
+
+	virtual void addBackground();
 
 	LevelModel* level;
 	void updateLevel(float);

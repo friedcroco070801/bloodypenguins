@@ -2,38 +2,41 @@
 #include "Scenes/GameScene/GSDefine.h"
 USING_NS_CC;
 
+/*
+Add to Scene
+*/
 void UIControlCellBar::addToScene(Scene* scene) {
 	scene->addChild(this, CELLBAR_LAYER_ZORDER);
 }
 
-void UIControlCellBar::addButton() {
-	cellbar = ui::Button::create("sprites/hello_world.png");
-	cellbar->setScale(0.5);
-	cellbar->setAnchorPoint(Vec2(0, 0));
-	cellbar->cocos2d::Node::setPosition(Vec2(WIDTH*0.75,0));
-	cellbar->setTouchEnabled(false);
-	this->addChild(cellbar);
+
+void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType type) {
+	switch (type)
+	{
+	case ui::Widget::TouchEventType::BEGAN:
+		CCLOG("Touch");
+		break;
+	case ui::Widget::TouchEventType::ENDED:
+		CCLOG("Cell Hold");
+		//Plant Cell
+		removeFromScene();
+		break;
+	default:
+		break;
+	}
+};
+
+UIControlCellBar* UIControlCellBar::create() {
+	UIControlCellBar *btn = new (std::nothrow) UIControlCellBar;
+	if (btn && btn->init(CELLBAR_00, CELLBAR_00, CELLBAR_00, TextureResType::LOCAL))
+	{
+		btn->autorelease();
+		return btn;
+	}
+	CC_SAFE_DELETE(btn);
+	return nullptr;
 }
-/*
+
 void UIControlCellBar::onTouch() {
-	auto button = Button::create(CELLBAR_00_FILENAME);
-
-	//button->setPosition(Vec2(Vis));
-
-	button->addTouchEventListener([&](Ref* sender, Widget::TouchEventType type) {
-		switch (type)
-		{
-		case ui::Widget::TouchEventType::BEGAN:
-			CCLOG("Button touch");
-			break;
-		case ui::Widget::TouchEventType::ENDED:
-			CCLOG("Button da clicked");
-			break;
-		default:
-			break;
-		}
-	});
-
-	this->addChild(button);
+	this->addTouchEventListener(CC_CALLBACK_2(UIControlCellBar::touchControlEvent, this));
 }
-*/

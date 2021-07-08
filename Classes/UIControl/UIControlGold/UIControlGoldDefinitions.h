@@ -6,4 +6,6 @@
 #define POS_X_ORIGIN 360.0f + CELL_WIDTH / 2.0f
 #define POS_Y_ORIGIN 110.0f + CELL_WIDTH / 2.0f
 
+#define IMG_GOLD "sprites/InformationLayer/gold.png"
+
 #endif // !__UI_CONTROL_GOLD_DEFINITIONS_H__
