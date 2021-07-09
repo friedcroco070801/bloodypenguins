@@ -120,7 +120,8 @@ void DiseaseModel::update() {
             else {
                 action = WALKING;
                 changeDirectionOnPath();
-                currentPath++;
+				if (currentPath != path->end())
+					currentPath++;
                 if (nextPath != path->end())
                     nextPath++;
             }

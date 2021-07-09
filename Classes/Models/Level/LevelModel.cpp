@@ -9,6 +9,7 @@
 #include "fstream"
 #include "UIControl/UIControlCellBar/UIControlCellBar.h"
 #include "UIControl/UIControlEnergy/UIControlEnergy.h"
+#include "UINumeric/UINumeric.h"
 using namespace std;
 USING_NS_CC;
 
@@ -22,11 +23,15 @@ LevelModel::LevelModel(int level, Scene* scene) {
     /*
     Set UIObject of energy, gold and CellBar
     */
+    auto energyCounterUI = UINumeric::create();
+    energyCounterUI->addToScene(scene);
+    energy.setUIObject(energyCounterUI);
+    energyCounterUI->setPosition(ENERGY_COUNTER_POS_X, ENERGY_COUNTER_POS_Y);
 
     readLevelFromJson(level);
 
     // Temporary data
-    gold.changeValue(200);
+    // gold.changeValue(200);
     cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
     cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
 
@@ -54,7 +59,9 @@ void LevelModel::readLevelFromJson(int level) {
     json j = json::parse(content);
 
     // Get value of initial energy
+    CCLOG("ok");
     energy.changeValue(j["initialEnergy"].get<int>());
+    CCLOG("OK");
 
     // Get value of map
     json jmap = j["map"];

@@ -7,10 +7,14 @@
 
 
 class UINumeric : public cocos2d::Node {
+	cocos2d::Vector<cocos2d::Sprite*> digitList;
+	float scale;
 public:
 	virtual void addToScene(cocos2d::Scene* scene);
     virtual void removeFromScene();
 	virtual void changeValue(int);
+	virtual void setScale(float _scale) {scale *= _scale;}
+	static UINumeric* create();
 };
 
 #endif // !__UI_NUMERIC_H__

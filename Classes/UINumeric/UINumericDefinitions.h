@@ -1,8 +1,13 @@
 #ifndef __UI_NUMERIC_DEFINITIONS_H__
 #define __UI_NUMERIC_DEFINITIONS_H__
 
-#define CELL_WIDTH 98.0f
-#define POS_X_ORIGIN 360.0f + CELL_WIDTH / 2.0f
-#define POS_Y_ORIGIN 110.0f + CELL_WIDTH / 2.0f
+#define ENERGY_COUNTER_POS_X 120
+#define ENERGY_COUNTER_POS_Y Director::getInstance()->getVisibleSize().height / 16 * 15
+#define GOLD_COUNTER_POS_X
+#define GOLD_COUNTER_POS_Y
+
+#define NUMERIC_LAYER_ZORDER 9
+
+#define NUMERIC_IMG "sprites/InformationLayer/number.png"
 
 #endif // !__UI_NUMERIC_DEFINITIONS_H__

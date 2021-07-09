@@ -29,6 +29,46 @@
             "time": 15.0,
             "huge": false,
             "enemies": [0]
+        },
+        {
+            "time": 20.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 25.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 30.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 35.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 40.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 42.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 44.0,
+            "huge": false,
+            "enemies": [0]
+        },
+        {
+            "time": 46.0,
+            "huge": false,
+            "enemies": [0]
         }
     ]
 }

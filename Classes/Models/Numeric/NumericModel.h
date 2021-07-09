@@ -1,6 +1,7 @@
 #ifndef __NUMERIC_MODEL_H__
 #define __NUMERIC_MODEL_H__
 
+#define __HAS_UINUMERIC__
 #ifdef __HAS_UINUMERIC__
 class UINumeric;    
 #endif // __HAS_UINUMERIC__

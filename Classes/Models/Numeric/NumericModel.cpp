@@ -1,14 +1,12 @@
 #include "Models/models.h"
 #include "NumericModel.h"
+#include "UINumeric/UINumeric.h"
 
 /*
 Constructor of Numeric Model
 */
 NumericModel::NumericModel() {
     value = 0;
-    #ifdef __HAS_UINUMERIC__
-    ui->changeValue(value);
-    #endif // __HAS_UINUMERIC__
 }
 
 /*
