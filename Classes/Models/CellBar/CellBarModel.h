@@ -3,8 +3,9 @@
 
 enum CellId;
 class LevelModel;
+#define __HAS_UICELLBAR__
 #ifdef __HAS_UICELLBAR__
-class UICellBar;
+class UIControlCellBar;
 #endif // __HAS_UICELLBAR__
 
 class CellBarModel {
@@ -28,6 +29,8 @@ public:
     // Set level model of the model
     void __setLevel(LevelModel* level) {this->level = level;} 
 
+    void setUIObject(UIControlCellBar*);
+
 protected:
     LevelModel* level;
     CellId id;
@@ -35,7 +38,7 @@ protected:
     double rechargeTimeCounter;
     int cost;
     #ifdef __HAS_UICELLBAR__
-    UICellBar* ui;
+    UIControlCellBar* ui;
     #endif // __HAS_UICELLBAR__
 };
 

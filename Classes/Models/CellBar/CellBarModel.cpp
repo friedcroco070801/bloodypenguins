@@ -1,5 +1,6 @@
 #include "Models/models.h"
 #include "CellBarModel.h"
+#include "UIControl/UIControlCellBar/UIControlCellBar.h"
 #include <cmath>
 
 /* 
@@ -32,17 +33,17 @@ void CellBarModel::update() {
         rechargeTimeCounter = std::min(rechargeTimeCounter + UPDATING_FREQUENCY, rechargeTime);
 
         #ifdef __HAS_UICELLBAR__
-        // Updating UICellBar
-        ui->updateRecharge(getRechargePercent());
+        // Updating UIControlCellBar
+        // ui->updateRecharge(getRechargePercent());
         #endif // __HAS_UICELLBAR__
     }
 }
 
 #ifdef __HAS_UICELLBAR__
 /* 
-Set UICellBar 
+Set UIControlCellBar 
 */
-void CellBarModel::setUIObject(UICellBar* ui) {
+void CellBarModel::setUIObject(UIControlCellBar* ui) {
     this->ui = ui;
 
     // Set something with ui

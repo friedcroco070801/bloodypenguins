@@ -6,6 +6,6 @@
 #define POS_X_ORIGIN 360.0f + CELL_WIDTH / 2.0f
 #define POS_Y_ORIGIN 110.0f + CELL_WIDTH / 2.0f
 
-#define IMG_ENERGY "sprites/InformationLayer/energy.png"
+#define IMG_ENERGY "sprites/objects/pickup/energy.png"
 
 #endif // !__UI_CONTROL_ENERGY_DEFINITIONS_H__

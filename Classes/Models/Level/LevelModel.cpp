@@ -7,6 +7,8 @@
 #include "UIObjects/uiobj.h"
 #include "Database/LevelReader/LevelReader.h"
 #include "fstream"
+#include "UIControl/UIControlCellBar/UIControlCellBar.h"
+#include "UIControl/UIControlEnergy/UIControlEnergy.h"
 using namespace std;
 USING_NS_CC;
 
@@ -27,6 +29,14 @@ LevelModel::LevelModel(int level, Scene* scene) {
     gold.changeValue(200);
     cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
     cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
+
+    for (unsigned int i = 0; i < cellBarList.size(); i++) {
+        cellBarList[i].__setLevel(this);
+        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i].getCellId());
+        cellBarList[i].setUIObject(cellBarControl);
+        cellBarControl->addToScene(scene);
+        cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));
+    }
 
     // Initialize properties
     timeCounter = 0.0;
@@ -319,6 +329,9 @@ Add a energy to scene
 void LevelModel::addEnergyObject(double cellX, double cellY) {
     if (scene != NULL) {
         // Add to scene a energy at (cellX, cellY)
+        auto energy = UIControlEnergy::create(this);
+        energy->addToScene(scene);
+        energy->setCellPosition(cellX, cellY);
     }
 }
 

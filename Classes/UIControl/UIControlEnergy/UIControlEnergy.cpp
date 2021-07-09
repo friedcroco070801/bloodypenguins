@@ -1,6 +1,7 @@
 #include "UIControlEnergy.h"
 #include "Scenes/GameScene/GSDefine.h"
 #include "UIObjects/uiobj.h"
+#include "Models/models.h"
 
 USING_NS_CC;
 
@@ -13,6 +14,7 @@ Add UIObjects to Scene
 */
 void UIControlEnergy::addToScene(Scene* scene) {
 	scene->addChild(this, ENERGY_LAYER_ZORDER);
+	onTouch();
 }
 
 /*
@@ -30,7 +32,7 @@ void UIControlEnergy::touchControlEvent(Ref *sender, ui::Widget::TouchEventType 
 		break;
 	case ui::Widget::TouchEventType::ENDED:
 		CCLOG("Energy update");
-		//update energy
+		level->addEnergyValue(50);
 		removeFromScene();
 		break;
 	default:
@@ -38,10 +40,11 @@ void UIControlEnergy::touchControlEvent(Ref *sender, ui::Widget::TouchEventType 
 	}
 };
 
-UIControlEnergy* UIControlEnergy::create() {
+UIControlEnergy* UIControlEnergy::create(LevelModel* level) {
 	UIControlEnergy *btn = new (std::nothrow) UIControlEnergy;
 	if (btn && btn->init(IMG_ENERGY, IMG_ENERGY, IMG_ENERGY, TextureResType::LOCAL))
 	{
+		btn->level = level;
 		btn->autorelease();
 		return btn;
 	}

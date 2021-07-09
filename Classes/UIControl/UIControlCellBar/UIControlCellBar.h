@@ -11,8 +11,11 @@ public:
 	virtual void addToScene(cocos2d::Scene* scene);
 	virtual void onTouch();
 	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type); 
-	static UIControlCellBar* create();
-
+	static UIControlCellBar* create(LevelModel*, CellId);
+private:
+	CellId id;
+	Scene* scene;
+	LevelModel* level;
 };
 
 #endif // !__UI_CONTROL_CELLBAR_H__

@@ -1,6 +1,7 @@
 #include "GSControlLayer.h"
 #include "GSdefine.h"
 #include "AppDelegate.h"
+#include "UIObjects/UICell/UICellDefinitions.h"
 
 USING_NS_CC;
 //global variable
@@ -66,7 +67,10 @@ void GSControlLayer::setPreviewImage(CellId id) {
 	switch (id)
 	{
 	case CELL_00_EOSINOPHILS:
-		this->link_image = "sprites/objects/cell/cell_00.png";
+		this->link_image = CELL_00_FILENAME;
+		break;
+	case CELL_01_ERYTHROCYTES:
+		this->link_image = CELL_01_FILENAME;
 		break;
 	default:
 		break;
@@ -88,7 +92,6 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 	auto p = touch->getLocation();
 
 	if (buttonCheck) {
-		this->previewImage = new Sprite();
 		this->previewImage = Sprite::create(this->link_image);
 		this->previewImage->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
 		if (GRASS_OUTSIDE(p)) {

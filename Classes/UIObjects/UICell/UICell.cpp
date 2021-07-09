@@ -1,5 +1,6 @@
 #include "UIObjects/uiobj.h"
 #include "UICell.h"
+#include "UICellType/UICellType.h"
 USING_NS_CC;
 
 /*
@@ -16,14 +17,13 @@ UICell* UICell::create(CellId id) {
     switch (id) {
     // Case id 00: Eosinophils
     case CELL_00_EOSINOPHILS:
-        UICell *uicell = new (std::nothrow) UICell();
-        if (uicell && uicell->initWithFile(CELL_00_FILENAME))
-        {
-            uicell->autorelease();
-            return uicell;
-        }
-        CC_SAFE_DELETE(uicell);
-        return nullptr;
+        return UICell00::create();
+        break;
+    
+    // Case id 01: Ethry
+    case CELL_01_ERYTHROCYTES:
+        return UICell01::create();
+        break;
     }
     return nullptr;
 }

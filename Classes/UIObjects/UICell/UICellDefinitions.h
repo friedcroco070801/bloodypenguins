@@ -6,5 +6,6 @@
 #define CELL_LAYER_ZORDER 5
 
 #define CELL_00_FILENAME "sprites/objects/cell/cell_00.png"
+#define CELL_01_FILENAME "sprites/objects/cell/cell_01.png"
 
 #endif // !__UI_CELL_DEFINITIONS_H__
