@@ -1,5 +1,6 @@
 #include "UIObjects/uiobj.h"
 #include "UIDisease.h"
+#include "UIDiseaseType/UIDiseaseType.h"
 USING_NS_CC;
 
 /*
@@ -16,14 +17,7 @@ UIDisease* UIDisease::create(DiseaseId id) {
     switch (id) {
     // Case id 00: Rabies
     case DISEASE_00_RABIES:
-        UIDisease *uidisease = new (std::nothrow) UIDisease();
-        if (uidisease && uidisease->initWithFile(DISEASE_00_FILENAME))
-        {
-            uidisease->autorelease();
-            return uidisease;
-        }
-        CC_SAFE_DELETE(uidisease);
-        return nullptr;
+        return UIDisease00::create();
     }
     return nullptr;
 }

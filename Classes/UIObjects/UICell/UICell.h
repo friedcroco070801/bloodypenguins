@@ -10,6 +10,11 @@ class UICell : public UIObjects {
 public:
     static UICell* create(CellId);
     virtual void addToScene(cocos2d::Scene*);
+    virtual void idleAnimate() {}
+    virtual void attackAnimate() {}
+    virtual void effectAnimate() {}
+    virtual void hitAnimate() {}
+    virtual void dieAnimate() {}
 };
 
 #endif // !__UI_CELL_H__
