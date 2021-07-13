@@ -8,7 +8,11 @@ enum DiseaseAction {
 };
 
 enum DiseaseId {
-    DISEASE_00_RABIES
+    DISEASE_00_RABIES,
+    DISEASE_01_SMALLPOX,
+    DISEASE_02_INFLUENZA,
+    DISEASE_03_MEASLES,
+    DISEASE_04_POLIO
 };
 
 enum Direction {

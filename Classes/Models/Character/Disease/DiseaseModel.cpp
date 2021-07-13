@@ -34,6 +34,14 @@ DiseaseModel* DiseaseModel::create(DiseaseId id) {
     switch (id) {
     case DISEASE_00_RABIES:
         return new Disease00Model();
+    case DISEASE_01_SMALLPOX:
+        return new Disease01Model();
+    case DISEASE_02_INFLUENZA:
+        return new Disease02Model();
+    case DISEASE_03_MEASLES:
+        return new Disease03Model();
+    case DISEASE_04_POLIO:
+        return new Disease04Model();
     }
     return nullptr;
 }
