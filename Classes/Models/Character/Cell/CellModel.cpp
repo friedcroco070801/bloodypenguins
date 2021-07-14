@@ -26,6 +26,8 @@ CellModel* CellModel::create(CellId id) {
         return new Cell02Model();
     case CELL_03_BASOPHILS:
         return new Cell03Model();
+    case CELL_04_MONOCYTES:
+        return new Cell04Model();
     }
     return nullptr;
 } 
@@ -41,7 +43,8 @@ void CellModel::update() {
         this->level = NULL;
 
         // Destroy UIObject
-        ui->removeFromScene();
+        ui->dieAnimate();
+        //ui->removeFromScene();
         return;
     }
 }
@@ -51,6 +54,7 @@ Set UI Object for the CellModel
 */
 void CellModel::setUIObject(UICell* ui) {
     this->ui = ui;
+    ui->idleAnimate();
 }
 
 /*

@@ -2,6 +2,7 @@
 #include "ShootingCellModel.h"
 #include <cmath>
 #include "ShootingCellType/ShootingCellType.h"
+#include "UIObjects/uiobj.h"
 using namespace std;
 
 /* 
@@ -15,10 +16,12 @@ ShootingCellModel::ShootingCellModel(CellId cellId, ProjectileId projectileId) :
 /*
 Shoot projectile from source to target
 */
-void ShootingCellModel::shoot(CharacterModel* target) {
+void ShootingCellModel::shoot(DiseaseModel* target) {
     if (level != NULL) {
+        ui->attackAnimate();
         auto projectile = ProjectileModel::create(projectileId, this, target);
         level->addProjectile(projectile);
+        ui->idleAnimate();
     }
 }
 

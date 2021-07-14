@@ -103,7 +103,8 @@ void DiseaseModel::update() {
         this->level = NULL;
 
         // Destroy UIObject
-        ui->removeFromScene();
+        ui->dieAnimate(dir);
+        //ui->removeFromScene();
         return;
     }
 
@@ -145,11 +146,13 @@ void DiseaseModel::update() {
                 auto deltaError = timePoint - roundTimePoint;
                 if (deltaError >= -ACCEPTING_TIME_ERROR && deltaError <= ACCEPTING_TIME_ERROR) {
                     hitTarget(*target);
+                    ui->idleAnimate(dir);
                 }
             }
             else {
                 action = WALKING;
                 changeDirectionOnPath();
+                ui->walkAnimate(dir);
                 currentPath++;
                 if (nextPath != path->end())
                     nextPath++;
@@ -176,6 +179,7 @@ void DiseaseModel::update() {
             auto roundY = round(cellY);
             if (abs(cellX - roundX) <= ACCEPTING_TIME_ERROR && abs(cellY - roundY) <= ACCEPTING_TIME_ERROR) {
                 action = WAITING;
+                ui->idleAnimate(dir);
             }
         }
     }
@@ -185,7 +189,9 @@ void DiseaseModel::update() {
 Attack on target
 */
 void DiseaseModel::hitTarget(CellModel* target) {
+    ui->attackAnimate(dir);
     target->takeDamage(damage);
+    target->__getUIObject()->hitAnimate();
 }
 
 /*
@@ -200,4 +206,5 @@ Set UI Object for the DiseaseModel
 */
 void DiseaseModel::setUIObject(UIDisease* ui) {
     this->ui = ui;
+    ui->idleAnimate(dir);
 }

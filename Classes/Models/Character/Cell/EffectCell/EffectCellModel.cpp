@@ -1,6 +1,7 @@
 #include "Models/models.h"
 #include "EffectCellModel.h"
 #include "EffectCellType/EffectCellType.h"
+#include "UIObjects/uiobj.h"
 
 /*
 Constructor of EffectCellModel
@@ -18,7 +19,9 @@ void EffectCellModel::update() {
         effectTimeCounter -= UPDATING_FREQUENCY;
         if (abs(effectTimeCounter) <= ACCEPTING_TIME_ERROR) {
             effectTimeCounter = effectRechargeTime;
+            ui->effectAnimate();
             takeEffect();
+            ui->idleAnimate();
         }
     }
 }

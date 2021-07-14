@@ -9,7 +9,7 @@ using namespace std;
 /*
 Create a projectile model with factory
 */
-ProjectileModel* ProjectileModel::create(ProjectileId id, CharacterModel* source, CharacterModel* target) {
+ProjectileModel* ProjectileModel::create(ProjectileId id, CellModel* source, DiseaseModel* target) {
     switch (id) {
     case CELL_00_PROJECTILE:
         return new Cell00ProjectileModel(source, target);
@@ -20,7 +20,7 @@ ProjectileModel* ProjectileModel::create(ProjectileId id, CharacterModel* source
 /*
 Constructor of projectile model
 */
-ProjectileModel::ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target) {
+ProjectileModel::ProjectileModel(ProjectileId id, CellModel* source, DiseaseModel* target) {
     this->level = NULL;
     this->id = id;
     this->target = target;
@@ -90,13 +90,15 @@ Take damage and take effect upon hitting target
 */
 void ProjectileModel::hitTarget() {
     if (!isDestroyed) {
+        target->__getUIObject()->hitAnimate(target->getDirection());
         target->takeDamage(damage);
         effectOnHit();
         isDestroyed = true;
         level->dumpProjectile(this);
 
         // Destroy UIObject
-        ui->removeFromScene();
+        ui->destroyAnimate();
+        //ui->removeFromScene();
     }
 }
 
@@ -105,4 +107,5 @@ Set UI Object for the ProjectileModel
 */
 void ProjectileModel::setUIObject(UIProjectile* ui) {
     this->ui = ui;
+    ui->idleAnimate();
 }

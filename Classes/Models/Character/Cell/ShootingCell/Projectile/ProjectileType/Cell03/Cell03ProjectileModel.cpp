@@ -4,7 +4,7 @@
 /*
 Constructor of Cell0ProjectileModel
 */
-Cell03ProjectileModel::Cell03ProjectileModel(CharacterModel* source, CharacterModel* target) 
+Cell03ProjectileModel::Cell03ProjectileModel(CellModel* source, DiseaseModel* target) 
     : ProjectileModel(CELL_03_PROJECTILE, source, target) {
     // Temporary data
     speed = 8.0;

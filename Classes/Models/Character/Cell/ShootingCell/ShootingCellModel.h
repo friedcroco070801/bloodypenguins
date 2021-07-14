@@ -10,7 +10,7 @@ protected:
 public:
     ShootingCellModel(CellId cellId, ProjectileId);
     virtual ~ShootingCellModel(){};
-    virtual void shoot(CharacterModel* target);
+    virtual void shoot(DiseaseModel* target);
     virtual void update();
     virtual bool canPutOn(LevelModel*, int cellX, int cellY);
 };

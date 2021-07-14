@@ -31,8 +31,10 @@ public:
     virtual void __setLevel(LevelModel*);
     virtual DiseaseId __getDiseaseId();
     virtual void setUIObject(UIDisease* ui);
+    virtual UIDisease* __getUIObject() {return ui;}
     // Get DiseaseId
     virtual DiseaseId getDiseaseId() {return id;}
+    virtual Direction getDirection() {return dir;}
 };
 
 #endif // !__DISEASE_MODEL_H__

@@ -6,7 +6,7 @@ class CharacterModel;
 
 class Cell00ProjectileModel : public ProjectileModel {
 public:
-    Cell00ProjectileModel(CharacterModel*, CharacterModel*);
+    Cell00ProjectileModel(CellModel*, DiseaseModel*);
     virtual ~Cell00ProjectileModel(){}
 protected:
 };

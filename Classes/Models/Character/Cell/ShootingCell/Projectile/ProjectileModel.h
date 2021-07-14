@@ -19,13 +19,13 @@ protected:
     double targetY;
     double speed;
     double damage;
-    CharacterModel* target;
+    DiseaseModel* target;
     bool isDestroyed;
     virtual void effectOnHit(){};
     UIProjectile* ui;
 public:
-    static ProjectileModel* create(ProjectileId id, CharacterModel* source, CharacterModel* target);
-    ProjectileModel(ProjectileId id, CharacterModel* source, CharacterModel* target);
+    static ProjectileModel* create(ProjectileId id, CellModel* source, DiseaseModel* target);
+    ProjectileModel(ProjectileId id, CellModel* source, DiseaseModel* target);
     virtual void update();
     virtual double getPositionCellX();
     virtual double getPositionCellY();

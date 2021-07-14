@@ -24,6 +24,7 @@ public:
     static bool canPutOn(CellId, LevelModel* level, int cellX, int cellY);
     virtual void update();
     virtual void setUIObject(UICell* ui);
+    virtual UICell* __getUIObject() {return ui;}
     // Get CellId
     virtual CellId getCellId() {return id;}
     // Get cost

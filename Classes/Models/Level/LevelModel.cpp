@@ -34,6 +34,9 @@ LevelModel::LevelModel(int level, Scene* scene) {
     // gold.changeValue(200);
     cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
     cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
+    cellBarList.push_back(CellBarModel(CELL_02_PLATELETS));
+    cellBarList.push_back(CellBarModel(CELL_03_BASOPHILS));
+    cellBarList.push_back(CellBarModel(CELL_04_MONOCYTES));
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i].__setLevel(this);
