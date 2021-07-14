@@ -21,8 +21,11 @@ public:
 	virtual void onTouch();
 	void idleAnimate();
 	void destroyAnimate();
+	void appearAnimate();
 private:
 	LevelModel* level;
+	bool canCollect;
+	cocos2d::Sprite* child;
 };
 
 #endif // !__UI_CONTROL_ENERGY_H__

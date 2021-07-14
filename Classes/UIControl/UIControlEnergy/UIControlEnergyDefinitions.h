@@ -8,4 +8,7 @@
 
 #define IMG_ENERGY "sprites/objects/pickup/energy.png"
 
+#define ANIM_ENERGY_POPUP_DURATION 0.5f
+#define ANIM_ENERGY_DESTROY_DURATION 0.15f
+
 #endif // !__UI_CONTROL_ENERGY_DEFINITIONS_H__

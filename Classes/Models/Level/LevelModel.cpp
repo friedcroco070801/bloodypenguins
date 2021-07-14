@@ -342,6 +342,7 @@ void LevelModel::addEnergyObject(double cellX, double cellY) {
         auto energy = UIControlEnergy::create(this);
         energy->addToScene(scene);
         energy->setCellPosition(cellX, cellY);
+        energy->appearAnimate();
     }
 }
 
