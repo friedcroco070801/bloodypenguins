@@ -187,7 +187,7 @@ void UIDisease00::attackAnimate(Direction dir) {
 	default:
 		break;
 	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.5f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
 	animate = Animate::create(animation);
 
 	this->runAction(RepeatForever::create(animate));

@@ -22,6 +22,9 @@ UIDisease* UIDisease::create(DiseaseId id) {
 	case DISEASE_01_SMALLPOX:
 		return UIDisease01::create();
 		break;
+	case DISEASE_02_INFLUENZA:
+		return UIDisease02::create();
+		break;
     }
 	
 
