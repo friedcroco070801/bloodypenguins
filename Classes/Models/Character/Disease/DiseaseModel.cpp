@@ -129,6 +129,7 @@ void DiseaseModel::update() {
             else {
                 action = WALKING;
                 changeDirectionOnPath();
+                ui->walkAnimate(dir);
 				if (currentPath != path->end())
 					currentPath++;
                 if (nextPath != path->end())
