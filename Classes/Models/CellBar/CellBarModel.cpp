@@ -14,7 +14,7 @@ CellBarModel::CellBarModel(CellId id) {
     this->rechargeTime = cellModel->getRechargeTime();
     switch (id) {
     case CELL_01_ERYTHROCYTES:
-        this->rechargeTimeCounter = 0.0;
+        this->rechargeTimeCounter = rechargeTime;
         break;
     default:
         this->rechargeTimeCounter = rechargeTime / 2;
@@ -34,7 +34,7 @@ void CellBarModel::update() {
 
         #ifdef __HAS_UICELLBAR__
         // Updating UIControlCellBar
-        // ui->updateRecharge(getRechargePercent());
+        ui->updateRecharge(getRechargePercent());
         #endif // __HAS_UICELLBAR__
     }
 }

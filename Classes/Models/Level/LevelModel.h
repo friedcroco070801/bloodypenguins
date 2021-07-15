@@ -67,7 +67,7 @@ private:
     std::list<CellModel*> cellList;
     std::list<DiseaseModel*> diseaseList;
     std::list<ProjectileModel*> projectileList;
-    std::vector<CellBarModel> cellBarList;
+    std::vector<CellBarModel*> cellBarList;
 
     double timeCounter;
     bool isCounting;

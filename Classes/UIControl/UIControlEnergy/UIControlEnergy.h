@@ -6,6 +6,7 @@
 #include "../UIControl.h"
 #include "Scenes/GameScene/GSDefine.h"
 #include "ui/CocosGUI.h"
+#include <functional>
 class LevelModel;
 
 using namespace cocos2d;
@@ -20,7 +21,7 @@ public:
 	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type);
 	virtual void onTouch();
 	void idleAnimate();
-	void destroyAnimate();
+	void destroyAnimate(std::function<void()>);
 	void appearAnimate();
 private:
 	LevelModel* level;

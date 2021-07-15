@@ -1,13 +1,13 @@
-#ifndef __UI_DISEASE_00_H__
-#define __UI_DISEASE_00_H__
+#ifndef __UI_DISEASE_02_H__
+#define __UI_DISEASE_02_H__
 
 #include "cocos2d.h"
 using namespace cocos2d;
 
 class UIDisease;
-class UIDisease00 : public UIDisease {
+class UIDisease02 : public UIDisease {
 public:
-    static UIDisease00* create();
+    static UIDisease02* create();
 	//virtual void addToScene(cocos2d::Scene*);
 	virtual void idleAnimate(Direction dir);
 	virtual void walkAnimate(Direction dir);
@@ -19,4 +19,4 @@ public:
 	Animate* animate;
 };
 
-#endif // !__UI_DISEASE_00_H__
+#endif // !__UI_DISEASE_02_H__

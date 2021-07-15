@@ -2,5 +2,7 @@
 #define __UI_DISEASE_TYPE_H__
 
 #include "Disease00/UIDisease00.h"
+#include "Disease01/UIDisease01.h"
+#include "Disease02/UIDisease02.h"
 
 #endif // !__UI_DISEASE_TYPE_H__

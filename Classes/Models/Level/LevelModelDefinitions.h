@@ -14,4 +14,7 @@ enum MapPosition {
 #define ACCEPTING_TIME_ERROR 0.0001
 #define DUMP_CAPACITY 100
 
+#define MAX_ENERGY 9000
+#define MAX_GOLD 999990
+
 #endif // !__LEVEL_MODEL_DEFINITIONS_H__
