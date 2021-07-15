@@ -18,6 +18,12 @@ UIDisease* UIDisease::create(DiseaseId id) {
     // Case id 00: Rabies
     case DISEASE_00_RABIES:
         return UIDisease00::create();
+		break;
+	case DISEASE_01_SMALLPOX:
+		return UIDisease01::create();
+		break;
     }
+	
+
     return nullptr;
 }

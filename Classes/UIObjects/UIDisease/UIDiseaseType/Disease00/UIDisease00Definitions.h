@@ -5,6 +5,8 @@
 
 #define DISEASE_LAYER_ZORDER 3
 
+#define DISEASE_00_FILENAME "sprites/objects/disease/disease00/disease00.png"
+
 #define DISEASE_00_SHEETWALK "sprites/objects/disease/disease00/disease00walk.plist"
 #define DISEASE_00_IMGWALK "sprites/objects/disease/disease00/disease00walk.png"
 #define DISEASE_00_SHEETIDLE "sprites/objects/disease/disease00/disease00idle.plist"
