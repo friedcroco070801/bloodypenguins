@@ -90,9 +90,10 @@ void GSControlLayer::ButtonCall_2() {
 bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
 
 	auto p = touch->getLocation();
-
+	int size = cocos2d::Sprite::create(link_image)->getContentSize().height;
 	if (buttonCheck) {
-		this->previewImage = Sprite::create(this->link_image);
+		this->previewImage = Sprite::create(this->link_image,Rect(0,0,size,size));
+		this->previewImage->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
 		this->previewImage->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
 		if (GRASS_OUTSIDE(p)) {
 			this->previewImage->setColor(Color3B::RED);
@@ -168,4 +169,5 @@ void GSControlLayer::calculateCellsPosition() {
             }
         }
     }
+
 }

@@ -19,8 +19,8 @@
            |
         CARDBAR
 */
-#define HEIGHT					Director::getInstance()->getVisibleSize().height
-#define WIDTH					Director::getInstance()->getVisibleSize().width
+#define HEIGHT					cocos2d::Director::getInstance()->getVisibleSize().height
+#define WIDTH					cocos2d::Director::getInstance()->getVisibleSize().width
 #define TOP						HEIGHT*7/8
 #define GRASS_POSITION_LEFT		WIDTH*9/32
 #define GRASS_POSITION_RIGHT	WIDTH*15/16
