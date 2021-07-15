@@ -65,7 +65,7 @@ void UIControlEnergy::onTouch() {
 Pop up animation
 */
 void UIControlEnergy::appearAnimate() {
-	auto jump = JumpBy::create(ANIM_ENERGY_POPUP_DURATION, Vec2(CCRANDOM_MINUS1_1() * CELL_WIDTH, 0 - CELL_WIDTH / 4), CELL_WIDTH, 1);
+	auto jump = JumpBy::create(ANIM_ENERGY_POPUP_DURATION, Vec2(CCRANDOM_MINUS1_1() * CELL_WIDTH, 0 - CELL_WIDTH / 4 * (CCRANDOM_0_1() * 0.75f + 0.25f)), CELL_WIDTH * (0.75f + 0.25f * CCRANDOM_0_1()), 1);
 	this->runAction(jump);
 }
 
@@ -93,10 +93,13 @@ void UIControlEnergy::idleAnimate() {
 Destroy animation
 */
 void UIControlEnergy::destroyAnimate() {
+	auto pos = getParent()->convertToNodeSpace(getPosition());
+	auto move = MoveBy::create(ANIM_ENERGY_DESTROY_DURATION, Vec2(0 - pos.x, Director::getInstance()->getVisibleSize().height - pos.y));
 	auto fade = FadeTo::create(ANIM_ENERGY_DESTROY_DURATION, 0);
 	auto call = CallFuncN::create([] (Node* node) {
 		node->getParent()->removeFromParent();
 	});
 	auto seq = Sequence::create(fade, call, nullptr);
+	child->runAction(move);
 	child->runAction(seq);
 }

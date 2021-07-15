@@ -15,7 +15,7 @@ public:
     void update();
 
     // Reset the counter of rechargeTime
-    void resetCounter() {rechargeTimeCounter = rechargeTime;}
+    void resetCounter() {rechargeTimeCounter = 0.0;}
 
     // Get the CellId of the Cell bar model
     CellId getCellId() {return id;}

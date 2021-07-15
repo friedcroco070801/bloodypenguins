@@ -32,16 +32,16 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     // Temporary data
     // gold.changeValue(200);
-    cellBarList.push_back(CellBarModel(CELL_00_EOSINOPHILS));
-    cellBarList.push_back(CellBarModel(CELL_01_ERYTHROCYTES));
-    cellBarList.push_back(CellBarModel(CELL_02_PLATELETS));
-    cellBarList.push_back(CellBarModel(CELL_03_BASOPHILS));
-    cellBarList.push_back(CellBarModel(CELL_04_MONOCYTES));
+    cellBarList.push_back(new CellBarModel(CELL_00_EOSINOPHILS));
+    cellBarList.push_back(new CellBarModel(CELL_01_ERYTHROCYTES));
+    cellBarList.push_back(new CellBarModel(CELL_02_PLATELETS));
+    cellBarList.push_back(new CellBarModel(CELL_03_BASOPHILS));
+    cellBarList.push_back(new CellBarModel(CELL_04_MONOCYTES));
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
-        cellBarList[i].__setLevel(this);
-        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i].getCellId());
-        cellBarList[i].setUIObject(cellBarControl);
+        cellBarList[i]->__setLevel(this);
+        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId());
+        cellBarList[i]->setUIObject(cellBarControl);
         cellBarControl->addToScene(scene);
         cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));
     }
@@ -134,7 +134,7 @@ void LevelModel::update() {
             (*(it++))->update();
         }
         for (auto it = cellBarList.begin(); it != cellBarList.end();) {
-            (*(it++)).update();
+            (*(it++))->update();
         }
 
         // Garbage collect
@@ -169,6 +169,9 @@ LevelModel::~LevelModel() {
         delete (*it);
     }
     for (auto it = projectileDump.begin(); it != projectileDump.end(); it++) {
+        delete (*it);
+    }
+    for (auto it = cellBarList.begin(); it != cellBarList.end(); it++) {
         delete (*it);
     }
 }
@@ -266,6 +269,13 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
 
         // Change value of energy
         addEnergyValue(0 - obj->getCost());
+
+        // Reset recharging
+        for (auto it = cellBarList.begin(); it != cellBarList.end(); it++) {
+            if ((*it)->getCellId() == obj->getCellId()) {
+                (*it)->resetCounter();
+            }
+        }
     }
     else {
         delete obj;
@@ -350,12 +360,12 @@ void LevelModel::addEnergyObject(double cellX, double cellY) {
 Add more to the value of energy model
 */
 void LevelModel::addEnergyValue(int add) {
-    energy.changeValue(energy.getValue() + add);
+    energy.changeValue(min(energy.getValue() + add, MAX_ENERGY));
 }
 
 /* 
 Add more to the value of gold model
 */
 void LevelModel::addGoldValue(int add) {
-    gold.changeValue(gold.getValue() + add);
+    gold.changeValue(min(gold.getValue() + add, MAX_GOLD));
 }
