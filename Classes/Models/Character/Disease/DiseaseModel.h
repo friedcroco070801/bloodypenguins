@@ -16,6 +16,7 @@ protected:
     double speed;
     int damage;
     double hitRechargeTime;
+    bool ignoreCell;
     std::vector< std::vector<int> >* path;
     std::vector< std::vector<int> >::iterator currentPath;
     std::vector< std::vector<int> >::iterator nextPath;

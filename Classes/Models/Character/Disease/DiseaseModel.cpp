@@ -11,6 +11,7 @@ Constructor of DiseaseModel
 DiseaseModel::DiseaseModel(DiseaseId id) : CharacterModel(DISEASE), id(id), action(WAITING), dir(LEFT) {
     level = NULL;
     path = NULL;
+    ignoreCell = false;
 }
 
 /* 
@@ -122,7 +123,7 @@ void DiseaseModel::update() {
         // If is waiting
         if (action == WAITING) {
             // Detect to attack
-            if (target != cellList.end()) {
+            if (target != cellList.end() && !ignoreCell) {
                 action = ATTACKING;
                 changeDirectionToTarget(*target);
             }
