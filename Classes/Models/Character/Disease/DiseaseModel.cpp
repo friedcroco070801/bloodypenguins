@@ -141,6 +141,8 @@ void DiseaseModel::update() {
         if (action == ATTACKING) {
             // Detect to attack
             if (target != cellList.end()) {
+                changeDirectionToTarget(*target);
+                
                 // Check if recharge time
                 auto timePoint = level->getTimeCounter() / hitRechargeTime;
                 auto roundTimePoint = round(timePoint);

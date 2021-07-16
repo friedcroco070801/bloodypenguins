@@ -11,7 +11,7 @@ public:
     static UIProjectile* create(ProjectileId);
     virtual void addToScene(cocos2d::Scene*);
     virtual void idleAnimate() {}
-    virtual void destroyAnimate() {}
+    virtual void destroyAnimate();
 };
 
 #endif // !__UI_PROJECTILE_H__

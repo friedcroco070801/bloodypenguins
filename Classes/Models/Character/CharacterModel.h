@@ -31,6 +31,7 @@ public:
     virtual void update(){};
     virtual ~CharacterModel(){};
     double getDistanceToOther(CharacterModel* other);
+    int getHP() {return hp;}
     virtual void __setLevel(LevelModel*);
 };
 

@@ -21,3 +21,10 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
     }
     return nullptr;
 }
+
+/*
+Destroy animation
+*/
+void UIProjectile::destroyAnimate() {
+    removeFromParent();
+}

@@ -5,7 +5,7 @@
 Cell00Model constructor
 */
 Cell00Model::Cell00Model() : ShootingCellModel(CELL_00_EOSINOPHILS, CELL_00_PROJECTILE) {
-    rechargeTime = 20.0;
+    rechargeTime = 5.0;
     shootRechargeTime = 1.0;
     distance = 2.0;
     cost = 100;

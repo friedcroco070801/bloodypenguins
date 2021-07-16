@@ -90,8 +90,9 @@ Take damage and take effect upon hitting target
 */
 void ProjectileModel::hitTarget() {
     if (!isDestroyed) {
-        target->__getUIObject()->hitAnimate(target->getDirection());
         target->takeDamage(damage);
+        if (target->getHP() > 0)
+            target->__getUIObject()->hitAnimate(target->getDirection());
         effectOnHit();
         isDestroyed = true;
         level->dumpProjectile(this);

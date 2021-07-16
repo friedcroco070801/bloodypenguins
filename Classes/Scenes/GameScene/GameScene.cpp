@@ -12,7 +12,7 @@ bool GameScene::init() {
 	if (!Scene::init()) return false;
 	level = new LevelModel(1, this);
 	level->startCounting();
-	controlLayer(level);
+	//controlLayer(level);
 	drawMap();
 	addBackground();
     this->schedule(CC_SCHEDULE_SELECTOR(GameScene::updateLevel), 0.01f);

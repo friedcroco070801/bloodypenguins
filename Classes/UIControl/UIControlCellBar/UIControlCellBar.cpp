@@ -27,13 +27,15 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 			CCLOG("Touch");
 			break;
 		case ui::Widget::TouchEventType::ENDED:
+		{
 			CCLOG("Cell Hold");
 			auto controlLayer = GSControlLayer::create(level);
 			scene->addChild(controlLayer, CELLBAR_LAYER_ZORDER);
 			controlLayer->setPreviewImage(id);
 			break;
-		// default:
-		// 	break;
+		}
+		default:
+			break;
 		}
 	}
 };

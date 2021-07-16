@@ -3,7 +3,7 @@
 
 #include "Models/Character/Cell/CellModelDefinitions.h"
 
-#define DOUBLE_PRECISION 0.00001
+#define DOUBLE_PRECISION 0.000001
 
 #define CELLBAR_LAYER_ZORDER 10
 
