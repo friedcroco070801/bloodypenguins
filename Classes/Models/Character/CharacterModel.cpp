@@ -9,6 +9,7 @@ CharacterModel::CharacterModel(CharacterType type) {
     this->type = type;
     this->level = NULL;
     status = NORMAL;
+    frozenStatusCounter = 0.0;
     alive = true;
 }
 
@@ -31,6 +32,13 @@ Set status of the character
 */
 void CharacterModel::setStatus(CharacterStatus status) {
     this->status = status;
+}
+
+/*
+Set frozen counter of the character
+*/
+void CharacterModel::setFronzenCounter(double counter) {
+    frozenStatusCounter = counter;
 }
 
 /*

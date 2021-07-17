@@ -9,7 +9,8 @@ enum CharacterType {
 
 // Status of the character
 enum CharacterStatus {
-    NORMAL
+    NORMAL,
+    FROZEN
 };
 
 #endif // !__CHARACTER_MODEL_DEFINITIONS_H__

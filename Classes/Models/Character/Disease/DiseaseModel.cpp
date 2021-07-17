@@ -103,10 +103,27 @@ void DiseaseModel::update() {
         level->dumpDisease(this);
         this->level = NULL;
 
+        // Remove any existing status
+        if (status == FROZEN) {
+            ui->deFrozenAnimate();
+        }
+
         // Destroy UIObject
         ui->dieAnimate(dir);
         //ui->removeFromScene();
         return;
+    }
+
+    // Check if any status that prevents moving
+    if (status == FROZEN) {
+        if (abs(frozenStatusCounter) <= ACCEPTING_TIME_ERROR) {
+            // Thawed out
+            deFrozen();
+        }
+        else {
+            frozenStatusCounter -= UPDATING_FREQUENCY;
+            return;
+        }
     }
 
     if (alive && level != NULL) {
@@ -114,28 +131,25 @@ void DiseaseModel::update() {
         auto cellList = level->__getCellList();
         auto target = cellList.end();
         for (auto it = cellList.begin(); it != cellList.end(); it++) {
-            if (getDistanceToOther(*it) <= 1.0 + ACCEPTING_TIME_ERROR) {
+            if (getDistanceToOther(*it) <= 1.0 + 0.000002 && (*it)->canBeEaten()) {
+                // Check if a passed target
+                auto tempDir = dir;
+                changeDirectionToTarget(*it);
+                if ((dir == UP && tempDir == DOWN) || (dir == DOWN && tempDir == UP) || 
+                    (dir == LEFT && tempDir == RIGHT) || (dir == RIGHT && tempDir == LEFT)) {
+                    dir = tempDir;
+                    continue;
+                }
+                dir = tempDir;
+
                 target = it;
                 break;
             }
         }
 
-        // If is waiting
-        if (action == WAITING) {
-            // Detect to attack
-            if (target != cellList.end() && !ignoreCell) {
-                action = ATTACKING;
-                changeDirectionToTarget(*target);
-            }
-            else {
-                action = WALKING;
-                changeDirectionOnPath();
-                ui->walkAnimate(dir);
-				if (currentPath != path->end())
-					currentPath++;
-                if (nextPath != path->end())
-                    nextPath++;
-            }
+        // Detect enemy
+        if (target != cellList.end() && !ignoreCell) {
+            action = ATTACKING;
         }
 
         // If is attacking
@@ -154,13 +168,17 @@ void DiseaseModel::update() {
                 }
             }
             else {
-                action = WALKING;
-                changeDirectionOnPath();
-                ui->walkAnimate(dir);
-                currentPath++;
-                if (nextPath != path->end())
-                    nextPath++;
+                action = WAITING;
+                ui->idleAnimate(dir);
             }
+        }
+
+        // If is waiting
+        if (action == WAITING) {
+            // Change to walking
+            action = WALKING;
+            changeDirectionOnPath();
+            ui->walkAnimate(dir);
         }
 
         // If is walking
@@ -184,6 +202,12 @@ void DiseaseModel::update() {
             if (abs(cellX - roundX) <= ACCEPTING_TIME_ERROR && abs(cellY - roundY) <= ACCEPTING_TIME_ERROR) {
                 action = WAITING;
                 ui->idleAnimate(dir);
+                if (nextPath != path->end()) {
+                    if (abs((*nextPath)[0] - cellX) <= ACCEPTING_TIME_ERROR && abs((*nextPath)[1] - cellY) <= ACCEPTING_TIME_ERROR) {
+                        currentPath++;
+                        nextPath++;
+                    }
+                }
             }
         }
     }
@@ -211,4 +235,21 @@ Set UI Object for the DiseaseModel
 void DiseaseModel::setUIObject(UIDisease* ui) {
     this->ui = ui;
     ui->idleAnimate(dir);
+}
+
+/*
+Set frozen
+*/
+void DiseaseModel::setFrozen() {
+    this->setStatus(FROZEN);
+    ui->setFrozenAnimate();
+}
+
+/*
+Defrozen
+*/
+void DiseaseModel::deFrozen() {
+    this->setStatus(NORMAL);
+    this->setFronzenCounter(0.0);
+    ui->deFrozenAnimate();
 }

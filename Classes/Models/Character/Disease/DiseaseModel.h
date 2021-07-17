@@ -36,6 +36,8 @@ public:
     // Get DiseaseId
     virtual DiseaseId getDiseaseId() {return id;}
     virtual Direction getDirection() {return dir;}
+    virtual void setFrozen();
+    virtual void deFrozen();
 };
 
 #endif // !__DISEASE_MODEL_H__

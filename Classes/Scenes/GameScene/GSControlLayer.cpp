@@ -73,6 +73,7 @@ void GSControlLayer::setPreviewImage(CellId id) {
 		this->link_image = CELL_01_FILENAME;
 		break;
 	default:
+		this->link_image = CELL_01_FILENAME;
 		break;
 	}
 }

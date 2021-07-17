@@ -13,6 +13,7 @@ protected:
     double distance;
     double rechargeTime;
     UICell* ui;
+    bool beEaten;
 public:
     static CellModel* create(CellId id);
     CellModel(CellId id);
@@ -31,6 +32,8 @@ public:
     virtual int getCost() {return cost;}
     // Get recharge time
     virtual double getRechargeTime() {return rechargeTime;}
+    // Check if can be eaten
+    virtual bool canBeEaten() {return beEaten;}
 };
 
 #endif // !__CELL_MODEL_H__

@@ -15,6 +15,7 @@ protected:
     CharacterType type;
     int hp;
     CharacterStatus status;
+    double frozenStatusCounter;
     bool alive;
     double cellX;
     double cellY;
@@ -23,6 +24,8 @@ public:
     CharacterModel(CharacterType);
     virtual void takeDamage(int);
     virtual void setStatus(CharacterStatus);
+    virtual CharacterStatus getStatus() {return status;}
+    virtual void setFronzenCounter(double);
     virtual bool isAlive();
     virtual void setPosition(double, double);
     virtual CellPosition getPosition();

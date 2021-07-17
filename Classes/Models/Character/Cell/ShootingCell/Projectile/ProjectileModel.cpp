@@ -13,6 +13,8 @@ ProjectileModel* ProjectileModel::create(ProjectileId id, CellModel* source, Dis
     switch (id) {
     case CELL_00_PROJECTILE:
         return new Cell00ProjectileModel(source, target);
+    default:
+        return new Cell00ProjectileModel(source, target);
     }
     return nullptr;
 }

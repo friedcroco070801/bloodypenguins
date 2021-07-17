@@ -5,7 +5,7 @@
 Cell02Model constructor
 */
 Cell02Model::Cell02Model() : EffectCellModel(CELL_02_PLATELETS) {
-    rechargeTime = 40.0;
+    rechargeTime = 7.0;
     distance = 0.0;
     cost = 50;
     hp = 80;

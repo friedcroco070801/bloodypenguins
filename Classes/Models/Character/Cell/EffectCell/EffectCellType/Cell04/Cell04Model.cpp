@@ -1,14 +1,16 @@
 #include "Models/models.h"
 #include "Cell04Model.h"
+#include "UIObjects/uiobj.h"
 
 /*
 Cell04Model constructor
 */
 Cell04Model::Cell04Model() : EffectCellModel(CELL_04_MONOCYTES) {
-    rechargeTime = 40.0;
-    distance = 1.0;
+    rechargeTime = 5.0;
+    distance = 1.5;
     cost = 50;
     hp = 80;
+    beEaten = false;
 
     // Do not use
     effectRechargeTime = 0.5;
@@ -19,7 +21,16 @@ Cell04Model::Cell04Model() : EffectCellModel(CELL_04_MONOCYTES) {
 Cell04Model take effect: None
 */
 void Cell04Model::takeEffect() {
-
+    auto diseaseList = level->__getDiseaseList();
+    for (auto it = diseaseList.begin(); it != diseaseList.end(); it++) {
+        if (getDistanceToOther(*it) <= distance + ACCEPTING_TIME_ERROR) {
+            if ((*it)->getStatus() != FROZEN) {
+                (*it)->setFrozen();
+                (*it)->setFronzenCounter(3.0);
+            }
+        }
+    }
+    hp = 0;
 }
 
 /* 

@@ -9,6 +9,10 @@ public:
     virtual void setCellPosition(double, double);
     virtual void addToScene(cocos2d::Scene*);
     virtual void removeFromScene();
+    virtual void setFrozenAnimate();
+    virtual void deFrozenAnimate();
+protected:
+    cocos2d::Vector<cocos2d::Animation*> previousStateAnimations;
 };
 
 #endif // !__UI_OBJECTS_H__

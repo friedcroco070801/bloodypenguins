@@ -11,6 +11,7 @@ Constructor of CellModel
 CellModel::CellModel(CellId id) : CharacterModel(CELL) {
     this->id = id;
     ui = nullptr;
+    beEaten = true;
 }
 
 /* 
