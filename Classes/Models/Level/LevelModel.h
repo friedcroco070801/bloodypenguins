@@ -59,9 +59,11 @@ public:
     // Get cellList of the level. Should not be used outside Models.
     std::list<CellModel*>& __getCellList() {return cellList;}
     std::vector< std::vector<int> >* __getEnemyPath();
+    std::vector< std::vector<int> > getEndPaths() {return endPaths;}
 private:
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
+    std::vector< std::vector<int> > endPaths;
     std::vector<WaveModel> waveList;
     std::vector<WaveModel>::iterator currentWave;
     std::list<CellModel*> cellList;

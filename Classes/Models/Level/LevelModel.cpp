@@ -92,6 +92,17 @@ void LevelModel::readLevelFromJson(int level) {
         enemyPaths.push_back(temp1);
     }
 
+    // Get end paths
+    json jend = j["endPaths"];
+    for (auto it = jend.begin(); it != jend.end(); it++) {
+        vector<int> temp;
+        auto vec = it->get< vector<int> >();
+        for (auto it2 = vec.begin(); it2 != vec.end(); it2++) {
+            temp.push_back(*it2);
+        }
+        endPaths.push_back(temp);
+    }
+
     // Get wave lists
     json jwaves = j["waves"];
     for (auto it1 = jwaves.begin(); it1 != jwaves.end(); it1++) {

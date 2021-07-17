@@ -1,5 +1,6 @@
 #include "GSMap.h"
 #include "AppDelegate.h"
+#include "Components/GSFlag.h"
 
 USING_NS_CC;
 
@@ -32,6 +33,18 @@ void GSMap::createMap(LevelModel *level) {
 				enemyWay->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
 				enemyWay->setPosition(ROW_COLUMN_TO_POSITION(temp));
 				this->addChild(enemyWay);
+
+				// Draw endpoint of the path
+				auto endPaths = level->getEndPaths();
+				for (auto it = endPaths.begin(); it != endPaths.end(); it++) {
+					if ((*it)[0] == i && (*it)[1] == j) {
+						auto flag = GSFlag::create();
+						flag->setAnchorPoint(Vec2(0.75f, 0.125f));
+						flag->setPosition(ROW_COLUMN_TO_POSITION(temp));
+						flag->flutterAnimate();
+						this->addChild(flag);
+					}
+				}
 			}
 		}
 	}
