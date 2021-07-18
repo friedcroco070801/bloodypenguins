@@ -6,5 +6,7 @@
 #include "Disease02/Disease02Model.h"
 #include "Disease03/Disease03Model.h"
 #include "Disease04/Disease04Model.h"
+#include "Disease05/Disease05Model.h"
+#include "Disease06/Disease06Model.h"
 
 #endif // !__DISEASE_TYPE_H__
