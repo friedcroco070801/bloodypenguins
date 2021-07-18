@@ -29,6 +29,10 @@ CellModel* CellModel::create(CellId id) {
         return new Cell03Model();
     case CELL_04_MONOCYTES:
         return new Cell04Model();
+    case CELL_05_LYMPHOCYTESB:
+        return new Cell05Model();
+    case CELL_06_NEUTROPHILS:
+        return new Cell06Model();
     }
     return nullptr;
 } 
@@ -73,6 +77,7 @@ bool CellModel::canPutOn(CellId id, LevelModel* level, int cellX, int cellY) {
         case CELL_00_EOSINOPHILS:
         case CELL_01_ERYTHROCYTES:
         case CELL_03_BASOPHILS:
+        case CELL_05_LYMPHOCYTESB:
             if (map[cellX][cellY] == EMPTY_CAN_PUT) return true;
             else return false;
             break;
@@ -80,6 +85,7 @@ bool CellModel::canPutOn(CellId id, LevelModel* level, int cellX, int cellY) {
         // On path cell
         case CELL_02_PLATELETS:
         case CELL_04_MONOCYTES:
+        case CELL_06_NEUTROPHILS:
             if (map[cellX][cellY] == ENEMY_PATH) return true;
             else return false;
             break;

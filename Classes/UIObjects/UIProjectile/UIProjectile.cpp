@@ -18,6 +18,8 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
     // Case id 00: Rabies
     case CELL_00_PROJECTILE:
         return UICell00Projectile::create();
+    default:
+        return UICell00Projectile::create();
     }
     return nullptr;
 }

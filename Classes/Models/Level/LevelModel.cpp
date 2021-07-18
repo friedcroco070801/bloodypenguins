@@ -37,6 +37,8 @@ LevelModel::LevelModel(int level, Scene* scene) {
     cellBarList.push_back(new CellBarModel(CELL_02_PLATELETS));
     cellBarList.push_back(new CellBarModel(CELL_03_BASOPHILS));
     cellBarList.push_back(new CellBarModel(CELL_04_MONOCYTES));
+    cellBarList.push_back(new CellBarModel(CELL_05_LYMPHOCYTESB));
+    cellBarList.push_back(new CellBarModel(CELL_06_NEUTROPHILS));
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i]->__setLevel(this);
