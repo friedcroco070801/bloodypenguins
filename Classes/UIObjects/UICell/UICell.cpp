@@ -24,7 +24,6 @@ UICell* UICell::create(CellId id) {
 	case CELL_01_ERYTHROCYTES:
 		return UICell01::create();
 		break;
-
 //////////////////////////////////////////
 	case CELL_02_PLATELETS:
 		return UICell02::create();
