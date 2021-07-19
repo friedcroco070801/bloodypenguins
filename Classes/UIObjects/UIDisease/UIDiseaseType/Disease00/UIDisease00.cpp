@@ -205,7 +205,7 @@ void UIDisease00::attackAnimate(Direction dir) {
 	{
 		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY() - SIZE_OF_SQUARE/2));
 		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
-		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr)
+		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
 		// run the sequence and repeat forever.
 		this->runAction(RepeatForever::create(attackseq));
 	}
