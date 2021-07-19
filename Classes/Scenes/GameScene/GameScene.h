@@ -14,7 +14,7 @@ public:
 	void addEnergyLabel(int);
 	
 protected:
-	virtual void controlLayer(LevelModel* level);
+	// virtual void controlLayer(LevelModel* level);
 	virtual void drawMap();
 
 	virtual void addBackground();

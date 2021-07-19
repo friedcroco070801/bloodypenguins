@@ -18,10 +18,10 @@ bool GameScene::init() {
     this->schedule(CC_SCHEDULE_SELECTOR(GameScene::updateLevel), 0.01f);
 	return true;
 }
-void GameScene::controlLayer(LevelModel* level) {
-	auto controlLayer_ = GSControlLayer::create(level);
-	this->addChild(controlLayer_, 1);
-}
+// void GameScene::controlLayer(LevelModel* level) {
+// 	auto controlLayer_ = GSControlLayer::create(level);
+// 	this->addChild(controlLayer_, 1);
+// }
 void GameScene::updateLevel(float) {
 	level->update();
 }

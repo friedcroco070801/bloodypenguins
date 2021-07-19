@@ -12,6 +12,7 @@
 
 #define CELLBAR_LOADING_FILENAME "sprites/objects/cell/cellbar/cellbar_loading.png"
 #define CELLBAR_LOADING_COMPLETE_FILENAME "sprites/objects/cell/cellbar/cellbar_loading_complete.png"
+#define CELLBAR_CHOOSING_FILENAME "sprites/objects/cell/cellbar/cellbar_choosing.png"
 #define ANIM_CELLBAR_FLASH 0.1f
 
 #define CELLBAR_00_FILENAME "sprites/objects/cell/cellbar/cellbar_00.png"

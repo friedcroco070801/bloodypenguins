@@ -1,7 +1,9 @@
 #include "UIControlCellBar.h"
 #include "Scenes/GameScene/GSDefine.h"
 #include "Scenes/GameScene/GSControlLayer.h"
+#include <functional>
 USING_NS_CC;
+using namespace std;
 
 /*
 Add to Scene
@@ -29,7 +31,13 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 		case ui::Widget::TouchEventType::ENDED:
 		{
 			CCLOG("Cell Hold");
-			auto controlLayer = GSControlLayer::create(level);
+
+			// Choosing sprite
+			auto choosing = Sprite::create(CELLBAR_CHOOSING_FILENAME);
+			addChild(choosing);
+			choosing->setPosition(this->getContentSize() / 2);
+
+			auto controlLayer = GSControlLayer::create(level, choosing);
 			scene->addChild(controlLayer, CELLBAR_LAYER_ZORDER);
 			controlLayer->setPreviewImage(id);
 			break;
