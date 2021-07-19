@@ -1,6 +1,5 @@
 #ifndef __UI_CELL_00_H__
 #define __UI_CELL_00_H__
-#include "Scenes/GameScene/GSDefine.h"
 #include "cocos2d.h"
 class UICell;
 class UICell00 : public UICell {

@@ -3,5 +3,8 @@
 
 #include "Cell00/UICell00.h"
 #include "Cell01/UICell01.h"
+#include "Cell02/UICell02.h"
+#include "Cell03/UICell03.h"
+#include "Cell04/UICell04.h"
 
 #endif // !__UI_CELL_TYPE_H__

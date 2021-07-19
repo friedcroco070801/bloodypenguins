@@ -66,28 +66,33 @@ void GSControlLayer::setPreviewImage(CellId id) {
 	this->buttonCheck = true;
 	switch (id)
 	{
+		
+			
+			
 	case CELL_00_EOSINOPHILS:
 		this->link_image = CELL_00_FILENAME;
 		break;
 	case CELL_01_ERYTHROCYTES:
 		this->link_image = CELL_01_FILENAME;
 		break;
+	case CELL_02_PLATELETS:
+		this->link_image = CELL_02_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		break;
+	case CELL_03_BASOPHILS:
+		this->link_image = CELL_03_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		break;
+	case CELL_04_MONOCYTES:
+		this->link_image = CELL_04_FILENAME;
+		this->ScaleNumber = 0.75f;
+		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		break;
 	default:
-		this->link_image = CELL_01_FILENAME;
 		break;
 	}
 }
 
-/*
-void GSControlLayer::ButtonCall_1() {
-	createPreview(0);
-}
-
-void GSControlLayer::ButtonCall_2() {
-	createPreview(0);
-}
-*/
-//////////////////////////////////////XOA
 bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
 
 	auto p = touch->getLocation();
@@ -95,7 +100,8 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 	if (buttonCheck) {
 		this->previewImage = Sprite::create(this->link_image,Rect(0,0,size,size));
 		this->previewImage->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
-		this->previewImage->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
+		this->previewImage->setAnchorPoint(this->anchonPoint);
+		this->previewImage->setScale(this->ScaleNumber);
 		if (GRASS_OUTSIDE(p)) {
 			this->previewImage->setColor(Color3B::RED);
 			this->previewImage->setOpacity(150);

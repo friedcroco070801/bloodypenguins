@@ -39,6 +39,8 @@ public:
 	void setPreviewImage(CellId id);
 
 private:
+	float ScaleNumber = 1.0f;
+	cocos2d::Point anchonPoint = cocos2d::Point(0.5,0.5);
 	std::string link_image;
 	CellId Cell_Id;
 	cocos2d::Sprite *previewImage ;
