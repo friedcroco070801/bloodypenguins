@@ -43,6 +43,10 @@ DiseaseModel* DiseaseModel::create(DiseaseId id) {
         return new Disease03Model();
     case DISEASE_04_POLIO:
         return new Disease04Model();
+    case DISEASE_05_MALARIA:
+        return new Disease05Model();
+    case DISEASE_06_EBOLA:
+        return new Disease06Model();
     }
     return nullptr;
 }

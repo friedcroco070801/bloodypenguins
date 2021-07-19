@@ -163,6 +163,7 @@ void GSControlLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) 
 		}
 		this->previewImage->removeFromParent();
 		this->removeFromParent();
+		choose->removeFromParent();
 	}	
 	
 }

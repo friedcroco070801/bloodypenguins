@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "Models/models.h"
 #include "GSDefine.h"
+#include <functional>
 
 
 struct position
@@ -15,7 +16,7 @@ struct position
 class GSControlLayer : public cocos2d::Layer
 {
 public:
-	static GSControlLayer* create(LevelModel* level_) 
+	static GSControlLayer* create(LevelModel* level_, cocos2d::Sprite* choose) 
 	{ 
 		GSControlLayer *pRet = new(std::nothrow) GSControlLayer(); 
 		if (pRet && pRet->init()) 
@@ -23,6 +24,7 @@ public:
 
 			pRet->autorelease(); 
 			pRet->level = level_;
+			pRet->choose = choose;
 			return pRet; 
 		} 
 		else 
@@ -45,6 +47,7 @@ private:
 	CellId Cell_Id;
 	cocos2d::Sprite *previewImage ;
 	bool buttonCheck = false;
+	cocos2d::Sprite* choose;
 
 public:
     virtual bool init();
