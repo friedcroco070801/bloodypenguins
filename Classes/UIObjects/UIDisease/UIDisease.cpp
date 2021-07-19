@@ -25,8 +25,13 @@ UIDisease* UIDisease::create(DiseaseId id) {
 	case DISEASE_02_INFLUENZA:
 		return UIDisease02::create();
 		break;
+	case DISEASE_03_MEASLES:
+		return UIDisease03::create();
+		break;
+	case DISEASE_04_POLIO:
+		return UIDisease04::create();
+		break;
     }
-	
 
     return nullptr;
 }

@@ -4,6 +4,7 @@
 #include "Models/Character/Disease/DiseaseModelDefinitions.h"
 
 #define DISEASE_LAYER_ZORDER 3
+#define ANIM_BASE 1
 
 #define DISEASE_02_FILENAME "sprites/objects/disease/disease02/disease02.png"
 
