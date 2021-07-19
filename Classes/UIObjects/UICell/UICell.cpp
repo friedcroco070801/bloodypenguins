@@ -34,6 +34,13 @@ UICell* UICell::create(CellId id) {
 	case CELL_04_MONOCYTES:
 		return UICell04::create();
 		break;
+	case CELL_05_LYMPHOCYTESB:
+		return UICell05::create();
+		break;
+
+	case CELL_06_NEUTROPHILS:
+		return UICell06::create();
+		break;
 	}
     return nullptr;
 }

@@ -20,7 +20,7 @@ void UICell02::addToScene(cocos2d::Scene* scene) {
 	this->idleAnimate();
 }
 void UICell02::idleAnimate() {
-	this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	
 	//this->stopActionByTag();
 
@@ -38,6 +38,8 @@ void UICell02::idleAnimate() {
 
 	this->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
 	auto idle = cocos2d::RepeatForever::create(animate);
+	idle->setTag(ANIM_BASE_TAG);
+
 	this->runAction(idle);
 }
 
@@ -50,7 +52,7 @@ void UICell02::hitAnimate() {
 
 }
 void UICell02::dieAnimate() {
-	this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	
 	//this->stopActionByTag();
 

@@ -19,7 +19,7 @@ void UICell01::addToScene(cocos2d::Scene* scene) {
 	this->idleAnimate();
 }
 void UICell01::idleAnimate() {
-	this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	const int numberSprite = 113;
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	int size = cocos2d::Sprite::create(CELL_01_FILENAME)->getContentSize().height;
@@ -31,15 +31,14 @@ void UICell01::idleAnimate() {
 	cocos2d::Animate *animate = cocos2d::Animate::create(animation);
 	this->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
 	auto idle = cocos2d::RepeatForever::create(animate);
+	idle->setTag(ANIM_BASE_TAG);
+
 	this->runAction(idle);
 }
 void UICell01::effectAnimate() {
-	this->stopAllActions();
-	auto rotate = cocos2d::RotateBy::create(1.0f,360.0f);
-	auto move = cocos2d::MoveBy::create(0.5f, cocos2d::Vec2(0,50));
-	auto move_ = cocos2d::MoveBy::create(0.5f, cocos2d::Vec2(0, -50));
-	auto sequenceSprites = cocos2d::Sequence::create(move, move_, nullptr);
-	this->runAction(rotate);
+	auto scale_1 = cocos2d::ScaleBy::create(0.5f, 2.0f);
+	auto scale_2 = cocos2d::ScaleBy::create(0.5f, 0.5f);
+	auto sequenceSprites = cocos2d::Sequence::create(scale_1, scale_2, nullptr);
 	this->runAction(sequenceSprites);
 }
 void UICell01::hitAnimate() {
@@ -49,7 +48,7 @@ void UICell01::hitAnimate() {
 	this->runAction(sequenceSprites);
 }
 void UICell01::dieAnimate() {
-	this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	auto fadeOut = cocos2d::FadeOut::create(1.0f);
 	auto remove = cocos2d::RemoveSelf::create();
 	auto sequence = cocos2d::Sequence::create(fadeOut, remove, nullptr);
