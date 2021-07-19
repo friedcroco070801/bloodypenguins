@@ -14,6 +14,7 @@ public:
     virtual void removeFromScene();
 	virtual void changeValue(int);
 	virtual void setScale(float _scale) {scale *= _scale;}
+	virtual void emphasizeAnimate();
 	static UINumeric* create();
 };
 

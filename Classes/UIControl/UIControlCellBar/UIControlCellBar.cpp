@@ -2,6 +2,7 @@
 #include "Scenes/GameScene/GSDefine.h"
 #include "Scenes/GameScene/GSControlLayer.h"
 #include <functional>
+#include "UINumeric/UINumeric.h"
 USING_NS_CC;
 using namespace std;
 
@@ -22,6 +23,11 @@ void UIControlCellBar::addToScene(Scene* scene) {
 }
 
 void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType type) {
+	if (level->getEnergyValue() < cost && canActivate) {
+		level->emphasizeEnergy();
+		return;
+	}
+
 	if (canActivate) {
 		switch (type)
 		{
@@ -48,7 +54,7 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 	}
 };
 
-UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id) {
+UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cost) {
 	UIControlCellBar *btn = new (std::nothrow) UIControlCellBar;
 
 	std::string filename;
@@ -60,6 +66,15 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id) {
 	case CELL_01_ERYTHROCYTES:
 		filename = CELLBAR_01_FILENAME;
 		break;
+	case CELL_02_PLATELETS:
+		filename = CELLBAR_02_FILENAME;
+		break;
+	case CELL_03_BASOPHILS:
+		filename = CELLBAR_03_FILENAME;
+		break;
+	case CELL_04_MONOCYTES:
+		filename = CELLBAR_04_FILENAME;
+		break;
 	default:
 		filename = CELLBAR_00_FILENAME;
 		break;
@@ -69,7 +84,15 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id) {
 	{
 		btn->level = level;
 		btn->id = id;
+		btn->cost = cost;
 		btn->autorelease();
+
+		auto costShow = UINumeric::create();
+		costShow->setScale(0.3f);
+		costShow->setPosition(8.0f, 18.0f);
+		btn->addChild(costShow);
+		costShow->changeValue(cost);
+
 		return btn;
 	}
 	CC_SAFE_DELETE(btn);

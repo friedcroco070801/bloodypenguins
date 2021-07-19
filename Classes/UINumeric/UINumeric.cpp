@@ -21,7 +21,7 @@ void UINumeric::removeFromScene() {
 
 void UINumeric::changeValue(int value) {
 	for (auto digit : digitList) {
-		getParent()->removeChild(digit);
+		this->removeChild(digit);
 	}
 	digitList.clear();
 
@@ -31,13 +31,11 @@ void UINumeric::changeValue(int value) {
 		i = i - 48;
 		auto sprite = Sprite::create(NUMERIC_IMG);
 		auto ith_number = Sprite::create(NUMERIC_IMG, Rect(sprite->getContentSize().width / 10 * i, 0, sprite->getContentSize().width / 10, sprite->getContentSize().height));
-		//ith_number->setContentSize(Size(NUMBER_SIZE, NUMBER_SIZE));
-		//ith_number->setAnchorPoint(Vec2(0, 0));
 		sprite->setContentSize(Size(sprite->getContentSize().width * scale, sprite->getContentSize().height * scale));
+		ith_number->setAnchorPoint(Vec2(0.0f, 0.5f));
 		ith_number->setContentSize(Size(ith_number->getContentSize().width * scale, ith_number->getContentSize().height * scale));
-		ith_number->setPosition(Vec2(getPosition().x + ith_number->getContentSize().width * (1/2 + j), getPosition().y));
-		//ith_number->setPosition(Vec2(WIDTH / 160 + ICON_SIZE + WIDTH* 1/5 + NUMBER_SIZE * j + NUMBER_SIZE / 2, NUMBER_HEIGHT));
-		getParent()->addChild(ith_number, NUMERIC_LAYER_ZORDER);
+		ith_number->setPosition(Vec2(ith_number->getContentSize().width * (1/2 + j), 0.0f));
+		this->addChild(ith_number, NUMERIC_LAYER_ZORDER);
 		digitList.pushBack(ith_number);
 	}
 }
@@ -54,4 +52,14 @@ UINumeric* UINumeric::create() {
         CC_SAFE_DELETE(ret);
     }
     return ret;
+}
+
+void UINumeric::emphasizeAnimate() {
+	for (auto sprite : digitList) {
+		auto blinkRed = TintTo::create(0.05f, Color3B::RED);
+		auto blinkWhite = TintTo::create(0.05f, Color3B::WHITE);
+		auto delay = DelayTime::create(0.05f);
+		auto seq = Sequence::create(blinkRed, blinkWhite, delay, blinkRed, blinkWhite, nullptr);
+		sprite->runAction(seq);
+	}
 }
