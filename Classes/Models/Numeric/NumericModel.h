@@ -14,6 +14,7 @@ public:
     virtual int getValue();
     #ifdef __HAS_UINUMERIC__
     virtual void setUIObject(UINumeric*);
+    virtual UINumeric* __getUIObject() {return ui;}
     #endif // __HAS_UINUMERIC__
 protected:
     int value;

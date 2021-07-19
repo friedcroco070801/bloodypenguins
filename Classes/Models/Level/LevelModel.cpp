@@ -44,7 +44,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i]->__setLevel(this);
-        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId());
+        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId(), cellBarList[i]->getCost());
         cellBarList[i]->setUIObject(cellBarControl);
         cellBarControl->addToScene(scene);
         cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));
@@ -390,3 +390,18 @@ Add more to the value of gold model
 void LevelModel::addGoldValue(int add) {
     gold.changeValue(min(gold.getValue() + add, MAX_GOLD));
 }
+
+/*
+Get value of current energy
+*/
+int LevelModel::getEnergyValue() {
+    return energy.getValue();
+}
+
+/*
+Emphasize the energy counter
+*/
+void LevelModel::emphasizeEnergy() {
+    energy.__getUIObject()->emphasizeAnimate();
+}
+
