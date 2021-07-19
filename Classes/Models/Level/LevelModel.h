@@ -53,6 +53,8 @@ public:
     void addEnergyValue(int);
     void addGoldValue(int);
     void printLevelState();
+    void emphasizeEnergy();
+    int getEnergyValue();
 
     // Get diseaseList of the level. Should not be used outside Models.
     std::list<DiseaseModel*>& __getDiseaseList() {return diseaseList;}

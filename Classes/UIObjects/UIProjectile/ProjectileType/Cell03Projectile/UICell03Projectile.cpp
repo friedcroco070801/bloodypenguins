@@ -1,13 +1,13 @@
 #include "UIObjects/uiobj.h"
-#include "UICell00Projectile.h"
+#include "UICell03Projectile.h"
 USING_NS_CC;
 
 /*
-Create new instance of UICell00Projectile
+Create new instance of UICell03Projectile
 */
-UICell00Projectile* UICell00Projectile::create() {
-    UICell00Projectile *uiprojectile = new (std::nothrow) UICell00Projectile();
-    if (uiprojectile && uiprojectile->initWithFile(CELL_00_PROJECTILE_FILENAME))
+UICell03Projectile* UICell03Projectile::create() {
+    UICell03Projectile *uiprojectile = new (std::nothrow) UICell03Projectile();
+    if (uiprojectile && uiprojectile->initWithFile(CELL_03_PROJECTILE_FILENAME))
     {
         uiprojectile->autorelease();
         uiprojectile->setScaleY(0.75f);
@@ -20,19 +20,19 @@ UICell00Projectile* UICell00Projectile::create() {
 /*
 Idle animate
 */
-void UICell00Projectile::idleAnimate() {
-    auto spin = RotateBy::create(0.25f, 360);
+void UICell03Projectile::idleAnimate() {
+    auto spin = RotateBy::create(0.5f, 360);
     this->runAction(RepeatForever::create(spin));
 }
 
 /*
 Destroy animate
 */
-void UICell00Projectile::destroyAnimate() {
+void UICell03Projectile::destroyAnimate() {
     this->stopAllActions();
     Vector<SpriteFrame*> frames;
     for (unsigned int i = 1; i < 6; i++) {
-        auto frame = SpriteFrame::create(CELL_00_DESTROY_FILENAME, Rect(i * 32, 0, 32, 32));
+        auto frame = SpriteFrame::create(CELL_03_DESTROY_FILENAME, Rect(i * 32, 0, 32, 32));
         frames.pushBack(frame);
     }
     auto animate = Animate::create(Animation::createWithSpriteFrames(frames, 0.05f));

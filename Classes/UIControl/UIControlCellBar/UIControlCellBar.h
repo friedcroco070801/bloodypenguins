@@ -12,13 +12,14 @@ public:
 	virtual void onTouch();
 	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type);
 	void updateRecharge(double);
-	static UIControlCellBar* create(LevelModel*, CellId);
+	static UIControlCellBar* create(LevelModel*, CellId, int);
 private:
 	CellId id;
 	Scene* scene;
 	LevelModel* level;
 	Sprite* loading;
 	Sprite* choosing;
+	int cost;
 	bool canActivate;
 	void flashAnimate();
 };

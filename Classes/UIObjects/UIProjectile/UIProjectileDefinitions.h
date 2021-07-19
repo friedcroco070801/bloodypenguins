@@ -6,5 +6,6 @@
 #define PROJECTILE_LAYER_ZORDER 4
 
 #define CELL_00_PROJECTILE_FILENAME "sprites/objects/projectile/cell_00_projectile.png"
+#define CELL_03_PROJECTILE_FILENAME "sprites/objects/projectile/cell_03_projectile.png"
 
 #endif // !__UI_PROJECTILE_DEFINITIONS_H__
