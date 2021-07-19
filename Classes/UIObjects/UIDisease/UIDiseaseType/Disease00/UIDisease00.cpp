@@ -11,7 +11,8 @@ UIDisease00* UIDisease00::create() {
     if (uidisease && uidisease->initWithFile(DISEASE_00_FILENAME))
     {
         uidisease->autorelease();
-		uidisease->setScale(2);
+		uidisease->setScale(1.5);
+		//uidisease->setAnchorPoint(Vec2(0.75f, 0.125f));
         return uidisease;
     }
     CC_SAFE_DELETE(uidisease);
@@ -20,7 +21,8 @@ UIDisease00* UIDisease00::create() {
 
 
 void UIDisease00::walkAnimate(Direction dir) {
-	this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE);
+	//this->stopAllActions();
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_00_SHEETWALK, DISEASE_00_IMGWALK);
 	
 	const int numberSprite = 16;
@@ -82,15 +84,17 @@ void UIDisease00::walkAnimate(Direction dir) {
 		break;
 	}
 	// Khởi tạo một khung hình animation từ Vector SpriteFrame.  
-	animation = Animation::createWithSpriteFrames(animFrames, 0.5f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
 	animate = Animate::create(animation);
-
+	auto repeat = RepeatForever::create(animate);
+	repeat->setTag(ANIM_BASE);
 	// Chạy Acction animation với số lần lặp vô hạn.
-	this->runAction(RepeatForever::create(animate));
+	this->runAction(repeat);
 }
 
 void UIDisease00::idleAnimate(Direction dir) {
-	this->stopAllActions();
+	//this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_00_SHEETIDLE, DISEASE_00_IMGIDLE);
 
 	const int numberSprites = 16;
@@ -135,14 +139,18 @@ void UIDisease00::idleAnimate(Direction dir) {
 	default:
 		break;
 	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.2f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
 	animate = Animate::create(animation);
-
-	this->runAction(RepeatForever::create(animate));
+	auto repeat = RepeatForever::create(animate);
+	repeat->setTag(ANIM_BASE);
+	// Chạy Acction animation với số lần lặp vô hạn.
+	this->runAction(repeat);
+	
 }
 
 void UIDisease00::attackAnimate(Direction dir) {
-	this->stopAllActions();
+	/*
+	this->stopActionByTag(ANIM_BASE);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_00_SHEETATTACK, DISEASE_00_IMGATTACK);
 
 	const int numberSprites = 16;
@@ -189,16 +197,60 @@ void UIDisease00::attackAnimate(Direction dir) {
 	}
 	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
 	animate = Animate::create(animation);
-
+	this->setTag(ANIM_BASE);
 	this->runAction(RepeatForever::create(animate));
+	*/
+	switch (dir) {
+	case DOWN:
+	{
+		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY() - SIZE_OF_SQUARE/2));
+		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
+		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
+		// run the sequence and repeat forever.
+		this->runAction(RepeatForever::create(attackseq));
+	}
+	break;
+
+	case LEFT:
+	{
+		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX() - SIZE_OF_SQUARE/2, this->getPositionY()));
+		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
+		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
+		// run the sequence and repeat forever.
+		this->runAction(RepeatForever::create(attackseq));
+	}
+	break;
+
+	case RIGHT:
+	{
+		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX() + SIZE_OF_SQUARE/2, this->getPositionY()));
+		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
+		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
+		// run the sequence and repeat forever.
+		this->runAction(RepeatForever::create(attackseq));
+	}
+	break;
+
+	case UP:
+	{
+		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY() + SIZE_OF_SQUARE/2));
+		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
+		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
+		// run the sequence and repeat forever.
+		this->runAction(RepeatForever::create(attackseq));
+	}
+	break;
+	default:
+		break;
+	}
+
 }
 
 void UIDisease00::hitAnimate(Direction dir) {
-	
-	this->stopAllActions();
-	auto hitanim = Blink::create(1, 3);
+	auto tintTo = cocos2d::TintTo::create(0.1, cocos2d::Color3B::RED);
+	auto tintTo_ = cocos2d::TintTo::create(0.1, cocos2d::Color3B::WHITE);
+	auto hitanim = cocos2d::Sequence::create(tintTo, tintTo_, nullptr);
 	this->runAction(hitanim);
-	
 }
 
 void UIDisease00::dieAnimate(Direction dir) {

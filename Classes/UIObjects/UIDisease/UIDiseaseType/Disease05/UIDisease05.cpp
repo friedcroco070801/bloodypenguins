@@ -1,14 +1,14 @@
 ﻿#include "UIObjects/uiobj.h"
-#include "UIDisease02.h"
+#include "UIDisease05.h"
 #include "Scenes/GameScene/GSDefine.h"
-#include "UIDisease02Definitions.h"
+#include "UIDisease05Definitions.h"
 
 /*
-Create new instance of UIDisease02
+Create new instance of UIDisease05
 */
-UIDisease02* UIDisease02::create() {
-	UIDisease02 *uidisease = new (std::nothrow) UIDisease02();
-    if (uidisease && uidisease->initWithFile(DISEASE_02_FILENAME))
+UIDisease05* UIDisease05::create() {
+	UIDisease05 *uidisease = new (std::nothrow) UIDisease05();
+    if (uidisease && uidisease->initWithFile(DISEASE_05_FILENAME))
     {
         uidisease->autorelease();
 		uidisease->setScale(1.5);
@@ -19,11 +19,11 @@ UIDisease02* UIDisease02::create() {
 }
 
 
-void UIDisease02::walkAnimate(Direction dir) {
+void UIDisease05::walkAnimate(Direction dir) {
 	this->stopAllActionsByTag(ANIM_BASE);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_02_SHEETWALK, DISEASE_02_IMGWALK);
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_05_SHEETWALK, DISEASE_05_IMGWALK);
 	
-	const int numberSprite = 16;
+	const int numberSprite = 12;
 	const int maxWord = 50;
 
 	Vector<SpriteFrame*> animFrames;
@@ -32,29 +32,29 @@ void UIDisease02::walkAnimate(Direction dir) {
 	char spriteFrameByName[maxWord] = { 0 };
 	switch (dir) {
 	case DOWN:
-		for (int index = 1; index <= 4; index++){
-			sprintf(spriteFrameByName, "disease02walk%d.png", index);
+		for (int index = 1; index <= 3; index++){
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case LEFT:
-		for (int index = 5; index <= 8; index++){
-			sprintf(spriteFrameByName, "disease02walk%d.png", index);
+		for (int index = 4; index <= 6; index++){
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case RIGHT:
-		for (int index = 9; index <= 12; index++){
-			sprintf(spriteFrameByName, "disease02walk%d.png", index);
+		for (int index = 7; index <= 9; index++){
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case UP:
-		for (int index = 13; index <= 16; index++){
-			sprintf(spriteFrameByName, "disease02walk%d.png", index);
+		for (int index = 10; index <= 12; index++){
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
@@ -69,11 +69,11 @@ void UIDisease02::walkAnimate(Direction dir) {
 	this->runAction(repeat);
 }
 
-void UIDisease02::idleAnimate(Direction dir) {
+void UIDisease05::idleAnimate(Direction dir) {
 	this->stopAllActionsByTag(ANIM_BASE);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_02_SHEETIDLE, DISEASE_02_IMGIDLE);
+	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_05_SHEETIDLE, DISEASE_05_IMGIDLE);
 
-	const int numberSprites = 16;
+	const int numberSprites = 12;
 	const int maxWords = 50;
 
 	Vector<SpriteFrame*> animFrames;
@@ -82,29 +82,29 @@ void UIDisease02::idleAnimate(Direction dir) {
 	char spriteFrameByName[maxWords] = { 0 };
 	switch (dir) {
 	case DOWN:
-		for (int index = 1; index <= 4; index++) {
-			sprintf(spriteFrameByName, "disease02idle%d.png", index);
+		for (int index = 1; index <= 3; index++) {
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case LEFT:
-		for (int index = 5; index <= 8; index++) {
-			sprintf(spriteFrameByName, "disease02idle%d.png", index);
+		for (int index = 4; index <= 6; index++) {
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case RIGHT:
-		for (int index = 9; index <= 12; index++) {
-			sprintf(spriteFrameByName, "disease02idle%d.png", index);
+		for (int index = 7; index <= 9; index++) {
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
 		break;
 	case UP:
-		for (int index = 13; index <= 16; index++) {
-			sprintf(spriteFrameByName, "disease02idle%d.png", index);
+		for (int index = 10; index <= 12; index++) {
+			sprintf(spriteFrameByName, "disease05idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
 			animFrames.pushBack(frame);
 		}
@@ -119,7 +119,7 @@ void UIDisease02::idleAnimate(Direction dir) {
 	this->runAction(repeat);
 }
 
-void UIDisease02::attackAnimate(Direction dir) {
+void UIDisease05::attackAnimate(Direction dir) {
 	switch (dir) {
 	case DOWN:
 	{
@@ -161,8 +161,7 @@ void UIDisease02::attackAnimate(Direction dir) {
 	}
 }
 
-void UIDisease02::hitAnimate(Direction dir) {
-
+void UIDisease05::hitAnimate(Direction dir) {
 	auto tintTo = cocos2d::TintTo::create(0.1, cocos2d::Color3B::RED);
 	auto tintTo_ = cocos2d::TintTo::create(0.1, cocos2d::Color3B::WHITE);
 	auto hitanim = cocos2d::Sequence::create(tintTo, tintTo_, nullptr);
@@ -170,7 +169,7 @@ void UIDisease02::hitAnimate(Direction dir) {
 
 }
 
-void UIDisease02::dieAnimate(Direction dir) {
+void UIDisease05::dieAnimate(Direction dir) {
 	this->stopAllActions();
 	auto fadeout = FadeOut::create(1);
 	auto remove = RemoveSelf::create();
