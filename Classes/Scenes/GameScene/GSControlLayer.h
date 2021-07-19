@@ -19,12 +19,11 @@ public:
 	static GSControlLayer* create(LevelModel* level_, cocos2d::Sprite* choose) 
 	{ 
 		GSControlLayer *pRet = new(std::nothrow) GSControlLayer(); 
-		if (pRet && pRet->init()) 
+		if (pRet && pRet->init(choose)) 
 		{ 
 
 			pRet->autorelease(); 
 			pRet->level = level_;
-			pRet->choose = choose;
 			return pRet; 
 		} 
 		else 
@@ -50,7 +49,7 @@ private:
 	cocos2d::Sprite* choose;
 
 public:
-    virtual bool init();
+    virtual bool init(cocos2d::Sprite*);
     void calculateCellsPosition();
 	LevelModel* level;
 	position cur_ ;

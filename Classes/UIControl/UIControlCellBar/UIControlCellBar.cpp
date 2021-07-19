@@ -33,7 +33,7 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 			CCLOG("Cell Hold");
 
 			// Choosing sprite
-			auto choosing = Sprite::create(CELLBAR_CHOOSING_FILENAME);
+			choosing = Sprite::create(CELLBAR_CHOOSING_FILENAME);
 			addChild(choosing);
 			choosing->setPosition(this->getContentSize() / 2);
 

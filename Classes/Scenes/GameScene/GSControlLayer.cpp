@@ -6,7 +6,7 @@
 USING_NS_CC;
 //global variable
 
-bool GSControlLayer::init()
+bool GSControlLayer::init(Sprite* choose)
 {
     // Super init
     if ( !Layer::init() )
@@ -15,6 +15,8 @@ bool GSControlLayer::init()
     }
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+	this->choose = choose;
 
 	Vector<MenuItem*> MenuItems;
 	auto touchListener = EventListenerTouchOneByOne::create();
@@ -162,8 +164,8 @@ void GSControlLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) 
 			level->addCell(CellModel::create(this->Cell_Id), cellsPosition_.x, cellsPosition_.y);
 		}
 		this->previewImage->removeFromParent();
-		this->removeFromParent();
 		choose->removeFromParent();
+		this->removeFromParent();	
 	}	
 	
 }

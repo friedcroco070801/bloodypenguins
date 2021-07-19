@@ -18,6 +18,7 @@ private:
 	Scene* scene;
 	LevelModel* level;
 	Sprite* loading;
+	Sprite* choosing;
 	bool canActivate;
 	void flashAnimate();
 };
