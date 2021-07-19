@@ -9,6 +9,7 @@ bool GSBackgroundLayer::init() {
 		return false;
 	}
 	setBackgroundImagePosition();
+	setEnergyBarImage();
 	return true;
 }
 
@@ -24,4 +25,10 @@ void GSBackgroundLayer::setBackgroundImagePosition()
 	}
 }
 
+void GSBackgroundLayer::setEnergyBarImage() {
+	auto energy = Sprite::create(ENERGY_BAR_FILENAME);
+	energy->setAnchorPoint(Vec2(0.0f, 0.5f));
+	energy->setPosition(5.0f + Director::getInstance()->getVisibleOrigin().x, Director::getInstance()->getVisibleSize().height * 15 / 16 + Director::getInstance()->getVisibleOrigin().y);
+	this->addChild(energy, -1);
+}
 
