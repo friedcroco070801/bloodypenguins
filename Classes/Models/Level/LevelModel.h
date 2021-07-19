@@ -13,6 +13,7 @@ class DiseaseModel;
 class ProjectileModel;
 class NumericModel;
 class CellBarModel;
+class UIProgressor;
 
 class LevelModel {
 public:
@@ -85,6 +86,8 @@ private:
     cocos2d::Scene* scene;
 
     void readLevelFromJson(int level);
+
+    UIProgressor* progressor;
 };
 
 #endif // !__LEVEL_MODEL_H__

@@ -26,7 +26,7 @@
         },
         {
             "time": 10.0,
-            "huge": false,
+            "huge": true,
             "enemies": [0]
         },
         {
@@ -41,7 +41,7 @@
         },
         {
             "time": 25.0,
-            "huge": false,
+            "huge": true,
             "enemies": [0]
         },
         {
@@ -56,7 +56,7 @@
         },
         {
             "time": 40.0,
-            "huge": false,
+            "huge": true,
             "enemies": [0]
         },
         {

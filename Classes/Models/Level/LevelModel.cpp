@@ -10,6 +10,7 @@
 #include "UIControl/UIControlCellBar/UIControlCellBar.h"
 #include "UIControl/UIControlEnergy/UIControlEnergy.h"
 #include "UINumeric/UINumeric.h"
+#include "UIComponents/UIProgressor/UIProgressor.h"
 using namespace std;
 USING_NS_CC;
 
@@ -24,6 +25,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
     Set UIObject of energy, gold and CellBar
     */
     auto energyCounterUI = UINumeric::create();
+    energyCounterUI->setScale(0.75);
     energyCounterUI->addToScene(scene);
     energy.setUIObject(energyCounterUI);
     energyCounterUI->setPosition(ENERGY_COUNTER_POS_X, ENERGY_COUNTER_POS_Y);
@@ -47,6 +49,11 @@ LevelModel::LevelModel(int level, Scene* scene) {
         cellBarControl->addToScene(scene);
         cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));
     }
+
+    // UIProgressor initialization
+    progressor = UIProgressor::create(&waveList);
+    scene->addChild(progressor, 9);
+    progressor->setPosition(PROGRESSOR_POS_X, PROGRESSOR_POS_Y);
 
     // Initialize properties
     timeCounter = 0.0;
@@ -157,6 +164,7 @@ void LevelModel::update() {
         if (currentWave != waveList.end()) {
             if (abs(timeCounter - currentWave->getTime()) <= ACCEPTING_TIME_ERROR) {
                 addEnemiesOnWave();
+                progressor->updateOnWave();
             }
         }
     }
