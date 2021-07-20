@@ -4,123 +4,123 @@
     <dict>
         <key>frames</key>
         <dict>
-            <key>disease01idle1.png</key>
+            <key>disease06idle1.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{42,42}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{61,1},{42,42}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06idle2.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{58,36}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{58,36}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06idle3.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
                 <string>{-1,1}</string>
                 <key>spriteSize</key>
-                <string>{20,24}</string>
+                <string>{58,48}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,1},{20,24}}</string>
+                <string>{{59,93},{58,48}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease01idle2.png</key>
+            <key>disease06idle4.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,0}</string>
+                <string>{0,1}</string>
                 <key>spriteSize</key>
-                <string>{20,22}</string>
+                <string>{56,50}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,27},{20,22}}</string>
+                <string>{{1,83},{56,50}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease01idle3.png</key>
+            <key>disease06idle5.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,0}</string>
+                <string>{-1,1}</string>
                 <key>spriteSize</key>
-                <string>{22,22}</string>
+                <string>{58,48}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,51},{22,22}}</string>
+                <string>{{59,143},{58,48}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease01idle4.png</key>
+            <key>disease06idle6.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,-1}</string>
+                <string>{0,1}</string>
                 <key>spriteSize</key>
-                <string>{22,20}</string>
+                <string>{56,50}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,75},{22,20}}</string>
+                <string>{{1,135},{56,50}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease01idle5.png</key>
+            <key>disease06idle7.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,0}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{22,22}</string>
+                <string>{42,56}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,97},{22,22}}</string>
+                <string>{{1,39},{42,56}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
-            <key>disease01idle6.png</key>
+            <key>disease06idle8.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
                 <key>spriteOffset</key>
-                <string>{-1,-1}</string>
+                <string>{0,0}</string>
                 <key>spriteSize</key>
-                <string>{22,20}</string>
+                <string>{56,46}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,121},{22,20}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease01idle7.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{-1,0}</string>
-                <key>spriteSize</key>
-                <string>{18,22}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{1,143},{18,22}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease01idle8.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>spriteOffset</key>
-                <string>{-1,-1}</string>
-                <key>spriteSize</key>
-                <string>{18,20}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{1,167},{18,20}}</string>
+                <string>{{59,45},{56,46}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -134,13 +134,13 @@
             <key>premultiplyAlpha</key>
             <false/>
             <key>realTextureFileName</key>
-            <string>disease01idle.png</string>
+            <string>disease06idle.png</string>
             <key>size</key>
-            <string>{24,188}</string>
+            <string>{118,192}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:7f863f468901af7586dbdba1ddae7d91:d300d822e0f92b51b998c7df8fea1232:7c63e49ac1dcc81cc83eeb989263830f$</string>
+            <string>$TexturePacker:SmartUpdate:7773d89751d8ae72c00a80a1c63ce085:a65d09cddf1100ab783b87e798472b4a:874cfb92bc729ec07c92002884b2e492$</string>
             <key>textureFileName</key>
-            <string>disease01idle.png</string>
+            <string>disease06idle.png</string>
         </dict>
     </dict>
 </plist>

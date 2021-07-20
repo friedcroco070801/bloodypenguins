@@ -13,8 +13,8 @@
 #define DISEASE_01_IMGWALK "sprites/objects/disease/disease01/disease01walk.png"
 #define DISEASE_01_SHEETIDLE "sprites/objects/disease/disease01/disease01idle.plist"
 #define DISEASE_01_IMGIDLE "sprites/objects/disease/disease01/disease01idle.png"
-#define DISEASE_01_SHEETATTACK "sprites/objects/disease/disease01/disease01idle.plist"
-#define DISEASE_01_IMGATTACK "sprites/objects/disease/disease01/disease01idle.png"
+#define DISEASE_01_SHEETATTACK "sprites/objects/disease/disease01/disease01attack.plist"
+#define DISEASE_01_IMGATTACK "sprites/objects/disease/disease01/disease01attack.png"
 
 
 #endif // !__UI_DISEASE01_DEFINITIONS_H__

@@ -7,5 +7,6 @@
 #include "Disease03/UIDisease03.h"
 #include "Disease04/UIDisease04.h"
 #include "Disease05/UIDisease05.h"
+#include "Disease06/UIDisease06.h"
 
 #endif // !__UI_DISEASE_TYPE_H__

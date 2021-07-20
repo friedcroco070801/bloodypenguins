@@ -42,17 +42,17 @@
         {
             "time": 25.0,
             "huge": true,
-            "enemies": [0]
+            "enemies": [3]
         },
         {
             "time": 30.0,
             "huge": false,
-            "enemies": [0]
+            "enemies": [1]
         },
         {
             "time": 35.0,
             "huge": false,
-            "enemies": [0]
+            "enemies": [1]
         },
         {
             "time": 40.0,

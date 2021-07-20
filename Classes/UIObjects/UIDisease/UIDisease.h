@@ -13,9 +13,9 @@ public:
     virtual void addToScene(cocos2d::Scene*);
     virtual void idleAnimate(Direction dir) {}
     virtual void walkAnimate(Direction dir) {}
-    virtual void attackAnimate(Direction dir) {}
-    virtual void hitAnimate(Direction dir) {}
-    virtual void dieAnimate(Direction dir) {}
+	virtual void attackAnimate(Direction dir);
+	virtual void hitAnimate(Direction dir);
+	virtual void dieAnimate(Direction dir);
 };
 
 #endif // !__UI_DISEASE_H__
