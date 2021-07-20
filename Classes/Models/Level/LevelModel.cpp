@@ -11,6 +11,7 @@
 #include "UIControl/UIControlEnergy/UIControlEnergy.h"
 #include "UINumeric/UINumeric.h"
 #include "UIComponents/UIProgressor/UIProgressor.h"
+#include "UIControl/UIPause/UIPause.h"
 using namespace std;
 USING_NS_CC;
 
@@ -54,6 +55,11 @@ LevelModel::LevelModel(int level, Scene* scene) {
     progressor = UIProgressor::create(&waveList);
     scene->addChild(progressor, 9);
     progressor->setPosition(PROGRESSOR_POS_X, PROGRESSOR_POS_Y);
+
+    // UIPause initialization
+    pauser = UIPause::create(this);
+    scene->addChild(pauser, 9);
+    pauser->setPosition(Vec2(PAUSE_BUTTON_POS_X, PAUSE_BUTTON_POS_Y));
 
     // Initialize properties
     timeCounter = 0.0;
@@ -163,6 +169,7 @@ void LevelModel::update() {
         // Add enemies on current wave
         if (currentWave != waveList.end()) {
             if (abs(timeCounter - currentWave->getTime()) <= ACCEPTING_TIME_ERROR) {
+                timeCounter = currentWave->getTime();
                 addEnemiesOnWave();
                 progressor->updateOnWave();
             }
@@ -403,5 +410,27 @@ Emphasize the energy counter
 */
 void LevelModel::emphasizeEnergy() {
     energy.__getUIObject()->emphasizeAnimate();
+}
+
+/*
+Pause the game
+*/
+void LevelModel::pause() {
+    isCounting = false;
+    if (scene != nullptr) {
+        pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
+        Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
+    }
+}
+
+/*
+Resume the game
+*/
+void LevelModel::resume()  {
+    isCounting = true;
+    if (scene != nullptr) {
+        Director::getInstance()->getActionManager()->resumeTargets(pausedNodes);
+        Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(scene, true);
+    }
 }
 
