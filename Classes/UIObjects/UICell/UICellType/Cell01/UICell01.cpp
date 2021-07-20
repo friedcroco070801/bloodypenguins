@@ -36,9 +36,11 @@ void UICell01::idleAnimate() {
 	this->runAction(idle);
 }
 void UICell01::effectAnimate() {
-	auto scale_1 = cocos2d::ScaleBy::create(0.5f, 2.0f);
-	auto scale_2 = cocos2d::ScaleBy::create(0.5f, 0.5f);
-	auto sequenceSprites = cocos2d::Sequence::create(scale_1, scale_2, nullptr);
+	auto rotate = cocos2d::RotateBy::create(1.0f, 360.0f);
+	auto move = cocos2d::MoveBy::create(0.5f, cocos2d::Vec2(0, 50));
+	auto move_ = cocos2d::MoveBy::create(0.5f, cocos2d::Vec2(0, -50));
+	auto sequenceSprites = cocos2d::Sequence::create(move, move_, nullptr);
+	this->runAction(rotate);
 	this->runAction(sequenceSprites);
 }
 void UICell01::hitAnimate() {

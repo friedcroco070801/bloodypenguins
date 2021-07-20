@@ -1,5 +1,6 @@
 #include "UIObjects/uiobj.h"
 #include "UICell04.h"
+#include "Scenes/GameScene/GSDefine.h"
 
 /*
 Create a new instance of UICell00
@@ -43,11 +44,17 @@ void UICell04::idleAnimate() {
 	idle->setTag(ANIM_BASE_TAG);
 
 	this->runAction(idle);
+
 }
 void UICell04::effectAnimate() {
-	auto scaleBy = cocos2d::ScaleBy::create(0.5f, 2.0f, 2.0f);
+
+	auto tintTo = cocos2d::TintTo::create(0.1, cocos2d::Color3B::BLUE);
+	auto tintTo_ = cocos2d::TintTo::create(0.1, cocos2d::Color3B::WHITE);
 	auto remove = cocos2d::RemoveSelf::create();
-	auto squence = cocos2d::Sequence::create(scaleBy, remove, nullptr);
-	this->runAction(squence);
+	auto sequenceSprites = cocos2d::Sequence::create(tintTo, tintTo_, tintTo->clone(), tintTo_->clone(),remove, nullptr);
+	auto scale_ = cocos2d::ScaleBy::create(0.5, 0.5);
+	auto mySpawn = cocos2d::Spawn::createWithTwoActions(scale_, sequenceSprites);
+	this->runAction(mySpawn);
 }
+
 
