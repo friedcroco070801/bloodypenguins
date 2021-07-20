@@ -2,6 +2,9 @@
 #define __UI_CELL_04_H__
 
 class UICell;
+
+#define CELL_04_EFFECT_FILENAME "sprites/objects/projectile/cell_04_effect.png"
+
 class UICell04 : public UICell {
 public:
     static UICell04* create();
@@ -9,7 +12,7 @@ public:
 	virtual void idleAnimate();
 	virtual void effectAnimate();
 	//virtual void hitAnimate();
-	virtual void dieAnimate() {};
+	virtual void dieAnimate() {this->removeFromParent();};
 };
 
 #endif // !__UI_CELL_04_H__

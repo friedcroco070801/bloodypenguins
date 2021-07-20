@@ -47,7 +47,7 @@ void UICell05Projectile::destroyAnimate() {
 
     // Create aftermath
 
-    for (int j = 0; j < 15; j++) {
+    for (int j = 0; j < 30; j++) {
         auto after = Sprite::create(CELL_05_AFTERMATH_FILENAME, Rect(0.0f, 0.0f, 32.0f, 32.0f));
         this->getParent()->addChild(after, PROJECTILE_LAYER_ZORDER);
         after->setPosition(this->getPosition());
@@ -60,7 +60,7 @@ void UICell05Projectile::destroyAnimate() {
         animateIn->setTag(3);
         after->runAction(animateIn);
 
-        auto time = CCRANDOM_0_1() * 0.25f + 0.25f;
+        auto time = CCRANDOM_0_1() * 0.35f + 0.15f;
         auto distance = 30.0f + CCRANDOM_0_1() * 50.0f;
         auto jumpX = distance * CCRANDOM_MINUS1_1();
         auto jumpY = (CCRANDOM_0_1() <= 0.5f ? -1 : 1) * sqrt(distance * distance - jumpX * jumpX);

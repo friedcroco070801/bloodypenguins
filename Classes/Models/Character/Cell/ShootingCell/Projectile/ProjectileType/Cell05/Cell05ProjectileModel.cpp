@@ -22,6 +22,9 @@ void Cell05ProjectileModel::hitTarget() {
         for (auto it = diseaseList.begin(); it != diseaseList.end(); it++) {
             if (target->getDistanceToOther(*it) <= distance + 0.000001)
             {
+                if ((*it)->getStatus() == FROZEN) {
+                    (*it)->deFrozen();
+                }
                 (*it)->takeDamage(damage);
                 if ((*it)->getHP() > 0)
                     (*it)->__getUIObject()->hitAnimate((*it)->getDirection());
