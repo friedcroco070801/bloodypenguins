@@ -88,7 +88,13 @@ void GSControlLayer::setPreviewImage(CellId id) {
 	case CELL_04_MONOCYTES:
 		this->link_image = CELL_04_FILENAME;
 		this->ScaleNumber = 0.75f;
-		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		this->anchonPoint = cocos2d::Point(0.5, 0.3);
+		break;
+	case CELL_05_LYMPHOCYTESB:
+		this->link_image = CELL_05_FILENAME;
+		break;
+	case CELL_06_NEUTROPHILS: 
+		this->link_image = CELL_06_FILENAME;
 		break;
 	default:
 		break;

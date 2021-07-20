@@ -1,10 +1,10 @@
-#ifndef __UI_CELL_03_H__
-#define __UI_CELL_03_H__
+#ifndef __UI_CELL_05_H__
+#define __UI_CELL_05_H__
 
 class UICell;
-class UICell03 : public UICell {
+class UICell05 : public UICell {
 public:
-    static UICell03* create();
+	static UICell05* create();
 	virtual void addToScene(cocos2d::Scene*);
 	virtual void idleAnimate();
 	virtual void attackAnimate();
@@ -12,5 +12,4 @@ public:
 	virtual void hitAnimate();
 	virtual void dieAnimate();
 };
-
-#endif // !__UI_CELL_03_H__
+#endif // !__UI_CELL_05_H__

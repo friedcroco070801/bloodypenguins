@@ -24,9 +24,9 @@ void UICell00::addToScene(cocos2d::Scene* scene) {
 void UICell00::idleAnimate() {
 
 	const int numberSprite = 20;
-	this->stopAllActions();
+	//this->stopAllActions();
 	
-	//this->stopActionByTag();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	int size = cocos2d::Sprite::create(CELL_00_FILENAME)->getContentSize().height;
@@ -37,33 +37,36 @@ void UICell00::idleAnimate() {
 	}
 	cocos2d::Animation* animation = cocos2d::Animation::createWithSpriteFrames(animFrames,0.05f);	
 	cocos2d::Animate *animate = cocos2d::Animate::create(animation);
-	
-	//animate->setTag();
-	
+		
 	this->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
 	auto idle = cocos2d::RepeatForever::create(animate);
+	idle->setTag(ANIM_BASE_TAG);
+
 	this->runAction(idle);
 }
 
 void UICell00::attackAnimate() {
-	this->stopAllActions();
-
+	//this->stopAllActions();
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
 	//this->stopActionByTag();
 	
 	const int numberSprite = 40;
 
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	animFrames.reserve(numberSprite);
+	int size = cocos2d::Sprite::create(CELL_00_FILENAME)->getContentSize().height;
 	for (int i = 20; i < numberSprite ; i++) {
-		animFrames.pushBack(cocos2d::SpriteFrame::create(CELL_00_FILENAME, cocos2d::Rect(96 * i, 0, 96, 96)));
+		animFrames.pushBack(cocos2d::SpriteFrame::create(CELL_00_FILENAME, cocos2d::Rect(size * i, 0, size, size)));
 	}
-	cocos2d::Animation* animation = cocos2d::Animation::createWithSpriteFrames(animFrames,0.05f);
+	cocos2d::Animation* animation = cocos2d::Animation::createWithSpriteFrames(animFrames,0.025f);
 	cocos2d::Animate *animate = cocos2d::Animate::create(animation);
 	
-	//animate->setTag();
-	
 	this->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
-	this->runAction(cocos2d::RepeatForever::create(animate));
+
+	auto attack = cocos2d::RepeatForever::create(animate);
+	attack->setTag(ANIM_BASE_TAG);	
+
+	this->runAction(attack);
 	
 	
 }
@@ -76,8 +79,11 @@ void UICell00::hitAnimate() {
 }
 
 void UICell00::dieAnimate() {
-	this->stopAllActions();
+
 	//this->stopActionByTag();
+
+	this->stopAllActionsByTag(ANIM_BASE_TAG);
+
 	auto fadeOut = cocos2d::FadeOut::create(1.0f);
 	auto remove = cocos2d::RemoveSelf::create();
 	auto sequence = cocos2d::Sequence::create(fadeOut, remove, nullptr);
