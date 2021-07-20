@@ -20,6 +20,8 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
         return UICell00Projectile::create();
     case CELL_03_PROJECTILE:
         return UICell03Projectile::create();
+    case CELL_05_PROJECTILE:
+        return UICell05Projectile::create();
     default:
         return UICell00Projectile::create();
     }
