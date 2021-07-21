@@ -23,7 +23,7 @@ void UIDisease06::walkAnimate(Direction dir) {
 	this->stopAllActionsByTag(ANIM_BASE);
 	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_06_SHEETWALK, DISEASE_06_IMGWALK);
 	
-	const int numberSprite = 12;
+	const int numberSprite = 16;
 	const int maxWord = 50;
 
 	Vector<SpriteFrame*> animFrames;
@@ -32,37 +32,41 @@ void UIDisease06::walkAnimate(Direction dir) {
 	char spriteFrameByName[maxWord] = { 0 };
 	switch (dir) {
 	case DOWN:
-		for (int index = 1; index <= 3; index++){
+		for (int index = 1; index <= 4; index++){
 			sprintf(spriteFrameByName, "disease06walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
 	case LEFT:
-		for (int index = 4; index <= 6; index++){
+		for (int index = 5; index <= 8; index++){
 			sprintf(spriteFrameByName, "disease06walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
 	case RIGHT:
-		for (int index = 7; index <= 9; index++){
+		for (int index = 9; index <= 12; index++){
 			sprintf(spriteFrameByName, "disease06walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
 	case UP:
-		for (int index = 10; index <= 12; index++){
+		for (int index = 13; index <= 16; index++){
 			sprintf(spriteFrameByName, "disease06walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
 	default:
 		break;
 	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.2f);
 	animate = Animate::create(animation);
 	auto repeat = RepeatForever::create(animate);
 	repeat->setTag(ANIM_BASE);
@@ -85,6 +89,7 @@ void UIDisease06::idleAnimate(Direction dir) {
 		for (int index = 1; index <= 2; index++) {
 			sprintf(spriteFrameByName, "disease06idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -92,6 +97,7 @@ void UIDisease06::idleAnimate(Direction dir) {
 		for (int index = 3; index <= 4; index++) {
 			sprintf(spriteFrameByName, "disease06idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -99,6 +105,7 @@ void UIDisease06::idleAnimate(Direction dir) {
 		for (int index = 5; index <= 6; index++) {
 			sprintf(spriteFrameByName, "disease06idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -106,6 +113,7 @@ void UIDisease06::idleAnimate(Direction dir) {
 		for (int index = 7; index <= 8; index++) {
 			sprintf(spriteFrameByName, "disease06idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
+			frame->setAnchorPoint(Point(0.5, 0.25));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -120,111 +128,39 @@ void UIDisease06::idleAnimate(Direction dir) {
 }
 
 void UIDisease06::attackAnimate(Direction dir) {
-	/*
-	switch (dir) {
-	case DOWN:
-	{
-		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY() - SIZE_OF_SQUARE / 2));
-		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
-		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
-		this->runAction(RepeatForever::create(attackseq));
+
+	if (dir == DOWN || dir == LEFT || dir == RIGHT || dir == UP) {
+		auto jumpto = JumpTo::create(0.5, Vec2(this->getPositionX(), this->getPositionY() + SIZE_OF_SQUARE), 100, 1);
+		auto jumpback = JumpTo::create(0.5, Vec2(this->getPositionX(), this->getPositionY()), 100, 1);
+		//auto rotate = RotateBy::create(1.0f, Vec3(360.0f,0,0));
+		auto scalef = ScaleBy::create(0.2, 2);
+		auto scaleb = ScaleBy::create(0.2, 0.5);
+		auto attackseq = Sequence::create(jumpto, scalef, jumpback, DelayTime::create(1), scaleb, nullptr);
+
+		auto camera = Director::getInstance()->getRunningScene()->getDefaultCamera();
+		//auto movetocamera = MoveBy::create(0.5, Vec2(0, 10));
+		//auto movebackcamera = MoveBy::create(0.5, Vec2(0, -10));
+		//auto seqcamera = Sequence::create(movetocamera, movebackcamera, nullptr);
+		auto scalecamf = ScaleBy::create(0.5, 2);
+		auto scalecamb = ScaleBy::create(0.5, 0.5);
+		//auto tintTo = TintTo::create(0.5, cocos2d::Color3B::RED);
+		//auto tintTo_ = TintTo::create(0.5, cocos2d::Color3B::WHITE);
+		//auto spawn = Spawn::createWithTwoActions(scalecamf, tintTo);
+		//auto spawn1 = Spawn::createWithTwoActions(scalecamb, tintTo_);
+		auto seqcamera = Sequence::create(scalecamf, scalecamb, nullptr);
+		//camera->runAction(seqcamera);
+		//camera->setPosition3D(Vec3(0, 100, 300));
+		this->getParent()->runAction(seqcamera);
+		this->runAction(attackseq);
 	}
-	break;
-
-	case LEFT:
-	{
-		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX() - SIZE_OF_SQUARE / 2, this->getPositionY()));
-		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
-		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
-		this->runAction(RepeatForever::create(attackseq));
-	}
-	break;
-
-	case RIGHT:
-	{
-		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX() + SIZE_OF_SQUARE / 2, this->getPositionY()));
-		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
-		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
-		this->runAction(RepeatForever::create(attackseq));
-	}
-	break;
-
-	case UP:
-	{
-		auto movetoattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY() + SIZE_OF_SQUARE / 2));
-		auto movebackattack = MoveTo::create(0.2, Vec2(this->getPositionX(), this->getPositionY()));
-		auto attackseq = Sequence::create(movetoattack, movebackattack, nullptr);
-		this->runAction(RepeatForever::create(attackseq));
-	}
-	break;
-	default:
-		break;
-	}
-	*/
-
-	this->stopAllActionsByTag(ANIM_BASE);
-	SpriteFrameCache::getInstance()->addSpriteFramesWithFile(DISEASE_06_SHEETATTACK, DISEASE_06_IMGATTACK);
-
-	const int numberSprites = 12;
-	const int maxWords = 50;
-
-	Vector<SpriteFrame*> animFrames;
-	animFrames.reserve(numberSprites);
-
-	char spriteFrameByName[maxWords] = { 0 };
-	switch (dir) {
-	case DOWN:
-		for (int index = 1; index <= 3; index++) {
-			sprintf(spriteFrameByName, "disease06attack%d.png", index);
-			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			animFrames.pushBack(frame);
-		}
-		break;
-	case LEFT:
-		for (int index = 4; index <= 6; index++) {
-			sprintf(spriteFrameByName, "disease06attack%d.png", index);
-			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			animFrames.pushBack(frame);
-		}
-		break;
-	case RIGHT:
-		for (int index = 7; index <= 9; index++) {
-
-			sprintf(spriteFrameByName, "disease06attack%d.png", index);
-			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			animFrames.pushBack(frame);
-		}
-		break;
-	case UP:
-		for (int index = 10; index <= 12; index++) {
-			sprintf(spriteFrameByName, "disease06attack%d.png", index);
-			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			animFrames.pushBack(frame);
-		}
-		break;
-	default:
-		break;
-	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
-	animate = Animate::create(animation);
-	auto repeat = RepeatForever::create(animate);
-	repeat->setTag(ANIM_BASE);
-	this->runAction(repeat);
 }
 
 void UIDisease06::hitAnimate(Direction dir) {
-	auto tintTo = cocos2d::TintTo::create(0.1, cocos2d::Color3B::RED);
-	auto tintTo_ = cocos2d::TintTo::create(0.1, cocos2d::Color3B::WHITE);
-	auto hitanim = cocos2d::Sequence::create(tintTo, tintTo_, nullptr);
-	this->runAction(hitanim);
+	UIDisease::hitAnimate(dir);
 
 }
 
 void UIDisease06::dieAnimate(Direction dir) {
-	this->stopAllActions();
-	auto fadeout = FadeOut::create(1);
-	auto remove = RemoveSelf::create();
-	auto seq = Sequence::create(fadeout, remove, nullptr);
-	this->runAction(seq);
+	UIDisease::dieAnimate(dir);
 }
 

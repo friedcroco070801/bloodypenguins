@@ -65,7 +65,7 @@ void UIDisease00::walkAnimate(Direction dir) {
 	default:
 		break;
 	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.2f);
 	animate = Animate::create(animation);
 	auto repeat = RepeatForever::create(animate);
 	repeat->setTag(ANIM_BASE);
@@ -119,7 +119,7 @@ void UIDisease00::idleAnimate(Direction dir) {
 	default:
 		break;
 	}
-	animation = Animation::createWithSpriteFrames(animFrames, 0.3f);
+	animation = Animation::createWithSpriteFrames(animFrames, 0.2f);
 	animate = Animate::create(animation);
 	auto repeat = RepeatForever::create(animate);
 	repeat->setTag(ANIM_BASE);

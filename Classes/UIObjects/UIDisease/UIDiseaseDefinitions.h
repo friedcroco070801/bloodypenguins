@@ -3,6 +3,6 @@
 
 #include "Models/Character/Disease/DiseaseModelDefinitions.h"
 
-#define DISEASE_LAYER_ZORDER 3
+#define DISEASE_LAYER_ZORDER 5
 
 #endif // !__UI_DISEASE_DEFINITIONS_H__

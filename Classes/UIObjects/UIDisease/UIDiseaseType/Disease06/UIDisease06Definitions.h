@@ -3,7 +3,7 @@
 
 #include "Models/Character/Disease/DiseaseModelDefinitions.h"
 
-#define DISEASE_LAYER_ZORDER 3
+#define DISEASE_LAYER_ZORDER 10
 
 #define ANIM_BASE 1
 

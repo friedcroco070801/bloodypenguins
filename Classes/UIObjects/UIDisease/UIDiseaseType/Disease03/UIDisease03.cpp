@@ -138,6 +138,6 @@ void UIDisease03::hitAnimate(Direction dir) {
 }
 
 void UIDisease03::dieAnimate(Direction dir) {
-	UIDisease::hitAnimate(dir);
+	UIDisease::dieAnimate(dir);
 }
 

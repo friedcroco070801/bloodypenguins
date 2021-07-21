@@ -8,76 +8,6 @@
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
-                <key>spriteOffset</key>
-                <string>{-1,0}</string>
-                <key>spriteSize</key>
-                <string>{42,44}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{85,1},{42,44}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease06walk10.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
-                <key>spriteOffset</key>
-                <string>{-1,1}</string>
-                <key>spriteSize</key>
-                <string>{40,56}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{1,1},{40,56}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease06walk11.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
-                <key>spriteOffset</key>
-                <string>{0,0}</string>
-                <key>spriteSize</key>
-                <string>{42,56}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{129,1},{42,56}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease06walk12.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
-                <key>spriteOffset</key>
-                <string>{-1,1}</string>
-                <key>spriteSize</key>
-                <string>{40,56}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{43,1},{40,56}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease06walk2.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
@@ -85,16 +15,119 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{173,1},{42,42}}</string>
+                <string>{{1,509},{42,42}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease06walk3.png</key>
+            <key>disease06walk10.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{58,46}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,101},{58,46}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06walk11.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,1}</string>
+                <key>spriteSize</key>
+                <string>{58,48}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{58,48}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06walk12.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,1}</string>
+                <key>spriteSize</key>
+                <string>{56,46}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,197},{56,46}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06walk13.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{42,56}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,293},{42,56}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>disease06walk14.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,1}</string>
+                <key>spriteSize</key>
+                <string>{40,56}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,337},{40,56}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>disease06walk15.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{42,56}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,293},{42,56}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>disease06walk16.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,1}</string>
+                <key>spriteSize</key>
+                <string>{40,56}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,379},{40,56}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>disease06walk2.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
                 <key>spriteOffset</key>
                 <string>{-1,0}</string>
                 <key>spriteSize</key>
@@ -102,7 +135,22 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,59},{42,44}}</string>
+                <string>{{1,421},{42,44}}</string>
+                <key>textureRotated</key>
+                <true/>
+            </dict>
+            <key>disease06walk3.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{0,0}</string>
+                <key>spriteSize</key>
+                <string>{42,42}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,509},{42,42}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -110,25 +158,21 @@
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
-                <string>{0,0}</string>
+                <string>{-1,0}</string>
                 <key>spriteSize</key>
-                <string>{58,46}</string>
+                <string>{42,44}</string>
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{161,59},{58,46}}</string>
+                <string>{{1,465},{42,44}}</string>
                 <key>textureRotated</key>
-                <false/>
+                <true/>
             </dict>
             <key>disease06walk5.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
                 <string>{-1,1}</string>
                 <key>spriteSize</key>
@@ -136,7 +180,7 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{1,107},{58,48}}</string>
+                <string>{{1,51},{58,48}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -144,25 +188,6 @@
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
-                <key>spriteOffset</key>
-                <string>{-1,1}</string>
-                <key>spriteSize</key>
-                <string>{56,46}</string>
-                <key>spriteSourceSize</key>
-                <string>{64,64}</string>
-                <key>textureRect</key>
-                <string>{{45,59},{56,46}}</string>
-                <key>textureRotated</key>
-                <false/>
-            </dict>
-            <key>disease06walk7.png</key>
-            <dict>
-                <key>aliases</key>
-                <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
                 <string>{0,0}</string>
                 <key>spriteSize</key>
@@ -170,16 +195,14 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{61,107},{58,46}}</string>
+                <string>{{1,149},{58,46}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease06walk8.png</key>
+            <key>disease06walk7.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
                 <string>{-1,1}</string>
                 <key>spriteSize</key>
@@ -187,16 +210,14 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{121,107},{58,48}}</string>
+                <string>{{1,51},{58,48}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
-            <key>disease06walk9.png</key>
+            <key>disease06walk8.png</key>
             <dict>
                 <key>aliases</key>
                 <array/>
-                <key>anchor</key>
-                <string>{0.5,0.5}</string>
                 <key>spriteOffset</key>
                 <string>{-1,1}</string>
                 <key>spriteSize</key>
@@ -204,7 +225,22 @@
                 <key>spriteSourceSize</key>
                 <string>{64,64}</string>
                 <key>textureRect</key>
-                <string>{{103,59},{56,46}}</string>
+                <string>{{1,245},{56,46}}</string>
+                <key>textureRotated</key>
+                <false/>
+            </dict>
+            <key>disease06walk9.png</key>
+            <dict>
+                <key>aliases</key>
+                <array/>
+                <key>spriteOffset</key>
+                <string>{-1,1}</string>
+                <key>spriteSize</key>
+                <string>{58,48}</string>
+                <key>spriteSourceSize</key>
+                <string>{64,64}</string>
+                <key>textureRect</key>
+                <string>{{1,1},{58,48}}</string>
                 <key>textureRotated</key>
                 <false/>
             </dict>
@@ -220,9 +256,9 @@
             <key>realTextureFileName</key>
             <string>disease06walk.png</string>
             <key>size</key>
-            <string>{220,156}</string>
+            <string>{60,552}</string>
             <key>smartupdate</key>
-            <string>$TexturePacker:SmartUpdate:2d2d6bc3177fc58d8a247c1264f407c3:e8fdaeb5fdf8b1e1b5aef038b7fded86:508619e9b2df9baf7f64c657615f51ab$</string>
+            <string>$TexturePacker:SmartUpdate:3432a3df289cfbf52358aa6dc77cb492:cb09361da3ca199cc98f2d428d8fc851:508619e9b2df9baf7f64c657615f51ab$</string>
             <key>textureFileName</key>
             <string>disease06walk.png</string>
         </dict>
