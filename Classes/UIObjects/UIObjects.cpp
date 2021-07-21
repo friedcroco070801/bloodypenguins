@@ -1,5 +1,7 @@
 #include "UIObjects.h"
 #include "Scenes/GameScene/GSDefine.h"
+#include <cmath>
+using namespace std;
 USING_NS_CC;
 
 /*

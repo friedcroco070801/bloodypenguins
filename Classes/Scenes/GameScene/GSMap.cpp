@@ -20,11 +20,10 @@ void GSMap::createMap(LevelModel *level) {
 	int b = level->getMap()[0].size(); 
 
 	auto mapImage = Sprite::create("sprites/MapLayer/khonggian.png");
-	mapImage->setContentSize(Size(WIDTH,HEIGHT));
-	mapImage->setContentSize(Size(SIZE_OF_SQUARE*COLUMNN, SIZE_OF_SQUARE*ROWW));
+	mapImage->setContentSize(Size(SIZE_OF_SQUARE * COLUMNN, SIZE_OF_SQUARE * ROWW));
 	mapImage->setAnchorPoint(Vec2(0,0));
 	positionCell temp;
-	mapImage->setPosition(Vec2(GRASS_POSITION_LEFT,GRASS_POSITION_BOTTOM));
+	mapImage->setPosition(Vec2(GRASS_ORIGIN_POSITION_X, GRASS_ORIGIN_POSITION_Y));
 
 	auto map = level->getMap();
 	std::function<bool(int, int)> checkPath = [&map](int i, int j) -> bool {
