@@ -8,6 +8,7 @@ class Shooter {
 protected:
     ProjectileId projectileId;
     double shootRechargeTime;
+    double shootTimeCounter;
 public:
     Shooter(){};
     virtual ~Shooter(){};

@@ -33,10 +33,7 @@ void ShootingCellModel::update() {
 
     if (alive && level != NULL) {
         // Check if recharge time
-        auto timePoint = level->getTimeCounter() / shootRechargeTime;
-        auto roundTimePoint = round(timePoint);
-        auto deltaError = timePoint - roundTimePoint;
-        if (deltaError >= -ACCEPTING_TIME_ERROR && deltaError <= ACCEPTING_TIME_ERROR) {
+        if (shootTimeCounter <= ACCEPTING_TIME_ERROR) {
             // Find target in range
             auto diseaseList = level->__getDiseaseList();
             auto target = diseaseList.end();
@@ -56,7 +53,11 @@ void ShootingCellModel::update() {
             // Shoot to target
             if (target != diseaseList.end()) {
                 shoot(*target);
+                shootTimeCounter = shootRechargeTime;
             }
+        }
+        else {
+            shootTimeCounter -= UPDATING_FREQUENCY;
         }
     }
 }
