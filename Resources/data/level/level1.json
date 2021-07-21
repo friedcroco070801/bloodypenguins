@@ -1,5 +1,5 @@
 {
-    "initialEnergy": 400,
+    "initialEnergy": 2400,
     "map": [
         [0, 1, 0, 1, 0],
         [0, 1, 0, 1, 0],

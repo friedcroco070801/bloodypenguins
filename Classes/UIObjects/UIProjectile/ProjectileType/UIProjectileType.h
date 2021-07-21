@@ -3,5 +3,6 @@
 
 #include "Cell00Projectile/UICell00Projectile.h"
 #include "Cell03Projectile/UICell03Projectile.h"
+#include "Cell05Projectile/UICell05Projectile.h"
 
 #endif // !__UI_PROJECTILE_TYPE_H__

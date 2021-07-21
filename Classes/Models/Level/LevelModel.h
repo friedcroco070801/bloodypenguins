@@ -14,6 +14,7 @@ class ProjectileModel;
 class NumericModel;
 class CellBarModel;
 class UIProgressor;
+class UIPause;
 
 class LevelModel {
 public:
@@ -55,6 +56,8 @@ public:
     void printLevelState();
     void emphasizeEnergy();
     int getEnergyValue();
+    void pause();
+    void resume();
 
     // Get diseaseList of the level. Should not be used outside Models.
     std::list<DiseaseModel*>& __getDiseaseList() {return diseaseList;}
@@ -73,6 +76,7 @@ private:
     std::list<DiseaseModel*> diseaseList;
     std::list<ProjectileModel*> projectileList;
     std::vector<CellBarModel*> cellBarList;
+    cocos2d::Vector<cocos2d::Node*> pausedNodes;
 
     double timeCounter;
     bool isCounting;
@@ -90,6 +94,7 @@ private:
     void readLevelFromJson(int level);
 
     UIProgressor* progressor;
+    UIPause* pauser;
 };
 
 #endif // !__LEVEL_MODEL_H__

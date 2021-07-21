@@ -14,8 +14,8 @@ Cell06Model::Cell06Model() : EffectCellModel(CELL_06_NEUTROPHILS) {
     beEaten = false;
 
     // Do not use
-    effectRechargeTime = 0.5;
-    effectTimeCounter = 0.5;
+    effectRechargeTime = 0.9;
+    effectTimeCounter = 0.9;
 } 
 
 /*
@@ -25,6 +25,9 @@ void Cell06Model::takeEffect() {
     auto diseaseList = level->__getDiseaseList();
     for (auto it = diseaseList.begin(); it != diseaseList.end(); it++) {
         if (getDistanceToOther(*it) <= distance + ACCEPTING_TIME_ERROR) {
+            if ((*it)->getStatus() == FROZEN) {
+                    (*it)->deFrozen();
+            }
             (*it)->takeDamage(damage);
             if ((*it)->getHP() > 0)
                 (*it)->__getUIObject()->hitAnimate((*it)->getDirection());

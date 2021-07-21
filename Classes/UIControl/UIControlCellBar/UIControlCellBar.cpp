@@ -75,6 +75,12 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cos
 	case CELL_04_MONOCYTES:
 		filename = CELLBAR_04_FILENAME;
 		break;
+	case CELL_05_LYMPHOCYTESB:
+		filename = CELLBAR_05_FILENAME;
+		break;
+	case CELL_06_NEUTROPHILS:
+		filename = CELLBAR_06_FILENAME;
+		break;
 	default:
 		filename = CELLBAR_00_FILENAME;
 		break;

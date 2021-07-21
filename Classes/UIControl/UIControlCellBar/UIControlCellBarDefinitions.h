@@ -20,5 +20,7 @@
 #define CELLBAR_02_FILENAME "sprites/objects/cell/cellbar/cellbar_02.png"
 #define CELLBAR_03_FILENAME "sprites/objects/cell/cellbar/cellbar_03.png"
 #define CELLBAR_04_FILENAME "sprites/objects/cell/cellbar/cellbar_04.png"
+#define CELLBAR_05_FILENAME "sprites/objects/cell/cellbar/cellbar_05.png"
+#define CELLBAR_06_FILENAME "sprites/objects/cell/cellbar/cellbar_06.png"
 
 #endif // !__UI_CONTROL_CELLBAR_DEFINITIONS_H__
