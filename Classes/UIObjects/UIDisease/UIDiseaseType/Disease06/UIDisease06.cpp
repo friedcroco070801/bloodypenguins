@@ -2,6 +2,8 @@
 #include "UIDisease06.h"
 #include "Scenes/GameScene/GSDefine.h"
 #include "UIDisease06Definitions.h"
+#include <cmath>
+using namespace std;
 
 /*
 Create new instance of UIDisease06
@@ -153,6 +155,90 @@ void UIDisease06::attackAnimate(Direction dir) {
 		this->getParent()->runAction(seqcamera);
 		this->runAction(attackseq);
 	}
+}
+
+void UIDisease06::attackAnimateWithSync(Direction dir, function<void()> callBack) {
+	auto jump = JumpBy::create(0.5, Vec2(0.0f, 0.0f), SIZE_OF_SQUARE, 1);
+	auto changeZOrder = CallFuncN::create([](Node* node){
+		node->setLocalZOrder(DISEASE_LAYER_ZORDER);
+	});
+	this->setLocalZOrder(6);
+	auto seq = Sequence::create(jump, changeZOrder, nullptr);
+	this->runAction(seq);
+
+	function<function<void()>()> callScene = [this]() -> function<void()> {
+		return [&](){
+			// Make the camera fluctuate
+			Vector<FiniteTimeAction*> fluct;
+			auto amplifier = CELL_WIDTH / 2;
+			for (int i = 0; i < 32; i++, amplifier /= 1.25f) {
+				auto fluctLeft = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? 1 : -1) * amplifier, 0.0f));
+				auto fluctRight = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? -1 : 1) * amplifier, 0.0f));
+				fluct.pushBack(fluctLeft);
+				fluct.pushBack(fluctRight);
+			}
+			auto camFluctSeq = Sequence::create(fluct);
+
+			// Make the camera flash
+			auto flash = CallFuncN::create([](Node* node){
+				auto flashing = Sprite::create(BACKGROUND_FLASH_FILENAME);
+				flashing->setOpacity(0);
+				node->addChild(flashing, 7);
+				flashing->setPosition(Director::getInstance()->getVisibleSize().width / 2 + Director::getInstance()->getVisibleOrigin().x, 
+									Director::getInstance()->getVisibleSize().height / 2 + Director::getInstance()->getVisibleOrigin().y);
+				auto flashIn = FadeTo::create(0.1f, 255);
+				auto flashOut = FadeTo::create(0.1f, 0);
+				auto remove = RemoveSelf::create();
+				auto flashSeq = Sequence::create(flashIn, flashOut, remove, nullptr);
+				flashing->runAction(flashSeq);
+			});
+
+			this->getParent()->runAction(camFluctSeq);
+			this->getParent()->runAction(flash);
+		};
+	};
+	
+	auto delay2 = DelayTime::create(0.5f);
+	auto sceneSeq = Sequence::create(delay2, CallFunc::create(callScene()), nullptr);
+	this->runAction(sceneSeq);
+
+	// Make the ground go wild
+	auto wild = CallFuncN::create([](Node* node){
+		for (int j = 0; j < 50; j++) {
+			auto ground = Sprite::create(DISEASE_06_EFFECT, Rect(0.0f, 0.0f, 32.0f, 32.0f));
+			ground->setOpacity(0);
+			ground->setScale(1.0f + 0.75f * CCRANDOM_0_1());
+
+			auto delay = DelayTime::create(0.25f * CCRANDOM_0_1());
+			auto appear = FadeTo::create(0.0f, 255);
+
+			Vector<SpriteFrame*> frames;
+			for (unsigned int i = 0; i < 8; i++) {
+				auto frame = SpriteFrame::create(DISEASE_06_EFFECT, Rect(i * 32.0f, 0.0f, 32.0f, 32.0f));
+				frames.pushBack(frame);
+			}
+			auto animate = Repeat::create(Animate::create(Animation::createWithSpriteFrames(frames, 0.0125f)), 3u);
+			auto remove = RemoveSelf::create();
+
+			auto seq = Sequence::create(delay, appear, animate, remove, nullptr);
+
+			auto radius = (0.5f + 1.0f * CCRANDOM_0_1()) * CELL_WIDTH;
+			auto vecY = (-1.0f + CCRANDOM_0_1() * 1.866f) * radius;
+			auto vecX = (CCRANDOM_0_1() <= 0.5f ? 1 : -1) * sqrt(radius * radius - vecY * vecY);
+			node->getParent()->addChild(ground, 6);
+			ground->setPosition(node->getPosition() + Vec2(vecX, vecY));
+			ground->runAction(seq);
+		}
+	});
+	auto delay3 = DelayTime::create(0.5f);
+	auto camWildSeq = Sequence::create(delay3, wild, nullptr);
+	this->runAction(camWildSeq);
+
+	// Callback in earthquake
+	auto delay4 = DelayTime::create(0.5f);
+	auto call = CallFunc::create(callBack);
+	auto callSeq = Sequence::create(delay4, call, nullptr);
+	this->runAction(callSeq);
 }
 
 void UIDisease06::hitAnimate(Direction dir) {

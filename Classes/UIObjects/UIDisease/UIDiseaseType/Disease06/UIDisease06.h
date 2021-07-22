@@ -2,6 +2,7 @@
 #define __UI_DISEASE_06_H__
 
 #include "cocos2d.h"
+#include <functional>
 using namespace cocos2d;
 
 class UIDisease;
@@ -14,6 +15,7 @@ public:
 	virtual void attackAnimate(Direction dir);
 	virtual void hitAnimate(Direction dir);
 	virtual void dieAnimate(Direction dir);
+	virtual void attackAnimateWithSync(Direction dir, std::function<void()> callBack);
 
 	Animation *animation;
 	Animate* animate;

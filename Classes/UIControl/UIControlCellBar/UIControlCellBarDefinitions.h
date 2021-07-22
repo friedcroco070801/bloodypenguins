@@ -7,8 +7,10 @@
 
 #define CELLBAR_LAYER_ZORDER 10
 
-#define CELLBAR_POSITION_X 80
-#define CELLBAR_POSITION_Y(index) Director::getInstance()->getVisibleSize().height / 16 * (13 - 2 * index)
+#define CELLBAR_POSITION_X 8.0f + 72.0f * Director::getInstance()->getVisibleSize().height / 8 / 90.0f + Director::getInstance()->getVisibleOrigin().x
+#define CELLBAR_POSITION_Y(index) Director::getInstance()->getVisibleSize().height / 16 * (13 - 2 * index) + Director::getInstance()->getVisibleOrigin().y
+
+#define CELLBAR_SCALE Director::getInstance()->getVisibleSize().height / 8 / 90.0f
 
 #define CELLBAR_LOADING_FILENAME "sprites/objects/cell/cellbar/cellbar_loading.png"
 #define CELLBAR_LOADING_COMPLETE_FILENAME "sprites/objects/cell/cellbar/cellbar_loading_complete.png"

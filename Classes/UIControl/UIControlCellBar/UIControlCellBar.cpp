@@ -92,10 +92,11 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cos
 		btn->id = id;
 		btn->cost = cost;
 		btn->autorelease();
+		btn->setScale(CELLBAR_SCALE);
 
 		auto costShow = UINumeric::create();
 		costShow->setScale(0.3f);
-		costShow->setPosition(8.0f, 18.0f);
+		costShow->setPosition(8.0f * CELLBAR_SCALE, 18.0f * CELLBAR_SCALE);
 		btn->addChild(costShow);
 		costShow->changeValue(cost);
 

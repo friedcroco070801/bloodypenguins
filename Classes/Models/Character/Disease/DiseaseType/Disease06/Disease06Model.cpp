@@ -1,12 +1,14 @@
 #include "Models/models.h"
 #include "Disease06Model.h"
 #include "UIObjects/uiobj.h"
+#include <functional>
+using namespace std;
 
 Disease06Model::Disease06Model() : DiseaseModel(DISEASE_06_EBOLA) {
     // Temporary data
     speed = 0.2;
     damage = 50;
-    hitRechargeTime = 2;
+    hitRechargeTime = 2.0;
     hp = 120;
     distance = 1.5;
     waitingUntilNextMove = 0.0;
@@ -16,17 +18,29 @@ Disease06Model::Disease06Model() : DiseaseModel(DISEASE_06_EBOLA) {
 Boss hit target
 */
 void Disease06Model::hitTarget(CellModel*) {
-    ui->attackAnimate(dir);
-    auto cellList = level->__getCellList();
-    for (auto it = cellList.begin(); it != cellList.end(); it++) {
-        if (getDistanceToOther(*it) <= distance + 0.000001) {
-            (*it)->takeDamage(damage);
-            (*it)->__getUIObject()->hitAnimate();
-        }
-    }
+    function<function<void()>()> func = [this]() -> function<void()> {
+        return [&]() {
+            auto cellList = this->level->__getCellList();
+            for (auto it = cellList.begin(); it != cellList.end(); it++) {
+                if (this->getDistanceToOther(*it) <= this->distance + 0.000001) {
+                    (*it)->takeDamage(this->damage);
+                    (*it)->__getUIObject()->hitAnimate();
+                }
+            }
+        };
+    };
 
-    // Update counter
-    waitingUntilNextMove = 2.0;
+    ui->attackAnimateWithSync(dir, func());
+    // auto cellList = level->__getCellList();
+    // for (auto it = cellList.begin(); it != cellList.end(); it++) {
+    //     if (getDistanceToOther(*it) <= distance + 0.000001) {
+    //         (*it)->takeDamage(damage);
+    //         (*it)->__getUIObject()->hitAnimate();
+    //     }
+    // }
+
+    // // Update counter
+    waitingUntilNextMove = 3.0;
     ui->idleAnimate(dir);
 }
 

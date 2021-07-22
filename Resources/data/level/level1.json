@@ -22,7 +22,7 @@
         {
             "time": 5.0,
             "huge": false,
-            "enemies": [0]
+            "enemies": [6]
         },
         {
             "time": 10.0,

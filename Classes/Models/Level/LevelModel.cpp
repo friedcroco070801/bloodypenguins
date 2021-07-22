@@ -26,7 +26,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
     Set UIObject of energy, gold and CellBar
     */
     auto energyCounterUI = UINumeric::create();
-    energyCounterUI->setScale(0.75);
+    energyCounterUI->setScale(0.75 * Director::getInstance()->getVisibleSize().height / 8 / 90.0f);
     energyCounterUI->addToScene(scene);
     energy.setUIObject(energyCounterUI);
     energyCounterUI->setPosition(ENERGY_COUNTER_POS_X, ENERGY_COUNTER_POS_Y);
