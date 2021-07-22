@@ -166,36 +166,41 @@ void UIDisease06::attackAnimateWithSync(Direction dir, function<void()> callBack
 	auto seq = Sequence::create(jump, changeZOrder, nullptr);
 	this->runAction(seq);
 
-	// Make the camera fluctuate
-	Vector<FiniteTimeAction*> fluct;
-	auto delay = DelayTime::create(0.5f);
-	fluct.pushBack(delay);
-	auto amplifier = CELL_WIDTH / 2;
-	for (int i = 0; i < 32; i++, amplifier /= 1.25f) {
-		auto fluctLeft = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? 1 : -1) * amplifier, 0.0f));
-		auto fluctRight = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? -1 : 1) * amplifier, 0.0f));
-		fluct.pushBack(fluctLeft);
-		fluct.pushBack(fluctRight);
-	}
-	auto camFluctSeq = Sequence::create(fluct);
-	this->getParent()->runAction(camFluctSeq);
+	function<function<void()>()> callScene = [this]() -> function<void()> {
+		return [&](){
+			// Make the camera fluctuate
+			Vector<FiniteTimeAction*> fluct;
+			auto amplifier = CELL_WIDTH / 2;
+			for (int i = 0; i < 32; i++, amplifier /= 1.25f) {
+				auto fluctLeft = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? 1 : -1) * amplifier, 0.0f));
+				auto fluctRight = MoveBy::create(0.03125f, Vec2((i % 2 == 0 ? -1 : 1) * amplifier, 0.0f));
+				fluct.pushBack(fluctLeft);
+				fluct.pushBack(fluctRight);
+			}
+			auto camFluctSeq = Sequence::create(fluct);
 
-	// Make the camera flash
-	auto flash = CallFuncN::create([](Node* node){
-		auto flashing = Sprite::create(BACKGROUND_FLASH_FILENAME);
-		flashing->setOpacity(0);
-		node->addChild(flashing, 7);
-		flashing->setPosition(Director::getInstance()->getVisibleSize().width / 2 + Director::getInstance()->getVisibleOrigin().x, 
-							Director::getInstance()->getVisibleSize().height / 2 + Director::getInstance()->getVisibleOrigin().y);
-		auto flashIn = FadeTo::create(0.1f, 255);
-		auto flashOut = FadeTo::create(0.1f, 0);
-		auto remove = RemoveSelf::create();
-		auto flashSeq = Sequence::create(flashIn, flashOut, remove, nullptr);
-		flashing->runAction(flashSeq);
-	});
+			// Make the camera flash
+			auto flash = CallFuncN::create([](Node* node){
+				auto flashing = Sprite::create(BACKGROUND_FLASH_FILENAME);
+				flashing->setOpacity(0);
+				node->addChild(flashing, 7);
+				flashing->setPosition(Director::getInstance()->getVisibleSize().width / 2 + Director::getInstance()->getVisibleOrigin().x, 
+									Director::getInstance()->getVisibleSize().height / 2 + Director::getInstance()->getVisibleOrigin().y);
+				auto flashIn = FadeTo::create(0.1f, 255);
+				auto flashOut = FadeTo::create(0.1f, 0);
+				auto remove = RemoveSelf::create();
+				auto flashSeq = Sequence::create(flashIn, flashOut, remove, nullptr);
+				flashing->runAction(flashSeq);
+			});
+
+			this->getParent()->runAction(camFluctSeq);
+			this->getParent()->runAction(flash);
+		};
+	};
+	
 	auto delay2 = DelayTime::create(0.5f);
-	auto camFlashSeq = Sequence::create(delay2, flash, nullptr);
-	this->getParent()->runAction(camFlashSeq);
+	auto sceneSeq = Sequence::create(delay2, CallFunc::create(callScene()), nullptr);
+	this->runAction(sceneSeq);
 
 	// Make the ground go wild
 	auto wild = CallFuncN::create([](Node* node){
