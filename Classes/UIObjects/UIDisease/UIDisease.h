@@ -4,6 +4,7 @@
 #include "UIDiseaseDefinitions.h"
 #include "cocos2d.h"
 #include "Models/Character/Disease/DiseaseModelDefinitions.h"
+#include <functional>
 
 class UIObjects;
 
@@ -16,6 +17,7 @@ public:
 	virtual void attackAnimate(Direction dir);
 	virtual void hitAnimate(Direction dir);
 	virtual void dieAnimate(Direction dir);
+    virtual void attackAnimateWithSync(Direction dir, std::function<void()> callBack){}
 };
 
 #endif // !__UI_DISEASE_H__
