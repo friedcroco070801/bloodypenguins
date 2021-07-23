@@ -6,6 +6,7 @@
 #include "GSDefine.h"
 #include <functional>
 
+#define RADIUS_PREVIEW "sprites/objects/cell/radius_preview.png"
 
 struct position
 {
@@ -37,7 +38,7 @@ public:
 	bool onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event);
 	void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
 	void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event*event);
-	void setPreviewImage(CellId id);
+	void setPreviewImage(CellId id, double);
 
 private:
 	float ScaleNumber = 1.0f;
@@ -47,6 +48,7 @@ private:
 	cocos2d::Sprite *previewImage ;
 	bool buttonCheck = false;
 	cocos2d::Sprite* choose;
+	double distance;
 
 public:
     virtual bool init(cocos2d::Sprite*);

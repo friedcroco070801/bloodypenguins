@@ -12,6 +12,8 @@
 #include "UINumeric/UINumeric.h"
 #include "UIComponents/UIProgressor/UIProgressor.h"
 #include "UIControl/UIPause/UIPause.h"
+#include "UIControl/UIResultLayer/UIWinLayer.h"
+#include "UIControl/UIResultLayer/UILoseLayer.h"
 using namespace std;
 USING_NS_CC;
 
@@ -45,7 +47,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i]->__setLevel(this);
-        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId(), cellBarList[i]->getCost());
+        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId(), cellBarList[i]->getCost(), cellBarList[i]->getDistance());
         cellBarList[i]->setUIObject(cellBarControl);
         cellBarControl->addToScene(scene);
         cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));
@@ -64,6 +66,9 @@ LevelModel::LevelModel(int level, Scene* scene) {
     // Initialize properties
     timeCounter = 0.0;
     isCounting = false;
+
+    winTimeCounter = -1.0f;
+    loseCheck = false;
 }
 
 /*
@@ -174,6 +179,30 @@ void LevelModel::update() {
                 progressor->updateOnWave();
             }
         }
+
+        // Lose condition
+        if (loseCheck) {
+            lose();
+            return;
+        }
+
+        // Winning condition
+        if (winTimeCounter < -0.5) {
+            if (diseaseList.size() == 0 && currentWave == waveList.end()) {
+                setWin();
+            }
+        }
+
+        if (winTimeCounter > UPDATING_FREQUENCY / 2) {
+            winTimeCounter -= UPDATING_FREQUENCY;
+            if (abs(winTimeCounter) <= ACCEPTING_TIME_ERROR) {
+                win();
+            }
+        }
+        // // Temporary test
+        // if (abs(timeCounter - 6.0) <= ACCEPTING_TIME_ERROR) {
+        //     win();
+        // }
     }
 }
 
@@ -434,3 +463,28 @@ void LevelModel::resume()  {
     }
 }
 
+/*
+Win the game
+*/
+void LevelModel::win() {
+    isCounting = false;
+    if (scene != nullptr) {
+        pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
+        Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
+
+        scene->addChild(UIWinLayer::create(), 12);
+    }
+}
+
+/*
+Lose the game
+*/
+void LevelModel::lose() {
+    isCounting = false;
+    if (scene != nullptr) {
+        pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
+        Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
+
+        scene->addChild(UILoseLayer::create(), 12);
+    }
+}

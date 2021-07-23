@@ -58,6 +58,8 @@ public:
     int getEnergyValue();
     void pause();
     void resume();
+    void win();
+    void lose();
 
     // Get diseaseList of the level. Should not be used outside Models.
     std::list<DiseaseModel*>& __getDiseaseList() {return diseaseList;}
@@ -66,6 +68,12 @@ public:
     std::list<CellModel*>& __getCellList() {return cellList;}
     std::vector< std::vector<int> >* __getEnemyPath();
     std::vector< std::vector<int> > getEndPaths() {return endPaths;}
+
+    // Set lose
+    void setLose() {loseCheck = true;}
+
+    // Set win
+    void setWin() {winTimeCounter = 1.5;}
 private:
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
@@ -95,6 +103,9 @@ private:
 
     UIProgressor* progressor;
     UIPause* pauser;
+
+    double winTimeCounter;
+    bool loseCheck;
 };
 
 #endif // !__LEVEL_MODEL_H__
