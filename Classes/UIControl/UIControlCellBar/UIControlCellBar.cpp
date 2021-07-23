@@ -3,6 +3,7 @@
 #include "Scenes/GameScene/GSControlLayer.h"
 #include <functional>
 #include "UINumeric/UINumeric.h"
+#include <vector>
 USING_NS_CC;
 using namespace std;
 
@@ -45,7 +46,7 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 
 			auto controlLayer = GSControlLayer::create(level, choosing);
 			scene->addChild(controlLayer, CELLBAR_LAYER_ZORDER);
-			controlLayer->setPreviewImage(id);
+			controlLayer->setPreviewImage(id, distance);
 			break;
 		}
 		default:
@@ -54,32 +55,47 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 	}
 };
 
-UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cost) {
+UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cost, double distance) {
 	UIControlCellBar *btn = new (std::nothrow) UIControlCellBar;
 
 	std::string filename;
+	std::vector<std::string> icons;
 
 	switch(id) {
 	case CELL_00_EOSINOPHILS:
 		filename = CELLBAR_00_FILENAME;
+		icons.push_back(ICON_ATTACK);
+		icons.push_back(ICON_LANE);
 		break;
 	case CELL_01_ERYTHROCYTES:
 		filename = CELLBAR_01_FILENAME;
+		icons.push_back(ICON_EFFECT);
+		icons.push_back(ICON_LANE);
 		break;
 	case CELL_02_PLATELETS:
 		filename = CELLBAR_02_FILENAME;
+		icons.push_back(ICON_DEFENSE);
+		icons.push_back(ICON_PATH);
 		break;
 	case CELL_03_BASOPHILS:
 		filename = CELLBAR_03_FILENAME;
+		icons.push_back(ICON_ATTACK);
+		icons.push_back(ICON_LANE);
 		break;
 	case CELL_04_MONOCYTES:
 		filename = CELLBAR_04_FILENAME;
+		icons.push_back(ICON_EFFECT);
+		icons.push_back(ICON_PATH);
 		break;
 	case CELL_05_LYMPHOCYTESB:
 		filename = CELLBAR_05_FILENAME;
+		icons.push_back(ICON_ATTACK);
+		icons.push_back(ICON_LANE);
 		break;
 	case CELL_06_NEUTROPHILS:
 		filename = CELLBAR_06_FILENAME;
+		icons.push_back(ICON_EFFECT);
+		icons.push_back(ICON_PATH);
 		break;
 	default:
 		filename = CELLBAR_00_FILENAME;
@@ -91,15 +107,23 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cos
 		btn->level = level;
 		btn->id = id;
 		btn->cost = cost;
+		btn->distance = distance;
 		btn->autorelease();
 		btn->setScale(CELLBAR_SCALE);
 
+		// Cost show
 		auto costShow = UINumeric::create();
 		costShow->setScale(0.3f);
-		costShow->setPosition(8.0f * CELLBAR_SCALE, 18.0f * CELLBAR_SCALE);
+		costShow->setPosition(8.0f, 18.0f);
 		btn->addChild(costShow);
 		costShow->changeValue(cost);
 
+		// Icon type
+		for (auto i = 0u; i < icons.size(); i++) {
+			auto icon = Sprite::create(icons[i]);
+			icon->setPosition(16.0f + i * 20.0f, 65.0f);
+			btn->addChild(icon);
+		}
 		return btn;
 	}
 	CC_SAFE_DELETE(btn);

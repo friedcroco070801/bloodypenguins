@@ -23,6 +23,9 @@ public:
     // Get the cost of the Cell
     int getCost() {return cost;}
 
+    // Get the distance of the Cell
+    double getDistance() {return distance;}
+
     // Get the recharge percentage
     double getRechargePercent() {return 1.0 - rechargeTimeCounter / rechargeTime;}
 
@@ -37,6 +40,7 @@ protected:
     double rechargeTime;
     double rechargeTimeCounter;
     int cost;
+    double distance;
     #ifdef __HAS_UICELLBAR__
     UIControlCellBar* ui;
     #endif // __HAS_UICELLBAR__

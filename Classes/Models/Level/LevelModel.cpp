@@ -47,7 +47,7 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i]->__setLevel(this);
-        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId(), cellBarList[i]->getCost());
+        auto cellBarControl = UIControlCellBar::create(this, cellBarList[i]->getCellId(), cellBarList[i]->getCost(), cellBarList[i]->getDistance());
         cellBarList[i]->setUIObject(cellBarControl);
         cellBarControl->addToScene(scene);
         cellBarControl->setPosition(Vec2(CELLBAR_POSITION_X, CELLBAR_POSITION_Y(i)));

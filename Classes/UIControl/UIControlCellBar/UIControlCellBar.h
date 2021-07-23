@@ -12,7 +12,7 @@ public:
 	virtual void onTouch();
 	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type);
 	void updateRecharge(double);
-	static UIControlCellBar* create(LevelModel*, CellId, int);
+	static UIControlCellBar* create(LevelModel*, CellId, int, double);
 private:
 	CellId id;
 	Scene* scene;
@@ -21,6 +21,7 @@ private:
 	Sprite* choosing;
 	int cost;
 	bool canActivate;
+	double distance;
 	void flashAnimate();
 };
 
