@@ -12,6 +12,7 @@ CellBarModel::CellBarModel(CellId id) {
     this->level = nullptr;
     this->id = id;
     this->rechargeTime = cellModel->getRechargeTime();
+    this->distance = cellModel->getDistance();
     switch (id) {
     case CELL_01_ERYTHROCYTES:
         this->rechargeTimeCounter = rechargeTime;

@@ -62,39 +62,41 @@ void GSControlLayer::createPreview(int id) {
 }
 */
 //ham call --------------------------------------------------------------------------
-void GSControlLayer::setPreviewImage(CellId id) {
+void GSControlLayer::setPreviewImage(CellId id, double distance) {
 
 	this->Cell_Id = id;
 	this->buttonCheck = true;
+	this->distance = distance;
 	switch (id)
 	{
-		
-			
-			
 	case CELL_00_EOSINOPHILS:
 		this->link_image = CELL_00_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5f, 10.0f / 58);
 		break;
 	case CELL_01_ERYTHROCYTES:
 		this->link_image = CELL_01_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5f, 0.0f);
 		break;
 	case CELL_02_PLATELETS:
 		this->link_image = CELL_02_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		this->anchonPoint = cocos2d::Point(0.5f, 9.0f / 82);
 		break;
 	case CELL_03_BASOPHILS:
 		this->link_image = CELL_03_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5, 0.25);
+		this->anchonPoint = cocos2d::Point(0.5f, 6.0f / 69);
 		break;
 	case CELL_04_MONOCYTES:
 		this->link_image = CELL_04_FILENAME;
-		this->ScaleNumber = 0.75f;
-		this->anchonPoint = cocos2d::Point(0.5, 0.3);
+		// this->ScaleNumber = 0.75f;
+		this->anchonPoint = cocos2d::Point(0.5f, 11.0f / 71);
 		break;
 	case CELL_05_LYMPHOCYTESB:
 		this->link_image = CELL_05_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5f, 2.0f / 42);
 		break;
 	case CELL_06_NEUTROPHILS: 
 		this->link_image = CELL_06_FILENAME;
+		this->anchonPoint = cocos2d::Point(0.5f, 14.0f / 46);
 		break;
 	default:
 		break;
@@ -110,6 +112,16 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 		this->previewImage->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
 		this->previewImage->setAnchorPoint(this->anchonPoint);
 		this->previewImage->setScale(this->ScaleNumber);
+
+		// Radius around
+		if (distance > ACCEPTING_TIME_ERROR){
+			auto radius = cocos2d::Sprite::create(RADIUS_PREVIEW);
+			previewImage->addChild(radius, -1);
+			radius->setPosition(previewImage->getContentSize() / 2);
+			radius->setScale(distance * 2 * SIZE_OF_SQUARE / radius->getContentSize().height / ScaleNumber);
+			radius->setOpacity(200);
+		}				
+
 		if (GRASS_OUTSIDE(p)) {
 			this->previewImage->setColor(Color3B::RED);
 			this->previewImage->setOpacity(150);

@@ -40,20 +40,23 @@ void UIPauseLayer::init(LevelModel* level) {
 
     // Add resume button
     auto resume = ui::Button::create(PAUSE_LAYER_RESUME_FILENAME, PAUSE_LAYER_RESUME_CLICKED_FILENAME, PAUSE_LAYER_RESUME_CLICKED_FILENAME);
-    resume->addTouchEventListener(CC_CALLBACK_2(UIPauseLayer::resumeGame, this));
+    
+    function<function<void(Ref*, ui::Widget::TouchEventType)>()> resumeTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+        return [&](Ref* sender, ui::Widget::TouchEventType type) {
+            switch (type) {
+                case ui::Widget::TouchEventType::BEGAN:
+                    break;
+                case ui::Widget::TouchEventType::ENDED:  
+                    this->level->resume();
+                    this->removeFromParent();   
+                    break;
+                default:
+                    break;
+            }
+        };
+    };
+    
+    resume->addTouchEventListener(resumeTouch());
     this->addChild(resume);
     resume->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 45.0f * 2 + 15.0f * 2));
-}
-
-void UIPauseLayer::resumeGame(Ref *sender, ui::Widget::TouchEventType type) {
-    switch (type) {
-        case ui::Widget::TouchEventType::BEGAN:
-            break;
-        case ui::Widget::TouchEventType::ENDED:  
-            level->resume();
-            this->removeFromParent();   
-            break;
-        default:
-            break;
-    }
 }

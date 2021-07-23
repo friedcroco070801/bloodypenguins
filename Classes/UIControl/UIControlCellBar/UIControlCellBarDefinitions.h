@@ -25,4 +25,10 @@
 #define CELLBAR_05_FILENAME "sprites/objects/cell/cellbar/cellbar_05.png"
 #define CELLBAR_06_FILENAME "sprites/objects/cell/cellbar/cellbar_06.png"
 
+#define ICON_ATTACK "sprites/objects/cell/cellbar/icon_attack.png"
+#define ICON_DEFENSE "sprites/objects/cell/cellbar/icon_defense.png"
+#define ICON_EFFECT "sprites/objects/cell/cellbar/icon_effect.png"
+#define ICON_PATH "sprites/objects/cell/cellbar/icon_path.png"
+#define ICON_LANE "sprites/objects/cell/cellbar/icon_lane.png"
+
 #endif // !__UI_CONTROL_CELLBAR_DEFINITIONS_H__

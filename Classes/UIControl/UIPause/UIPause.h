@@ -14,7 +14,6 @@ public:
     static UIPause* create(LevelModel*);
 
 private:
-	void touchControlEvent(Ref *sender, ui::Widget::TouchEventType type);
 	virtual void onTouch();
     LevelModel* level;
 };

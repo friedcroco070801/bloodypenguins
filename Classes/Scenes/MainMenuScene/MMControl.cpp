@@ -95,7 +95,7 @@ void MMControl::addButtonMenu() {
 }
 
 void MMControl::GoToGameScene(cocos2d::Ref *sender) {
-	auto scene = GameScene::createScene();
+	auto scene = GameScene::createScene(1);
 	Director::getInstance()->replaceScene(TransitionFade::create(1, scene));
 }
 

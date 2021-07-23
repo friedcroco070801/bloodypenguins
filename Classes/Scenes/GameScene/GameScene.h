@@ -6,19 +6,31 @@
 class GameScene :public cocos2d::Scene 
 {
 public:
-	CREATE_FUNC(GameScene);
-	static Scene* createScene();
-	virtual bool init();
-	virtual ~GameScene() {delete level;}
+	static GameScene* create(int level) 
+	{ 
+		GameScene *pRet = new(std::nothrow) GameScene(); 
+		if (pRet && pRet->init(level)) 
+		{ 
+			pRet->autorelease(); 
+			return pRet; 
+		} 
+		else 
+		{ 
+			delete pRet; 
+			pRet = nullptr; 
+			return nullptr; 
+		} 
+	}
 
-	void addEnergyLabel(int);
+	static Scene* createScene(int);
+	virtual bool init(int);
+	virtual ~GameScene() {delete level;}
 	
 protected:
 	// virtual void controlLayer(LevelModel* level);
 	virtual void drawMap();
-
 	virtual void addBackground();
-
+	
 	LevelModel* level;
 	void updateLevel(float);
 };
