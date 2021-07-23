@@ -1,6 +1,5 @@
 #include "LevelButton.h"
-#include "GSControlLayer.h"
-#include "GameScene.h"
+#include "Scenes/GameScene/GameScene.h"
 #include "UIObjects/uiobj.h"
 #define TRANSITION_TIME 0.5f
 USING_NS_CC;

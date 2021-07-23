@@ -24,7 +24,7 @@
 
 #include "AppDelegate.h"
 #include "Scenes/GameScene/GameScene.h"
-#include "Scenes/GameScene/LevelScene.h"
+#include "Scenes/LevelScene/LevelScene.h"
 // #define USE_AUDIO_ENGINE 1
 
 #if USE_AUDIO_ENGINE
