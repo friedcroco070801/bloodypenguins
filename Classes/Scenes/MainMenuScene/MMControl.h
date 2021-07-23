@@ -18,6 +18,7 @@
 using namespace cocos2d;
 
 class GameScene;
+class LevelScene;
 
 class MMControl : public cocos2d::Scene
 {
@@ -27,8 +28,8 @@ public:
 
 private:
 
-	//void GoToLevelScene(cocos2d::Ref *sender);
-	void GoToGameScene(cocos2d::Ref *sender);
+	void GoToLevelScene(cocos2d::Ref *sender);
+	//void GoToGameScene(cocos2d::Ref *sender);
 	void GoToOptionsCom(cocos2d::Ref *sender);
 	void ExitGameMain(cocos2d::Ref *sender);
 	void addButtonMenu();

@@ -2,6 +2,7 @@
 #include "Scenes/GameScene/GSDefine.h"
 #include "AppDelegate.h"
 #include "UIObjects/UICell/UICellDefinitions.h"
+#include "Scenes/LevelScene/LevelScene.h"
 
 USING_NS_CC;
 //global variable
@@ -46,7 +47,7 @@ void MMControl::addButtonMenu() {
 
 	Vector<MenuItem*> MenuItems;
 
-	auto play = MenuItemImage::create(PLAY_LAYER_FILENAME, PLAY_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToGameScene, this));
+	auto play = MenuItemImage::create(PLAY_LAYER_FILENAME, PLAY_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToLevelScene, this));
 	play->setScale(1.25);
 	//play->setPosition(Vec2(WIDTH / 2, HEIGHT * 5 / 8));
 	MenuItems.pushBack(play);
@@ -94,8 +95,8 @@ void MMControl::addButtonMenu() {
 
 }
 
-void MMControl::GoToGameScene(cocos2d::Ref *sender) {
-	auto scene = GameScene::createScene(1);
+void MMControl::GoToLevelScene(cocos2d::Ref *sender) {
+	auto scene = levelScene::createScene();
 	Director::getInstance()->replaceScene(TransitionFade::create(1, scene));
 }
 
