@@ -1,6 +1,8 @@
 #include "UIPause.h"
 #include "Models/models.h"
 #include "UIControl/UIPauseLayer/UIPauseLayer.h"
+#include <functional>
+using namespace std;
 
 UIPause* UIPause::create(LevelModel* level) {
 	UIPause *btn = new (std::nothrow) UIPause;
@@ -16,21 +18,23 @@ UIPause* UIPause::create(LevelModel* level) {
 }
 
 void UIPause::onTouch() {
-	this->addTouchEventListener(CC_CALLBACK_2(UIPause::touchControlEvent, this));
-}
+    function<function<void(Ref*, ui::Widget::TouchEventType)>()> pauseTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+        return [&](Ref *sender, ui::Widget::TouchEventType type){
+            switch (type)
+            {
+            case ui::Widget::TouchEventType::BEGAN:
+                CCLOG("Touch pause");
+                break;
+            case ui::Widget::TouchEventType::ENDED:
+                CCLOG("Pause!");
+                level->pause();
+                getParent()->addChild(UIPauseLayer::create(level), 12);
+                break;
+            default:
+                break;
+            }
+        };
+    };
 
-void UIPause::touchControlEvent(Ref *sender, ui::Widget::TouchEventType type) {
-    switch (type)
-    {
-    case ui::Widget::TouchEventType::BEGAN:
-        CCLOG("Touch pause");
-        break;
-    case ui::Widget::TouchEventType::ENDED:
-        CCLOG("Pause!");
-        level->pause();
-        getParent()->addChild(UIPauseLayer::create(level), 12);
-        break;
-    default:
-        break;
-    }
-};
+	this->addTouchEventListener(pauseTouch());
+}

@@ -210,6 +210,11 @@ void DiseaseModel::update() {
                     if (abs((*nextPath)[0] - cellX) <= ACCEPTING_TIME_ERROR && abs((*nextPath)[1] - cellY) <= ACCEPTING_TIME_ERROR) {
                         currentPath++;
                         nextPath++;
+
+                        // Losing condition
+                        if (nextPath == path->end()) {
+                            level->setLose();
+                        }
                     }
                 }
             }
