@@ -23,6 +23,7 @@ Constructor of LevelModel
 LevelModel::LevelModel(int level, Scene* scene) {
     srand(time(NULL));
     this->scene = scene;
+    this->levelId = level;
 
     /*
     Set UIObject of energy, gold and CellBar

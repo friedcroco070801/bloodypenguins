@@ -15,7 +15,7 @@ Effect Cell Model update on each updating
 */
 void EffectCellModel::update() {
     CellModel::update();
-    if (alive & level != NULL) {
+    if (alive && level != NULL) {
         effectTimeCounter -= UPDATING_FREQUENCY;
         if (abs(effectTimeCounter) <= ACCEPTING_TIME_ERROR) {
             effectTimeCounter = effectRechargeTime;

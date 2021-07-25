@@ -75,7 +75,11 @@ public:
 
     // Set win
     void setWin() {winTimeCounter = 1.5;}
+
+    // Get levelId
+    int getLevelId() {return levelId;}
 private:
+    int levelId;
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
     std::vector< std::vector<int> > endPaths;
