@@ -44,6 +44,7 @@ void UIObjects::setFrozenAnimate() {
     this->setPosition(0.0f, 0.0f);
     this->setLocalZOrder(3);
     this->setColor(Color3B(0, 162, 232));
+    this->shadow->pause();
     this->pause();
     tempParent->pause();
 }
@@ -61,5 +62,6 @@ void UIObjects::deFrozenAnimate() {
     this->setPosition(tempPos.x, tempPos.y);
     this->setColor(Color3B(255, 255, 255));
     this->resume();
+    this->shadow->resume();
     tempParent->removeFromParent();
 }

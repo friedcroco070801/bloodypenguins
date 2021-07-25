@@ -10,7 +10,6 @@ UICell00Projectile* UICell00Projectile::create() {
     if (uiprojectile && uiprojectile->initWithFile(CELL_00_PROJECTILE_FILENAME))
     {
         uiprojectile->autorelease();
-        uiprojectile->setScaleY(0.75f);
         return uiprojectile;
     }
     CC_SAFE_DELETE(uiprojectile);

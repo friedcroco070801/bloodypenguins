@@ -19,7 +19,7 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
     case CELL_00_PROJECTILE:
     {
         auto proj = UICell00Projectile::create();
-        proj->setScale(1.1f * OBJECT_SCALE);
+        proj->setScale(1.1f * OBJECT_SCALE, 0.78f * OBJECT_SCALE);
         return proj;
     }
     case CELL_03_PROJECTILE:

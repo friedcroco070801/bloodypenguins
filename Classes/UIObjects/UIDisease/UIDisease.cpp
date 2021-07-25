@@ -11,6 +11,10 @@ Add UIDisease to scene
 void UIDisease::addToScene(Scene* scene) {
     scene->addChild(this, DISEASE_LAYER_ZORDER);
 	this->shadow->setOpacity(160);
+
+	this->setScale(this->getScale() * 0.1f);
+	auto scaleUp = ScaleBy::create(0.25f, 10.0f);
+	this->runAction(scaleUp);
 }
 
 /*

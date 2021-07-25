@@ -64,6 +64,19 @@ void GSMap::createMap(LevelModel *level) {
 				brick->setGlobalZOrder(0.0f);
 				brick->putPiecesIntoPlace(left, right, up, down);
 
+				// Draw beginpoint of the path
+				auto beginPaths = level->getBeginPaths();
+				for (auto it = beginPaths.begin(); it != beginPaths.end(); it++) {
+					if ((*it)[0] == i && (*it)[1] == j) {
+						auto tent = Sprite::create("sprites/objects/disease/tent.png");
+						tent->setScale(1.25f * SIZE_OF_SQUARE / 98.0f);
+						tent->setAnchorPoint(Vec2(0.5f, 18.0f / 80));
+						tent->setPosition(ROW_COLUMN_TO_POSITION(temp));
+						this->addChild(tent);
+						tent->setGlobalZOrder(2.0f + 5.0f - j / 5.0f);
+					}
+				}
+				
 				// Draw endpoint of the path
 				auto endPaths = level->getEndPaths();
 				for (auto it = endPaths.begin(); it != endPaths.end(); it++) {

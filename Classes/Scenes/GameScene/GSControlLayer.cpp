@@ -26,21 +26,6 @@ bool GSControlLayer::init(Sprite* choose)
 	touchListener->onTouchMoved = CC_CALLBACK_2(GSControlLayer::onTouchMoved, this);
 	touchListener->onTouchEnded = CC_CALLBACK_2(GSControlLayer::onTouchEnded, this);
 	_eventDispatcher->addEventListenerWithSceneGraphPriority(touchListener, this);
-//	setPreviewImage(CELL_00_EOSINOPHILS);
-/////////////////////////////////////////////////////////XOA
-/*
-	auto button = MenuItemImage::create("CloseNormal.png", "CloseSelected.png", CC_CALLBACK_0(GSControlLayer::ButtonCall_1, this));
-	button->setPosition(Vec2(100, 200));
-
-	auto button2 = MenuItemImage::create("CloseNormal.png", "CloseSelected.png", CC_CALLBACK_0(GSControlLayer::ButtonCall_2, this));
-	button2->setPosition(Vec2(100, 300));
-
-	auto menu = Menu::create(button,button2, NULL);
-	menu->setPosition(Point::ZERO);
-
-	this->addChild(menu);
-*/
-///////////////////////////////////////////////////////////////XOA
 
 	return true;
 }
@@ -108,6 +93,28 @@ void GSControlLayer::setPreviewImage(CellId id, double distance) {
 		break;
 	default:
 		break;
+	}
+
+	// Show where can be placed
+	CCLOG("Control init");
+	for (int x = 0; x < 8; x++) {
+		for (int y = 0; y < 5; y++) {
+			if (CellModel::canPutOn(Cell_Id, level, x, y)) {
+				auto square = Sprite::create("sprites/objects/cell/placable.png");
+				square->setOpacity(160);
+				square->setContentSize(Size(CELL_WIDTH, CELL_WIDTH));
+				square->setScale(this->getScale() * 0.65f);
+				CCLOG("At %d, %d", x, y);
+				auto shrink = ScaleBy::create(0.75f, 0.5f);
+				auto deShrink = ScaleBy::create(0.75f, 2.0f);
+				auto seq = RepeatForever::create(Sequence::create(shrink, deShrink, nullptr));
+				square->runAction(seq);
+
+				this->addChild(square);
+				square->setGlobalZOrder(1.25f);
+				square->setPosition(Vec2(x * CELL_WIDTH + POS_X_ORIGIN, y * CELL_WIDTH + POS_Y_ORIGIN));
+			}
+		}
 	}
 }
 

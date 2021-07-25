@@ -114,6 +114,17 @@ void LevelModel::readLevelFromJson(int level) {
         enemyPaths.push_back(temp1);
     }
 
+    // Get begin paths
+    json jbegin = j["beginPaths"];
+    for (auto it = jbegin.begin(); it != jbegin.end(); it++) {
+        vector<int> temp;
+        auto vec = it->get< vector<int> >();
+        for (auto it2 = vec.begin(); it2 != vec.end(); it2++) {
+            temp.push_back(*it2);
+        }
+        beginPaths.push_back(temp);
+    }
+
     // Get end paths
     json jend = j["endPaths"];
     for (auto it = jend.begin(); it != jend.end(); it++) {

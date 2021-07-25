@@ -68,6 +68,7 @@ public:
     std::list<CellModel*>& __getCellList() {return cellList;}
     std::vector< std::vector<int> >* __getEnemyPath();
     std::vector< std::vector<int> > getEndPaths() {return endPaths;}
+    std::vector< std::vector<int> > getBeginPaths() {return beginPaths;}
 
     // Set lose
     void setLose() {loseCheck = true;}
@@ -78,6 +79,7 @@ private:
     std::vector< std::vector<MapPosition> > map;
     std::vector< std::vector< std::vector<int> > > enemyPaths;
     std::vector< std::vector<int> > endPaths;
+    std::vector< std::vector<int> > beginPaths;
     std::vector<WaveModel> waveList;
     std::vector<WaveModel>::iterator currentWave;
     std::list<CellModel*> cellList;
