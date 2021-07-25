@@ -2,6 +2,7 @@
 #include "GSdefine.h"
 #include "AppDelegate.h"
 #include "UIObjects/UICell/UICellDefinitions.h"
+#include "UIObjects/uiobj.h"
 
 USING_NS_CC;
 //global variable
@@ -71,52 +72,60 @@ void GSControlLayer::setPreviewImage(CellId id, double distance) {
 	{
 	case CELL_00_EOSINOPHILS:
 		this->link_image = CELL_00_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 10.0f / 58);
+		this->anchonPoint = Point(0.5f, 10.0f / 58);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_01_ERYTHROCYTES:
 		this->link_image = CELL_01_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 0.0f);
+		this->anchonPoint = Point(0.5f, 0.0f);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_02_PLATELETS:
 		this->link_image = CELL_02_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 9.0f / 82);
+		this->anchonPoint = Point(0.5f, 9.0f / 82);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_03_BASOPHILS:
 		this->link_image = CELL_03_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 6.0f / 69);
+		this->anchonPoint = Point(0.5f, 6.0f / 69);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_04_MONOCYTES:
 		this->link_image = CELL_04_FILENAME;
 		// this->ScaleNumber = 0.75f;
-		this->anchonPoint = cocos2d::Point(0.5f, 11.0f / 71);
+		this->anchonPoint = Point(0.5f, 11.0f / 71);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_05_LYMPHOCYTESB:
 		this->link_image = CELL_05_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 2.0f / 42);
+		this->anchonPoint = Point(0.5f, 2.0f / 42);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	case CELL_06_NEUTROPHILS: 
 		this->link_image = CELL_06_FILENAME;
-		this->anchonPoint = cocos2d::Point(0.5f, 14.0f / 46);
+		this->anchonPoint = Point(0.5f, 14.0f / 46);
+		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
 	default:
 		break;
 	}
 }
 
-bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
+bool GSControlLayer::onTouchBegan(Touch *touch, Event *event) {
 
 	auto p = touch->getLocation();
-	int size = cocos2d::Sprite::create(link_image)->getContentSize().height;
+	int size = Sprite::create(link_image)->getContentSize().height;
 	if (buttonCheck) {
 		this->previewImage = Sprite::create(this->link_image,Rect(0,0,size,size));
-		this->previewImage->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
+		this->previewImage->setRotation3D(Vec3(0, 180.0f, 0));
 		this->previewImage->setAnchorPoint(this->anchonPoint);
 		this->previewImage->setScale(this->ScaleNumber);
 
 		// Radius around
 		if (distance > ACCEPTING_TIME_ERROR){
-			auto radius = cocos2d::Sprite::create(RADIUS_PREVIEW);
-			previewImage->addChild(radius, -1);
+			auto radius = Sprite::create(RADIUS_PREVIEW);
+			previewImage->addChild(radius);
+			radius->setGlobalZOrder(1.0f);
 			radius->setPosition(previewImage->getContentSize() / 2);
 			radius->setScale(distance * 2 * SIZE_OF_SQUARE / radius->getContentSize().height / ScaleNumber);
 			radius->setOpacity(200);
@@ -140,12 +149,13 @@ bool GSControlLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) 
 				this->previewImage->setColor(Color3B::RED);
 			}
 		}
-		this->addChild(this->previewImage, 2);
+		this->addChild(this->previewImage);
+		previewImage->setGlobalZOrder(1.5f);
 	}
 	return true;
 }
 
-void GSControlLayer::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event) {
+void GSControlLayer::onTouchMoved(Touch *touch, Event *event) {
 	auto p = touch->getLocation();
 	if (buttonCheck) {
 		if (GRASS_OUTSIDE(p)) {
@@ -169,7 +179,7 @@ void GSControlLayer::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event) 
 	}
 
 }
-void GSControlLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
+void GSControlLayer::onTouchEnded(Touch *touch, Event *event) {
 
 	auto p = touch->getLocation();
 	if (buttonCheck) {

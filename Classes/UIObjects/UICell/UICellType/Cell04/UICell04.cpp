@@ -1,7 +1,7 @@
 #include "UIObjects/uiobj.h"
 #include "UICell04.h"
 #include "Scenes/GameScene/GSDefine.h"
-
+USING_NS_CC;
 /*
 Create a new instance of UICell00
 */
@@ -15,10 +15,10 @@ UICell04* UICell04::create() {
     CC_SAFE_DELETE(uicell);
     return nullptr;
 }
-void UICell04::addToScene(cocos2d::Scene* scene) {
-	this->setAnchorPoint(cocos2d::Point(0.5,0.3));
-	this->setScale(0.75);
+void UICell04::addToScene(Scene* scene) {
+	// this->setScale(0.75);
 	scene->addChild(this, CELL_LAYER_ZORDER);
+	this->shadow->setOpacity(160);
 	this->idleAnimate();
 }
 void UICell04::idleAnimate() {
@@ -27,67 +27,68 @@ void UICell04::idleAnimate() {
 	//this->stopActionByTag();
 
 	const int numberSprite = 65;
-	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
-	int size = cocos2d::Sprite::create(CELL_04_FILENAME)->getContentSize().height;
+	Vector<SpriteFrame*> animFrames;
+	int size = Sprite::create(CELL_04_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);
 	for (int i = 0; i < numberSprite; i++) {
-		animFrames.pushBack(cocos2d::SpriteFrame::create(CELL_04_FILENAME, cocos2d::Rect(size * i, 0, size, size)));
+		animFrames.pushBack(SpriteFrame::create(CELL_04_FILENAME, Rect(size * i, 0, size, size)));
 	}
-	cocos2d::Animation* animation = cocos2d::Animation::createWithSpriteFrames(animFrames, 0.05f);
-	cocos2d::Animate *animate = cocos2d::Animate::create(animation);
+	Animation* animation = Animation::createWithSpriteFrames(animFrames, 0.05f);
+	Animate *animate = Animate::create(animation);
 	
 	//animate->setTag();
 
-	this->setRotation3D(cocos2d::Vec3(0, 180.0f, 0));
-	auto idle = cocos2d::RepeatForever::create(animate);
+	this->setRotation3D(Vec3(0, 180.0f, 0));
+	auto idle = RepeatForever::create(animate);
 
 	idle->setTag(ANIM_BASE_TAG);
 
 	this->runAction(idle);
 
-	auto tintTo = cocos2d::TintTo::create(0.1, cocos2d::Color3B::BLUE);
-	auto tintTo_ = cocos2d::TintTo::create(0.1, cocos2d::Color3B::WHITE);
-	auto sequenceSprites = cocos2d::Sequence::create(tintTo, tintTo_, tintTo->clone(), tintTo_->clone(), nullptr);
-	auto scale_ = cocos2d::ScaleBy::create(0.5, 0.5);
-	auto mySpawn = cocos2d::Spawn::createWithTwoActions(scale_, sequenceSprites);
+	auto tintTo = TintTo::create(0.1, Color3B::BLUE);
+	auto tintTo_ = TintTo::create(0.1, Color3B::WHITE);
+	auto sequenceSprites = Sequence::create(tintTo, tintTo_, tintTo->clone(), tintTo_->clone(), nullptr);
+	auto scale_ = ScaleBy::create(0.5, 0.5);
+	auto mySpawn = Spawn::createWithTwoActions(scale_, sequenceSprites);
 	this->runAction(mySpawn);
 }
 void UICell04::effectAnimate() {
-	for (int j = 0; j < 50; j++) {
-	    auto after = Sprite::create(CELL_04_EFFECT_FILENAME, cocos2d::Rect(0.0f, 0.0f, 32.0f, 32.0f));
+	for (int j = 0; j < 80; j++) {
+	    auto after = Sprite::create(CELL_04_EFFECT_FILENAME, Rect(0.0f, 0.0f, 32.0f, 32.0f));
 	    this->getParent()->addChild(after, PROJECTILE_LAYER_ZORDER);
+		after->setGlobalZOrder(8.0f);
 	    after->setPosition(this->getPosition());
 
-		auto rotate = cocos2d::RepeatForever::create(cocos2d::RotateBy::create(1.0f, 360 * CCRANDOM_MINUS1_1()));
+		auto rotate = RepeatForever::create(RotateBy::create(1.0f, 360 * CCRANDOM_MINUS1_1()));
 		rotate->setTag(3);
 		after->runAction(rotate);
 
 	    auto time = CCRANDOM_0_1() * 0.7f + 0.3f;
-	    auto distance = 50.0f + CCRANDOM_0_1() * 80.0f;
+	    auto distance = CELL_WIDTH * (1.0f  + CCRANDOM_0_1()) * 0.8f;
 	    auto jumpX = distance * CCRANDOM_MINUS1_1();
 	    auto jumpY = (CCRANDOM_0_1() <= 0.5f ? -1 : 1) * sqrt(distance * distance - jumpX * jumpX);
 	    auto jumpH = 40.0f + 20.0f * CCRANDOM_0_1();
 
-	    auto jump = cocos2d::JumpBy::create(time + 0.25f, cocos2d::Vec2(jumpX, jumpY), jumpH, 1);
-	    auto call = cocos2d::CallFuncN::create([](Node* node){
+	    auto jump = JumpBy::create(time + 0.25f, Vec2(jumpX, jumpY), jumpH, 1);
+	    auto call = CallFuncN::create([](Node* node){
 	        node->stopActionByTag(3);
 	    });
 
-		cocos2d::Vector<cocos2d::SpriteFrame*> frames;
+		Vector<SpriteFrame*> frames;
 		for (unsigned int i = 1; i < 6; i++) {
-			auto frame = cocos2d::SpriteFrame::create(CELL_04_EFFECT_FILENAME, cocos2d::Rect(i * 32, 0, 32, 32));
+			auto frame = SpriteFrame::create(CELL_04_EFFECT_FILENAME, Rect(i * 32, 0, 32, 32));
 			frames.pushBack(frame);
 		}
-	    auto animate = cocos2d::Animate::create(cocos2d::Animation::createWithSpriteFrames(frames, 0.05f));
+	    auto animate = Animate::create(Animation::createWithSpriteFrames(frames, 0.05f));
 
-		auto remove = cocos2d::RemoveSelf::create();
-		auto delay = cocos2d::DelayTime::create(time);
+		auto remove = RemoveSelf::create();
+		auto delay = DelayTime::create(time);
 
-	    auto seq = cocos2d::Sequence::create(delay, call, animate, remove, nullptr);
+	    auto seq = Sequence::create(delay, call, animate, remove, nullptr);
 	    after->runAction(seq);
 		after->runAction(jump);
 
-	    after->setScale(0.1f + 0.9f * CCRANDOM_0_1());
+	    after->setScale(0.15f + 1.2f * CCRANDOM_0_1());
 	}
 }
 

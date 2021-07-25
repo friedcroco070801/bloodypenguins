@@ -11,7 +11,6 @@ UIDisease03* UIDisease03::create() {
     if (uidisease && uidisease->initWithFile(DISEASE_03_FILENAME))
     {
         uidisease->autorelease();
-		uidisease->setScale(2);
         return uidisease;
     }
     CC_SAFE_DELETE(uidisease);
@@ -35,7 +34,7 @@ void UIDisease03::walkAnimate(Direction dir) {
 		for (int index = 1; index <= 4; index++){
 			sprintf(spriteFrameByName, "disease03walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -43,7 +42,7 @@ void UIDisease03::walkAnimate(Direction dir) {
 		for (int index = 5; index <= 8; index++){
 			sprintf(spriteFrameByName, "disease03walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -51,7 +50,7 @@ void UIDisease03::walkAnimate(Direction dir) {
 		for (int index = 9; index <= 12; index++){
 			sprintf(spriteFrameByName, "disease03walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -59,7 +58,7 @@ void UIDisease03::walkAnimate(Direction dir) {
 		for (int index = 13; index <= 16; index++){
 			sprintf(spriteFrameByName, "disease03walk%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -89,7 +88,7 @@ void UIDisease03::idleAnimate(Direction dir) {
 		for (int index = 1; index <= 2; index++) {
 			sprintf(spriteFrameByName, "disease03idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -97,7 +96,7 @@ void UIDisease03::idleAnimate(Direction dir) {
 		for (int index = 3; index <= 4; index++) {
 			sprintf(spriteFrameByName, "disease03idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -105,7 +104,7 @@ void UIDisease03::idleAnimate(Direction dir) {
 		for (int index = 5; index <= 6; index++) {
 			sprintf(spriteFrameByName, "disease03idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;
@@ -113,7 +112,7 @@ void UIDisease03::idleAnimate(Direction dir) {
 		for (int index = 7; index <= 8; index++) {
 			sprintf(spriteFrameByName, "disease03idle%d.png", index);
 			auto frame = SpriteFrameCache::getInstance()->getSpriteFrameByName(spriteFrameByName);
-			frame->setAnchorPoint(Point(0.5, 0.375));
+			frame->setAnchorPoint(Point(0.5f, 0.35f));
 			animFrames.pushBack(frame);
 		}
 		break;

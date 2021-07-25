@@ -1,5 +1,8 @@
 #include "Models/models.h"
 #include "Cell01Model.h"
+#include "UIObjects/uiobj.h"
+#include <functional>
+using namespace std;
 
 /*
 Cell01Model constructor
@@ -17,9 +20,15 @@ Cell01Model::Cell01Model() : EffectCellModel(CELL_01_ERYTHROCYTES) {
 Cell01Model take effect: create energy
 */
 void Cell01Model::takeEffect() {
-    if (level != NULL) {
-        level->addEnergyObject(cellX, cellY);
-    }
+    function<function<void()>()> func = [this]() -> function<void()> {
+        return [&](){
+            if (level != NULL) {
+                level->addEnergyObject(cellX, cellY);
+            }
+        };
+    };
+
+    ui->effectAnimate(func());
 }
 
 /* 

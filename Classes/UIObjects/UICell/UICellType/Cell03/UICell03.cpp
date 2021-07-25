@@ -15,8 +15,8 @@ UICell03* UICell03::create() {
     return nullptr;
 }
 void UICell03::addToScene(cocos2d::Scene* scene) {
-	this->setAnchorPoint(cocos2d::Point(0.5,0.25));
 	scene->addChild(this, CELL_LAYER_ZORDER);
+	this->shadow->setOpacity(160);
 	this->idleAnimate();
 }
 void UICell03::idleAnimate() {

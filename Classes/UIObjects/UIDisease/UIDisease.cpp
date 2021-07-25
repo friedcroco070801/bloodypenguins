@@ -10,6 +10,7 @@ Add UIDisease to scene
 */
 void UIDisease::addToScene(Scene* scene) {
     scene->addChild(this, DISEASE_LAYER_ZORDER);
+	this->shadow->setOpacity(160);
 }
 
 /*
@@ -19,26 +20,138 @@ UIDisease* UIDisease::create(DiseaseId id) {
     switch (id) {
     // Case id 00: Rabies
     case DISEASE_00_RABIES:
-        return UIDisease00::create();
+	{
+		auto disease = UIDisease00::create();
+		disease->setScale(1.1f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.2f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.5f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_01_SMALLPOX:
-		return UIDisease01::create();
+	{
+		auto disease = UIDisease01::create();
+		disease->setScale(2.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.375f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.25f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_02_INFLUENZA:
-		return UIDisease02::create();
+	{
+		auto disease = UIDisease02::create();
+		disease->setScale(1.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.25f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.5f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_03_MEASLES:
-		return UIDisease03::create();
+	{
+		auto disease = UIDisease03::create();
+		disease->setScale(2.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.35f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.3f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_04_POLIO:
-		return UIDisease04::create();
+	{
+		auto disease = UIDisease04::create();
+		disease->setScale(1.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.25f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.5f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_05_MALARIA:
-		return UIDisease05::create();
+	{
+		auto disease = UIDisease05::create();
+		disease->setScale(1.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.0f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.2f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
 	case DISEASE_06_EBOLA:
-		return UIDisease06::create();
+	{
+		auto disease = UIDisease06::create();
+		disease->setScale(2.5f * OBJECT_SCALE);
+		disease->setAnchorPoint(Vec2(0.5f, 0.25f));
+
+		disease->shadow = Sprite::create(SHADOW_FILENAME);
+		disease->addChild(disease->shadow);
+		disease->shadow->setScale(0.5f);
+		disease->shadow->setAnchorPoint(Vec2(0.5f, 0.5f));
+
+		auto size = 64.0f;
+		auto anchor = disease->getAnchorPoint();
+
+		disease->shadow->setPosition(Vec2(size * anchor.x, size * anchor.y));
+		disease->shadow->setGlobalZOrder(2.5f);
+		return disease;
 		break;
+	}
     }
 
     return nullptr;

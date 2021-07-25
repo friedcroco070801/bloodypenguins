@@ -13,7 +13,6 @@ UIDisease06* UIDisease06::create() {
     if (uidisease && uidisease->initWithFile(DISEASE_06_FILENAME))
     {
         uidisease->autorelease();
-		uidisease->setScale(2);
         return uidisease;
     }
     CC_SAFE_DELETE(uidisease);
@@ -166,6 +165,9 @@ void UIDisease06::attackAnimateWithSync(Direction dir, function<void()> callBack
 	auto seq = Sequence::create(jump, changeZOrder, nullptr);
 	this->runAction(seq);
 
+	auto shadowDeJump = JumpBy::create(0.5, Vec2(0.0f, 0.0f), 0.0f - SIZE_OF_SQUARE / this->getScale(), 1);
+	this->shadow->runAction(shadowDeJump);
+
 	function<function<void()>()> callScene = [this]() -> function<void()> {
 		return [&](){
 			// Make the camera fluctuate
@@ -226,6 +228,7 @@ void UIDisease06::attackAnimateWithSync(Direction dir, function<void()> callBack
 			auto vecY = (-1.0f + CCRANDOM_0_1() * 1.866f) * radius;
 			auto vecX = (CCRANDOM_0_1() <= 0.5f ? 1 : -1) * sqrt(radius * radius - vecY * vecY);
 			node->getParent()->addChild(ground, 6);
+			ground->setGlobalZOrder(8.0f);
 			ground->setPosition(node->getPosition() + Vec2(vecX, vecY));
 			ground->runAction(seq);
 		}

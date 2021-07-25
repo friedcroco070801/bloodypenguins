@@ -135,7 +135,7 @@ void DiseaseModel::update() {
         auto cellList = level->__getCellList();
         auto target = cellList.end();
         for (auto it = cellList.begin(); it != cellList.end(); it++) {
-            if (getDistanceToOther(*it) <= 1.0 + 0.000002 && (*it)->canBeEaten()) {
+            if (getDistanceToOther(*it) <= 1.0 + 0.0000002 && (*it)->canBeEaten()) {
                 // Check if a passed target
                 auto tempDir = dir;
                 changeDirectionToTarget(*it);

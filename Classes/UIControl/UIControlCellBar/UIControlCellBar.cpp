@@ -12,12 +12,14 @@ Add to Scene
 */
 void UIControlCellBar::addToScene(Scene* scene) {
 	this->scene = scene;
-	scene->addChild(this, CELLBAR_LAYER_ZORDER);
+	scene->addChild(this);
+	this->setGlobalZOrder(9.0f);
 	onTouch();
 
 	loading = Sprite::create(CELLBAR_LOADING_FILENAME);
 	loading->setAnchorPoint(Vec2(0.0f, 0.0f));
 	addChild(loading);
+	loading->setGlobalZOrder(10.5f);
 	loading->setOpacity(170);
 
 	canActivate = false;
@@ -43,9 +45,11 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 			choosing = Sprite::create(CELLBAR_CHOOSING_FILENAME);
 			addChild(choosing);
 			choosing->setPosition(this->getContentSize() / 2);
+			choosing->setGlobalZOrder(9.0f);
 
 			auto controlLayer = GSControlLayer::create(level, choosing);
 			scene->addChild(controlLayer, CELLBAR_LAYER_ZORDER);
+			controlLayer->setGlobalZOrder(11.5f);
 			controlLayer->setPreviewImage(id, distance);
 			break;
 		}
@@ -116,6 +120,7 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cos
 		costShow->setScale(0.3f);
 		costShow->setPosition(8.0f, 18.0f);
 		btn->addChild(costShow);
+		costShow->setGlobalZOrder(9.25f);
 		costShow->changeValue(cost);
 
 		// Icon type
@@ -123,6 +128,7 @@ UIControlCellBar* UIControlCellBar::create(LevelModel* level, CellId id, int cos
 			auto icon = Sprite::create(icons[i]);
 			icon->setPosition(16.0f + i * 20.0f, 65.0f);
 			btn->addChild(icon);
+			icon->setGlobalZOrder(9.25f);
 		}
 		return btn;
 	}
@@ -157,6 +163,7 @@ void UIControlCellBar::flashAnimate() {
 	flash->setAnchorPoint(Vec2(0.0f, 0.0f));
 	flash->setOpacity(0);
 	addChild(flash);
+	flash->setGlobalZOrder(10.5f);
 
 	// Flashing
 	auto fadeIn = FadeTo::create(ANIM_CELLBAR_FLASH, 255);

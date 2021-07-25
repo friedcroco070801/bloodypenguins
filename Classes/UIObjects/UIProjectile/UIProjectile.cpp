@@ -17,11 +17,23 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
     switch (id) {
     // Case id 00: Rabies
     case CELL_00_PROJECTILE:
-        return UICell00Projectile::create();
+    {
+        auto proj = UICell00Projectile::create();
+        proj->setScale(1.1f * OBJECT_SCALE);
+        return proj;
+    }
     case CELL_03_PROJECTILE:
-        return UICell03Projectile::create();
+    {
+        auto proj = UICell03Projectile::create();
+        proj->setScale(1.1f * OBJECT_SCALE);
+        return proj;
+    }
     case CELL_05_PROJECTILE:
-        return UICell05Projectile::create();
+    {
+        auto proj = UICell05Projectile::create();
+        proj->setScale(1.5f * OBJECT_SCALE);
+        return proj;
+    }
     default:
         return UICell00Projectile::create();
     }
@@ -33,4 +45,12 @@ Destroy animation
 */
 void UIProjectile::destroyAnimate() {
     removeFromParent();
+}
+
+/*
+Override parent method
+*/
+void UIProjectile::setCellPosition(double cellX, double cellY) {
+    UIObjects::setCellPosition(cellX, cellY);
+    setGlobalZOrder(8.0f);
 }

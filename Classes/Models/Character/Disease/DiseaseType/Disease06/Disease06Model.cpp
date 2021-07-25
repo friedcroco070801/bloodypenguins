@@ -53,6 +53,34 @@ void Disease06Model::update() {
         DiseaseModel::update();
     }
     else {
+        // Check if alive
+        if (alive && hp <= 0) {
+            alive = false;
+            level->dumpDisease(this);
+            this->level = NULL;
+
+            // Remove any existing status
+            if (status == FROZEN) {
+                ui->deFrozenAnimate();
+            }
+
+            // Destroy UIObject
+            ui->dieAnimate(dir);
+            //ui->removeFromScene();
+            return;
+        }
+
+        // Check if any status that prevents moving
+        if (status == FROZEN) {
+            if (abs(frozenStatusCounter) <= ACCEPTING_TIME_ERROR) {
+                // Thawed out
+                deFrozen();
+            }
+            else {
+                frozenStatusCounter -= UPDATING_FREQUENCY;
+                return;
+            }
+        }
         waitingUntilNextMove -= UPDATING_FREQUENCY;
     }
 }

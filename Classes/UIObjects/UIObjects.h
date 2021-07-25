@@ -13,6 +13,7 @@ public:
     virtual void deFrozenAnimate();
 protected:
     cocos2d::Vector<cocos2d::Animation*> previousStateAnimations;
+    cocos2d::Sprite* shadow;
 };
 
 #endif // !__UI_OBJECTS_H__

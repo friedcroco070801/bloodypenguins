@@ -31,6 +31,7 @@ bool UILoseLayer::init() {
         auto remove = RemoveSelf::create();
         auto sequence = Sequence::create(fadeIn, fadeOut, remove, nullptr);
         node->addChild(flash);
+        flash->setGlobalZOrder(12.0f);
         flash->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         flash->runAction(sequence);
     });
@@ -46,6 +47,7 @@ bool UILoseLayer::init() {
         fore->setOpacity(0);
         auto fadeIn = FadeTo::create(0.5f, 160);
         node->addChild(fore);
+        fore->setGlobalZOrder(12.0f);
         fore->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         fore->runAction(fadeIn);
     });
@@ -60,6 +62,7 @@ bool UILoseLayer::init() {
         victory->setScale(0.75f);
 
         node->addChild(victory, 1);
+        victory->setGlobalZOrder(12.0f);
         victory->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         
         auto fadeIn = FadeTo::create(2.5f, 255);

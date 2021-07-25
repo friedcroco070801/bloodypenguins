@@ -47,10 +47,11 @@ void UICell05Projectile::destroyAnimate() {
 
     // Create aftermath
 
-    for (int j = 0; j < 30; j++) {
+    for (int j = 0; j < 60; j++) {
         auto after = Sprite::create(CELL_05_AFTERMATH_FILENAME, Rect(0.0f, 0.0f, 32.0f, 32.0f));
         this->getParent()->addChild(after, PROJECTILE_LAYER_ZORDER);
         after->setPosition(this->getPosition());
+        after->setGlobalZOrder(8.0f);
         Vector<SpriteFrame*> framesIn;
         for (unsigned int i = 0; i < 6; i++) {
             auto frame = SpriteFrame::create(CELL_05_AFTERMATH_FILENAME, Rect(i * 32, 0, 32, 32));
@@ -61,7 +62,7 @@ void UICell05Projectile::destroyAnimate() {
         after->runAction(animateIn);
 
         auto time = CCRANDOM_0_1() * 0.35f + 0.15f;
-        auto distance = 30.0f + CCRANDOM_0_1() * 50.0f;
+        auto distance = CELL_WIDTH * 2.0f / 3 * (1 + CCRANDOM_0_1());
         auto jumpX = distance * CCRANDOM_MINUS1_1();
         auto jumpY = (CCRANDOM_0_1() <= 0.5f ? -1 : 1) * sqrt(distance * distance - jumpX * jumpX);
         auto jumpH = 20.0f + 10.0f * CCRANDOM_0_1();
@@ -76,7 +77,7 @@ void UICell05Projectile::destroyAnimate() {
         auto seq = Sequence::create(jump, call, animate, remove, nullptr);
         after->runAction(seq);
 
-        after->setScale(0.1f + 0.9f * CCRANDOM_0_1());
+        after->setScale(0.15f + 1.05f * CCRANDOM_0_1());
     }
 
     auto seq = Sequence::create(animate, remove, nullptr);

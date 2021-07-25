@@ -55,12 +55,14 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     // UIProgressor initialization
     progressor = UIProgressor::create(&waveList);
-    scene->addChild(progressor, 9);
+    scene->addChild(progressor);
+    progressor->setGlobalZOrder(9.0f);
     progressor->setPosition(PROGRESSOR_POS_X, PROGRESSOR_POS_Y);
 
     // UIPause initialization
     pauser = UIPause::create(this);
-    scene->addChild(pauser, 9);
+    scene->addChild(pauser);
+    pauser->setGlobalZOrder(9.0f);
     pauser->setPosition(Vec2(PAUSE_BUTTON_POS_X, PAUSE_BUTTON_POS_Y));
 
     // Initialize properties
@@ -472,7 +474,9 @@ void LevelModel::win() {
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
-        scene->addChild(UIWinLayer::create(), 12);
+        auto winLayer = UIWinLayer::create();
+        scene->addChild(winLayer);
+        winLayer->setGlobalZOrder(12.0f);
     }
 }
 
@@ -485,6 +489,8 @@ void LevelModel::lose() {
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
-        scene->addChild(UILoseLayer::create(), 12);
+        auto loseLayer = UILoseLayer::create();
+        scene->addChild(loseLayer);
+        loseLayer->setGlobalZOrder(12.0f);
     }
 }

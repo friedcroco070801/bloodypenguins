@@ -31,6 +31,7 @@ bool UIWinLayer::init() {
         auto remove = RemoveSelf::create();
         auto sequence = Sequence::create(fadeIn, fadeOut, remove, nullptr);
         node->addChild(flash);
+        flash->setGlobalZOrder(12.0f);
         flash->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         flash->runAction(sequence);
     });
@@ -46,6 +47,7 @@ bool UIWinLayer::init() {
         fore->setOpacity(0);
         auto fadeIn = FadeTo::create(0.5f, 160);
         node->addChild(fore);
+        fore->setGlobalZOrder(12.0f);
         fore->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         fore->runAction(fadeIn);
     });
@@ -60,6 +62,7 @@ bool UIWinLayer::init() {
         victory->setScale(3.0f);
 
         node->addChild(victory, 1);
+        victory->setGlobalZOrder(12.0f);
         victory->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
         
         auto fadeIn = FadeTo::create(0.15f, 255);
@@ -97,6 +100,7 @@ bool UIWinLayer::init() {
             auto seq = Sequence::create(delay, fadeOut, remove, nullptr);
 
             node->addChild(star);
+            star->setGlobalZOrder(12.0f);
             star->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
             star->runAction(rotate);
             star->runAction(jump);

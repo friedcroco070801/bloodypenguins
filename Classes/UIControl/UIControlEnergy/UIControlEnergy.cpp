@@ -7,6 +7,8 @@ USING_NS_CC;
 
 void UIControlEnergy::setCellPosition(double cellX, double cellY) {
 	setPosition(Vec2((float)cellX * CELL_WIDTH + POS_X_ORIGIN, (float)cellY * CELL_WIDTH + POS_Y_ORIGIN));
+	setPosition(getPosition() + Vec2(0.0f, 80.0f));
+	setGlobalZOrder(7.0f - cellY / 5.0f);
 }
 
 /*
@@ -71,8 +73,11 @@ void UIControlEnergy::onTouch() {
 Pop up animation
 */
 void UIControlEnergy::appearAnimate() {
-	auto jump = JumpBy::create(ANIM_ENERGY_POPUP_DURATION, Vec2(CCRANDOM_MINUS1_1() * CELL_WIDTH, 0 - CELL_WIDTH / 4 * (CCRANDOM_0_1() * 0.75f + 0.25f)), CELL_WIDTH * (0.75f + 0.25f * CCRANDOM_0_1()), 1);
+	this->setScale(0.4f);
+	auto scaleUp = ScaleTo::create(ANIM_ENERGY_POPUP_DURATION / 2, 1.0f);
+	auto jump = JumpBy::create(ANIM_ENERGY_POPUP_DURATION, Vec2(CCRANDOM_MINUS1_1() * CELL_WIDTH, 0 - CELL_WIDTH / 4 * (CCRANDOM_0_1() * 0.75f + 0.25f) - 80.0f), CELL_WIDTH * (1.5f + 0.25f * CCRANDOM_0_1()), 1);
 	this->runAction(jump);
+	this->runAction(scaleUp);
 }
 
 /*
@@ -93,12 +98,14 @@ void UIControlEnergy::idleAnimate() {
 	child->setAnchorPoint(Vec2(0.0f, 0.0f));
 	child->runAction(RepeatForever::create(animate));
 	this->addChild(child);
+	child->setGlobalZOrder(8.0f);
 }
 
 /*
 Destroy animation
 */
 void UIControlEnergy::destroyAnimate(std::function<void()> func) {
+	child->setGlobalZOrder(10.5f);
 	auto pos = getParent()->convertToNodeSpace(getPosition());
 	auto move = MoveBy::create(ANIM_ENERGY_DESTROY_DURATION, Vec2(0 - pos.x, Director::getInstance()->getVisibleSize().height - pos.y));
 	auto fade = FadeTo::create(ANIM_ENERGY_DESTROY_DURATION, 0);

@@ -3,6 +3,7 @@
 
 #include "UICellDefinitions.h"
 #include "cocos2d.h"
+#include <functional>
 
 class UIObjects;
 
@@ -13,6 +14,7 @@ public:
     virtual void idleAnimate() {}
     virtual void attackAnimate() {}
     virtual void effectAnimate() {}
+    virtual void effectAnimate(std::function<void()>) {}
     virtual void hitAnimate() {}
     virtual void dieAnimate() {}
 };

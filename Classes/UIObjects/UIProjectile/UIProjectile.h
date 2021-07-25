@@ -12,6 +12,7 @@ public:
     virtual void addToScene(cocos2d::Scene*);
     virtual void idleAnimate() {}
     virtual void destroyAnimate();
+    virtual void setCellPosition(double, double);
 };
 
 #endif // !__UI_PROJECTILE_H__

@@ -61,6 +61,7 @@ void GSMap::createMap(LevelModel *level) {
 				brick->setContentSize(Size(SIZE_OF_SQUARE, SIZE_OF_SQUARE));
 				brick->setPosition(ROW_COLUMN_TO_POSITION(temp));
 				this->addChild(brick);
+				brick->setGlobalZOrder(0.0f);
 				brick->putPiecesIntoPlace(left, right, up, down);
 
 				// Draw endpoint of the path
@@ -72,10 +73,12 @@ void GSMap::createMap(LevelModel *level) {
 						flag->setPosition(ROW_COLUMN_TO_POSITION(temp));
 						flag->flutterAnimate();
 						this->addChild(flag);
+						flag->setGlobalZOrder(2.0f + 5.0f - j / 5.0f);
 					}
 				}
 			}
 		}
 	}
-	this->addChild(mapImage,-1);
+	this->addChild(mapImage);
+	mapImage->setGlobalZOrder(0.0f);
 }

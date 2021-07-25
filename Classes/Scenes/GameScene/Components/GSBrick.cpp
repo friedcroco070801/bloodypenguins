@@ -45,6 +45,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(centerPiece);
     centerPiece->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(centerPiece);
+    centerPiece->setGlobalZOrder(0.5f);
     centerPiece->setPosition(width / 3, width / 3);
 
     // The 4 edges
@@ -55,6 +56,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(leftPiece);
     leftPiece->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(leftPiece);
+    leftPiece->setGlobalZOrder(0.5f);
     leftPiece->setPosition(0.0f, width / 3);
     // Right side
     Sprite* rightPiece;
@@ -63,6 +65,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(rightPiece);
     rightPiece->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(rightPiece);
+    rightPiece->setGlobalZOrder(0.5f);
     rightPiece->setPosition(width * 2 / 3, width / 3);
     // Up side
     Sprite* upPiece;
@@ -71,6 +74,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(upPiece);
     upPiece->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(upPiece);
+    upPiece->setGlobalZOrder(0.5f);
     upPiece->setPosition(width / 3, width * 2 / 3);
     // Down side
     Sprite* downPiece;
@@ -79,6 +83,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(downPiece);
     downPiece->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(downPiece);
+    downPiece->setGlobalZOrder(0.5f);
     downPiece->setPosition(width / 3, 0.0f);
 
     // Four corners
@@ -91,6 +96,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(upperLeft);
     upperLeft->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(upperLeft);
+    upperLeft->setGlobalZOrder(0.5f);
     upperLeft->setPosition(0.0f, width * 2 / 3);
     // Upper right
     Sprite* upperRight;
@@ -101,6 +107,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(upperRight);
     upperRight->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(upperRight);
+    upperRight->setGlobalZOrder(0.5f);
     upperRight->setPosition(width * 2 / 3, width * 2 / 3);
     // Lower left
     Sprite* lowerLeft;
@@ -111,6 +118,7 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(lowerLeft);
     lowerLeft->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(lowerLeft);
+    lowerLeft->setGlobalZOrder(0.5f);
     lowerLeft->setPosition(0.0f, 0.0f);
     // Lower right
     Sprite* lowerRight;
@@ -121,5 +129,6 @@ void GSBrick::putPiecesIntoPlace(bool left, bool right, bool up, bool down) {
     reSizeWithBrick(lowerRight);
     lowerRight->setAnchorPoint(Vec2(0.0f, 0.0f));
     this->addChild(lowerRight);
+    lowerRight->setGlobalZOrder(0.5f);
     lowerRight->setPosition(width * 2 / 3, 0.0f);
 }

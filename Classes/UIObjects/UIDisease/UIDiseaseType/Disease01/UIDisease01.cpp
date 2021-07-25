@@ -11,7 +11,6 @@ UIDisease01* UIDisease01::create() {
     if (uidisease && uidisease->initWithFile(DISEASE_01_FILENAME))
     {
         uidisease->autorelease();
-		uidisease->setScale(2);
         return uidisease;
     }
     CC_SAFE_DELETE(uidisease);

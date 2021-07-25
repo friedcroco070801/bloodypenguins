@@ -30,12 +30,14 @@ void UIPauseLayer::init(LevelModel* level) {
     // Add foreground
     auto fore = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
     this->addChild(fore);
+    fore->setGlobalZOrder(12.0f);
     fore->setOpacity(128);
     fore->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
 
     // Add layer box
     auto box = Sprite::create(PAUSE_LAYER_FILENAME);
     this->addChild(box);
+    box->setGlobalZOrder(12.0f);
     box->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
 
     // Add resume button
@@ -58,5 +60,6 @@ void UIPauseLayer::init(LevelModel* level) {
     
     resume->addTouchEventListener(resumeTouch());
     this->addChild(resume);
+    resume->setGlobalZOrder(12.0f);
     resume->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 45.0f * 2 + 15.0f * 2));
 }

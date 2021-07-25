@@ -26,10 +26,14 @@ void UIPause::onTouch() {
                 CCLOG("Touch pause");
                 break;
             case ui::Widget::TouchEventType::ENDED:
+            {
                 CCLOG("Pause!");
                 level->pause();
-                getParent()->addChild(UIPauseLayer::create(level), 12);
+                auto pauseLayer = UIPauseLayer::create(level);
+                getParent()->addChild(pauseLayer, 12);
+                pauseLayer->setGlobalZOrder(12.0f);
                 break;
+            }
             default:
                 break;
             }

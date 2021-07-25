@@ -23,4 +23,8 @@
 #define POS_X_ORIGIN GRASS_ORIGIN_POSITION_X_R + CELL_WIDTH / 2.0f
 #define POS_Y_ORIGIN GRASS_ORIGIN_POSITION_Y_R + CELL_WIDTH / 2.0f
 
+#define OBJECT_SCALE CELL_WIDTH / 98.0f
+
+#define SHADOW_FILENAME "sprites/objects/shadow.png"
+
 #endif // !__UI_OBJECTS_DEFINITIONS_H__

@@ -21,7 +21,8 @@ void GSBackgroundLayer::setBackgroundImagePosition()
 		background->setAnchorPoint(Point(0, 0));
 		// background->setContentSize(Size(WIDTH, HEIGHT));
 		background->setPosition(Vec2(0, 0));
-		this->addChild(background,-1);
+		this->addChild(background);
+		background->setGlobalZOrder(-1.0f);
 	}
 }
 
@@ -30,6 +31,7 @@ void GSBackgroundLayer::setEnergyBarImage() {
 	energy->setAnchorPoint(Vec2(0.0f, 0.5f));
 	energy->setPosition(5.0f + Director::getInstance()->getVisibleOrigin().x, Director::getInstance()->getVisibleSize().height * 15 / 16 + Director::getInstance()->getVisibleOrigin().y);
 	energy->setScale(Director::getInstance()->getVisibleSize().height / 8 / 90.0f);
-	this->addChild(energy, -1);
+	this->addChild(energy);
+	energy->setGlobalZOrder(9.0f);
 }
 

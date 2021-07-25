@@ -16,16 +16,19 @@ UIProgressor::UIProgressor(vector<WaveModel>* waves) {
     // Set up sprite
     auto inside = Sprite::create(PROGRESSOR_INSIDE_FILENAME);
     inside->setAnchorPoint(Vec2(0.0f, 0.5f));
-    this->addChild(inside, 1);
+    this->addChild(inside);
+    inside->setGlobalZOrder(9.0f);
 
     fill = Sprite::create(PROGRESSOR_FILL_FILENAME);
     fill->setAnchorPoint(Vec2(0.0f, 0.5f));
     fill->setScaleX(0.001f);
-    this->addChild(fill, 1);
+    this->addChild(fill);
+    fill->setGlobalZOrder(9.0f);
 
     auto outside = Sprite::create(PROGRESSOR_FILENAME);
     outside->setAnchorPoint(Vec2(0.0f, 0.5f));
-    this->addChild(outside, 1);
+    this->addChild(outside);
+    outside->setGlobalZOrder(9.0f);
 
     // Set up flag
     for (unsigned int i = 0; i < waveList->size(); i++) {
@@ -34,6 +37,7 @@ UIProgressor::UIProgressor(vector<WaveModel>* waves) {
             flag->setAnchorPoint(Vec2(0.5f, 0.0f));
             flag->setPosition(inside->getContentSize().width * (i + 1) / waveList->size(), 0.0f);
             this->addChild(flag);
+            flag->setGlobalZOrder(8.5f);
             flags.push_back(flag);
         }
     }
@@ -79,7 +83,8 @@ void UIProgressor::updateOnWave() {
                 // Notification hugeWave
                 auto noti = Sprite::create(NOTIFICATION_HUGEWAVE_FILENAME);
                 noti->setOpacity(0);
-                scene->addChild(noti, NOTIFICATION_LAYER_ZORDER);
+                scene->addChild(noti);
+                noti->setGlobalZOrder(11.0f);
                 noti->setPosition(NOTIFICATION_POS_X, NOTIFICATION_POS_Y);
                 auto fadeIn = FadeTo::create(0.3f, 255);
                 auto scaleFit = ScaleTo::create(0.3f, NOTIFICATION_HEIGHT / noti->getContentSize().height);
@@ -91,7 +96,8 @@ void UIProgressor::updateOnWave() {
                     return [scene](){
                         auto noti = Sprite::create((CCRANDOM_0_1() <= 0.2f) ? NOTIFICATION_HUGEWAVE_JOKE_FILENAME : NOTIFICATION_HUGEWAVE_FINAL_FILENAME);
                         noti->setOpacity(0);
-                        scene->addChild(noti, NOTIFICATION_LAYER_ZORDER);
+                        scene->addChild(noti);
+                        noti->setGlobalZOrder(11.0f);
                         noti->setPosition(NOTIFICATION_POS_X, NOTIFICATION_POS_Y);
                         auto fadeIn = FadeTo::create(0.3f, 255);
                         auto scaleFit = ScaleTo::create(0.3f, NOTIFICATION_HEIGHT / noti->getContentSize().height);

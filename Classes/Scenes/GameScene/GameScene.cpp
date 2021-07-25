@@ -25,9 +25,11 @@ void GameScene::drawMap() {
 	auto drawMapp = GSMap::create();
 	drawMapp->createMap(level);
 	this->addChild(drawMapp);
+	drawMapp->setGlobalZOrder(0.0f);
 }
 
 void GameScene::addBackground() {
 	auto backgroundLayer = GSBackgroundLayer::create();
-	this->addChild(backgroundLayer, -1);
+	this->addChild(backgroundLayer);
+	backgroundLayer->setGlobalZOrder(-1.0f);
 }

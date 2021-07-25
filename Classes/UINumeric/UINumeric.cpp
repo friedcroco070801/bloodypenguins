@@ -9,6 +9,7 @@ Add to Scene
 */
 void UINumeric::addToScene(Scene* scene) {
     scene->addChild(this, NUMERIC_LAYER_ZORDER);
+	this->setGlobalZOrder(10.0f);
 }
 
 /*
@@ -36,6 +37,7 @@ void UINumeric::changeValue(int value) {
 		ith_number->setContentSize(Size(ith_number->getContentSize().width * scale, ith_number->getContentSize().height * scale));
 		ith_number->setPosition(Vec2(ith_number->getContentSize().width * (1/2 + j), 0.0f));
 		this->addChild(ith_number, NUMERIC_LAYER_ZORDER);
+		ith_number->setGlobalZOrder(10.0f);
 		digitList.pushBack(ith_number);
 	}
 }

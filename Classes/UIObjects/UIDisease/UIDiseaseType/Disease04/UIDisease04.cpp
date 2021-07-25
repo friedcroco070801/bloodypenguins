@@ -11,7 +11,6 @@ UIDisease04* UIDisease04::create() {
     if (uidisease && uidisease->initWithFile(DISEASE_04_FILENAME))
     {
         uidisease->autorelease();
-		//uidisease->setScale(1.5);
 		//uidisease->setAnchorPoint(Point(0.5, 0.5));
         return uidisease;
     }
