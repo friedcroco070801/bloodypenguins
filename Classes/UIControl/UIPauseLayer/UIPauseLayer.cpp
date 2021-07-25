@@ -86,8 +86,27 @@ void UIPauseLayer::init(LevelModel* level) {
 
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto scene = GameScene::create(this->level->getLevelId());
-		                    Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            auto blacken = CallFuncN::create([](Node* node){
+                                auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
+                                black->setOpacity(0);
+                                auto fadeIn = FadeTo::create(0.5f, 255);
+                                black->runAction(fadeIn);
+                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                                node->addChild(black);
+                                black->setGlobalZOrder(12.5f);
+                            });
+
+                            auto delay = DelayTime::create(0.5f);
+
+                            auto changeScene = CallFunc::create([this](){
+                                return [&](){
+                                    auto scene = GameScene::create(this->level->getLevelId());
+		                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                                };
+                            }());
+
+                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                            this->runAction(seq);                            
                         };
                     };
 
@@ -127,8 +146,27 @@ void UIPauseLayer::init(LevelModel* level) {
 
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto scene = levelScene::create();
-		                    Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            auto blacken = CallFuncN::create([](Node* node){
+                                auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
+                                black->setOpacity(0);
+                                auto fadeIn = FadeTo::create(0.5f, 255);
+                                black->runAction(fadeIn);
+                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                                node->addChild(black);
+                                black->setGlobalZOrder(12.5f);
+                            });
+
+                            auto delay = DelayTime::create(0.5f);
+
+                            auto changeScene = CallFunc::create([this](){
+                                return [&](){
+                                    auto scene = levelScene::create();
+		                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                                };
+                            }());
+
+                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                            this->runAction(seq);
                         };
                     };
 
