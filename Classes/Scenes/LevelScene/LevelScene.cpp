@@ -8,17 +8,19 @@ Scene* levelScene::createScene()
 }
 bool levelScene::init() {
 	if (!Scene::init()) return false;
-	LoopCreate();
+	CreateButtonLevel();
 	return true;
 }
-void levelScene::CreateButtonLevel(int level) {
-	levelButton* button = levelButton::create(level);
-	button->setPosition(Vec2(level * 100.0f, 500.0f));
-	this->addChild(button, 5);
-}
-void levelScene::LoopCreate() {
-	for (int i = 1; i <= NUMBER_LEVEL; i++) {
-		CreateButtonLevel(i);
+void levelScene::CreateButtonLevel() {
+
+	auto background = Sprite::create("sprites/Background/backgroundpokemon.png");
+	background->setPosition(Vec2(640, 360));
+	for (int level = 1; level <= 8; level++) {
+		levelButton* button = levelButton::create(level);
+		button->setPosition(Vec2(level * background->getContentSize().width / 9 , background->getContentSize().height * 4 / 5));
+		background->addChild(button, 5);
 	}
+	this->addChild(background);
 }
+
 	

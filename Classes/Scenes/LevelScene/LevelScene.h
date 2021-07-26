@@ -14,7 +14,7 @@ public:
 	virtual ~levelScene() {};
 
 protected:
-	virtual void LoopCreate();
-	virtual void CreateButtonLevel(int level);
+
+	virtual void CreateButtonLevel();
 };
 #endif // !__LEVELSCENE_H__
