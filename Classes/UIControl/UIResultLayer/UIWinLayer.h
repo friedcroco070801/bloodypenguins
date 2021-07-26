@@ -8,10 +8,14 @@
 #define VICTORY_FILENAME "sprites/objects/button/result_layer/victory_noti.png"
 #define STAR_FILENAME "sprites/objects/button/result_layer/star.png"
 
+class LevelModel;
+
 class UIWinLayer : public cocos2d::Layer {
 public:
-    static UIWinLayer* create();
-    bool init();
+    static UIWinLayer* create(LevelModel*);
+    bool init(LevelModel*);
+protected:
+    LevelModel* level;
 };
 
 #endif // !__UI_RESULT_LAYER_H__

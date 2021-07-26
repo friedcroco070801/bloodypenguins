@@ -1,9 +1,16 @@
 #include "UILoseLayer.h"
+#include "Models/models.h"
+#include "UIControl/UITextLayer/UITextGeneralLayer.h"
+#include <functional>
+#include "Scenes/GameScene/GameScene.h"
+#include "Scenes/MainMenuScene/MainMenuScene.h"
+#include "Scenes/LevelScene/LevelScene.h"
 USING_NS_CC;
+using namespace std;
 
-UILoseLayer* UILoseLayer::create() {
+UILoseLayer* UILoseLayer::create(LevelModel* level) {
     UILoseLayer *ret = new (std::nothrow) UILoseLayer;
-    if (ret && ret->init())
+    if (ret && ret->init(level))
     {
         ret->autorelease();
         return ret;
@@ -15,9 +22,10 @@ UILoseLayer* UILoseLayer::create() {
     }
 }
 
-bool UILoseLayer::init() {
+bool UILoseLayer::init(LevelModel* level) {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
+    this->level = level;
 
     // Flash upon
     auto flashing = CallFuncN::create([](Node* node){
@@ -77,8 +85,81 @@ bool UILoseLayer::init() {
         victory->runAction(sequence);        
     });
 
+    auto delay2 = DelayTime::create(6.0f);
+
+    // Appear lose message
+    auto message = CallFunc::create([this](){
+        return [&](){
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            auto message = UITextGeneralLayer::create(TEXT_LOSE_FILENAME, RESTART_BUTTON_FILENAME, RESTART_BUTTON_CLICKED_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
+            this->addChild(message);
+            message->setPositionY(0.0f - visibleSize.height / 2 + origin.y);
+            auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
+            message->runAction(jump);
+
+            // Restart button
+            function<function<void(Ref*, ui::Widget::TouchEventType)>()> restartTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                    auto blacken = CallFuncN::create([](Node* node){
+                        auto black = Sprite::create(FORE_FILENAME);
+                        black->setOpacity(0);
+                        auto fadeIn = FadeTo::create(0.5f, 255);
+                        black->runAction(fadeIn);
+                        black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                        node->addChild(black);
+                        black->setGlobalZOrder(12.5f);
+                    });
+
+                    auto delay = DelayTime::create(0.5f);
+
+                    auto changeScene = CallFunc::create([this](){
+                        return [&](){
+                            auto scene = GameScene::create(this->level->getLevelId());
+                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                        };
+                    }());
+
+                    auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                    this->runAction(seq);                            
+                };
+            };
+
+            // Main menu button
+            function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                    auto blacken = CallFuncN::create([](Node* node){
+                        auto black = Sprite::create(FORE_FILENAME);
+                        black->setOpacity(0);
+                        auto fadeIn = FadeTo::create(0.5f, 255);
+                        black->runAction(fadeIn);
+                        black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                        node->addChild(black);
+                        black->setGlobalZOrder(12.5f);
+                    });
+
+                    auto delay = DelayTime::create(0.5f);
+
+                    auto changeScene = CallFunc::create([this](){
+                        return [&](){
+                            auto scene = levelScene::create();
+                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                        };
+                    }());
+
+                    auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                    this->runAction(seq);                            
+                };
+            };
+
+            message->setButtonLeftTouch(restartTouch());
+            message->setButtonRightTouch(mainmenuTouch());
+        };
+    }());
+
     // Finalize
-    auto seq = Sequence::create(flashing, delay1, foring, lose, nullptr);
+    auto seq = Sequence::create(flashing, delay1, foring, lose, delay2, message, nullptr);
     this->runAction(seq);
     
     return true;

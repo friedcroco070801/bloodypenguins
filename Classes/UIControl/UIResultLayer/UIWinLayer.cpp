@@ -1,9 +1,10 @@
 #include "UIWinLayer.h"
+#include "Models/models.h"
 USING_NS_CC;
 
-UIWinLayer* UIWinLayer::create() {
+UIWinLayer* UIWinLayer::create(LevelModel* level) {
     UIWinLayer *ret = new (std::nothrow) UIWinLayer;
-    if (ret && ret->init())
+    if (ret && ret->init(level))
     {
         ret->autorelease();
         return ret;
@@ -15,9 +16,10 @@ UIWinLayer* UIWinLayer::create() {
     }
 }
 
-bool UIWinLayer::init() {
+bool UIWinLayer::init(LevelModel* level) {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
+    this->level = level;
 
     // Flash upon
     auto flashing = CallFuncN::create([](Node* node){

@@ -486,7 +486,7 @@ void LevelModel::win() {
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
-        auto winLayer = UIWinLayer::create();
+        auto winLayer = UIWinLayer::create(this);
         scene->addChild(winLayer);
         winLayer->setGlobalZOrder(12.0f);
     }
@@ -501,7 +501,7 @@ void LevelModel::lose() {
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
-        auto loseLayer = UILoseLayer::create();
+        auto loseLayer = UILoseLayer::create(this);
         scene->addChild(loseLayer);
         loseLayer->setGlobalZOrder(12.0f);
     }
