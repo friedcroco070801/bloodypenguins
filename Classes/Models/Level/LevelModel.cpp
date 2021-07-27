@@ -39,13 +39,12 @@ LevelModel::LevelModel(int level, Scene* scene) {
 
     // Temporary data
     // gold.changeValue(200);
-    cellBarList.push_back(new CellBarModel(CELL_00_EOSINOPHILS));
-    cellBarList.push_back(new CellBarModel(CELL_01_ERYTHROCYTES));
-    cellBarList.push_back(new CellBarModel(CELL_02_PLATELETS));
-    cellBarList.push_back(new CellBarModel(CELL_03_BASOPHILS));
-    cellBarList.push_back(new CellBarModel(CELL_04_MONOCYTES));
-    cellBarList.push_back(new CellBarModel(CELL_05_LYMPHOCYTESB));
-    cellBarList.push_back(new CellBarModel(CELL_06_NEUTROPHILS));
+    auto data = UserDefault::getInstance();
+    auto numOfCells = data->getIntegerForKey("CURRENT_CELL", 0);
+
+    for (int i = 0; i <= numOfCells; i++) {
+        cellBarList.push_back(new CellBarModel((CellId) i));
+    }
 
     for (unsigned int i = 0; i < cellBarList.size(); i++) {
         cellBarList[i]->__setLevel(this);

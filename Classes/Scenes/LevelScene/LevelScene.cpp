@@ -36,8 +36,8 @@ void levelScene::SetBackGround() {
 	}
 }
 void levelScene::CreateButtonLevel() {
-
-	int level_current = 2;	
+	auto data = UserDefault::getInstance();
+	int level_current = data->getIntegerForKey("CURRENT_LEVEL", 1);	
 	for (int level = 1; level <= 8; level++) {
 		if (level <= level_current) {
 			levelButton* button = levelButton::create(level);

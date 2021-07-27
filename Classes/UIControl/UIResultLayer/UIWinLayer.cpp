@@ -234,13 +234,28 @@ bool UIWinLayer::init(LevelModel* level) {
     }());
 
     // Finalize
-    if (level->getReward() != -1) {
+    auto data = UserDefault::getInstance();
+    auto currentLevel = data->getIntegerForKey("CURRENT_LEVEL", 1);
+    auto currentCell = data->getIntegerForKey("CURRENT_CELL", 0);
+    auto rewardCell = level->getReward();
+
+    if (rewardCell != -1 && rewardCell > currentCell) {
         auto seq = Sequence::create(flashing, delay1, foring, victory, delay2, stars, delay3, reward, nullptr);
         this->runAction(seq);
     }
     else {
         auto seq = Sequence::create(flashing, delay1, foring, victory, delay2, stars, delay3, message, nullptr);
         this->runAction(seq);
+    }
+
+    if (level->getLevelId() == currentLevel) {
+        data->setIntegerForKey("CURRENT_LEVEL", level->getLevelId() + 1);
+        data->flush();
+    }
+
+    if (rewardCell != -1 && rewardCell > currentCell) {
+        data->setIntegerForKey("CURRENT_CELL", rewardCell);
+        data->flush();
     }
     
     return true;
