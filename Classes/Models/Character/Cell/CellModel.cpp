@@ -89,6 +89,12 @@ bool CellModel::canPutOn(CellId id, LevelModel* level, int cellX, int cellY) {
             if (map[cellX][cellY] == ENEMY_PATH) return true;
             else return false;
             break;
+
+        // On occupied
+        case REMOVE_CELL:
+            if (map[cellX][cellY] == EMPTY_CAN_PUT_OCCUPIED || map[cellX][cellY] == ENEMY_PATH_OCCUPIED) return true;
+            else return false;
+            break;
         }
     }
     else

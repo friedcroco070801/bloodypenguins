@@ -14,6 +14,7 @@ public:
 protected:
     double distance;
     double waitingUntilNextMove;
+    int maxHP;
 };
 
 #endif // !__DISEASE_06_MODEL_H__

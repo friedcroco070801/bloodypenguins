@@ -169,6 +169,7 @@ void DiseaseModel::update() {
                 if (deltaError >= -ACCEPTING_TIME_ERROR && deltaError <= ACCEPTING_TIME_ERROR) {
                     hitTarget(*target);
                     ui->idleAnimate(dir);
+                    changeDirectionOnPath();
                 }
             }
             else {

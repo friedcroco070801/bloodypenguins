@@ -15,6 +15,7 @@ class NumericModel;
 class CellBarModel;
 class UIProgressor;
 class UIPause;
+class UIRemove;
 
 class LevelModel {
 public:
@@ -80,6 +81,7 @@ public:
     int getLevelId() {return levelId;}
 
     int getReward();
+    void findAndRemoveCell(int, int);
 private:
     int levelId;
     std::vector< std::vector<MapPosition> > map;
@@ -111,6 +113,7 @@ private:
 
     UIProgressor* progressor;
     UIPause* pauser;
+    UIRemove* remover;
 
     double winTimeCounter;
     bool loseCheck;

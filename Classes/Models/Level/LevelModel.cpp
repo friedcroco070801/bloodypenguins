@@ -14,6 +14,7 @@
 #include "UIControl/UIPause/UIPause.h"
 #include "UIControl/UIResultLayer/UIWinLayer.h"
 #include "UIControl/UIResultLayer/UILoseLayer.h"
+#include "UIControl/UIRemove/UIRemove.h"
 using namespace std;
 USING_NS_CC;
 
@@ -65,6 +66,12 @@ LevelModel::LevelModel(int level, Scene* scene) {
     scene->addChild(pauser);
     pauser->setGlobalZOrder(9.0f);
     pauser->setPosition(Vec2(PAUSE_BUTTON_POS_X, PAUSE_BUTTON_POS_Y));
+
+    // UIRemove initialization
+    remover = UIRemove::create(this);
+    scene->addChild(remover);
+    remover->setGlobalZOrder(9.0f);
+    remover->setPosition(Vec2(REMOVE_BUTTON_POS_X, REMOVE_BUTTON_POS_Y));
 
     // Initialize properties
     timeCounter = 0.0;
@@ -511,11 +518,24 @@ void LevelModel::lose() {
 Get reward of the level
 */
 int LevelModel::getReward() {
-    if (levelId >= 1 && levelId <= 2) {
+    if (levelId >= 1 && levelId <= 3) {
         return levelId;
     }
-    else if (levelId >= 4 && levelId <= 7) {
+    else if (levelId >= 5 && levelId <= 7) {
         return levelId - 1;
     }
     return -1;
+}
+
+/*
+Find and remove cell
+*/
+void LevelModel::findAndRemoveCell(int x, int y) {
+    for (auto it = cellList.begin(); it != cellList.end(); it++) {
+        if (abs((*it)->getPositionCellX() - x) <= ACCEPTING_TIME_ERROR && abs((*it)->getPositionCellY() - y) <= ACCEPTING_TIME_ERROR) {
+            dumpCell(*it);
+            (*it)->__getUIObject()->removeFromParent();
+            return;
+        }
+    }
 }

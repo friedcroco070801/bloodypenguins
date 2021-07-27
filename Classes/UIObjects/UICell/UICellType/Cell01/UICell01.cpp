@@ -22,7 +22,7 @@ void UICell01::addToScene(Scene* scene) {
 }
 void UICell01::idleAnimate() {
 	this->stopAllActionsByTag(ANIM_BASE_TAG);
-	const int numberSprite = 113;
+	const int numberSprite = 33;
 	Vector<SpriteFrame*> animFrames;
 	int size = Sprite::create(CELL_01_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);

@@ -93,9 +93,9 @@ bool UILoseLayer::init(LevelModel* level) {
             auto visibleSize = Director::getInstance()->getVisibleSize();
             auto origin = Director::getInstance()->getVisibleOrigin();
 
-            auto message = UITextGeneralLayer::create(TEXT_LOSE_FILENAME, RESTART_BUTTON_FILENAME, RESTART_BUTTON_CLICKED_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
+            auto message = UITextGeneralLayer::create(TEXT_LOSE_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, RESTART_BUTTON_FILENAME, RESTART_BUTTON_CLICKED_FILENAME, false);
             this->addChild(message);
-            message->setPositionY(0.0f - visibleSize.height / 2 + origin.y);
+            message->setPositionY(0.0f - visibleSize.height / 2);
             auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
             message->runAction(jump);
 
@@ -157,8 +157,8 @@ bool UILoseLayer::init(LevelModel* level) {
                 };
             };
 
-            message->setButtonLeftTouch(restartTouch());
-            message->setButtonRightTouch(mainmenuTouch());
+            message->setButtonRightTouch(restartTouch());
+            message->setButtonLeftTouch(mainmenuTouch());
         };
     }());
 

@@ -14,4 +14,5 @@
 #define CELL_04_FILENAME "sprites/objects/cell/animation/monocytess.png"
 #define CELL_05_FILENAME "sprites/objects/cell/animation/Lymphocytes.png"
 #define CELL_06_FILENAME "sprites/objects/cell/animation/Neutrophils.png"
+#define REMOVE_CELL_FILENAME "sprites/objects/cell/remove.png"
 #endif // !__UI_CELL_DEFINITIONS_H__

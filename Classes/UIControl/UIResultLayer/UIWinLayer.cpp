@@ -183,19 +183,19 @@ bool UIWinLayer::init(LevelModel* level) {
             };
 
             if (this->level->getLevelId() < 8) {
-                auto message = UITextGeneralLayer::create(TEXT_WIN_FILENAME, NEXT_LEVEL_BUTTON_FILENAME, NEXT_LEVEL_BUTTON_CLICKED_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
+                auto message = UITextGeneralLayer::create(TEXT_WIN_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, NEXT_LEVEL_BUTTON_FILENAME, NEXT_LEVEL_BUTTON_CLICKED_FILENAME, false);
                 this->addChild(message);
-                message->setPositionY(0.0f - visibleSize.height / 2 + origin.y);
+                message->setPositionY(0.0f - visibleSize.height / 2);
                 auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
                 message->runAction(jump);
 
-                message->setButtonLeftTouch(nextTouch());
-                message->setButtonRightTouch(mainmenuTouch());
+                message->setButtonRightTouch(nextTouch());
+                message->setButtonLeftTouch(mainmenuTouch());
             }
             else {
                 auto message = UITextSingleLayer::create(TEXT_COMPLETE_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
                 this->addChild(message);
-                message->setPositionY(0.0f - visibleSize.height / 2 + origin.y);
+                message->setPositionY(0.0f - visibleSize.height / 2);
                 auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
                 message->runAction(jump);
                 message->setButtonTouch(mainmenuTouch());
@@ -227,7 +227,7 @@ bool UIWinLayer::init(LevelModel* level) {
             }());
 
             this->addChild(this->rewardLayer);
-            this->rewardLayer->setPositionY(0.0f - visibleSize.height / 2 + origin.y);
+            this->rewardLayer->setPositionY(0.0f - visibleSize.height / 2);
             auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
             this->rewardLayer->runAction(jump);
         };

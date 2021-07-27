@@ -20,4 +20,6 @@
 
 #define BACKGROUND_FLASH_FILENAME "sprites/Background/flash_bg.jpg"
 
+#define DISEASE_06_BANDAGE "sprites/objects/disease/disease06/bandage.png"
+
 #endif // !__UI_DISEASE06_DEFINITIONS_H__

@@ -26,7 +26,7 @@ void UICell04::idleAnimate() {
 
 	//this->stopActionByTag();
 
-	const int numberSprite = 65;
+	const int numberSprite = 33;
 	Vector<SpriteFrame*> animFrames;
 	int size = Sprite::create(CELL_04_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);

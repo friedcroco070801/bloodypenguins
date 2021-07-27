@@ -12,6 +12,7 @@ UIDisease06* UIDisease06::create() {
 	UIDisease06 *uidisease = new (std::nothrow) UIDisease06();
     if (uidisease && uidisease->initWithFile(DISEASE_06_FILENAME))
     {
+		uidisease->thirdHPCount = 1;
         uidisease->autorelease();
         return uidisease;
     }
@@ -253,3 +254,22 @@ void UIDisease06::dieAnimate(Direction dir) {
 	UIDisease::dieAnimate(dir);
 }
 
+void UIDisease06::thirdHPAnimate(float percent) {
+	if (percent * 3 > thirdHPCount) {
+		thirdHPCount += 1;
+
+		auto bandage = Sprite::create(DISEASE_06_BANDAGE);
+		this->addChild(bandage);
+		bandage->setScale(0.9f + CCRANDOM_0_1() * 0.4f);
+		bandage->setRotation(360 * CCRANDOM_0_1());
+		bandage->setGlobalZOrder(8.0f);
+		bandage->setPosition(32.0f + 15.0f * CCRANDOM_MINUS1_1(), 32.0f + 15.0f * CCRANDOM_MINUS1_1());
+
+		auto scaleLess = ScaleBy::create(0.0f, 0.8f);
+		auto delay1 = DelayTime::create(0.75f);
+		auto scaleMore = ScaleBy::create(0.0f, 1.25f);
+		auto delay2 = DelayTime::create(0.75f);
+		auto seq = Sequence::create(scaleLess, delay1, scaleMore, delay2, nullptr);
+		bandage->runAction(RepeatForever::create(seq));
+	}
+}
