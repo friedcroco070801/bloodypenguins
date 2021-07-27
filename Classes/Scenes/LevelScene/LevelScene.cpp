@@ -1,6 +1,9 @@
 #include "LevelScene.h"
 #include "UIObjects/uiobj.h"
 #include "LevelButton.h"
+#include "Scenes/GameScene/GSDefine.h"
+#include "SwitchSceneButton.h"
+#include "Scenes/MainMenuScene/MainMenuScene.h"
 USING_NS_CC;
 Scene* levelScene::createScene()
 {
@@ -8,17 +11,52 @@ Scene* levelScene::createScene()
 }
 bool levelScene::init() {
 	if (!Scene::init()) return false;
-	LoopCreate();
+	CreateButtonLevel();
+	SetBackGround();
+	CreateBackButton();
 	return true;
 }
-void levelScene::CreateButtonLevel(int level) {
-	levelButton* button = levelButton::create(level);
-	button->setPosition(Vec2(level * 100.0f, 500.0f));
-	this->addChild(button, 5);
-}
-void levelScene::LoopCreate() {
-	for (int i = 1; i <= NUMBER_LEVEL; i++) {
-		CreateButtonLevel(i);
+void levelScene::SetBackGround() {
+	auto t = time(NULL);
+	auto hour = localtime(&t)->tm_hour;
+	auto background = Sprite::create(BACK_GROUND_2);
+	if (hour < 6 || hour >= 18) {
+		background = Sprite::create(BACK_GROUND_3);
+	}
+	else if (hour >= 6 && hour < 15) {
+		background = Sprite::create(BACK_GROUND_1);
+	}
+	if (background != nullptr)
+	{
+		background->setAnchorPoint(Point(0, 0));
+		background->setContentSize(Size(WIDTH + VISIBLE_ORIGIN_X, HEIGHT + VISIBLE_ORIGIN_Y));
+		background->setPosition(Vec2(0, 0));
+		background->setOpacity(175);
+		this->addChild(background);
 	}
 }
+void levelScene::CreateButtonLevel() {
+
+	int level_current = 2;	
+	for (int level = 1; level <= 8; level++) {
+		if (level <= level_current) {
+			levelButton* button = levelButton::create(level);
+			button->setPosition(Vec2(level * WIDTH / 9  + VISIBLE_ORIGIN_X,HEIGHT  * 4 / 5 + VISIBLE_ORIGIN_Y));
+			this->addChild(button, 5);
+		}
+		else {
+			auto lock = Sprite::create(LOCK_BUTTON);
+			lock->setPosition(Vec2(level * WIDTH / 9 + VISIBLE_ORIGIN_X, HEIGHT * 4 / 5 + VISIBLE_ORIGIN_Y));
+			this->addChild(lock, 5);
+		}
+	}
+}
+void levelScene::CreateBackButton() {
+	next = MainMenuScene::create();
+	SwitchSceneButton* back_button = SwitchSceneButton::create( BUTTON_BACK, BUTTON_BACK_CLICKED);
+	back_button->setScale(1.25);
+	back_button->setPosition(Vec2(WIDTH - 113.75f + VISIBLE_ORIGIN_X, 44.5f + VISIBLE_ORIGIN_Y));
+	this->addChild(back_button,5);
+}
+
 	

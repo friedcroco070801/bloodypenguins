@@ -29,25 +29,7 @@ bool GSControlLayer::init(Sprite* choose)
 
 	return true;
 }
-/////////////////////////////
-/*
-void GSControlLayer::createPreview(int id) {
-	std::string link;
-	switch (id)
-	{
-	case 1:
-		link = "HelloWorld.png";
-		break;
-	case 2:
-		link = "CloseSelected.png";
-		break;
-	default:
-		break;
-	}
-	setPreviewImage(CELL_00_EOSINOPHILS);
-}
-*/
-//ham call --------------------------------------------------------------------------
+
 void GSControlLayer::setPreviewImage(CellId id, double distance) {
 
 	this->Cell_Id = id;
