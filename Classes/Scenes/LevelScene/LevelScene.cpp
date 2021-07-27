@@ -41,12 +41,12 @@ void levelScene::CreateButtonLevel() {
 	for (int level = 1; level <= 8; level++) {
 		if (level <= level_current) {
 			levelButton* button = levelButton::create(level);
-			button->setPosition(Vec2(level * WIDTH / 9  + VISIBLE_ORIGIN_X,HEIGHT  * 4 / 5 + VISIBLE_ORIGIN_Y));
+			button->setPosition(Vec2(level * WIDTH / 9  + VISIBLE_ORIGIN_X,HEIGHT  * 2 / 3 + VISIBLE_ORIGIN_Y));
 			this->addChild(button, 5);
 		}
 		else {
 			auto lock = Sprite::create(LOCK_BUTTON);
-			lock->setPosition(Vec2(level * WIDTH / 9 + VISIBLE_ORIGIN_X, HEIGHT * 4 / 5 + VISIBLE_ORIGIN_Y));
+			lock->setPosition(Vec2(level * WIDTH / 9 + VISIBLE_ORIGIN_X, HEIGHT * 2 / 3 + VISIBLE_ORIGIN_Y));
 			this->addChild(lock, 5);
 		}
 	}
