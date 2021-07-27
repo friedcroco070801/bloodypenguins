@@ -13,7 +13,6 @@ levelButton* levelButton::create(int number) {
 	filename = filename + num + png;
 	if (button && button->init(filename, filename, filename)) {
 		CCLOG("true");
-		button->setScale(0.75);
 		button->level = number;
 		button->autorelease();
 		button->onTouch();
