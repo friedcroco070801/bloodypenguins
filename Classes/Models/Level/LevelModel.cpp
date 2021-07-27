@@ -506,3 +506,16 @@ void LevelModel::lose() {
         loseLayer->setGlobalZOrder(12.0f);
     }
 }
+
+/*
+Get reward of the level
+*/
+int LevelModel::getReward() {
+    if (levelId >= 1 && levelId <= 2) {
+        return levelId;
+    }
+    else if (levelId >= 4 && levelId <= 7) {
+        return levelId - 1;
+    }
+    return -1;
+}

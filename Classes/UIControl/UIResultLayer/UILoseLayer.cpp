@@ -102,54 +102,58 @@ bool UILoseLayer::init(LevelModel* level) {
             // Restart button
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> restartTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                    auto blacken = CallFuncN::create([](Node* node){
-                        auto black = Sprite::create(FORE_FILENAME);
-                        black->setOpacity(0);
-                        auto fadeIn = FadeTo::create(0.5f, 255);
-                        black->runAction(fadeIn);
-                        black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                        node->addChild(black);
-                        black->setGlobalZOrder(12.5f);
-                    });
+                    if (type == ui::Widget::TouchEventType::ENDED) {
+                        auto blacken = CallFuncN::create([](Node* node){
+                            auto black = Sprite::create(FORE_FILENAME);
+                            black->setOpacity(0);
+                            auto fadeIn = FadeTo::create(0.5f, 255);
+                            black->runAction(fadeIn);
+                            black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                            node->addChild(black);
+                            black->setGlobalZOrder(12.5f);
+                        });
 
-                    auto delay = DelayTime::create(0.5f);
+                        auto delay = DelayTime::create(0.5f);
 
-                    auto changeScene = CallFunc::create([this](){
-                        return [&](){
-                            auto scene = GameScene::create(this->level->getLevelId());
-                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                        };
-                    }());
+                        auto changeScene = CallFunc::create([this](){
+                            return [&](){
+                                auto scene = GameScene::create(this->level->getLevelId());
+                                Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            };
+                        }());
 
-                    auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                    this->runAction(seq);                            
+                        auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                        this->runAction(seq);
+                    }                        
                 };
             };
 
             // Main menu button
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                    auto blacken = CallFuncN::create([](Node* node){
-                        auto black = Sprite::create(FORE_FILENAME);
-                        black->setOpacity(0);
-                        auto fadeIn = FadeTo::create(0.5f, 255);
-                        black->runAction(fadeIn);
-                        black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                        node->addChild(black);
-                        black->setGlobalZOrder(12.5f);
-                    });
+                    if (type == ui::Widget::TouchEventType::ENDED) {
+                        auto blacken = CallFuncN::create([](Node* node){
+                            auto black = Sprite::create(FORE_FILENAME);
+                            black->setOpacity(0);
+                            auto fadeIn = FadeTo::create(0.5f, 255);
+                            black->runAction(fadeIn);
+                            black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                            node->addChild(black);
+                            black->setGlobalZOrder(12.5f);
+                        });
 
-                    auto delay = DelayTime::create(0.5f);
+                        auto delay = DelayTime::create(0.5f);
 
-                    auto changeScene = CallFunc::create([this](){
-                        return [&](){
-                            auto scene = levelScene::create();
-                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                        };
-                    }());
+                        auto changeScene = CallFunc::create([this](){
+                            return [&](){
+                                auto scene = levelScene::create();
+                                Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            };
+                        }());
 
-                    auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                    this->runAction(seq);                            
+                        auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                        this->runAction(seq);
+                    }                   
                 };
             };
 

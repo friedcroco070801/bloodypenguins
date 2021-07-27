@@ -78,6 +78,8 @@ public:
 
     // Get levelId
     int getLevelId() {return levelId;}
+
+    int getReward();
 private:
     int levelId;
     std::vector< std::vector<MapPosition> > map;
