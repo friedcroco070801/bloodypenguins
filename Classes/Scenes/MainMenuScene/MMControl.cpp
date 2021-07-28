@@ -3,6 +3,7 @@
 #include "AppDelegate.h"
 #include "UIObjects/UICell/UICellDefinitions.h"
 #include "Scenes/LevelScene/LevelScene.h"
+#include "Components/MMOptions.h"
 
 USING_NS_CC;
 //global variable
@@ -10,7 +11,7 @@ USING_NS_CC;
 bool MMControl::init()
 {
 	// Super init
-	if (!Scene::init())
+	if (!Layer::init())
 	{
 		return false;
 	}
@@ -47,50 +48,57 @@ void MMControl::addButtonMenu() {
 
 	Vector<MenuItem*> MenuItems;
 
-	auto play = MenuItemImage::create(PLAY_LAYER_FILENAME, PLAY_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToLevelScene, this));
+	auto play = MenuItemImage::create(MM_PLAY_LAYER_FILENAME, MM_PLAY_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToLevelScene, this));
 	play->setScale(1.25);
-	//play->setPosition(Vec2(WIDTH / 2, HEIGHT * 5 / 8));
 	MenuItems.pushBack(play);
 
-	auto options = MenuItemImage::create(OPTIONS_LAYER_FILENAME, OPTIONS_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToOptionsCom, this));
+	auto options = MenuItemImage::create(MM_OPTIONS_LAYER_FILENAME, MM_OPTIONS_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::GoToOptionsCom, this));
 	options->setScale(1.25);
-	//options->setPosition(Vec2(WIDTH / 2, HEIGHT * 4 / 8));
 	MenuItems.pushBack(options);
 
-	auto quit = MenuItemImage::create(QUIT_LAYER_FILENAME, QUIT_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::ExitGameMain, this));
+	auto quit = MenuItemImage::create(MM_QUIT_LAYER_FILENAME, MM_QUIT_LAYER_CLICKED_FILENAME, CC_CALLBACK_1(MMControl::ExitGameMain, this));
 	quit->setScale(1.25);
-	//quit->setPosition(Vec2(WIDTH / 2, HEIGHT * 3 / 8));
 	MenuItems.pushBack(quit);
 
 	auto menu = Menu::createWithArray(MenuItems);
 
-	//menu->setScale(1.25);
+	menu->alignItemsVerticallyWithPadding(9.5f);
 
-	menu->alignItemsVerticallyWithPadding(6.5f);
+	menu->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height * (-1/2) + origin.y));
+	auto moveto = JumpTo::create(0.75, Point(visibleSize.width / 2 + origin.x, visibleSize.height / 3 + origin.y + 50.f), visibleSize.height/8, 1);
 
-	menu->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height + origin.y + 50.f));
-	auto moveto = MoveTo::create(2, Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-	menu->runAction(moveto);
-	
-	auto roto = RotateBy::create(2, Vec3(0, 360, 0));
-	auto delay = DelayTime::create(18);
-	auto seqname = Sequence::create(roto, delay, nullptr);
-	auto repeat = RepeatForever::create(seqname);
-	play->runAction(repeat);
+	auto delay3 = DelayTime::create(1.0f);
 
-	auto roto1 = RotateBy::create(2, Vec3(0, 360, 0));
-	auto delay1 = DelayTime::create(20);
-	auto seqname1 = Sequence::create(roto1, delay1, nullptr);
-	auto repeat1 = RepeatForever::create(seqname1);
-	options->runAction(repeat1);
+	auto rotoplay = [=]() {
+		auto roto = RotateBy::create(2, Vec3(0, 360, 0));
+		auto delay = DelayTime::create(14);
+		auto seqname = Sequence::create(roto, delay, nullptr);
+		auto repeat = RepeatForever::create(seqname);
+		play->runAction(repeat);
+	};
 
-	auto roto2 = RotateBy::create(2, Vec3(0, 360, 0));
-	auto delay2 = DelayTime::create(22);
-	auto seqname2 = Sequence::create(roto2, delay2, nullptr);
-	auto repeat2 = RepeatForever::create(seqname2);
-	quit->runAction(repeat2);
-	
-	//menu->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+	auto rotooptions = [=]() {
+		auto roto1 = RotateBy::create(2, Vec3(0, 360, 0));
+		auto delay1 = DelayTime::create(16);
+		auto seqname1 = Sequence::create(roto1, delay1, nullptr);
+		auto repeat1 = RepeatForever::create(seqname1);
+		options->runAction(repeat1);
+	};
+
+	auto rotoquit = [=]() {
+		auto roto2 = RotateBy::create(2, Vec3(0, 360, 0));
+		auto delay2 = DelayTime::create(18);
+		auto seqname2 = Sequence::create(roto2, delay2, nullptr);
+		auto repeat2 = RepeatForever::create(seqname2);
+		quit->runAction(repeat2);
+	};
+
+	auto callFuncplay = CallFunc::create(rotoplay);
+	auto callFuncoptions = CallFunc::create(rotooptions);
+	auto callFuncquit = CallFunc::create(rotoquit);
+
+	menu->runAction(Sequence::create(moveto, delay3, callFuncplay, callFuncoptions, callFuncquit, nullptr));
+
 	this->addChild(menu);
 
 }
@@ -106,7 +114,8 @@ void MMControl::ExitGameMain(cocos2d::Ref *sender)
 	Director::getInstance()->end();
 }
 
-//temporary
 void MMControl::GoToOptionsCom(cocos2d::Ref *sender) {
-	Director::getInstance()->end();
+	Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
+	auto layer = MMOptions::create();
+	this->addChild(layer,1);
 }

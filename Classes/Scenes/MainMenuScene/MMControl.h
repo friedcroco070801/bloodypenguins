@@ -7,20 +7,17 @@
 #include <functional>
 #include "Scenes/GameScene/GameScene.h"
 
-#define PLAY_LAYER_FILENAME "sprites/objects/button/play_layer_button_mainmenu.png"
-#define PLAY_LAYER_CLICKED_FILENAME "sprites/objects/button/play_layer_button_mainmenu_clicked.png"
-#define OPTIONS_LAYER_FILENAME "sprites/objects/button/options_layer_button_mainmenu.png"
-#define OPTIONS_LAYER_CLICKED_FILENAME "sprites/objects/button/options_layer_button_mainmenu_clicked.png"
-#define QUIT_LAYER_FILENAME "sprites/objects/button/quit_layer_button_mainmenu.png"
-#define QUIT_LAYER_CLICKED_FILENAME "sprites/objects/button/quit_layer_button_mainmenu_clicked.png"
-
-
-using namespace cocos2d;
+#define MM_PLAY_LAYER_FILENAME "sprites/objects/button/play_layer_button_mainmenu.png"
+#define MM_PLAY_LAYER_CLICKED_FILENAME "sprites/objects/button/play_layer_button_mainmenu_clicked.png"
+#define MM_OPTIONS_LAYER_FILENAME "sprites/objects/button/options_layer_button_mainmenu.png"
+#define MM_OPTIONS_LAYER_CLICKED_FILENAME "sprites/objects/button/options_layer_button_mainmenu_clicked.png"
+#define MM_QUIT_LAYER_FILENAME "sprites/objects/button/quit_layer_button_mainmenu.png"
+#define MM_QUIT_LAYER_CLICKED_FILENAME "sprites/objects/button/quit_layer_button_mainmenu_clicked.png"
 
 class GameScene;
 class LevelScene;
 
-class MMControl : public cocos2d::Scene
+class MMControl : public cocos2d::Layer
 {
 public:
 	CREATE_FUNC(MMControl);

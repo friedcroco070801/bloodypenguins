@@ -10,7 +10,7 @@
 #define IMG_MMBGNIGHT "sprites/Background/bg_mainmenu_night.png"
 #define IMG_NAMEGAME "sprites/Background/defensesquad.png"
 
-class MMBackgroundLayer:public cocos2d :: Scene
+class MMBackgroundLayer:public cocos2d :: Layer
 {
 public:
 	CREATE_FUNC(MMBackgroundLayer);
@@ -19,9 +19,7 @@ public:
 
 private:
 	void setBackgroundImagePosition();
-	void setNameGamePosition();
-
-	
+	void setNameGamePosition();	
 
 };
 #endif // !__MM_BACKGROUND_LAYER_H__
