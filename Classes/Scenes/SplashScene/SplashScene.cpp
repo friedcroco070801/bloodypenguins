@@ -47,7 +47,7 @@ bool SplashScene::init() {
     auto delay2 = DelayTime::create(1.5f);
 
     auto changeScene = CallFunc::create([](){
-        Director::getInstance()->replaceScene(TransitionFade::create(1.0f, MainMenuScene::create()));
+        Director::getInstance()->replaceScene(TransitionFade::create(0.05f, MainMenuScene::create()));
     });
 
     auto seq = Sequence::create(appear, delay1, loadMusic, delay2, changeScene, nullptr);
