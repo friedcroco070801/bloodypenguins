@@ -23,14 +23,14 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-#include "Scenes/GameScene/GameScene.h"
-#include "Scenes/LevelScene/LevelScene.h"
-#include "Scenes/MainMenuScene/MainMenuScene.h"
-// #define USE_AUDIO_ENGINE 1
+// #include "Scenes/GameScene/GameScene.h"
+// #include "Scenes/LevelScene/LevelScene.h"
+// #include "Scenes/MainMenuScene/MainMenuScene.h"
+#include "Scenes/SplashScene/SplashScene.h"
+#define USE_AUDIO_ENGINE 1
 
 #if USE_AUDIO_ENGINE
-#include "audio/include/AudioEngine.h"
-using namespace cocos2d::experimental;
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 #endif
 
 USING_NS_CC;
@@ -47,7 +47,7 @@ AppDelegate::AppDelegate()
 AppDelegate::~AppDelegate() 
 {
 #if USE_AUDIO_ENGINE
-    AudioEngine::end();
+    CocosDenshion::SimpleAudioEngine::getInstance()->end();
 #endif
 }
 
@@ -110,7 +110,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     //auto scene = levelScene::create();
-	auto scene = MainMenuScene::create();
+	auto scene = SplashScene::create();
     // run
     director->runWithScene(scene);
 
@@ -122,7 +122,8 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
 #if USE_AUDIO_ENGINE
-    AudioEngine::pauseAll();
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseAllEffects();
+    CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 #endif
 }
 
@@ -131,6 +132,7 @@ void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
 #if USE_AUDIO_ENGINE
-    AudioEngine::resumeAll();
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeAllEffects();
+    CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 #endif
 }

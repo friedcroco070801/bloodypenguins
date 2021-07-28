@@ -5,9 +5,11 @@
 #include "Scenes/GameScene/GameScene.h"
 #include "Scenes/LevelScene/LevelScene.h"
 #include <functional>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 UIPauseLayer* UIPauseLayer::create(LevelModel* level) {
     UIPauseLayer *ret = new (std::nothrow) UIPauseLayer;
@@ -245,6 +247,9 @@ void UIPauseLayer::init(LevelModel* level) {
             auto volume = (this->music_slider->getPositionX() - left) / 150.0f;
             UserDefault::getInstance()->setFloatForKey("MUSIC_VOLUME", volume);
             UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setBackgroundMusicVolume(volume);
         };
     };
 
@@ -310,6 +315,9 @@ void UIPauseLayer::init(LevelModel* level) {
             auto volume = (this->effect_slider->getPositionX() - left) / 150.0f;
             UserDefault::getInstance()->setFloatForKey("EFFECT_VOLUME", volume);
             UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setEffectsVolume(volume);
         };
     };
 
