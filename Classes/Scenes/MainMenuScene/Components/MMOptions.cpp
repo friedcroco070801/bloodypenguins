@@ -7,9 +7,11 @@
 #include "Scenes/LevelScene/LevelScene.h"
 #include <functional>
 
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 MMOptions* MMOptions::create() {
 	MMOptions *ret = new (std::nothrow) MMOptions;
@@ -217,10 +219,12 @@ bool MMOptions::init() {
     music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
 	//music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
+    auto music_volume = UserDefault::getInstance()->getFloatForKey("MUSIC_VOLUME", 1.0f);
+
     music_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(music_slider);
     music_slider->setGlobalZOrder(12.0f);
-    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - music_volume) * 150.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
 	//music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     // Function set
@@ -251,6 +255,18 @@ bool MMOptions::init() {
 
     function<function<void(Touch*, Event*)>()> afterDragMusic = [this]() -> function<void(Touch*, Event*)> {
         return [&](Touch* touch, Event* event) {
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            auto left = visibleSize.width / 2 + origin.x - 40.0f;
+            auto right = visibleSize.width / 2 + origin.x + 110.0f;
+
+            auto volume = (this->music_slider->getPositionX() - left) / 150.0f;
+            UserDefault::getInstance()->setFloatForKey("MUSIC_VOLUME", volume);
+            UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setBackgroundMusicVolume(volume);
         };
     };
 
@@ -274,10 +290,12 @@ bool MMOptions::init() {
 	effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 15.0f));
     //effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.65  + origin.y - 45.0f * 2 - 15.0f * 2));
 
+    auto effect_volume = UserDefault::getInstance()->getFloatForKey("EFFECT_VOLUME", 1.0f);
+
     effect_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(effect_slider);
     effect_slider->setGlobalZOrder(12.0f);
-	effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y - 15.0f));
+	effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - effect_volume) * 150.0f, visibleSize.height / 2 + origin.y - 15.0f));
     //effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     // Function set
@@ -308,6 +326,18 @@ bool MMOptions::init() {
 
     function<function<void(Touch*, Event*)>()> afterDragEffect = [this]() -> function<void(Touch*, Event*)> {
         return [&](Touch* touch, Event* event) {
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            auto left = visibleSize.width / 2 + origin.x - 40.0f;
+            auto right = visibleSize.width / 2 + origin.x + 110.0f;
+
+            auto volume = (this->effect_slider->getPositionX() - left) / 150.0f;
+            UserDefault::getInstance()->setFloatForKey("EFFECT_VOLUME", volume);
+            UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setEffectsVolume(volume);
         };
     };
 
