@@ -49,7 +49,7 @@ bool MMOptions::init() {
 	auto optionstext = Sprite::create(OPTIONS_TEXT_FILENAME);
 	this->addChild(optionstext);
 	optionstext->setGlobalZOrder(12.0f);
-	optionstext->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height * 0.7 + origin.y - 15.f);
+	optionstext->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2  + origin.y + 45.f * 2 + 15.f * 2);
 
 	
     // Add okay button
@@ -208,20 +208,20 @@ bool MMOptions::init() {
     auto music = Sprite::create(OPTIONS_LAYER_MUSIC_FILENAME);
     this->addChild(music);
     music->setGlobalZOrder(12.0f);
-    //music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
-	music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
+    music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+	//music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     auto music_base = Sprite::create(OPTIONS_LAYER_SLIDER_BASE_FILENAME);
     this->addChild(music_base);
     music_base->setGlobalZOrder(12.0f);
-    //music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
-	music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
+    music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+	//music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     music_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(music_slider);
     music_slider->setGlobalZOrder(12.0f);
-    //music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
-	music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
+    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+	//music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     // Function set
     function<function<bool(Touch*, Event*)>()> emptyMusic = [this]() -> function<bool(Touch*, Event*)> {
@@ -265,17 +265,20 @@ bool MMOptions::init() {
     auto effect = Sprite::create(OPTIONS_LAYER_EFFECT_FILENAME);
     this->addChild(effect);
     effect->setGlobalZOrder(12.0f);
-    effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
+	effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y - 15.0f));
+    //effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     auto effect_base = Sprite::create(OPTIONS_LAYER_SLIDER_BASE_FILENAME);
     this->addChild(effect_base);
     effect_base->setGlobalZOrder(12.0f);
-    effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.65  + origin.y - 45.0f * 2 - 15.0f * 2));
+	effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 15.0f));
+    //effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.65  + origin.y - 45.0f * 2 - 15.0f * 2));
 
     effect_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(effect_slider);
     effect_slider->setGlobalZOrder(12.0f);
-    effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
+	effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y - 15.0f));
+    //effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     // Function set
     function<function<bool(Touch*, Event*)>()> emptyEffect = [this]() -> function<bool(Touch*, Event*)> {

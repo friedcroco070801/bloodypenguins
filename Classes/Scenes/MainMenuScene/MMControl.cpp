@@ -67,6 +67,7 @@ void MMControl::addButtonMenu() {
 	menu->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height * (-1/2) + origin.y));
 	auto moveto = JumpTo::create(0.75, Point(visibleSize.width / 2 + origin.x, visibleSize.height / 3 + origin.y + 50.f), visibleSize.height/8, 1);
 
+	auto delay4 = DelayTime::create(0.5f);
 	auto delay3 = DelayTime::create(1.0f);
 
 	auto rotoplay = [=]() {
@@ -97,7 +98,7 @@ void MMControl::addButtonMenu() {
 	auto callFuncoptions = CallFunc::create(rotooptions);
 	auto callFuncquit = CallFunc::create(rotoquit);
 
-	menu->runAction(Sequence::create(moveto, delay3, callFuncplay, callFuncoptions, callFuncquit, nullptr));
+	menu->runAction(Sequence::create(delay4, moveto, delay3, callFuncplay, callFuncoptions, callFuncquit, nullptr));
 
 	this->addChild(menu);
 

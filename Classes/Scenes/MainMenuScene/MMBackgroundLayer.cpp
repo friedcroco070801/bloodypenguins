@@ -72,6 +72,8 @@ void MMBackgroundLayer::setNameGamePosition() {
 
 	auto delay2 = DelayTime::create(1.0f);
 
+	auto delay3 = DelayTime::create(0.5f);
+
 	auto rotoname = [=]() {
 		auto roto = RotateBy::create(2, Vec3(0, 360, 0));
 		auto delay = DelayTime::create(12);
@@ -81,7 +83,7 @@ void MMBackgroundLayer::setNameGamePosition() {
 	};
 
 	auto callFunc = CallFunc::create(rotoname);
-	namegame->runAction(Sequence::create(moveto, delay2, callFunc, nullptr));
+	namegame->runAction(Sequence::create(delay3, moveto, delay2, callFunc, nullptr));
 	this->addChild(namegame, 0);
 
 }
