@@ -6,13 +6,13 @@
 Cell04Model constructor
 */
 Cell04Model::Cell04Model() : EffectCellModel(CELL_04_MONOCYTES) {
-    rechargeTime = 5.0;
+    rechargeTime = 25.0;
     distance = 1.5;
     cost = 50;
-    hp = 80;
     beEaten = false;
 
     // Do not use
+    hp = 80;
     effectRechargeTime = 0.5;
     effectTimeCounter = 0.5;
 } 
@@ -26,7 +26,7 @@ void Cell04Model::takeEffect() {
         if (getDistanceToOther(*it) <= distance + ACCEPTING_TIME_ERROR) {
             if ((*it)->getStatus() != FROZEN) {
                 (*it)->setFrozen();
-                (*it)->setFronzenCounter(3.0);
+                (*it)->setFronzenCounter(7.0);
             }
         }
     }

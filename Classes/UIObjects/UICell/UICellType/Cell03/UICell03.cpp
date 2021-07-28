@@ -24,7 +24,7 @@ void UICell03::idleAnimate() {
 
 	//this->stopActionByTag();
 
-	const int numberSprite = 168;
+	const int numberSprite = 20;
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	int size = cocos2d::Sprite::create(CELL_03_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);
@@ -44,7 +44,7 @@ void UICell03::idleAnimate() {
 void UICell03::attackAnimate() {
 	this->stopAllActionsByTag(ANIM_BASE_TAG);
 
-	const int numberSprite = 168;
+	const int numberSprite = 20;
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	int size = cocos2d::Sprite::create(CELL_03_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);

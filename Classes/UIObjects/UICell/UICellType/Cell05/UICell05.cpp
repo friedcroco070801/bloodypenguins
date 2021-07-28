@@ -22,7 +22,7 @@ void UICell05::addToScene(cocos2d::Scene* scene) {
 
 void UICell05::idleAnimate() {
 
-	const int numberSprite = 20;
+	const int numberSprite = 18;
 
 	this->stopAllActionsByTag(ANIM_BASE_TAG);
 
@@ -47,12 +47,12 @@ void UICell05::attackAnimate() {
 
 	this->stopAllActionsByTag(ANIM_BASE_TAG);
 
-	const int numberSprite = 40;
+	const int numberSprite = 18;
 
 	cocos2d::Vector<cocos2d::SpriteFrame*> animFrames;
 	animFrames.reserve(numberSprite);
 	int size = cocos2d::Sprite::create(CELL_05_FILENAME)->getContentSize().height;
-	for (int i = 20; i < numberSprite; i++) {
+	for (int i = 0; i < numberSprite; i++) {
 		animFrames.pushBack(cocos2d::SpriteFrame::create(CELL_05_FILENAME, cocos2d::Rect(size * i, 0, size, size)));
 	}
 	cocos2d::Animation* animation = cocos2d::Animation::createWithSpriteFrames(animFrames, 0.025f);

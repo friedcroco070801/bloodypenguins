@@ -9,7 +9,8 @@ Disease06Model::Disease06Model() : DiseaseModel(DISEASE_06_EBOLA) {
     speed = 0.2;
     damage = 50;
     hitRechargeTime = 2.0;
-    hp = 120;
+    maxHP = 175;
+    hp = 175;
     distance = 1.5;
     waitingUntilNextMove = 0.0;
 }
@@ -48,6 +49,8 @@ void Disease06Model::hitTarget(CellModel*) {
 Update on each updating of Disease06
 */
 void Disease06Model::update() {
+    ui->thirdHPAnimate(1.0f - ((float) hp) / maxHP);
+
     // Check waiting for next move
     if (waitingUntilNextMove <= ACCEPTING_TIME_ERROR) {
         DiseaseModel::update();

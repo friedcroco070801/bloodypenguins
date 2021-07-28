@@ -7,6 +7,8 @@ using namespace cocos2d;
 
 class UIDisease;
 class UIDisease06 : public UIDisease {
+protected:
+	int thirdHPCount;
 public:
     static UIDisease06* create();
 	//virtual void addToScene(cocos2d::Scene*);
@@ -16,6 +18,7 @@ public:
 	virtual void hitAnimate(Direction dir);
 	virtual void dieAnimate(Direction dir);
 	virtual void attackAnimateWithSync(Direction dir, std::function<void()> callBack);
+	virtual void thirdHPAnimate(float);
 
 	Animation *animation;
 	Animate* animate;

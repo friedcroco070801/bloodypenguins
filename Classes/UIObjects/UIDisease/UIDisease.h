@@ -18,6 +18,7 @@ public:
 	virtual void hitAnimate(Direction dir);
 	virtual void dieAnimate(Direction dir);
     virtual void attackAnimateWithSync(Direction dir, std::function<void()> callBack){}
+    virtual void thirdHPAnimate(float) {}
 };
 
 #endif // !__UI_DISEASE_H__

@@ -8,9 +8,9 @@ Constructor of Cell0ProjectileModel
 Cell05ProjectileModel::Cell05ProjectileModel(CellModel* source, DiseaseModel* target) 
     : ProjectileModel(CELL_05_PROJECTILE, source, target) {
     // Temporary data
-    speed = 6.0;
+    speed = 8.0;
     damage = 1;
-    distance = 1.0;
+    distance = 0.75;
 }
 
 /*

@@ -1,6 +1,12 @@
 #include "UIWinLayer.h"
 #include "Models/models.h"
+#include "UIRewardLayer.h"
+#include "Scenes/GameScene/GameScene.h"
+#include "Scenes/LevelScene/LevelScene.h"
+#include "UIControl/UITextLayer/UITextGeneralLayer.h"
+#include "UIControl/UITextLayer/UITextSingleLayer.h"
 USING_NS_CC;
+using namespace std;
 
 UIWinLayer* UIWinLayer::create(LevelModel* level) {
     UIWinLayer *ret = new (std::nothrow) UIWinLayer;
@@ -110,9 +116,155 @@ bool UIWinLayer::init(LevelModel* level) {
         }
     });
 
+    auto delay3 = DelayTime::create(2.0f);
+
+    // Appear win message
+    this->callMessage = [this](){
+        return [&](){
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            // Nextlevel button
+            function<function<void(Ref*, ui::Widget::TouchEventType)>()> nextTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                    if (type == ui::Widget::TouchEventType::ENDED) {
+                        auto blacken = CallFuncN::create([](Node* node){
+                            auto black = Sprite::create(FORE_FILENAME);
+                            black->setOpacity(0);
+                            auto fadeIn = FadeTo::create(0.5f, 255);
+                            black->runAction(fadeIn);
+                            black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                            node->addChild(black);
+                            black->setGlobalZOrder(12.5f);
+                        });
+
+                        auto delay = DelayTime::create(0.5f);
+
+                        auto changeScene = CallFunc::create([this](){
+                            return [&](){
+                                auto scene = GameScene::create(this->level->getLevelId() + 1);
+                                Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            };
+                        }());
+
+                        auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                        this->runAction(seq);
+                    }                     
+                };
+            };
+
+            // Main menu button
+            function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                    if (type == ui::Widget::TouchEventType::ENDED) {
+                        auto blacken = CallFuncN::create([](Node* node){
+                            auto black = Sprite::create(FORE_FILENAME);
+                            black->setOpacity(0);
+                            auto fadeIn = FadeTo::create(0.5f, 255);
+                            black->runAction(fadeIn);
+                            black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                            node->addChild(black);
+                            black->setGlobalZOrder(12.5f);
+                        });
+
+                        auto delay = DelayTime::create(0.5f);
+
+                        auto changeScene = CallFunc::create([this](){
+                            return [&](){
+                                auto scene = levelScene::create();
+                                Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                            };
+                        }());
+
+                        auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                        this->runAction(seq); 
+                    }                           
+                };
+            };
+
+            if (this->level->getLevelId() < 8 && this->level->getLevelId() == UserDefault::getInstance()->getIntegerForKey("CURRENT_LEVEL", 1) - 1) {
+                auto message = UITextGeneralLayer::create(TEXT_WIN_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, NEXT_LEVEL_BUTTON_FILENAME, NEXT_LEVEL_BUTTON_CLICKED_FILENAME, false);
+                this->addChild(message);
+                message->setPositionY(0.0f - visibleSize.height / 2);
+                auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
+                message->runAction(jump);
+
+                message->setButtonRightTouch(nextTouch());
+                message->setButtonLeftTouch(mainmenuTouch());
+            }
+            else if (this->level->getLevelId() < 8 && this->level->getLevelId() != UserDefault::getInstance()->getIntegerForKey("CURRENT_LEVEL", 1) - 1) {
+                auto message = UITextSingleLayer::create(TEXT_WIN_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
+                this->addChild(message);
+                message->setPositionY(0.0f - visibleSize.height / 2);
+                auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
+                message->runAction(jump);
+                message->setButtonTouch(mainmenuTouch());
+            }
+            else {
+                auto message = UITextSingleLayer::create(TEXT_COMPLETE_FILENAME, MAIN_MENU_BUTTON_FILENAME, MAIN_MENU_BUTTON_CLICKED_FILENAME, false);
+                this->addChild(message);
+                message->setPositionY(0.0f - visibleSize.height / 2);
+                auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
+                message->runAction(jump);
+                message->setButtonTouch(mainmenuTouch());
+            }
+        };
+    }();
+
+    auto message = CallFunc::create(this->callMessage);
+
+    // Appear reward message
+    auto reward = CallFunc::create([this](){
+        return [&](){
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            this->rewardLayer = UIRewardLayer::create((CellId) this->level->getReward(), [this](){
+                return [&](Ref*, ui::Widget::TouchEventType type){
+                    if (type == ui::Widget::TouchEventType::ENDED) {
+                        auto visibleSize = Director::getInstance()->getVisibleSize();
+                        auto origin = Director::getInstance()->getVisibleOrigin();
+
+                        auto move = MoveBy::create(0.5f, Vec2(0.0f, visibleSize.height));
+                        auto remove = RemoveSelf::create();
+                        auto seq = Sequence::create(move, remove, nullptr);
+                        this->rewardLayer->runAction(seq);
+                        this->callMessage();
+                    }
+                };
+            }());
+
+            this->addChild(this->rewardLayer);
+            this->rewardLayer->setPositionY(0.0f - visibleSize.height / 2);
+            auto jump = JumpBy::create(0.5f, Vec2(0.0f, visibleSize.height / 2), visibleSize.height / 4, 1);
+            this->rewardLayer->runAction(jump);
+        };
+    }());
+
     // Finalize
-    auto seq = Sequence::create(flashing, delay1, foring, victory, delay2, stars, nullptr);
-    this->runAction(seq);
+    auto data = UserDefault::getInstance();
+    auto currentLevel = data->getIntegerForKey("CURRENT_LEVEL", 1);
+    auto currentCell = data->getIntegerForKey("CURRENT_CELL", 0);
+    auto rewardCell = level->getReward();
+
+    if (rewardCell != -1 && rewardCell > currentCell) {
+        auto seq = Sequence::create(flashing, delay1, foring, victory, delay2, stars, delay3, reward, nullptr);
+        this->runAction(seq);
+    }
+    else {
+        auto seq = Sequence::create(flashing, delay1, foring, victory, delay2, stars, delay3, message, nullptr);
+        this->runAction(seq);
+    }
+
+    if (level->getLevelId() == currentLevel) {
+        data->setIntegerForKey("CURRENT_LEVEL", level->getLevelId() + 1);
+        data->flush();
+    }
+
+    if (rewardCell != -1 && rewardCell > currentCell) {
+        data->setIntegerForKey("CURRENT_CELL", rewardCell);
+        data->flush();
+    }
     
     return true;
 }

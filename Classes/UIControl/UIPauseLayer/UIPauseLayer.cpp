@@ -5,9 +5,11 @@
 #include "Scenes/GameScene/GameScene.h"
 #include "Scenes/LevelScene/LevelScene.h"
 #include <functional>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 UIPauseLayer* UIPauseLayer::create(LevelModel* level) {
     UIPauseLayer *ret = new (std::nothrow) UIPauseLayer;
@@ -86,27 +88,29 @@ void UIPauseLayer::init(LevelModel* level) {
 
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto blacken = CallFuncN::create([](Node* node){
-                                auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
-                                black->setOpacity(0);
-                                auto fadeIn = FadeTo::create(0.5f, 255);
-                                black->runAction(fadeIn);
-                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                                node->addChild(black);
-                                black->setGlobalZOrder(12.5f);
-                            });
+                            if (type == ui::Widget::TouchEventType::ENDED) {
+                                auto blacken = CallFuncN::create([](Node* node){
+                                    auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
+                                    black->setOpacity(0);
+                                    auto fadeIn = FadeTo::create(0.5f, 255);
+                                    black->runAction(fadeIn);
+                                    black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                                    node->addChild(black);
+                                    black->setGlobalZOrder(12.5f);
+                                });
 
-                            auto delay = DelayTime::create(0.5f);
+                                auto delay = DelayTime::create(0.5f);
 
-                            auto changeScene = CallFunc::create([this](){
-                                return [&](){
-                                    auto scene = GameScene::create(this->level->getLevelId());
-		                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                                };
-                            }());
+                                auto changeScene = CallFunc::create([this](){
+                                    return [&](){
+                                        auto scene = GameScene::create(this->level->getLevelId());
+                                        Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                                    };
+                                }());
 
-                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                            this->runAction(seq);                            
+                                auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                                this->runAction(seq);
+                            }                          
                         };
                     };
 
@@ -146,27 +150,29 @@ void UIPauseLayer::init(LevelModel* level) {
 
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto blacken = CallFuncN::create([](Node* node){
-                                auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
-                                black->setOpacity(0);
-                                auto fadeIn = FadeTo::create(0.5f, 255);
-                                black->runAction(fadeIn);
-                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                                node->addChild(black);
-                                black->setGlobalZOrder(12.5f);
-                            });
+                            if (type == ui::Widget::TouchEventType::ENDED) {
+                                auto blacken = CallFuncN::create([](Node* node){
+                                    auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
+                                    black->setOpacity(0);
+                                    auto fadeIn = FadeTo::create(0.5f, 255);
+                                    black->runAction(fadeIn);
+                                    black->setAnchorPoint(Vec2(0.0f, 0.0f));
+                                    node->addChild(black);
+                                    black->setGlobalZOrder(12.5f);
+                                });
 
-                            auto delay = DelayTime::create(0.5f);
+                                auto delay = DelayTime::create(0.5f);
 
-                            auto changeScene = CallFunc::create([this](){
-                                return [&](){
-                                    auto scene = levelScene::create();
-		                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                                };
-                            }());
+                                auto changeScene = CallFunc::create([this](){
+                                    return [&](){
+                                        auto scene = levelScene::create();
+                                        Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
+                                    };
+                                }());
 
-                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                            this->runAction(seq);
+                                auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
+                                this->runAction(seq);
+                            }
                         };
                     };
 
@@ -197,10 +203,12 @@ void UIPauseLayer::init(LevelModel* level) {
     music_base->setGlobalZOrder(12.0f);
     music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
 
+    auto music_volume = UserDefault::getInstance()->getFloatForKey("MUSIC_VOLUME", 1.0f);
+
     music_slider = Sprite::create(PAUSE_LAYER_SLIDER_FILENAME);
     this->addChild(music_slider);
     music_slider->setGlobalZOrder(12.0f);
-    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
+    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - music_volume) * 150.0f, visibleSize.height / 2 + origin.y - 45.0f - 15.0f));
 
     // Function set
     function<function<bool(Touch*, Event*)>()> emptyMusic = [this]() -> function<bool(Touch*, Event*)> {
@@ -230,6 +238,18 @@ void UIPauseLayer::init(LevelModel* level) {
 
     function<function<void(Touch*, Event*)>()> afterDragMusic = [this]() -> function<void(Touch*, Event*)> {
         return [&](Touch* touch, Event* event) {
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            auto left = visibleSize.width / 2 + origin.x - 40.0f;
+            auto right = visibleSize.width / 2 + origin.x + 110.0f;
+
+            auto volume = (this->music_slider->getPositionX() - left) / 150.0f;
+            UserDefault::getInstance()->setFloatForKey("MUSIC_VOLUME", volume);
+            UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setBackgroundMusicVolume(volume);
         };
     };
 
@@ -251,10 +271,12 @@ void UIPauseLayer::init(LevelModel* level) {
     effect_base->setGlobalZOrder(12.0f);
     effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 45.0f * 2 - 15.0f * 2));
 
+    auto effect_volume = UserDefault::getInstance()->getFloatForKey("EFFECT_VOLUME", 1.0f);
+
     effect_slider = Sprite::create(PAUSE_LAYER_SLIDER_FILENAME);
     this->addChild(effect_slider);
     effect_slider->setGlobalZOrder(12.0f);
-    effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height / 2 + origin.y - 45.0f * 2 - 15.0f * 2));
+    effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - effect_volume) * 150.0f, visibleSize.height / 2 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     // Function set
     function<function<bool(Touch*, Event*)>()> emptyEffect = [this]() -> function<bool(Touch*, Event*)> {
@@ -284,6 +306,18 @@ void UIPauseLayer::init(LevelModel* level) {
 
     function<function<void(Touch*, Event*)>()> afterDragEffect = [this]() -> function<void(Touch*, Event*)> {
         return [&](Touch* touch, Event* event) {
+            auto visibleSize = Director::getInstance()->getVisibleSize();
+            auto origin = Director::getInstance()->getVisibleOrigin();
+
+            auto left = visibleSize.width / 2 + origin.x - 40.0f;
+            auto right = visibleSize.width / 2 + origin.x + 110.0f;
+
+            auto volume = (this->effect_slider->getPositionX() - left) / 150.0f;
+            UserDefault::getInstance()->setFloatForKey("EFFECT_VOLUME", volume);
+            UserDefault::getInstance()->flush();
+
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setEffectsVolume(volume);
         };
     };
 

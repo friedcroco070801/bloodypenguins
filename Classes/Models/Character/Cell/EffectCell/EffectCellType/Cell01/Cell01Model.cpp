@@ -8,9 +8,9 @@ using namespace std;
 Cell01Model constructor
 */
 Cell01Model::Cell01Model() : EffectCellModel(CELL_01_ERYTHROCYTES) {
-    rechargeTime = 20.0;
-    effectRechargeTime = 10.0;
-    effectTimeCounter = 10.0;
+    rechargeTime = 12.0;
+    effectRechargeTime = 12.0;
+    effectTimeCounter = 9.0;
     distance = 0.0;
     cost = 50;
     hp = 5;

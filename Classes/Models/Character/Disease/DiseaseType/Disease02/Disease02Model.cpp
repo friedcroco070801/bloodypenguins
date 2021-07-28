@@ -5,7 +5,7 @@
 Disease02Model::Disease02Model() : DiseaseModel(DISEASE_02_INFLUENZA) {
     // Temporary data
     speed = 2.0;
-    damage = 2;
+    damage = 1;
     hitRechargeTime = 0.5;
     hp = 7;
 

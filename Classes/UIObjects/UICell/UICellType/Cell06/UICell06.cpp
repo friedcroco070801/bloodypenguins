@@ -65,7 +65,7 @@ void UICell06::idleAnimate() {
 	auto fluct8 = MoveBy::create(0.025f, Vec2(fluctuateRange / 4, 0.0f));
 	auto fluct9 = DelayTime::create(0.05f);
 	auto fluctMonoSeq = Sequence::create(fluct1, fluct2, fluct3, fluct4, fluct5, fluct6, fluct7, fluct8, fluct9, nullptr);
-	auto fluctSeq = Repeat::create(fluctMonoSeq, 3);
+	auto fluctSeq = RepeatForever::create(fluctMonoSeq);
 	this->runAction(fluctSeq);
 }
 

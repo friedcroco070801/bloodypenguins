@@ -22,6 +22,9 @@
 #define HEIGHT cocos2d::Director::getInstance()->getVisibleSize().height
 #define WIDTH cocos2d::Director::getInstance()->getVisibleSize().width
 
+#define VISIBLE_ORIGIN_X cocos2d::Director::getInstance()->getVisibleOrigin().x
+#define VISIBLE_ORIGIN_Y cocos2d::Director::getInstance()->getVisibleOrigin().y
+
 #define TOP HEIGHT * 7/8
 
 #define GRASS_POSITION_LEFT WIDTH * 3/16

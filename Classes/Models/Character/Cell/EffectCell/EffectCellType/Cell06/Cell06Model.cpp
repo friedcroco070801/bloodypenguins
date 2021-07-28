@@ -6,7 +6,7 @@
 Cell06Model constructor
 */
 Cell06Model::Cell06Model() : EffectCellModel(CELL_06_NEUTROPHILS) {
-    rechargeTime = 6.0;
+    rechargeTime = 60.0;
     distance = 1.5;
     cost = 175;
     hp = 80;

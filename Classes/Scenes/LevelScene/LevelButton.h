@@ -4,8 +4,6 @@
 #include "Models/models.h"
 #include "ui/CocosGUI.h"
 
-#define PAUSE_BUTTON_FILENAME "sprites/objects/button/pause.png"
-#define PAUSE_BUTTON_CLICKED_FILENAME "sprites/objects/button/pause_clicked.png"
 USING_NS_CC;
 class levelButton :public ui::Button
 {

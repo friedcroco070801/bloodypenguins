@@ -26,7 +26,7 @@ void UICell04::idleAnimate() {
 
 	//this->stopActionByTag();
 
-	const int numberSprite = 65;
+	const int numberSprite = 33;
 	Vector<SpriteFrame*> animFrames;
 	int size = Sprite::create(CELL_04_FILENAME)->getContentSize().height;
 	animFrames.reserve(numberSprite);
@@ -45,11 +45,15 @@ void UICell04::idleAnimate() {
 
 	this->runAction(idle);
 
-	auto tintTo = TintTo::create(0.1, Color3B::BLUE);
-	auto tintTo_ = TintTo::create(0.1, Color3B::WHITE);
+	auto tintTo = TintTo::create(0.1f, Color3B::BLUE);
+	auto tintTo_ = TintTo::create(0.1f, Color3B::WHITE);
 	auto sequenceSprites = Sequence::create(tintTo, tintTo_, tintTo->clone(), tintTo_->clone(), nullptr);
-	auto scale_ = ScaleBy::create(0.5, 0.5);
-	auto mySpawn = Spawn::createWithTwoActions(scale_, sequenceSprites);
+
+	auto scale_ = ScaleBy::create(0.5f, 0.5f);
+	auto rescale = ScaleBy::create(0.5f, 2.0f);
+	auto seq2 = Sequence::create(scale_, rescale, nullptr);
+
+	auto mySpawn = Spawn::createWithTwoActions(seq2, sequenceSprites);
 	this->runAction(mySpawn);
 }
 void UICell04::effectAnimate() {

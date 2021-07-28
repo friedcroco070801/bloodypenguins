@@ -1,5 +1,5 @@
 #include "GSControlLayer.h"
-#include "GSdefine.h"
+#include "GSDefine.h"
 #include "AppDelegate.h"
 #include "UIObjects/UICell/UICellDefinitions.h"
 #include "UIObjects/uiobj.h"
@@ -29,25 +29,7 @@ bool GSControlLayer::init(Sprite* choose)
 
 	return true;
 }
-/////////////////////////////
-/*
-void GSControlLayer::createPreview(int id) {
-	std::string link;
-	switch (id)
-	{
-	case 1:
-		link = "HelloWorld.png";
-		break;
-	case 2:
-		link = "CloseSelected.png";
-		break;
-	default:
-		break;
-	}
-	setPreviewImage(CELL_00_EOSINOPHILS);
-}
-*/
-//ham call --------------------------------------------------------------------------
+
 void GSControlLayer::setPreviewImage(CellId id, double distance) {
 
 	this->Cell_Id = id;
@@ -91,6 +73,10 @@ void GSControlLayer::setPreviewImage(CellId id, double distance) {
 		this->anchonPoint = Point(0.5f, 14.0f / 46);
 		this->ScaleNumber = 1.1f * OBJECT_SCALE;
 		break;
+	case REMOVE_CELL:
+		this->link_image = REMOVE_CELL_FILENAME;
+		this->anchonPoint = Point(0.5f, 0.5f);
+		this->ScaleNumber = 2.0f * OBJECT_SCALE;
 	default:
 		break;
 	}
@@ -153,7 +139,10 @@ bool GSControlLayer::onTouchBegan(Touch *touch, Event *event) {
 				this->previewImage->setColor(Color3B::WHITE);
 			}
 			else {
-				this->previewImage->setColor(Color3B::RED);
+				if (Cell_Id != REMOVE_CELL)
+					this->previewImage->setColor(Color3B::RED);
+				else
+					this->previewImage->setColor(Color3B(200, 200, 200));
 			}
 		}
 		this->addChild(this->previewImage);
@@ -179,7 +168,10 @@ void GSControlLayer::onTouchMoved(Touch *touch, Event *event) {
 				this->previewImage->setColor(Color3B::WHITE);
 			}
 			else {
-				this->previewImage->setColor(Color3B::RED);
+				if (Cell_Id != REMOVE_CELL)
+					this->previewImage->setColor(Color3B::RED);
+				else
+					this->previewImage->setColor(Color3B::GRAY);
 			}
 			this->previewImage->setPosition(Vec2(ROW_COLUMN_TO_POSITION(cellsPosition_)));
 		}
@@ -196,10 +188,15 @@ void GSControlLayer::onTouchEnded(Touch *touch, Event *event) {
 			GSControlLayer::calculateCellsPosition();
 			int b = cellsPosition_.x;
 			int a = cellsPosition_.y;
-			level->addCell(CellModel::create(this->Cell_Id), cellsPosition_.x, cellsPosition_.y);
+			if (Cell_Id != REMOVE_CELL)
+				level->addCell(CellModel::create(this->Cell_Id), cellsPosition_.x, cellsPosition_.y);
+			else {
+				level->findAndRemoveCell(cellsPosition_.x, cellsPosition_.y);
+			}
 		}
 		this->previewImage->removeFromParent();
-		choose->removeFromParent();
+		if (choose != nullptr)
+			choose->removeFromParent();
 		this->removeFromParent();	
 	}	
 	
