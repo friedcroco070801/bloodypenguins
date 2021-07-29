@@ -532,8 +532,8 @@ Find and remove cell
 void LevelModel::findAndRemoveCell(int x, int y) {
     for (auto it = cellList.begin(); it != cellList.end(); it++) {
         if (abs((*it)->getPositionCellX() - x) <= ACCEPTING_TIME_ERROR && abs((*it)->getPositionCellY() - y) <= ACCEPTING_TIME_ERROR) {
-            dumpCell(*it);
             (*it)->__getUIObject()->removeFromParent();
+            dumpCell(*it);
             return;
         }
     }
