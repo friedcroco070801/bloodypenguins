@@ -10,8 +10,9 @@ levelButton* levelButton::create(int number) {
 	std::string filename = "sprites/objects/button/levelButton/numberic";
 	std::string png = ".png";
 	std::string num = std::to_string(number);
+	std::string filenameClicked = filename + num + "_clicked" + png;
 	filename = filename + num + png;
-	if (button && button->init(filename, filename, filename)) {
+	if (button && button->init(filename, filenameClicked, filenameClicked)) {
 		CCLOG("true");
 		button->level = number;
 		button->autorelease();
