@@ -66,6 +66,7 @@ bool MMOptions::init() {
                     break;
                 case ui::Widget::TouchEventType::ENDED: 
 				{
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 					Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this->getParent(), true);
 					this->removeFromParent();
 					break;

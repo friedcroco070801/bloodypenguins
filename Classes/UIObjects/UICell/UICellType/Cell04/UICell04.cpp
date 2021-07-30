@@ -1,7 +1,9 @@
 #include "UIObjects/uiobj.h"
 #include "UICell04.h"
 #include "Scenes/GameScene/GSDefine.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
+using namespace CocosDenshion;
 /*
 Create a new instance of UICell00
 */
@@ -96,4 +98,8 @@ void UICell04::effectAnimate() {
 	}
 }
 
+void UICell04::dieAnimate() {
+	this->removeFromParent();
+	 SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/freeze.mp3");
+}
 

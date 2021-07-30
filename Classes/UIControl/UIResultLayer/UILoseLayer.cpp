@@ -5,8 +5,10 @@
 #include "Scenes/GameScene/GameScene.h"
 #include "Scenes/MainMenuScene/MainMenuScene.h"
 #include "Scenes/LevelScene/LevelScene.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 UILoseLayer* UILoseLayer::create(LevelModel* level) {
     UILoseLayer *ret = new (std::nothrow) UILoseLayer;
@@ -103,6 +105,7 @@ bool UILoseLayer::init(LevelModel* level) {
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> restartTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
                     if (type == ui::Widget::TouchEventType::ENDED) {
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                         auto blacken = CallFuncN::create([](Node* node){
                             auto black = Sprite::create(FORE_FILENAME);
                             black->setOpacity(0);
@@ -132,6 +135,7 @@ bool UILoseLayer::init(LevelModel* level) {
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
                     if (type == ui::Widget::TouchEventType::ENDED) {
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                         auto blacken = CallFuncN::create([](Node* node){
                             auto black = Sprite::create(FORE_FILENAME);
                             black->setOpacity(0);

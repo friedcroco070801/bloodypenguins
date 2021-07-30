@@ -2,8 +2,10 @@
 #include "UICell05Projectile.h"
 #include <cmath>
 #include <functional>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 /*
 Create new instance of UICell05Projectile
@@ -36,6 +38,8 @@ void UICell05Projectile::idleAnimate() {
 Destroy animate
 */
 void UICell05Projectile::destroyAnimate() {
+    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/ember.mp3");
+
     this->stopAllActions();
     Vector<SpriteFrame*> frames;
     for (unsigned int i = 0; i < 6; i++) {

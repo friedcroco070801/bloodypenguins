@@ -3,7 +3,9 @@
 #include "Scenes/GameScene/GSDefine.h"
 #include "UIDisease06Definitions.h"
 #include <cmath>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 using namespace std;
+using namespace CocosDenshion;
 
 /*
 Create new instance of UIDisease06
@@ -20,6 +22,11 @@ UIDisease06* UIDisease06::create() {
     return nullptr;
 }
 
+void UIDisease06::addToScene(Scene* scene) {
+	UIDisease::addToScene(scene);
+	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+	SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/GameScene/Boss/boss_appear.mp3", true);
+}
 
 void UIDisease06::walkAnimate(Direction dir) {
 	this->stopAllActionsByTag(ANIM_BASE);
@@ -171,6 +178,8 @@ void UIDisease06::attackAnimateWithSync(Direction dir, function<void()> callBack
 
 	function<function<void()>()> callScene = [this]() -> function<void()> {
 		return [&](){
+			SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/earthquake.mp3");
+
 			// Make the camera fluctuate
 			Vector<FiniteTimeAction*> fluct;
 			auto amplifier = CELL_WIDTH / 2;

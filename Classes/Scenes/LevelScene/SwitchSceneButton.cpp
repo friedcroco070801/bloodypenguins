@@ -2,8 +2,10 @@
 #include "UIObjects/uiobj.h"
 #include "UINumeric/UINumeric.h"
 #include "Scenes/MainMenuScene/MainMenuScene.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 #define TRANSITION_TIME 0.5f
 USING_NS_CC;
+using namespace CocosDenshion;
 //SwitchSceneButton* SwitchSceneButton::create(Scene* scene,std::string button_,std::string button_clicked) {
 SwitchSceneButton* SwitchSceneButton::create(std::string button_, std::string button_clicked) {
 	SwitchSceneButton* button = new(std::nothrow) SwitchSceneButton;
@@ -27,6 +29,7 @@ void SwitchSceneButton::touchControlEvent(Ref *sender, ui::Widget::TouchEventTyp
 		break;
 	case ui::Widget::TouchEventType::ENDED:
 	{
+		SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 		CCLOG("back!");
 		auto scene = MainMenuScene::create();
 		Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));

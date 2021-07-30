@@ -53,7 +53,8 @@ void UIPauseLayer::init(LevelModel* level) {
             switch (type) {
                 case ui::Widget::TouchEventType::BEGAN:
                     break;
-                case ui::Widget::TouchEventType::ENDED:  
+                case ui::Widget::TouchEventType::ENDED:
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                     this->level->resume();
                     this->removeFromParent();   
                     break;
@@ -78,10 +79,12 @@ void UIPauseLayer::init(LevelModel* level) {
                     break;
                 case ui::Widget::TouchEventType::ENDED:  
                 {
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                     Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
 
                     function<function<void()>()> cancelTouch = [this]() -> function<void()> {
                         return [&]() {
+                            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                             Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
                         };
                     };
@@ -89,6 +92,8 @@ void UIPauseLayer::init(LevelModel* level) {
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
                             if (type == ui::Widget::TouchEventType::ENDED) {
+                                SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+
                                 auto blacken = CallFuncN::create([](Node* node){
                                     auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
                                     black->setOpacity(0);
@@ -140,10 +145,12 @@ void UIPauseLayer::init(LevelModel* level) {
                     break;
                 case ui::Widget::TouchEventType::ENDED:  
                 {
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                     Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
 
                     function<function<void()>()> cancelTouch = [this]() -> function<void()> {
                         return [&]() {
+                            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                             Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
                         };
                     };
@@ -151,6 +158,7 @@ void UIPauseLayer::init(LevelModel* level) {
                     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                         return [&](Ref* sender, ui::Widget::TouchEventType type) {
                             if (type == ui::Widget::TouchEventType::ENDED) {
+                                SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                                 auto blacken = CallFuncN::create([](Node* node){
                                     auto black = Sprite::create(PAUSE_LAYER_FORE_FILENAME);
                                     black->setOpacity(0);

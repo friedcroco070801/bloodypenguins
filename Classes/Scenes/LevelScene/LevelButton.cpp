@@ -2,9 +2,11 @@
 #include "Scenes/GameScene/GameScene.h"
 #include "UIObjects/uiobj.h"
 #include "UINumeric/UINumeric.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 #define TRANSITION_TIME 0.5f
 USING_NS_CC;
 using namespace cocos2d;
+using namespace CocosDenshion;
 levelButton* levelButton::create(int number) {
 	levelButton*  button = new(std::nothrow) levelButton;
 	std::string filename = "sprites/objects/button/levelButton/numberic";
@@ -34,6 +36,7 @@ void levelButton::touchControlEvent(Ref *sender, ui::Widget::TouchEventType type
 	case ui::Widget::TouchEventType::ENDED:
 	{
 		CCLOG("level!");
+		SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 		auto scene = GameScene::create(level);
 		Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 		break;

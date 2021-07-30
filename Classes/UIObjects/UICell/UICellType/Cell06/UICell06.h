@@ -12,6 +12,6 @@ public:
 	virtual void idleAnimate();
 	virtual void effectAnimate();
 	//virtual void hitAnimate();
-	virtual void dieAnimate() {removeFromParent();};
+	virtual void dieAnimate();
 };
 #endif // !__UI_CELL_05_H__L_H__

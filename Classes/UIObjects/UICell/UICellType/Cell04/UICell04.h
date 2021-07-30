@@ -12,7 +12,7 @@ public:
 	virtual void idleAnimate();
 	virtual void effectAnimate();
 	//virtual void hitAnimate();
-	virtual void dieAnimate() {this->removeFromParent();};
+	virtual void dieAnimate();
 };
 
 #endif // !__UI_CELL_04_H__

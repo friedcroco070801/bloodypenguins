@@ -7,7 +7,7 @@
 
 #define CELLBAR_LAYER_ZORDER 10
 
-#define CELLBAR_POSITION_X 8.0f + 72.0f * Director::getInstance()->getVisibleSize().height / 8 / 90.0f + Director::getInstance()->getVisibleOrigin().x
+#define CELLBAR_POSITION_X Director::getInstance()->getSafeAreaRect().getMinX() + 8.0f + 72.0f * Director::getInstance()->getVisibleSize().height / 8 / 90.0f + Director::getInstance()->getVisibleOrigin().x
 #define CELLBAR_POSITION_Y(index) Director::getInstance()->getVisibleSize().height / 16 * (13 - 2 * index) + Director::getInstance()->getVisibleOrigin().y
 
 #define CELLBAR_SCALE Director::getInstance()->getVisibleSize().height / 8 / 90.0f

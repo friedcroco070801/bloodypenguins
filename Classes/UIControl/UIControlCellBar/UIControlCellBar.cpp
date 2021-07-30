@@ -4,8 +4,10 @@
 #include <functional>
 #include "UINumeric/UINumeric.h"
 #include <vector>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 /*
 Add to Scene
@@ -40,6 +42,7 @@ void UIControlCellBar::touchControlEvent(Ref *sender, ui::Widget::TouchEventType
 		case ui::Widget::TouchEventType::ENDED:
 		{
 			CCLOG("Cell Hold");
+			SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 
 			// Choosing sprite
 			choosing = Sprite::create(CELLBAR_CHOOSING_FILENAME);

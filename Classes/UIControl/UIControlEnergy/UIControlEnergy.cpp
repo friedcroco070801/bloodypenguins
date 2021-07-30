@@ -2,8 +2,10 @@
 #include "Scenes/GameScene/GSDefine.h"
 #include "UIObjects/uiobj.h"
 #include "Models/models.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 void UIControlEnergy::setCellPosition(double cellX, double cellY) {
 	setPosition(Vec2((float)cellX * CELL_WIDTH + POS_X_ORIGIN, (float)cellY * CELL_WIDTH + POS_Y_ORIGIN));
@@ -45,6 +47,7 @@ void UIControlEnergy::touchControlEvent(Ref *sender, ui::Widget::TouchEventType 
 		case ui::Widget::TouchEventType::ENDED:
 			CCLOG("Energy update");
 			canCollect = false;
+			SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/collect_energy.mp3");
 			destroyAnimate(func(level));
 			break;
 		default:

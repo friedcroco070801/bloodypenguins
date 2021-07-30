@@ -4,9 +4,9 @@
 #include "UIObjects/UICell/UICellDefinitions.h"
 #include "Scenes/LevelScene/LevelScene.h"
 #include "Components/MMOptions.h"
-
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
-//global variable
+using namespace CocosDenshion;
 
 bool MMControl::init()
 {
@@ -105,6 +105,7 @@ void MMControl::addButtonMenu() {
 }
 
 void MMControl::GoToLevelScene(cocos2d::Ref *sender) {
+	SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 	auto scene = levelScene::createScene();
 	Director::getInstance()->replaceScene(TransitionFade::create(1, scene));
 }
@@ -112,10 +113,12 @@ void MMControl::GoToLevelScene(cocos2d::Ref *sender) {
 void MMControl::ExitGameMain(cocos2d::Ref *sender)
 {
 	//CocosDenshion::SimpleAudioEngine::getInstance()->end();
+	SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 	Director::getInstance()->end();
 }
 
 void MMControl::GoToOptionsCom(cocos2d::Ref *sender) {
+	SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
 	Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
 	auto layer = MMOptions::create();
 	this->addChild(layer,1);

@@ -1,7 +1,9 @@
 #include "UIObjects/uiobj.h"
 #include "UIProjectile.h"
 #include "ProjectileType/UIProjectileType.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
+using namespace CocosDenshion;
 
 /*
 Add UIProjectile to scene
@@ -44,6 +46,7 @@ UIProjectile* UIProjectile::create(ProjectileId id) {
 Destroy animation
 */
 void UIProjectile::destroyAnimate() {
+    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/projectile_destroyed.wav");
     removeFromParent();
 }
 

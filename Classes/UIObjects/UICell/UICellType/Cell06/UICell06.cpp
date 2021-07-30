@@ -1,6 +1,8 @@
 #include "UIObjects/uiobj.h"
 #include "UICell06.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
+using namespace CocosDenshion;
 
 /*
 Create a new instance of UICell00
@@ -102,3 +104,7 @@ void UICell06::effectAnimate() {
 	}
 }
 
+void UICell06::dieAnimate() {
+	SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/explosion.mp3");
+	removeFromParent();
+}

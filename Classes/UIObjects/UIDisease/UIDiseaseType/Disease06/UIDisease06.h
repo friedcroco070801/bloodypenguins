@@ -11,7 +11,7 @@ protected:
 	int thirdHPCount;
 public:
     static UIDisease06* create();
-	//virtual void addToScene(cocos2d::Scene*);
+	virtual void addToScene(Scene*);
 	virtual void idleAnimate(Direction dir);
 	virtual void walkAnimate(Direction dir);
 	virtual void attackAnimate(Direction dir);

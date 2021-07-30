@@ -2,8 +2,11 @@
 #include "UIObjects/uiobj.h"
 #include "MMBackgroundLayer.h"
 #include "MMControl.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
+
 Scene* MainMenuScene::createScene()
 {
 	return MainMenuScene::create();
@@ -11,6 +14,9 @@ Scene* MainMenuScene::createScene()
 bool MainMenuScene::init() {
 	if (!Scene::init()) return false;
 	
+	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+	SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/MainMenu/mainmenu.mp3", true);
+
 	addBackground();
 	controlButton();
 	return true;

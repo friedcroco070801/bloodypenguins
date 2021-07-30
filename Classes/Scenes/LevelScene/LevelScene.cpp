@@ -4,13 +4,19 @@
 #include "Scenes/GameScene/GSDefine.h"
 #include "SwitchSceneButton.h"
 #include "Scenes/MainMenuScene/MainMenuScene.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
+using namespace CocosDenshion;
 Scene* levelScene::createScene()
 {
 	return levelScene::create();
 }
 bool levelScene::init() {
 	if (!Scene::init()) return false;
+
+	SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+	SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/LevelScene/levelscene.mp3", true);
+
 	CreateButtonLevel();
 	SetBackGround();
 	CreateBackButton();
@@ -52,7 +58,6 @@ void levelScene::CreateButtonLevel() {
 	}
 }
 void levelScene::CreateBackButton() {
-	next = MainMenuScene::create();
 	SwitchSceneButton* back_button = SwitchSceneButton::create( BUTTON_BACK, BUTTON_BACK_CLICKED);
 	back_button->setScale(1.25);
 	back_button->setPosition(Vec2(WIDTH - 113.75f + VISIBLE_ORIGIN_X, 44.5f + VISIBLE_ORIGIN_Y));

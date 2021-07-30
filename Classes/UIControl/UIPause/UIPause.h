@@ -4,8 +4,8 @@
 #include "../UIControl.h"
 #define PAUSE_BUTTON_FILENAME "sprites/objects/button/pause.png"
 #define PAUSE_BUTTON_CLICKED_FILENAME "sprites/objects/button/pause_clicked.png"
-#define PAUSE_BUTTON_POS_X Director::getInstance()->getVisibleSize().width - 30.0f + Director::getInstance()->getVisibleOrigin().x
-#define PAUSE_BUTTON_POS_Y Director::getInstance()->getVisibleSize().height - 30.0f + Director::getInstance()->getVisibleOrigin().y
+#define PAUSE_BUTTON_POS_X Director::getInstance()->getSafeAreaRect().getMaxX() - 7.5f - 22.5f * 1.2f + Director::getInstance()->getVisibleOrigin().x
+#define PAUSE_BUTTON_POS_Y Director::getInstance()->getVisibleSize().height - 7.5f - 22.5f * 1.2f + Director::getInstance()->getVisibleOrigin().y
 
 class LevelModel;
 

@@ -15,8 +15,10 @@
 #include "UIControl/UIResultLayer/UIWinLayer.h"
 #include "UIControl/UIResultLayer/UILoseLayer.h"
 #include "UIControl/UIRemove/UIRemove.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 using namespace std;
 USING_NS_CC;
+using namespace CocosDenshion;
 
 /*
 Constructor of LevelModel
@@ -333,6 +335,8 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
         return;
     }
     if (obj->canPutOn(this, cellX, cellY)) {
+        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/add_cell.mp3");
+
         obj->setPosition(cellX, cellY);
         cellList.push_back(obj);
         obj->__setLevel(this);
@@ -489,6 +493,12 @@ Win the game
 void LevelModel::win() {
     isCounting = false;
     if (scene != nullptr) {
+        SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+        if (levelId < 8)
+	        SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/GameScene/Win/win.mp3", true);
+        else
+        SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/GameScene/Boss/boss_die.mp3", true);
+
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
@@ -504,6 +514,9 @@ Lose the game
 void LevelModel::lose() {
     isCounting = false;
     if (scene != nullptr) {
+        SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+	    SimpleAudioEngine::getInstance()->playBackgroundMusic("audio/background/GameScene/Lose/lose.mp3", true);
+
         pausedNodes = Director::getInstance()->getActionManager()->pauseAllRunningActions();
         Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(scene, true);
 
@@ -532,6 +545,7 @@ Find and remove cell
 void LevelModel::findAndRemoveCell(int x, int y) {
     for (auto it = cellList.begin(); it != cellList.end(); it++) {
         if (abs((*it)->getPositionCellX() - x) <= ACCEPTING_TIME_ERROR && abs((*it)->getPositionCellY() - y) <= ACCEPTING_TIME_ERROR) {
+            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/delete_button.mp3");
             (*it)->__getUIObject()->removeFromParent();
             dumpCell(*it);
             return;

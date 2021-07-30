@@ -137,14 +137,17 @@ void DiseaseModel::update() {
         for (auto it = cellList.begin(); it != cellList.end(); it++) {
             if (getDistanceToOther(*it) <= 1.0 + 0.0000002 && (*it)->canBeEaten()) {
                 // Check if a passed target
-                auto tempDir = dir;
-                changeDirectionToTarget(*it);
-                if ((dir == UP && tempDir == DOWN) || (dir == DOWN && tempDir == UP) || 
-                    (dir == LEFT && tempDir == RIGHT) || (dir == RIGHT && tempDir == LEFT)) {
-                    dir = tempDir;
+                auto pre = currentPath;
+                if (abs((*it)->getPositionCellX() - (*pre)[0]) <= 0.0000002 && abs((*it)->getPositionCellY() - (*pre)[1]) <= 0.0000002) {
                     continue;
                 }
-                dir = tempDir;
+
+                if (pre != path->begin()) {
+                    pre--;
+                    if (abs((*it)->getPositionCellX() - (*pre)[0]) <= 0.0000002 && abs((*it)->getPositionCellY() - (*pre)[1]) <= 0.0000002) {
+                        continue;
+                    }
+                }
 
                 target = it;
                 break;

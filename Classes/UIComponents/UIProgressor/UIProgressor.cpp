@@ -1,9 +1,11 @@
 #include "UIProgressor.h"
 #include "Models/models.h"
 #include <functional>
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 using namespace std;
 USING_NS_CC;
+using namespace CocosDenshion;
 
 /*
 Constructor of UIProgressor
@@ -91,9 +93,10 @@ void UIProgressor::updateOnWave() {
                 auto delay = DelayTime::create(1.5f);
                 auto fadeOut = FadeTo::create(0.3f, 0);
                 
-                function< function<void()> (Node*) > final = [](Node* s) -> function<void()> {
+                function< function<void()> (Node*) > final = [](Node* s) -> function<void()> {                  
                     auto scene = s;
                     return [scene](){
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/final_round.mp3");
                         auto noti = Sprite::create((CCRANDOM_0_1() <= 0.2f) ? NOTIFICATION_HUGEWAVE_JOKE_FILENAME : NOTIFICATION_HUGEWAVE_FINAL_FILENAME);
                         noti->setOpacity(0);
                         scene->addChild(noti);

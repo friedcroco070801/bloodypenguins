@@ -4,8 +4,8 @@
 #include "UIControl/UIControl.h"
 #define REMOVE_BUTTON_FILENAME "sprites/objects/button/remove.png"
 #define REMOVE_BUTTON_CLICKED_FILENAME "sprites/objects/button/remove_clicked.png"
-#define REMOVE_BUTTON_POS_X Director::getInstance()->getVisibleSize().width - 85.0f + Director::getInstance()->getVisibleOrigin().x
-#define REMOVE_BUTTON_POS_Y Director::getInstance()->getVisibleSize().height - 30.0f + Director::getInstance()->getVisibleOrigin().y
+#define REMOVE_BUTTON_POS_X Director::getInstance()->getSafeAreaRect().getMaxX() - 15.0f - 67.5f * 1.2f + Director::getInstance()->getVisibleOrigin().x
+#define REMOVE_BUTTON_POS_Y Director::getInstance()->getVisibleSize().height - 7.5f - 22.5f * 1.2f + Director::getInstance()->getVisibleOrigin().y
 
 class LevelModel;
 

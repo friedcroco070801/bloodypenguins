@@ -5,8 +5,10 @@
 #include "Scenes/LevelScene/LevelScene.h"
 #include "UIControl/UITextLayer/UITextGeneralLayer.h"
 #include "UIControl/UITextLayer/UITextSingleLayer.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace std;
+using namespace CocosDenshion;
 
 UIWinLayer* UIWinLayer::create(LevelModel* level) {
     UIWinLayer *ret = new (std::nothrow) UIWinLayer;
@@ -128,6 +130,7 @@ bool UIWinLayer::init(LevelModel* level) {
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> nextTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
                     if (type == ui::Widget::TouchEventType::ENDED) {
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                         auto blacken = CallFuncN::create([](Node* node){
                             auto black = Sprite::create(FORE_FILENAME);
                             black->setOpacity(0);
@@ -157,6 +160,7 @@ bool UIWinLayer::init(LevelModel* level) {
             function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
                 return [&](Ref* sender, ui::Widget::TouchEventType type) {
                     if (type == ui::Widget::TouchEventType::ENDED) {
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                         auto blacken = CallFuncN::create([](Node* node){
                             auto black = Sprite::create(FORE_FILENAME);
                             black->setOpacity(0);
@@ -216,12 +220,15 @@ bool UIWinLayer::init(LevelModel* level) {
     // Appear reward message
     auto reward = CallFunc::create([this](){
         return [&](){
+            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/reward.mp3");
+
             auto visibleSize = Director::getInstance()->getVisibleSize();
             auto origin = Director::getInstance()->getVisibleOrigin();
 
             this->rewardLayer = UIRewardLayer::create((CellId) this->level->getReward(), [this](){
                 return [&](Ref*, ui::Widget::TouchEventType type){
                     if (type == ui::Widget::TouchEventType::ENDED) {
+                        SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
                         auto visibleSize = Director::getInstance()->getVisibleSize();
                         auto origin = Director::getInstance()->getVisibleOrigin();
 

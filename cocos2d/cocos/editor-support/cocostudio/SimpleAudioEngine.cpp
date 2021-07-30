@@ -33,6 +33,7 @@ struct SimpleAudioEngineDelegate {
     SimpleAudioEngine * engine = nullptr;
     int musicid;
     float effectsvolume;
+    float backgroundvolume;
     std::string musicpath;
 };
 
@@ -60,6 +61,7 @@ SimpleAudioEngine::SimpleAudioEngine()
 {
     g_SimpleAudioEngine->musicid = -1;
     g_SimpleAudioEngine->effectsvolume = 1.0f;
+    g_SimpleAudioEngine->backgroundvolume = 1.0f;
 }
 
 SimpleAudioEngine::~SimpleAudioEngine()
@@ -75,7 +77,7 @@ void SimpleAudioEngine::preloadBackgroundMusic(const char* filePath)
 void SimpleAudioEngine::playBackgroundMusic(const char* filePath, bool loop)
 {
     g_SimpleAudioEngine->musicpath = filePath;
-    g_SimpleAudioEngine->musicid = AudioEngine::play2d(filePath, loop);
+    g_SimpleAudioEngine->musicid = AudioEngine::play2d(filePath, loop, g_SimpleAudioEngine->backgroundvolume);
 }
 
 void SimpleAudioEngine::stopBackgroundMusic(bool releaseData)
@@ -134,6 +136,7 @@ float SimpleAudioEngine::getBackgroundMusicVolume()
  */
 void SimpleAudioEngine::setBackgroundMusicVolume(float volume)
 {
+    g_SimpleAudioEngine->backgroundvolume = volume;
     AudioEngine::setVolume(g_SimpleAudioEngine->musicid, volume);
 }
 

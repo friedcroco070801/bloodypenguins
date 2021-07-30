@@ -2,8 +2,10 @@
 #include "UIDisease.h"
 #include "UIDiseaseType/UIDiseaseType.h"
 #include "Scenes/GameScene/GSDefine.h"
+#include "editor-support/cocostudio/SimpleAudioEngine.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 /*
 Add UIDisease to scene
@@ -162,6 +164,7 @@ UIDisease* UIDisease::create(DiseaseId id) {
 }
 
 void UIDisease::attackAnimate(Direction dir) {
+	SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/disease_hit.mp3");
 	switch (dir) {
 	case DOWN:
 	{

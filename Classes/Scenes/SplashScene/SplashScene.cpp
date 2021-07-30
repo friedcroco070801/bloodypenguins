@@ -38,10 +38,32 @@ bool SplashScene::init() {
     auto loadMusic = CallFunc::create([](){
         auto data = UserDefault::getInstance();
         auto audio = SimpleAudioEngine::getInstance();
-        audio->setBackgroundMusicVolume(data->getFloatForKey("MUSIC_VOLUME", 1.0f));
-        audio->setEffectsVolume(data->getFloatForKey("EFFECT_VOLUME", 1.0f));
 
         // Preload here
+        audio->preloadBackgroundMusic("audio/background/GameScene/gamescene.mp3");
+        audio->preloadBackgroundMusic("audio/background/GameScene/Boss/boss_appear.mp3");
+        audio->preloadBackgroundMusic("audio/background/GameScene/Boss/boss_die.mp3");
+        audio->preloadBackgroundMusic("audio/background/GameScene/Lose/lose.mp3");
+        audio->preloadBackgroundMusic("audio/background/GameScene/Win/win.mp3");
+        audio->preloadBackgroundMusic("audio/background/LevelScene/levelscene.mp3");
+        audio->preloadBackgroundMusic("audio/background/MainMenu/mainmenu.mp3");
+
+        audio->preloadEffect("audio/soundfx/use/add_cell.mp3");
+        audio->preloadEffect("audio/soundfx/use/button.mp3");
+        audio->preloadEffect("audio/soundfx/use/collect_energy.mp3");
+        audio->preloadEffect("audio/soundfx/use/delete_button.mp3");
+        audio->preloadEffect("audio/soundfx/use/earthquake.mp3");
+        audio->preloadEffect("audio/soundfx/use/ember.mp3");
+        audio->preloadEffect("audio/soundfx/use/final_round.mp3");
+        audio->preloadEffect("audio/soundfx/use/freeze.mp3");
+        audio->preloadEffect("audio/soundfx/use/projectile_destroyed.wav");
+        audio->preloadEffect("audio/soundfx/use/reward.mp3");
+        audio->preloadEffect("audio/soundfx/use/projectile_destroyed.mp3");
+        audio->preloadEffect("audio/soundfx/use/disease_hit.mp3");
+        audio->preloadEffect("audio/soundfx/use/explosion.mp3");
+
+        audio->setBackgroundMusicVolume(data->getFloatForKey("MUSIC_VOLUME", 1.0f));
+        audio->setEffectsVolume(data->getFloatForKey("EFFECT_VOLUME", 1.0f));
     });
 
     auto delay2 = DelayTime::create(1.5f);
