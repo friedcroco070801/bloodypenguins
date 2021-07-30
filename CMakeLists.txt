@@ -25,7 +25,7 @@
 
 cmake_minimum_required(VERSION 3.6)
 
-set(APP_NAME BloodyPenguins)
+set(APP_NAME DefenseSquad)
 
 project(${APP_NAME})
 

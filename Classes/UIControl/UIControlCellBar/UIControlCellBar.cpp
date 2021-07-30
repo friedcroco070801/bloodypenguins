@@ -24,6 +24,12 @@ void UIControlCellBar::addToScene(Scene* scene) {
 	loading->setGlobalZOrder(10.5f);
 	loading->setOpacity(170);
 
+	middle = Sprite::create(CELLBAR_LOADING_FILENAME);
+	middle->setAnchorPoint(Vec2(0.0f, 0.0f));
+	addChild(middle);
+	middle->setGlobalZOrder(10.5f);
+	middle->setOpacity(80);
+
 	canActivate = false;
 }
 
@@ -150,10 +156,12 @@ void UIControlCellBar::updateRecharge(double percentage) {
 	if (abs(0.0 - percentage) < DOUBLE_PRECISION) {
 		if (canActivate == false) {
 			flashAnimate();
+			middle->setOpacity(0);
 		}
 		canActivate = true;
 	} else {
 		canActivate = false;
+		middle->setOpacity(80);
 	}
 	loading->setScaleY(percentage);
 }

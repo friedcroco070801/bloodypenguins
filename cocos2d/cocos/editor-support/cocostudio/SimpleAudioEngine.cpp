@@ -61,7 +61,7 @@ SimpleAudioEngine::SimpleAudioEngine()
 {
     g_SimpleAudioEngine->musicid = -1;
     g_SimpleAudioEngine->effectsvolume = 1.0f;
-    g_SimpleAudioEngine->backgroundvolume = 1.0f;
+    g_SimpleAudioEngine->backgroundvolume = 1.0f / 3;
 }
 
 SimpleAudioEngine::~SimpleAudioEngine()
@@ -124,7 +124,7 @@ bool SimpleAudioEngine::isBackgroundMusicPlaying()
  */
 float SimpleAudioEngine::getBackgroundMusicVolume()
 {
-    return AudioEngine::getVolume(g_SimpleAudioEngine->musicid);
+    return AudioEngine::getVolume(g_SimpleAudioEngine->musicid * 3);
 }
 
 /**
@@ -136,8 +136,8 @@ float SimpleAudioEngine::getBackgroundMusicVolume()
  */
 void SimpleAudioEngine::setBackgroundMusicVolume(float volume)
 {
-    g_SimpleAudioEngine->backgroundvolume = volume;
-    AudioEngine::setVolume(g_SimpleAudioEngine->musicid, volume);
+    g_SimpleAudioEngine->backgroundvolume = volume / 3;
+    AudioEngine::setVolume(g_SimpleAudioEngine->musicid, volume / 3);
 }
 
 /**

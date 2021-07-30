@@ -30,7 +30,6 @@ MMOptions* MMOptions::create() {
 
 bool MMOptions::init() {
 	
-	
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto origin = Director::getInstance()->getVisibleOrigin();
 
@@ -47,16 +46,123 @@ bool MMOptions::init() {
     box->setGlobalZOrder(12.0f);
     box->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y);
 
+    int bias = 0;
+
+#ifdef __CAN_UNLOCK__
+    bias = 1;
+#endif // DEBUG
+
+#ifndef __CAN_UNLOCK__
 	// Add Options Text
 	auto optionstext = Sprite::create(OPTIONS_TEXT_FILENAME);
 	this->addChild(optionstext);
 	optionstext->setGlobalZOrder(12.0f);
 	optionstext->setPosition(visibleSize.width / 2 + origin.x, visibleSize.height / 2  + origin.y + 45.f * 2 + 15.f * 2);
+#endif // !__CAN_UNLOCK__
 
+    // Add reset button
+    auto reset = ui::Button::create(OPTIONS_LAYER_RESET_FILENAME, OPTIONS_LAYER_RESET_CLICKED_FILENAME, OPTIONS_LAYER_RESET_CLICKED_FILENAME);
+    
+    function<function<void(Ref*, ui::Widget::TouchEventType)>()> resetTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+        return [&](Ref* sender, ui::Widget::TouchEventType type) {
+            switch (type) {
+                case ui::Widget::TouchEventType::BEGAN:
+                    break;
+                case ui::Widget::TouchEventType::ENDED:  
+                {
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+                    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
+
+                    function<function<void()>()> cancelTouch = [this]() -> function<void()> {
+                        return [&]() {
+                            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+                            Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
+                        };
+                    };
+
+                    function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                        return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                            if (type == ui::Widget::TouchEventType::ENDED) {
+                                SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+
+                                UserDefault::getInstance()->setIntegerForKey("CURRENT_LEVEL", 1);
+                                UserDefault::getInstance()->setIntegerForKey("CURRENT_CELL", 0);
+
+                                Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this->getParent(), true);
+                                this->removeFromParent();
+                            }
+                        };
+                    };
+
+                    auto sureLayer = UISureLayer::create();
+                    sureLayer->setCancelTouch(cancelTouch());
+                    sureLayer->setOkayTouch(okayTouch());
+                    this->addChild(sureLayer);
+                }
+                default:
+                    break;
+            }
+        };
+    };
+
+    reset->addTouchEventListener(resetTouch());
+    this->addChild(reset);
+    reset->setGlobalZOrder(12.0f);
+    reset->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 60.0f * (1 - bias)));
+
+#ifdef __CAN_UNLOCK__
+// Add unlock button
+    auto unlock = ui::Button::create(OPTIONS_LAYER_UNLOCK_FILENAME, OPTIONS_LAYER_UNLOCK_CLICKED_FILENAME, OPTIONS_LAYER_UNLOCK_CLICKED_FILENAME);
+    
+    function<function<void(Ref*, ui::Widget::TouchEventType)>()> unlockTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+        return [&](Ref* sender, ui::Widget::TouchEventType type) {
+            switch (type) {
+                case ui::Widget::TouchEventType::BEGAN:
+                    break;
+                case ui::Widget::TouchEventType::ENDED:  
+                {
+                    SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+                    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
+
+                    function<function<void()>()> cancelTouch = [this]() -> function<void()> {
+                        return [&]() {
+                            SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+                            Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
+                        };
+                    };
+
+                    function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
+                        return [&](Ref* sender, ui::Widget::TouchEventType type) {
+                            if (type == ui::Widget::TouchEventType::ENDED) {
+                                SimpleAudioEngine::getInstance()->playEffect("audio/soundfx/use/button.mp3");
+
+                                UserDefault::getInstance()->setIntegerForKey("CURRENT_LEVEL", 9);
+                                UserDefault::getInstance()->setIntegerForKey("CURRENT_CELL", 6);
+
+                                Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this->getParent(), true);
+                                this->removeFromParent();
+                            }
+                        };
+                    };
+
+                    auto sureLayer = UISureLayer::create();
+                    sureLayer->setCancelTouch(cancelTouch());
+                    sureLayer->setOkayTouch(okayTouch());
+                    this->addChild(sureLayer);
+                }
+                default:
+                    break;
+            }
+        };
+    };
+    unlock->addTouchEventListener(unlockTouch());
+    this->addChild(unlock);
+    unlock->setGlobalZOrder(12.0f);
+    unlock->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 60.0f));
+#endif // DEBUG
 	
     // Add okay button
     auto okay = ui::Button::create(OPTIONS_LAYER_OKAY_FILENAME, OPTIONS_LAYER_OKAY_CLICKED_FILENAME, OPTIONS_LAYER_OKAY_CLICKED_FILENAME);
-	
 	
     function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
         return [&](Ref* sender, ui::Widget::TouchEventType type) {
@@ -83,141 +189,19 @@ bool MMOptions::init() {
 	//Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
     this->addChild(okay);
 	okay->setGlobalZOrder(12.0f);
-	okay->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 45.0f * 2));
-
-	/*
-    // Add restart button
-    auto restart = ui::Button::create(OPTIONS_LAYER_RESTART_FILENAME, OPTIONS_LAYER_RESTART_CLICKED_FILENAME, OPTIONS_LAYER_RESTART_CLICKED_FILENAME);
-    
-    function<function<void(Ref*, ui::Widget::TouchEventType)>()> restartTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
-        return [&](Ref* sender, ui::Widget::TouchEventType type) {
-            switch (type) {
-                case ui::Widget::TouchEventType::BEGAN:
-                    break;
-                case ui::Widget::TouchEventType::ENDED:  
-                {
-                    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
-
-                    function<function<void()>()> cancelTouch = [this]() -> function<void()> {
-                        return [&]() {
-                            Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
-                        };
-                    };
-
-                    function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
-                        return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto blacken = CallFuncN::create([](Node* node){
-                                auto black = Sprite::create(OPTIONS_LAYER_FORE_FILENAME);
-                                black->setOpacity(0);
-                                auto fadeIn = FadeTo::create(0.5f, 255);
-                                black->runAction(fadeIn);
-                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                                node->addChild(black);
-                                black->setGlobalZOrder(12.5f);
-                            });
-
-                            auto delay = DelayTime::create(0.5f);
-
-                            auto changeScene = CallFunc::create([this](){
-                                return [&](){
-                                   //auto scene = GameScene::create(this->level->getLevelId());
-		                           //Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                                };
-                            }());
-
-                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                            this->runAction(seq);                            
-                        };
-                    };
-
-                    auto sureLayer = UISureLayer::create();
-                    sureLayer->setCancelTouch(cancelTouch());
-                    sureLayer->setOkayTouch(okayTouch());
-                    this->addChild(sureLayer);
-                }
-                default:
-                    break;
-            }
-        };
-    };
-    
-    restart->addTouchEventListener(restartTouch());
-    this->addChild(restart);
-    restart->setGlobalZOrder(12.0f);
-    restart->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
-
-    // Add mainmenu button
-    auto mainmenu = ui::Button::create(OPTIONS_LAYER_MAINMENU_FILENAME, OPTIONS_LAYER_MAINMENU_CLICKED_FILENAME, OPTIONS_LAYER_MAINMENU_CLICKED_FILENAME);
-    
-    function<function<void(Ref*, ui::Widget::TouchEventType)>()> mainmenuTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
-        return [&](Ref* sender, ui::Widget::TouchEventType type) {
-            switch (type) {
-                case ui::Widget::TouchEventType::BEGAN:
-                    break;
-                case ui::Widget::TouchEventType::ENDED:  
-                {
-                    Director::getInstance()->getEventDispatcher()->pauseEventListenersForTarget(this, true);
-
-                    function<function<void()>()> cancelTouch = [this]() -> function<void()> {
-                        return [&]() {
-                            Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this, true);
-                        };
-                    };
-
-                    function<function<void(Ref*, ui::Widget::TouchEventType)>()> okayTouch = [this]() -> function<void(Ref*, ui::Widget::TouchEventType)> {
-                        return [&](Ref* sender, ui::Widget::TouchEventType type) {
-                            auto blacken = CallFuncN::create([](Node* node){
-                                auto black = Sprite::create(OPTIONS_LAYER_FORE_FILENAME);
-                                black->setOpacity(0);
-                                auto fadeIn = FadeTo::create(0.5f, 255);
-                                black->runAction(fadeIn);
-                                black->setAnchorPoint(Vec2(0.0f, 0.0f));
-                                node->addChild(black);
-                                black->setGlobalZOrder(12.5f);
-                            });
-
-                            auto delay = DelayTime::create(0.5f);
-
-                            auto changeScene = CallFunc::create([this](){
-                                return [&](){
-                                    auto scene = levelScene::create();
-		                            Director::getInstance()->replaceScene(TransitionFade::create(0.5f, scene));
-                                };
-                            }());
-
-                            auto seq = Sequence::create(blacken, delay, changeScene, nullptr);
-                            this->runAction(seq);
-                        };
-                    };
-
-                    auto sureLayer = UISureLayer::create();
-                    sureLayer->setCancelTouch(cancelTouch());
-                    sureLayer->setOkayTouch(okayTouch());
-                    this->addChild(sureLayer);
-                }
-                default:
-                    break;
-            }
-        };
-    };
-    
-    mainmenu->addTouchEventListener(mainmenuTouch());
-    this->addChild(mainmenu);
-    mainmenu->setGlobalZOrder(12.0f);
-    mainmenu->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
-	*/
+	okay->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     // Add music slider
     auto music = Sprite::create(OPTIONS_LAYER_MUSIC_FILENAME);
     this->addChild(music);
     music->setGlobalZOrder(12.0f);
-    music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+    music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y + 60.0f * (1 + bias)));
 	//music->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     auto music_base = Sprite::create(OPTIONS_LAYER_SLIDER_BASE_FILENAME);
     this->addChild(music_base);
     music_base->setGlobalZOrder(12.0f);
-    music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+    music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y + 60.0f * (1 + bias)));
 	//music_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     auto music_volume = UserDefault::getInstance()->getFloatForKey("MUSIC_VOLUME", 1.0f);
@@ -225,7 +209,7 @@ bool MMOptions::init() {
     music_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(music_slider);
     music_slider->setGlobalZOrder(12.0f);
-    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - music_volume) * 150.0f, visibleSize.height / 2 + origin.y + 45.0f + 15.0f));
+    music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - music_volume) * 150.0f, visibleSize.height / 2 + origin.y + 60.0f * (1 + bias)));
 	//music_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.675 + origin.y - 45.0f - 15.0f));
 
     // Function set
@@ -251,6 +235,10 @@ bool MMOptions::init() {
 
             this->music_slider->setPositionX(fmin(right, fmax(left, posTouch)));
             CCLOG("%f Slider", this->music_slider->getPositionX());
+
+            auto volume = (this->music_slider->getPositionX() - left) / 150.0f;
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setBackgroundMusicVolume(volume);
         };
     };
 
@@ -282,13 +270,13 @@ bool MMOptions::init() {
     auto effect = Sprite::create(OPTIONS_LAYER_EFFECT_FILENAME);
     this->addChild(effect);
     effect->setGlobalZOrder(12.0f);
-	effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y - 15.0f));
+	effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height / 2 + origin.y + 60.0f * bias));
     //effect->setPosition(Vec2(visibleSize.width / 2 + origin.x - 87.5f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     auto effect_base = Sprite::create(OPTIONS_LAYER_SLIDER_BASE_FILENAME);
     this->addChild(effect_base);
     effect_base->setGlobalZOrder(12.0f);
-	effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y - 15.0f));
+	effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height / 2 + origin.y + 60.0f * bias));
     //effect_base->setPosition(Vec2(visibleSize.width / 2 + origin.x + 35.0f, visibleSize.height * 0.65  + origin.y - 45.0f * 2 - 15.0f * 2));
 
     auto effect_volume = UserDefault::getInstance()->getFloatForKey("EFFECT_VOLUME", 1.0f);
@@ -296,7 +284,7 @@ bool MMOptions::init() {
     effect_slider = Sprite::create(OPTIONS_LAYER_SLIDER_FILENAME);
     this->addChild(effect_slider);
     effect_slider->setGlobalZOrder(12.0f);
-	effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - effect_volume) * 150.0f, visibleSize.height / 2 + origin.y - 15.0f));
+	effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f - (1.0f - effect_volume) * 150.0f, visibleSize.height / 2 + origin.y + 60.0f * bias));
     //effect_slider->setPosition(Vec2(visibleSize.width / 2 + origin.x + 110.0f, visibleSize.height * 0.65 + origin.y - 45.0f * 2 - 15.0f * 2));
 
     // Function set

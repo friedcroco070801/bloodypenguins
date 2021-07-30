@@ -241,6 +241,10 @@ void UIPauseLayer::init(LevelModel* level) {
 
             this->music_slider->setPositionX(fmin(right, fmax(left, posTouch)));
             CCLOG("%f Slider", this->music_slider->getPositionX());
+
+            auto volume = (this->music_slider->getPositionX() - left) / 150.0f;
+            auto audio = SimpleAudioEngine::getInstance();
+            audio->setBackgroundMusicVolume(volume);
         };
     };
 
