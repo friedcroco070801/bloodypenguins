@@ -16,6 +16,7 @@ class CellBarModel;
 class UIProgressor;
 class UIPause;
 class UIRemove;
+class GSTutorial;
 
 class LevelModel {
 public:
@@ -117,6 +118,8 @@ private:
 
     double winTimeCounter;
     bool loseCheck;
+
+    GSTutorial* layer;
 };
 
 #endif // !__LEVEL_MODEL_H__

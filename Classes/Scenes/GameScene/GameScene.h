@@ -1,8 +1,10 @@
 #ifndef __GAMESCENE_H__
 #define __GAMESCENE_H__
 #include "cocos2d.h"
+#include "Components/GSTutorial.h"
 #include "Models/models.h"
 #include "GSMap.h"
+class GSTutorial;
 class GameScene :public cocos2d::Scene 
 {
 public:
@@ -33,6 +35,8 @@ protected:
 	
 	LevelModel* level;
 	void updateLevel(float);
+
+	GSTutorial* layer;
 };
 
 #endif // !__GAMESCENE_H__

@@ -18,7 +18,6 @@ private:
 	Scene* scene;
 	LevelModel* level;
 	Sprite* loading;
-	Sprite* middle;
 	Sprite* choosing;
 	int cost;
 	bool canActivate;

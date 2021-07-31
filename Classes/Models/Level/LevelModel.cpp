@@ -16,6 +16,8 @@
 #include "UIControl/UIResultLayer/UILoseLayer.h"
 #include "UIControl/UIRemove/UIRemove.h"
 #include "editor-support/cocostudio/SimpleAudioEngine.h"
+#include "Scenes/GameScene/Components/GSTutorial.h"
+
 using namespace std;
 USING_NS_CC;
 using namespace CocosDenshion;
@@ -356,6 +358,43 @@ void LevelModel::addCell(CellModel* obj, int cellX, int cellY) {
             if ((*it)->getCellId() == obj->getCellId()) {
                 (*it)->resetCounter();
             }
+        }
+
+        // Tutorial
+        if (UserDefault::getInstance()->getBoolForKey("TUTORIAL", true) && levelId == 1) {
+            auto instructCell = CallFunc::create([this](){
+                return [&](){
+                    this->pause();
+                    auto cell = *(this->cellList.begin());
+                    this->layer = GSTutorial::create(
+                        Rect(REMOVE_BUTTON_POS_X - 27.0f, REMOVE_BUTTON_POS_Y - 27.0f, 54.0f, 54.0f),
+                        Rect(GRASS_ORIGIN_POSITION_X_R + SIZE_OF_SQUARE_R * cell->getPositionCellX(), GRASS_ORIGIN_POSITION_Y_R + SIZE_OF_SQUARE_R * (cell->getPositionCellY() + 0.25f), SIZE_OF_SQUARE_R, SIZE_OF_SQUARE_R),
+                        TUTORIAL_5
+                    );
+                    this->scene->addChild(this->layer);
+
+                    this->layer->setOkayEvent([this](){
+                        return [&](){
+                            this->layer->removeFromParent();
+
+                            this->layer = GSTutorial::create(
+                                Rect(0.0f, 0.0f, 1.0f, 1.0f),
+                                TUTORIAL_6
+                            );
+                            this->scene->addChild(this->layer);
+
+                            this->layer->setOkayEvent([this](){
+                                return [&](){
+                                    this->layer->removeFromParent();
+                                    this->resume();
+                                    UserDefault::getInstance()->setBoolForKey("TUTORIAL", false);
+                                };
+                            }());
+                        };
+                    }());
+                };
+            }());
+            this->scene->runAction(instructCell);
         }
     }
     else {

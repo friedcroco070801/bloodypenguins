@@ -87,6 +87,7 @@ bool MMOptions::init() {
 
                                 UserDefault::getInstance()->setIntegerForKey("CURRENT_LEVEL", 1);
                                 UserDefault::getInstance()->setIntegerForKey("CURRENT_CELL", 0);
+                                UserDefault::getInstance()->setBoolForKey("TUTORIAL", true);
 
                                 Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this->getParent(), true);
                                 this->removeFromParent();
@@ -138,6 +139,7 @@ bool MMOptions::init() {
 
                                 UserDefault::getInstance()->setIntegerForKey("CURRENT_LEVEL", 9);
                                 UserDefault::getInstance()->setIntegerForKey("CURRENT_CELL", 6);
+                                UserDefault::getInstance()->setBoolForKey("TUTORIAL", false);
 
                                 Director::getInstance()->getEventDispatcher()->resumeEventListenersForTarget(this->getParent(), true);
                                 this->removeFromParent();
